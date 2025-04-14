@@ -1,11 +1,11 @@
  
-import cloud from "../../../assets/sponslogos/Cloud.svg"
-import glossy from "../../../assets/sponslogos/Glossy.svg"
-import iceberg from "../../../assets/sponslogos/Iceberg.svg"
-import uTurn from "../../../assets/sponslogos/U-Turn.svg"
-import luminous from "../../../assets/sponslogos/Luminous.svg"
-import proNature from "../../../assets/sponslogos/Pro-Nature.svg"
-import levelUp from "../../../assets/sponslogos/Level-up.svg"
+import cloud from "../../assets/sponslogos/Cloud.svg"
+import glossy from "../../assets/sponslogos/Glossy.svg"
+import iceberg from "../../assets/sponslogos/Iceberg.svg"
+import uTurn from "../../assets/sponslogos/U-Turn.svg"
+import luminous from "../../assets/sponslogos/Luminous.svg"
+import proNature from "../../assets/sponslogos/Pro-Nature.svg"
+import levelUp from "../../assets/sponslogos/Level-up.svg"
 
 import { useRef } from "react";
 import useLogoScroll from "../../hooks/useLogoScroll"

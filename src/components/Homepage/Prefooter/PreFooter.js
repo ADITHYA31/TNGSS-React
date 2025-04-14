@@ -1,7 +1,7 @@
  
 import { useRef } from "react";
 import ParallelScroll from "./ParallelScroll";
-import { useDoomScroll } from "@/hooks/useDoomScroll";
+import { useDoomScroll } from "../../../hooks/useDoomScroll";
 
 export default function PreFooter() {
     const circleRef= useRef(null);

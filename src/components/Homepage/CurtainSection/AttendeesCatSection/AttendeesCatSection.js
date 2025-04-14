@@ -1,17 +1,8 @@
- 
-
 import FlipingCard from "../../../../components/Elements/FlippingCard";
 import GradientBdrCard from "../../../../components/Elements/GradientBorderCard";
 
 export default function AtendeesSection() {
-
-    const data=[
-        // {
-        //     img:'',
-        //     title:'',
-        //     des:'',
-        //     foot:''
-        // },
+    const data = [
         {
             img: '/image1.jpg',
             title: 'Innovative Tech Solutions',
@@ -38,35 +29,41 @@ export default function AtendeesSection() {
         },
     ];
 
-    return(
-        <section className=" flex w-screen min-h-screen justify-center overflow-hidden    items-center bg-black">
-
-        <div className="flex max-md:flex-col isolate  items-center">
-        {data.map((item, index) => (
-            <FlipingCard flipinvert key={index} className={`z-${index*10} ${index%2===0?'rotate-6':'-rotate-6'} transition-all duration-300 hover:z-50 rounded-md`}>
-                <GradientBdrCard className="w-80 h-96 p-[2px] rounded-[inherit]">
-                    <div className="flex relative w-full h-full p-5">
-                    <img
-                    src={item.img}
-                    fill
-                    className=" object-cover object-center"
-                    />
-                    <div className="self-end">
-                        <p>{item.title}</p>
-                    </div>
-                    </div>
-                </GradientBdrCard>
-                <GradientBdrCard className="w-80 h-96 p-[2px] rounded-[inherit]">
-                    <div className=" flex flex-col w-full h-full p-5">
-                    <p>{item.title}</p>
-                    <p>{item.des}</p>
-                    <p className=" block mt-auto">{item.foot}</p>
-                    </div>
-                </GradientBdrCard>
-            </FlipingCard>
-        ))}
-        </div>
-
-    </section>
+    return (
+        <section className="flex w-screen min-h-screen justify-center overflow-hidden items-center bg-black">
+            <div className="flex max-md:flex-col isolate items-center">
+                {data.map((item, index) => (
+                    <FlipingCard
+                        flipinvert
+                        key={item.title} // Use unique key (item.title for example)
+                        className={`transition-all duration-300 hover:z-50 rounded-md`}
+                        style={{ zIndex: index * 10 }} // Dynamically set z-index using style
+                    >
+                        <GradientBdrCard className="w-80 h-96 p-[2px] rounded-[inherit]">
+                            <div className="flex relative w-full h-full p-5">
+                                {/* Using next/image for optimized images */}
+                                <img
+                                    src={item.img}
+                                    alt={item.title}
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="object-cover object-center"
+                                />
+                                <div className="self-end">
+                                    <p className="text-white">{item.title}</p>
+                                </div>
+                            </div>
+                        </GradientBdrCard>
+                        <GradientBdrCard className="w-80 h-96 p-[2px] rounded-[inherit]">
+                            <div className="flex flex-col w-full h-full p-5">
+                                <p className="text-white">{item.title}</p>
+                                <p className="text-white">{item.des}</p>
+                                <p className="text-white block mt-auto">{item.foot}</p>
+                            </div>
+                        </GradientBdrCard>
+                    </FlipingCard>
+                ))}
+            </div>
+        </section>
     );
 }

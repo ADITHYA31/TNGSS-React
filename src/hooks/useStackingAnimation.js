@@ -1,6 +1,6 @@
  
-import gsap from " ../../gsapconfig";
 import { useGSAP } from "@gsap/react";
+import gsap from "../../gsapconfig";
 
 
 

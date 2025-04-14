@@ -1,37 +1,47 @@
- 
+import { forwardRef } from 'react';
 import meetppl from '../../../assets/meetppl.svg'
 import meetspcs from '../../../assets/meetingspaces.svg'
 import byndstage from '../../../assets/beyondstage.svg'
 
-export default function ImageScroller({images,className='',ref}) {
-    // const className = classNamee;
-    // const imgChildRef = useRef(null);
-    return(
-        <div className={` relative w-[30vw] h-[var(--frame-height)]  [--frame-height:75vh]  overflow-hidden rounded-2xl border-3 border-white rotate-12   ${className}`}>
-            <div ref={ref} className="flex flex-col text-4xl text-black will-change-transform">
-                <div className="relative w-full h-[var(--frame-height)] bg-white">
+// Use forwardRef to pass down the ref to the parent component
+const ImageScroller = forwardRef(({ images, className = '' }, forwardedRef) => {
+    return (
+        <div
+            ref={forwardedRef}
+            className={`relative w-[30vw] h-[75vh] overflow-hidden rounded-2xl border-3 border-white rotate-12 ${className}`}
+        >
+            <div className="flex flex-col text-4xl text-black will-change-transform">
+                {/* Image Section 1 */}
+                <div className="relative w-full h-[75vh] bg-white">
                     <img
-                    src={meetppl}
-                    fill
-                    className='object-cover'
+                        src={meetppl}
+                        className="object-cover w-full h-full"
+                        alt="Meet People"
                     />
                 </div>
-                <div className="relative w-full h-[var(--frame-height)] bg-white">
+                {/* Image Section 2 */}
+                <div className="relative w-full h-[75vh] bg-white">
                     <img
-                    src={meetspcs}
-                    fill
-                    className='object-cover '
+                        src={meetspcs}
+                        className="object-cover w-full h-full"
+                        alt="Meeting Spaces"
                     />
                 </div>
-                <div className="relative w-full h-[var(--frame-height)] bg-white">
+                {/* Image Section 3 */}
+                <div className="relative w-full h-[75vh] bg-white">
                     <img
                         src={byndstage}
-                        fill
-                        className='object-cover object-center'
+                        className="object-cover w-full h-full object-center"
+                        alt="Beyond Stage"
                     />
                 </div>
-                <div className="min-w-full h-[var(--frame-height)] bg-white flex justify-center items-center">4</div>
+                {/* Placeholder Section */}
+                <div className="min-w-full h-[75vh] bg-white flex justify-center items-center">
+                    <p>4</p>
+                </div>
             </div>
         </div>
     );
-}
+});
+
+export default ImageScroller;

@@ -52,61 +52,30 @@ module.exports = {
   ],
 
   // Determine how modules within the project are treated
-  // module: {
-  //   rules: [
-  //     // JavaScript: Use Babel to transpile JavaScript files
-  //     { test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader'] },
-
-  //     // Styles: Inject CSS into the head with source maps
-  //     {
-  //       test: /\.(css|scss|sass)$/,
-  //       use: [
-  //         MiniCssExtractPlugin.loader,
-  //         'css-loader',
-  //         // 'sass-loader',
-  //         {
-  //           loader: 'postcss-loader', // postcss loader needed for tailwindcss
-  //           options: {
-  //             postcssOptions: {
-  //               ident: 'postcss',
-  //               plugins: [tailwindcss, autoprefixer],
-  //             },
-  //           },
-  //         },
-  //       ],
-  //     },
-
-  //     {
-  //       test: /\.svg$/,
-  //       use: ['@svgr/webpack'],
-  //     },
-
-  //     // Images: Copy image files to build folder
-  //     { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
-
-  //     // Fonts and SVGs: Inline files
-  //     { test: /\.(woff(2)?|eot|ttf|otf|)$/, type: 'asset/inline' },
-  //   ],
-  // },
   module: {
     rules: [
-        {
-            test: /\.(css|scss|sass)$/,
-            use: [
-                MiniCssExtractPlugin.loader,
-                'css-loader',
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        postcssOptions: {
-                            ident: 'postcss',
-                            plugins: [require('tailwindcss'), require('autoprefixer')],
-                        },
-                    },
-                },
-            ],
-        },
-       
+      // JavaScript: Use Babel to transpile JavaScript files
+      { test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader'] },
+
+      // Styles: Inject CSS into the head with source maps
+      {
+        test: /\.(css|scss|sass)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          // 'sass-loader',
+          {
+            loader: 'postcss-loader', // postcss loader needed for tailwindcss
+            options: {
+              postcssOptions: {
+                ident: 'postcss',
+                plugins: [tailwindcss, autoprefixer],
+              },
+            },
+          },
+        ],
+      },
+
       {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
@@ -118,6 +87,37 @@ module.exports = {
       // Fonts and SVGs: Inline files
       { test: /\.(woff(2)?|eot|ttf|otf|)$/, type: 'asset/inline' },
     ],
-},
+  },
+//   module: {
+//     rules: [
+//         {
+//             test: /\.(css|scss|sass)$/,
+//             use: [
+//                 MiniCssExtractPlugin.loader,
+//                 'css-loader',
+//                 {
+//                     loader: 'postcss-loader',
+//                     options: {
+//                         postcssOptions: {
+//                             ident: 'postcss',
+//                             plugins: [require('tailwindcss'), require('autoprefixer')],
+//                         },
+//                     },
+//                 },
+//             ],
+//         },
+       
+//       {
+//         test: /\.svg$/,
+//         use: ['@svgr/webpack'],
+//       },
+
+//       // Images: Copy image files to build folder
+//       { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
+
+//       // Fonts and SVGs: Inline files
+//       { test: /\.(woff(2)?|eot|ttf|otf|)$/, type: 'asset/inline' },
+//     ],
+// },
 
 }

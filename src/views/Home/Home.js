@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import Footer from '../../components/Elements/Footer/Footer'
 import NavBar from '../../components/Elements/NavBar';
 import TestCanvas from '../../components/TestCanvas';
+import StackingSections from '../../components/Homepage/FirstSections/StackingSections';
+import PreFooter from '../../components/Homepage/Prefooter/PreFooter';
+import CurtainSection from '../../components/Homepage/CurtainSection/CurtainSection';
+import ShowcaseSection from '../../components/Homepage/showcase_section/ShowcaseSection';
+import SponsSection from '../../components/Homepage/SponsSection';
 const Button = styled.button`
   background: transparent;
   border-radius: 3px;
@@ -16,10 +21,24 @@ const Home = (props) => {
   const [count, setCount] = React.useState(0);
 
   return (
-    <div className="h-screen">
-      <NavBar/>
+    <div className="h-screen scrollbar-hide scroll-smooth bg-black text-white">
+<NavBar/>
+<StackingSections/>
+    <div className='h-screen w-full bg-black isolate'/>
+    <CurtainSection/>
+    <div className='h-screen w-full bg-black isolate'/>
+    <ShowcaseSection/>
+    {/* <div className='h-screen w-full bg-purple-950/30 isolate'/> */}
+    <SponsSection/>
+
+    <PreFooter/>
+
+
+
+
+      {/* <NavBar/>
       <TestCanvas/>
-      <Footer/>
+      <Footer/> */}
       {/* <Header/>
       <Main/>
       <Footer/> */}

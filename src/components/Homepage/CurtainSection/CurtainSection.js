@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import AtendeesSection from "./AttendeesCatSection/AttendeesCatSection";
 import GlobalPavSection from "./GlobalPavSection";
-import { useSwipeScroll } from "@/hooks/useSwipeScroll";
+import { useSwipeScroll } from "../../../hooks/useSwipeScroll";
 
 
 export default function CurtainSection() {
