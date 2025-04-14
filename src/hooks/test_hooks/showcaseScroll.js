@@ -1,6 +1,7 @@
 
-import gsap from "@/lib/gsapconfig";
+
 import { useGSAP } from "@gsap/react";
+import gsap from "../../../gsapconfig";
 
 
 export function useShowcaseScroll(mainRef,imagesRef){

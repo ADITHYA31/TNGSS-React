@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Footer from '../../components/Elements/Footer/Footer'
+import NavBar from '../../components/Elements/NavBar';
+import TestCanvas from '../../components/TestCanvas';
 const Button = styled.button`
   background: transparent;
   border-radius: 3px;
@@ -15,11 +17,12 @@ const Home = (props) => {
 
   return (
     <div className="h-screen">
-      <div className="bg-gray-500">home</div>
-      <h1 data-testid="count-display">{count}</h1>
-      <Button data-testid="button-increment" onClick={() => setCount(count + 1)}>
-        Increment
-      </Button>
+      <NavBar/>
+      <TestCanvas/>
+      <Footer/>
+      {/* <Header/>
+      <Main/>
+      <Footer/> */}
     </div>
   );
 };

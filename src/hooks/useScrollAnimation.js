@@ -1,5 +1,5 @@
 // hooks/useScrollAnimation.js
-'use client';
+ ;
 // import { useRef } from 'react';
 import { gsap } from 'gsap';
 // import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';

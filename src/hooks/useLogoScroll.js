@@ -1,4 +1,4 @@
-import gsap from "@/lib/gsapconfig";
+import gsap from " ../../gsapconfig";
 import { useGSAP } from "@gsap/react";
 
 export default function useLogoScroll(logosRef) {

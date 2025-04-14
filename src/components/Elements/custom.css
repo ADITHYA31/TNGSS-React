@@ -1,34 +1,32 @@
 @import 'tailwindcss';
 
-/*---- Gradient Card styles ----*/
+/*---- Gradient Card styles 
 
-.gradient-wraper-card{
-    @apply flex relative  isolate justify-center items-center overflow-hidden ;
+.gradient-wraper-card {
+    @apply flex relative isolate justify-center items-center overflow-hidden;
 }
 
-.gradient-wraper-card::before{
-    @apply absolute w-full h-full scale-150 content-['']; 
-
-    /* background:conic-gradient(at 45deg, from-violet-700, via-lime-300, to-violet-700); */
+.gradient-wraper-card::before {
+    @apply absolute w-full h-full scale-150;
+    content: '';
     background: linear-gradient(135deg, #0055FF 0%, #07BCCE 22%, #F7750C 81%, #FF0000);
-
 }
 
-.card-content{
-    @apply relative content-[''] bg-black rounded-[inherit];
+.card-content {
+    @apply relative bg-black rounded-lg;
 }
 
-/*---- CTA Button styles ----*/
+ .button-wraper {
+    @apply relative overflow-hidden isolate w-fit h-fit;
+} 
 
-.button-wraper{
-    @apply  relative overflow-hidden isolate  w-fit h-fit
+.button-wraper::before {
+    @apply absolute top-0 left-0 w-full h-full;
+    content: '';
+    background: linear-gradient(135deg, #007FCF 0%, #F56B0D 100%);
 }
 
-
-.button-wraper::before{
-    @apply absolute top-0  left-0  w-full h-full content-[''] bg-linear-150 from-[#007FCF] to-[#F56B0D] 
+.button-cnt {
+    @apply relative rounded-lg w-fit h-fit overflow-hidden bg-black;
 }
-
-.button-cnt{
-@apply relative rounded-[inherit] w-fit h-fit  overflow-hidden bg-black  
-}
+----*/
