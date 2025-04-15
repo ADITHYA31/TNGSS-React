@@ -65,7 +65,7 @@ module.exports = {
           'css-loader',
           // 'sass-loader',
           {
-            loader: 'postcss-loader', // postcss loader needed for tailwindcss
+            loader: 'postcss-loader', 
             options: {
               postcssOptions: {
                 ident: 'postcss',
@@ -78,7 +78,15 @@ module.exports = {
 
       {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        oneOf: [
+          {
+            resourceQuery: /url/, // for `import icon from './icon.svg?url'`
+            type: 'asset/resource'
+          },
+          {
+            use: ['@svgr/webpack'] // default: use as React component
+          }
+        ]
       },
 
       // Images: Copy image files to build folder
