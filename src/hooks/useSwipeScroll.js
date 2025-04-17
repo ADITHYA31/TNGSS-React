@@ -5,10 +5,10 @@ export function useSwipeScroll(mainRef,flagRef){
     
     useGSAP(()=>{
         gsap.set(flagRef.current,{
-            x:'95%',
+            x:'85%',
         })
         gsap.to(flagRef.current,{
-            x:'-85%',
+            x:'-95%',
             ease:'power3.inOut',
             scrollTrigger:{
                 trigger:mainRef.current,

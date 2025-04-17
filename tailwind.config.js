@@ -1,7 +1,14 @@
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx,html}'],
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  darkMode: false,
   theme: {
     extend: {},
   },
+  variants: {
+    extend: {
+      transform: ['group-hover'],
+      rotate: ['group-hover'],
+    },
+  },
   plugins: [],
-}
+};

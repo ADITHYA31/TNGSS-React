@@ -12,7 +12,7 @@ export default function CurtainSection() {
     return(
     <div className="relative   min-h-screen  w-full isolate">
  
-        <div className=" relative h-fit  w-full z-10 ">
+        <div className=" relative h-full  w-full z-10 ">
             <AtendeesSection />
 
         </div>

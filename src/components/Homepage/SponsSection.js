@@ -6,7 +6,7 @@ import uTurn from "../../assets/sponslogos/U-Turn.svg?url"
 import luminous from "../../assets/sponslogos/Luminous.svg?url"
 import proNature from "../../assets/sponslogos/Pro-Nature.svg?url"
 import levelUp from "../../assets/sponslogos/Level-up.svg?url"
-
+import sponsbg from "../../assets/sponsbg.svg?url"
 import { useRef } from "react";
 import useLogoScroll from "../../hooks/useLogoScroll"
 const data=[
@@ -22,7 +22,10 @@ export default function SponsSection() {
     const stripsRef=useRef(null);
     useLogoScroll(stripsRef);
     return(
-        <section className=" relative flex flex-col h-screen w-full justify-around  bg-purple-900 ">
+        <section className=" relative flex flex-col h-screen w-full justify-around bg-cover bg-center "
+        style={{
+            backgroundImage: `url(${sponsbg})`,
+          }}>
             <h2 className=" text-center font-semibold md:text-7xl">Sponsors & Partners</h2>
 
             <div ref={stripsRef} className="flex flex-col w-full gap-28">

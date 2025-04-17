@@ -8,6 +8,8 @@ import PreFooter from '../../components/Homepage/Prefooter/PreFooter';
 import CurtainSection from '../../components/Homepage/CurtainSection/CurtainSection';
 import ShowcaseSection from '../../components/Homepage/showcase_section/ShowcaseSection';
 import SponsSection from '../../components/Homepage/SponsSection';
+import SpeakerSection from '../../components/Homepage/SpeakerSection/SpeakerSection'
+import Rocket from '../../components/Rocket/Rocket';
 const Button = styled.button`
   background: transparent;
   border-radius: 3px;
@@ -17,22 +19,23 @@ const Button = styled.button`
   padding: 0.25em 1em;
 `;
 
-const Home = (props) => {
-  const [count, setCount] = React.useState(0);
+const Home = () => {
 
   return (
     <div className="h-screen scrollbar-hide scroll-smooth bg-black text-white">
+      <Rocket />
 <NavBar/>
 <StackingSections/>
-    <div className='h-screen w-full bg-black isolate'/>
+    {/* <div className='h-screen w-full bg-black isolate'/> */}
     <CurtainSection/>
-    <div className='h-screen w-full bg-black isolate'/>
-    <ShowcaseSection/>
+    <SpeakerSection/>
+    {/* <div className='h-screen w-full bg-black isolate'/> */}
+    {/* <ShowcaseSection/> */}
     {/* <div className='h-screen w-full bg-purple-950/30 isolate'/> */}
     <SponsSection/>
 
     <PreFooter/>
-
+    <Footer/>
 
 
 
