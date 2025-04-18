@@ -1,14 +1,15 @@
 .rocket {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -20px;
     transform: translate(0, 0) scale(2.5); /* Start top-left and large */
     animation: flyRocket 4s ease-in-out forwards;
     z-index: 9999;
+
   }
   
   /* Final fixed position */
-  .rocket.fixed {
+  /* .rocket.fixed {
     position: fixed;
     top: 20px;
     left: 50%;
@@ -16,7 +17,7 @@
     animation: none;
     z-index: 9999;
   }
-  
+   */
   /* Circular flight path (top-left → around center → top-center) */
   @keyframes flyRocket {
     0% {

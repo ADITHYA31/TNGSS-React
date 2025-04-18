@@ -3,7 +3,7 @@ import Herobg from '../../../assets/herobg.svg?url'
 import herotext from '../../../assets/hero.svg?url'
 import avatarcir from '../../../assets/avatarcir.svg?url'
 import CTAButton from '../../Elements/CTAButton';
-
+import '../../Elements/custom.css'
 
 
 export default function HeroSection({ className = '',ref }) {
@@ -36,14 +36,15 @@ export default function HeroSection({ className = '',ref }) {
       />
     </div>
     <div className=' absolute bottom-0 text-white text-2xl flex justify-between  mt-auto w-full py-3 pb-8 px-12 '>
-      <div className=' flex flex-col  divide-y-2 divide-amber-700'>
-      <p>3-4 May 2025</p>
-      <p>Codissia, Coimbatore</p>
+      <div className=' flex flex-col'>
+      <p className='border-amber-700 pb-2'>3-4 May 2025</p>
+      <p className='pt-2'>Codissia, Coimbatore</p>
       </div>
 
-      <CTAButton src='#' className=' rounded-full font-medium ' contCN='px-3 py-3'>
-      REGISTER NOW
-      </CTAButton>
+     
+      <CTAButton src="/#" className=" rounded-2xl ">
+            <div className="w-60 h-10 px-6 py-7 flex items-center justify-center "> REGISTER NOW</div>
+        </CTAButton>
 
       <div className='flex gap-3'>
         <div className='  w-28 relative'>

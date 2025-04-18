@@ -12,12 +12,12 @@ export default function CurtainSection() {
     return(
     <div className="relative   min-h-screen  w-full isolate">
  
-        <div className=" relative h-full  w-full z-10 ">
-            <AtendeesSection />
+        {/* <div className=" relative h-fit  w-full z-10 ">
+            
 
-        </div>
+        </div> */}
         {/* <div className=" relative bg-white h-[50vh] w-full z-10"></div> */}
-        <div ref={mainRef} className="sticky bottom-0 w-full h-screen  -z-0 ">
+        <div ref={mainRef} className="sticky bottom-0 top-10 w-full h-screen  -z-0 ">
             <GlobalPavSection flagsRef={flagsRef}/>
         </div>
 

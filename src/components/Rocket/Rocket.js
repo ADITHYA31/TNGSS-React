@@ -14,7 +14,7 @@ const Rocket = () => {
   
 
   return (
-    <div className={`rocket ${isFixed ? 'fixed' : ''}`}>
+    <div className={'rocket'}>
  
   <svg
     xmlns="http://www.w3.org/2000/svg"

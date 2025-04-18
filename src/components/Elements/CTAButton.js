@@ -15,7 +15,7 @@ export default function CTAButton({
             >
         {/* The wrapper is responsible for padding */}
             {/* padding will work as border width */}
-            <div  className={`button-wraper py-1 px-1 ${className}`}>
+            <div  className={`button-wraper py-0.5 px-0.5 ${className}`}>
             <div className={`button-cnt ${contCN}`} >
                 
             {children}

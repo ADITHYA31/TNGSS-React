@@ -21,11 +21,11 @@ import gsap from "../../../gsapconfig";
         runAnim.add([
 
             gsap.set('.flags',{
-                x:'90%'
+                x:'70%'
             
             }),
             gsap.to('.flags',{
-                x:'-3%',
+                x:'-5%',
                 ease: "power2.inOut",
                 // onComplete: function() {
 

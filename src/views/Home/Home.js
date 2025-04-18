@@ -10,14 +10,8 @@ import ShowcaseSection from '../../components/Homepage/showcase_section/Showcase
 import SponsSection from '../../components/Homepage/SponsSection';
 import SpeakerSection from '../../components/Homepage/SpeakerSection/SpeakerSection'
 import Rocket from '../../components/Rocket/Rocket';
-const Button = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0 1em;
-  padding: 0.25em 1em;
-`;
+import PastEngagements from '../../components/Homepage/past_engagements';
+
 
 const Home = () => {
 
@@ -30,7 +24,8 @@ const Home = () => {
     <CurtainSection/>
     <SpeakerSection/>
     {/* <div className='h-screen w-full bg-black isolate'/> */}
-    {/* <ShowcaseSection/> */}
+    <ShowcaseSection/>
+    <PastEngagements/>
     {/* <div className='h-screen w-full bg-purple-950/30 isolate'/> */}
     <SponsSection/>
 

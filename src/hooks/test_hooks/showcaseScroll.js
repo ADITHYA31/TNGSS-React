@@ -1,67 +1,58 @@
-
-
 import { useGSAP } from "@gsap/react";
 import gsap from "../../../gsapconfig";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
+
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+export function useShowcaseScroll(mainRef, imagesRef) {
+  useGSAP(() => {
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: mainRef.current,
+        start: "top top",
+        end: "+=3500",
+        scrub: true,
+        pin: true,
+      },
+    });
+    
+  
 
 
-export function useShowcaseScroll(mainRef,imagesRef){
+    const steps = [
+      { txt: "Meet", color: "People",summary : "Meet the right people. Spark the right ideas.</br> Create the future." },
+      { txt: "Find", color: "Spaces",summary : " Your next investor, co-founder, or mentor</br> could be right across the table." },
+      { txt: "Go Beyond", color: "Stage",summary : "Great ideas don’t just happen on stage.</br> Here’s where they get real." },
+    ];
 
-    useGSAP(()=>{
-        const tl = gsap.timeline({
-            scrollTrigger:{
-                trigger: mainRef.current,
-                start:'top top',
-                end:'+=4500',
-                scrub:true,
-                // markers:true,
-                pin:true,
-            }
-        })
+    steps.forEach((step, index) => {
+      const stepLabel = `step-${index}`;
 
-        tl.add([
-            // gsap.to(mainRef.current,{
-            //     opacity:0,
-            // }),
-            gsap.to(imagesRef.current,{
-                delay:0.2,
-                ease:'power4.inOut',
-                y: '-25%',
-            }),
-            gsap.to('.txt',{
-                delay:0.2,
-                text:'meeting',
-            }),
-            gsap.to('.txtcolor',{
-                delay:0.2,
-                text:'spaces',
-            })
-        ]).add([
-            gsap.to(imagesRef.current,{
-                delay:0.2,
-                
-                ease:'power4.inOut',
-                 y: '-50%'
-            }),
-            gsap.to('.txt',{
-                delay:0.2,
-                text:'Beyond',
-            }),
-            gsap.to('.txtcolor',{
-                delay:0.2,
-                
-                text:'The stage',
-            })
-        ]).add([
-            gsap.to({},{duration:0.2,ease:'power4.inOut'})
-        ])
-        // .add([
-        //     gsap.to(imagesRef.current,{
-        //         delay:0.3,
-        //         ease:'power2.out',
-        //         y: '-75%'
-        //     }),
-        // ])
+      timeline.addLabel(stepLabel);
 
-    },{scope:mainRef,dependencies:[mainRef]});
+      timeline.to(imagesRef.current, {
+        y: `-${(index ) * 25}%`,
+        ease: "power3.inOut",
+        duration: 1,
+      }, stepLabel);
 
+      timeline.to(".txt", {
+        text: step.txt,
+        ease: "power3.inOut",
+        duration: 1,
+      }, stepLabel);
+
+      timeline.to(".txtcolor", {
+        text: step.color,
+        ease: "power3.inOut",
+        duration: 1,
+      }, stepLabel);
+      timeline.to(".txtsummary", {
+        text: step.summary,
+        ease: "power3.inOut",
+        duration: 1,
+      }, stepLabel);
+    });
+  }, { scope: mainRef });
 }
