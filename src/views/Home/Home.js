@@ -16,8 +16,8 @@ import PastEngagements from '../../components/Homepage/past_engagements';
 const Home = () => {
 
   return (
-    <div className="h-screen scrollbar-hide scroll-smooth bg-black text-white">
-      <Rocket />
+    <div className="h-screen scrollbar-hide scroll-smooth bg-black text-white font-urbanist">
+      {/* <Rocket /> */}
 <NavBar/>
 <StackingSections/>
     {/* <div className='h-screen w-full bg-black isolate'/> */}

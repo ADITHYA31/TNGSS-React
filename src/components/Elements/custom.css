@@ -20,11 +20,14 @@
 
 .custom-gradient {
     background: conic-gradient(from 0deg, #F5710C 0%, #F5710C 45%, #018BFD 60%, #018BFD 100%);
+    will-change: transform, filter, opacity;
+    backface-visibility: hidden;
   }
   
+  
   .custom-size {
-    width: 95vw;
-    height: 70vw;
+    width: 100vw;
+    height: 80vw;
   }
   
   .custom-blur {
@@ -32,7 +35,7 @@
   }
   
   .custom-translate {
-    transform: translateY(-80%);
+    transform: translateY(-70%);
   }
   
   .gradient-border {
@@ -50,13 +53,29 @@
   
 
 
-.gradient-text {
-    background: linear-gradient(95.34deg, #0055FF 4.12%, #07BCCE 93.45%);
+  .gradient-text {
+    background: linear-gradient(
+      95.34deg,
+      #0055FF 4.12%,
+      #07BCCE 60%,
+      rgba(7, 188, 206, 0) 100%
+    );
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
   }
+
+  .gradient-text-attend{
+    background: linear-gradient(90deg, #0A0A0A -7.96%, #FFFFFF 48.63%, #0B0B0B 109.89%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  
+
   
 
 @font-face {
@@ -687,6 +706,10 @@
 
     .justify-between {
         justify-content: space-between
+    }
+
+    .justify-even {
+        justify-content: space-evenly
     }
 
     .justify-center {

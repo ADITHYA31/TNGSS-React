@@ -41,7 +41,6 @@ export default function AtendeesSection() {
   ];
 
   useEffect(() => {
-    // Fade-out effect for "Why Attend" section with scroll
 
 
 
@@ -56,12 +55,12 @@ export default function AtendeesSection() {
 
     cardsRef.current.forEach((card, index) => {
       gsap.set(card, {
-        y: index % 2 === 0 ? -50 : 50,
+        y: index % 2 === 0 ? -150 : 50,
         scale: 0.96,
       });
 
       tl.to(card, {
-        y: 0,
+        y: 150,
         rotate: 0,
         scale: 1,
         ease: "power2.out",
@@ -84,7 +83,7 @@ export default function AtendeesSection() {
           {data.map((item, index) => (
             <div
               key={index}
-              className="relative pt-24 pb-10" // More breathing space
+              className="relative pt-24" // More breathing space
             >
               <div
                 ref={(el) => (cardsRef.current[index] = el)} // Shift ref here

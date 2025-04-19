@@ -35,10 +35,10 @@ export default function GlobalPavSection({ flagsRef }) {
         style={{
             backgroundImage: `url(${globalpav})`,
           }}>
-        <div className="w-full text-center py-12 ">
-        <p className="text-white text-9xl md:text-9xl font-bold text-left px-12 py-12">Global Pavilion</p>
+        <div className="w-full text-center pb-12 ">
+        <p className="text-white text-9xl md:text-9xl font-bold text-left px-12 ">Global Pavilion</p>
       </div>
-            <div ref={flagsRef} className="flex self-end w-full h-full gap-3 will-change-transform">
+            <div ref={flagsRef} className="flex self-end w-full h-fit gap-3 will-change-transform">
                 {flags.map((flag, index) => (
                     <div key={index} className="flex items-center justify-center">
                         {/* Dynamically applying width and height using inline styles */}

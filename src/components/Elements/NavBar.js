@@ -1,4 +1,4 @@
-import logo from "../../assets/plane_logo.svg";
+import logo from "../../assets/plane_logo.svg?url";
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
@@ -55,7 +55,13 @@ export default function NavBar() {
       <img
         src={logo}
         fetchPriority="high"
-        className="absolute top-1/2 transform -translate-y-1/2 rotate-12 object-center"
+        className="absolute rotate-12 object-center"
+        style={{
+          maxWidth: '57px',
+          top: '-20px',
+          translate: '0',
+          left: '20px',
+        }}
       />
     </a>
     <a href="/">Programs</a>

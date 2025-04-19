@@ -1,26 +1,36 @@
- 
 import { useRef } from "react";
-import AtendeesSection from "./AttendeesCatSection/AttendeesCatSection";
 import GlobalPavSection from "./GlobalPavSection";
 import { useSwipeScroll } from "../../../hooks/useSwipeScroll";
 
 
 export default function CurtainSection() {
-    const flagsRef =useRef(null);
+    const flagsRef = useRef(null);
     const mainRef = useRef(null);
-    useSwipeScroll(mainRef,flagsRef)
-    return(
-    <div className="relative   min-h-screen  w-full isolate">
- 
-        {/* <div className=" relative h-fit  w-full z-10 ">
-            
+    const curtainRef = useRef(null); // New ref for the curtain overlay
+  
+    useSwipeScroll(mainRef, flagsRef, curtainRef); // pass curtainRef into hook
+  
+    return (
+        <div className="relative w-full">
+        {/* Curtain Layer (sits above) */}
+        <div
+  ref={curtainRef}
+  className="absolute top-0 left-0 w-full h-full bg-black z-40"
+  style={{
+    height: "50%",   // Full height of section
+  }}
+/>
 
-        </div> */}
-        {/* <div className=" relative bg-white h-[50vh] w-full z-10"></div> */}
-        <div ref={mainRef} className="sticky bottom-0 top-10 w-full h-screen  -z-0 ">
-            <GlobalPavSection flagsRef={flagsRef}/>
+      
+        {/* Your actual section (revealed underneath) */}
+        <div
+          ref={mainRef}
+          className="relative z-10 min-h-screen bg-white"
+        >
+          <GlobalPavSection flagsRef={flagsRef} />
         </div>
-
-    </div>
+      </div>
+      
     );
-}
+  }
+  

@@ -31,17 +31,24 @@ export default function CMSection() {
     // Animate gradient color of the section
     gsap.fromTo(
       sectionRef.current,
-      {background: `conic-gradient(from 0deg,#F5710C 0%,#F5710C 45%,#018BFD 60%,#018BFD 100%)`}, // Start with the initial radial gradient
       {
-        background: 'conic-gradient(from 0deg,#F5710C 0%,#F5710C 45%,#018BFD 60%,#018BFD 100%)',  // Lighter gradient as scroll happ
+        opacity: 0.5,
+        scale: 1,
+        filter: "blur(70px)",
+      },
+      {
+        opacity: 0,
+        scale: 0.2,
+        filter: "blur(100px)",
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",  // Start from the top of the section
-          end: "bottom center",  // End when the section reaches the center of the viewport
-          scrub: 0.4,  // Smooth gradient transition with a slight delay
+          trigger: dummyref.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.4,
         },
       }
     );
+    
   }, []);
 
   return (
@@ -75,14 +82,17 @@ export default function CMSection() {
           />
         </div>
       </section>
-      <div className="absolute opacity-50 custom-gradient custom-size custom-blur custom-translate rounded-full"></div>
+      <div ref={sectionRef}
+       style={{
+        transformOrigin: "center",
+      }} className="absolute opacity-50 custom-gradient custom-size custom-blur custom-translate rounded-full"></div>
 
       <div ref={dummyref}
   
   className="w-full text-center py-20 pb-20"
  
 >
-  <p ref={headingRef} className="text-white text-5xl md:text-9xl font-bold opacity-80 mix-blend-lighten">
+  <p ref={headingRef} className="text-white text-6xl md:text-9xl opacity-80 mix-blend-lighten gradient-text-attend">
     Why Attend
   </p>
 </div>

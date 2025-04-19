@@ -3,7 +3,7 @@ import ImageScroller from './ImageScroller';
 import { useShowcaseScroll } from '../../../hooks/test_hooks/showcaseScroll';
 import bg from '../../../assets/showcasebg.svg?url';
 import RainScrollBackground from "../../../hooks/Rainbackground"; // adjust the path
-
+import logo from '../../../assets/logobutton.png';
 export default function ShowcaseSection() {
   const showcaseRef = useRef(null);
   const imgConRef = useRef(null);
@@ -28,6 +28,8 @@ export default function ShowcaseSection() {
       <div className="flex flex-col justify-center space-y-4 w-1/3 text-center text-white">
   <div className="text-8xl font-bold txt">Meet</div>
   <div className="text-8xl font-bold txtcolor" style={{color: '#F5710C'}}>People</div>
+  <a className='text-center flex justify-center' href=''><img style={{maxWidth: '400px'}} src ={logo} /></a>
+  
   <div className="text-2xl py-10  txtsummary">Meet the right people. Spark the right ideas. <br/> Create the future.</div>
 </div>
 

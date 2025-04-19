@@ -13,7 +13,7 @@ export default function StackingSections() {
     const className = "custom-class"; 
 
     return (
-        <div ref={stackcontainer} className="relative isolate overflow-hidden bg-black will-change-transform">
+        <div  className="relative isolate overflow-hidden bg-black will-change-transform">
             {/* Pass className prop to child components */}
             <HeroSection className={className} />
             <StatsSection className={className} />

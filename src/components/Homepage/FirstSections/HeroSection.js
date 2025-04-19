@@ -23,6 +23,11 @@ export default function HeroSection({ className = '',ref }) {
         quality={100}
         priority
         className=' object-cover object-center -z-10'
+        style={{
+          
+    maxHeight: '800px'
+
+        }}
       />
       {/* <div className='relative h-96 w-96 rounded-full z-10 bg-radial from-[#018BFD]  to-transparent blur-3xl opacity-60'/> */}
       {/* <div className='relative h-96 w-96 rounded-full z-10 bg-linear-0 from-red-400 to-blue-400 blur-xl'/> */}

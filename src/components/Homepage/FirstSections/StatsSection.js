@@ -8,7 +8,7 @@ export default function StatsSection({ className = '' }) {
   const data = [
     { count: '100+', tag: 'Projects Completed' },
     { count: '200+', tag: 'Happy Clients' },
-    { count: '50+', tag: 'Awards Won' },
+    { count: '30000+', tag: 'Awards Won' },
     { count: '300+', tag: 'Active Members' },
     { count: '10+', tag: 'Years of Experience' },
     { count: '150+', tag: 'Workshops Conducted' },
@@ -26,7 +26,7 @@ export default function StatsSection({ className = '' }) {
       className={`sticky overflow-hidden top-0 w-full h-screen z-10 p-2 ${className}`}
       id="stats-section"
     >
-      <div className='flex items-center justify-around bg-white w-full h-full relative'
+      <div className='flex items-center justify-even bg-white w-full h-full relative'
       style={{
         borderRadius: '25px',
       }}
@@ -40,13 +40,13 @@ export default function StatsSection({ className = '' }) {
           </div>
         </div>
 
-        <div className='grid grid-cols-2 gap-x-40 gap-y-20 max-w-[20vw]'>
+        <div className='grid grid-cols-2 gap-x-80 gap-y-20'>
       {data.map((item, index) => (
        <div key={index} className="flex flex-col">
-       <p className="text-4xl md:text-6xl font-bold gradient-text">
+       <p className="text-6xl md:text-6xl font-bold gradient-text">
          {item.count}
        </p>
-       <p className="text-black text-lg md:text-2xl">{item.tag}</p>
+       <p className="text-black text-lg md:text-3xl">{item.tag}</p>
      </div>
      
       
