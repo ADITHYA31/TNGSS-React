@@ -38,7 +38,7 @@ export default function Footer() {
         <div className=" flex flex-col bg-[#18BFDB]  h-[60vh] md:rounded-t-[60px] overflow-hidden" style={{
                          borderRadius : "50px 23px 0px 0px"
                         }}>
-        <div className=" inline-flex whitespace-nowrap w-full  animate-marking text-black font-medium text-4xl md:text-6xl space-x-16 py-3 pt-5 ">
+        <div className=" inline-flex whitespace-nowrap w-full  animate-marking text-black font-medium text-4xl md:text-4xl space-x-16 py-3 pt-5 ">
         {Array(7).fill("3rd-4th May, 2025 . Codissia, Coimbatore").map((text, index) => (
             <div key={index} className='space-x-16'>
                 <span >{text}</span>
@@ -68,7 +68,7 @@ export default function Footer() {
                 </div>
                 <div className=' flex w-full h-full group-hover:blur-xs justify-center items-center'>
 
-                <p className=" text-center text-6xl md:text-8xl font-medium tracking-widest  group-hover:-rotate-6 transition-all duration-300">
+                <p className=" text-center text-8xl md:text-9xl font-medium tracking-widest  group-hover:-rotate-6 transition-all duration-300">
                     DISRUPT TO RISE
                 </p>
                 </div>

@@ -18,6 +18,20 @@
   @apply relative bg-black overflow-hidden rounded-xl inline-block;
 }  */
 
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .home-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+  
+
 .custom-gradient {
     background: conic-gradient(from 0deg, #F5710C 0%, #F5710C 45%, #018BFD 60%, #018BFD 100%);
     will-change: transform, filter, opacity;
@@ -699,6 +713,11 @@
     .items-center {
         align-items: center
     }
+
+    .items-end {
+        align-items: end
+    }
+
 
     .justify-around {
         justify-content: space-around

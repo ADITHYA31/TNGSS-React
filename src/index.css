@@ -35,6 +35,7 @@ body {
   color: var(--foreground);
   font-family: Urbanist Fallback;
   overflow-x: hidden;
+  font-size: 14px;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

@@ -41,10 +41,10 @@ export default function ParallelScroll() {
             className="relative min-h-screen  w-screen isolate bg-white"
         >
             <div className="w-full h-full flex flex-col justify-center overflow-hidden">
-                <div className="flags flex w-full self-end gap-3 will-change-transform">
+                <div className="flags flex w-full  gap-3 will-change-transform">
 
                     {data.map((item, index) => (
-                        <div key={index} className="w-xl max-[800px] h-[80vh] bg-[#F3F4F6] rounded-2xl px-4 py-4">
+                        <div key={index} className="w-xl max-[1000px] h-[80vh] bg-[#F3F4F6] rounded-2xl px-4 py-4">
                             <div className="flex flex-col justify-end w-full h-full rounded-2xl bg-cover bg-center"
                              style={{
                                 backgroundImage: `url(${item.img})`,

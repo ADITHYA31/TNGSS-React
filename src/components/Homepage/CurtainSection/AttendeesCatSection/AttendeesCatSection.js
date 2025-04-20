@@ -55,7 +55,7 @@ export default function AtendeesSection() {
 
     cardsRef.current.forEach((card, index) => {
       gsap.set(card, {
-        y: index % 2 === 0 ? -150 : 50,
+        y: index % 2 === 0 ? -100 : 50,
         scale: 0.96,
       });
 

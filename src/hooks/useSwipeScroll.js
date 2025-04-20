@@ -4,37 +4,38 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function useSwipeScroll(mainRef, flagRef, curtainRef) {
+export function useSwipeScroll(mainRef, flagRef, curtainRef,contentHead) {
     useGSAP(() => {
       // Set initial position
-      gsap.set(flagRef.current, {
-        x: "55%",
-      });
   
       gsap.set(curtainRef.current, {
         y: "0%",
       });
   
       // Animate flags
-      gsap.to(flagRef.current, {
-        x: "-85%",
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: mainRef.current,
-          start: "top 5%",
-          scrub: 0.8,
-        },
-      });
-  
+      gsap.set(flagRef.current,{
+        x:'98%',
+    })
+    gsap.to(flagRef.current,{
+        x:'-65%',
+        ease:'power3.inOut',
+        scrollTrigger:{
+            trigger:mainRef.current,
+            start:'top 95%',
+            end:'+=1500',
+            scrub:0.7,
+            // markers:true,
+        }
+    })
       // Animate curtain smoothly
       gsap.to(curtainRef.current, {
-        y: "-200%",
+        y: "-100%",
         ease: "power2.inOut",
         scrollTrigger: {
-          trigger: mainRef.current,
-          start: "top center",
-          end: "bottom top",
-          scrub: 1.2, // smoother, slower transition
+          trigger: curtainRef.current,
+          start: "center center",
+          end: "bottom bottom",
+          scrub: 1.4, // smoother, slower transition
         },
       });
     }, { scope: mainRef });

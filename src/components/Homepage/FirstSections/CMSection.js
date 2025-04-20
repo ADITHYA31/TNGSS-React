@@ -8,57 +8,19 @@ import AtendeesSection from "../CurtainSection/AttendeesCatSection/AttendeesCatS
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CMSection() {
-  const headingRef = useRef(null);
-  const sectionRef = useRef(null); // Ref for the whole section to animate background
-  const dummyref = useRef(null);
-  useEffect(() => {
-    // Fade-out effect for "Why Attend" section with scroll
-    gsap.fromTo(
-      headingRef.current,
-      { opacity: 1 },  // Start with full opacity
-      {
-        opacity: 0.1,  // Fade to 0 (fully transparent)
-        scrollTrigger: {
-          trigger: dummyref.current,  // Target this element
-          start: "top top",  // Fade as soon as it hits the top of the viewport
-          end: "bottom bottom",  // End when the bottom of the element hits the center of the viewport
-          scrub: 0.8, // Smooth transition with a little delay
-          toggleActions: "play reverse play reverse",  // Reverse fade on scroll up
-        },
-      }
-    );
-
-    // Animate gradient color of the section
-    gsap.fromTo(
-      sectionRef.current,
-      {
-        opacity: 0.5,
-        scale: 1,
-        filter: "blur(70px)",
-      },
-      {
-        opacity: 0,
-        scale: 0.2,
-        filter: "blur(100px)",
-        scrollTrigger: {
-          trigger: dummyref.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 0.4,
-        },
-      }
-    );
-    
-  }, []);
+ 
 
   return (
     <div 
-    className="w-full text-center pb-00"
-  
+    style={{
+      background: 'linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)',
+      borderRadius: '0.75rem',
+    }}
+    className={`sticky overflow-hidden top-0 w-full h-screen z-10 p-2`}
     >
       <section 
-        className="sticky top-0 h-screen w-full my-28 bg-white z-20 flex items-center justify-center overflow-hidden text-black px-4" 
-        style={{ backgroundImage: `url(${CMbg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        className="sticky top-0 h-full w-full bg-white z-20 flex items-center justify-center overflow-hidden text-black px-4" 
+        style={{ backgroundImage: `url(${CMbg})`, backgroundSize: 'cover', backgroundPosition: 'center',    borderRadius: '0.95rem', }}
        
       >
         {/* Text Section */}
@@ -82,7 +44,7 @@ export default function CMSection() {
           />
         </div>
       </section>
-      <div ref={sectionRef}
+      {/* <div ref={sectionRef}
        style={{
         transformOrigin: "center",
       }} className="absolute opacity-50 custom-gradient custom-size custom-blur custom-translate rounded-full"></div>
@@ -95,8 +57,8 @@ export default function CMSection() {
   <p ref={headingRef} className="text-white text-6xl md:text-9xl opacity-80 mix-blend-lighten gradient-text-attend">
     Why Attend
   </p>
-</div>
-<AtendeesSection/>
+</div> */}
+{/* <AtendeesSection/> */}
     </div>
   );
 }

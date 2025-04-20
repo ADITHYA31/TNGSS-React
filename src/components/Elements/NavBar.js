@@ -37,35 +37,37 @@ export default function NavBar() {
   return(
     <motion.div 
     className={`
-      flex fixed top-7 left-1/2 transform -translate-x-1/2 z-50
-      p-3 rounded-full justify-between text-white
-      bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm
-      w-full max-w-sm md:max-w-lg
+    flex fixed top-0 left-0 z-50
+    p-3  text-white
+    bg-white bg-opacity-40  mix-blend-difference
+    w-full justify-between items-center py-5
     `}
     initial={{ opacity: 0, translateY: '-100%' }}
     animate={controls}
     transition={{ duration: 0.3 }}
   >
-    <a href="/">About</a>
-    <a href="/">Why Attend</a>
-    <a
-      href="/"
-      className="relative w-28 md:w-36 shadow-lg shadow-amber-700"
-    >
-      <img
+    <div>
+    <img
         src={logo}
         fetchPriority="high"
         className="absolute rotate-12 object-center"
         style={{
-          maxWidth: '57px',
-          top: '-20px',
+          maxWidth: '80px',
+          top: '-8px',
           translate: '0',
           left: '20px',
         }}
       />
-    </a>
+    </div>
+    <div className="flex w-full justify-between text-xl" style={{
+    maxWidth: '400px'
+    }}>
+    <a href="/">About</a>
+    <a href="/">Why Attend</a>
     <a href="/">Programs</a>
     <a href="/">Info</a>
+    <a href="/">Register</a>
+    </div>
   </motion.div>
   
   );

@@ -44,16 +44,19 @@ export default function SpeakerCarousel() {
     
       <div className="flex w-full max-w-screen-xl items-center justify-between px-8 relative">
         {/* Left Speaker Info */}
-        <div className="text-white relative">
-          <p
-            className="block pb-10 text-4xl font-bold absolute top-1/2 transform -translate-y-1/2 opacity-100 transition-opacity duration-700 ease-in-out"
-            style={{
-              opacity: 1,
-              transition: 'opacity 0.7s ease-in-out',
-            }}
-          >
-            {speakers[index].name}
-          </p>
+        <div className="text-white relative flex flex-col absolute" 
+        style={{ top: '8%', left: '-10px'}}
+        >
+         <p
+  className="block pb-5 text-5xl font-bold whitespace-pre-line"
+  style={{
+    opacity: 1,
+    transition: 'opacity 0.7s ease-in-out',
+  }}
+>
+  {speakers[index].name.replace(' ', '\n')}
+</p>
+
           <span className="text-xl" style={{
             
     width: '100%',
@@ -61,9 +64,12 @@ export default function SpeakerCarousel() {
     padding: '30px 0px 30px 0px',
 
           }}>{speakers[index].desc}</span>
-          <CTAButton src="/new" className=" rounded-2xl ">
-            <div className="w-40 h-9 px-5 flex items-center justify-center ">View More</div>
+           <CTAButton src="/#" className=" rounded-2xl ">
+            <div className="w-30 h-10 px-14  py-2 flex items-center justify-center ">View More</div>
         </CTAButton>
+          {/* <CTAButton src="/new" className=" rounded-2xl ">
+            <div className="w-40 h-9 px-5 flex items-center justify-center ">View More</div>
+        </CTAButton> */}
         </div>
 
         {/* Right Carousel */}
