@@ -11,6 +11,8 @@ export default function CTAButton({
         role="button" 
         style={{
           lineHeight: '12px',
+          textAlign : 'center',
+          display: 'inline-block'
         }}
             >
         {/* The wrapper is responsible for padding */}

@@ -5,14 +5,12 @@ import { motion, useAnimation } from "framer-motion";
 export default function NavBar() {
   const [isVisible, setIsVisible] = useState(true);
   const controls = useAnimation();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 310);
-
-      if (window.scrollY > lastScrollY && window.scrollY > 300) { // Increased distance to 150px
+      if (window.scrollY > lastScrollY && window.scrollY > 300) {
         setIsVisible(false);
       } else if (window.scrollY < lastScrollY) {
         setIsVisible(true);
@@ -21,54 +19,75 @@ export default function NavBar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     if (isVisible) {
       controls.start({ opacity: 1, translateY: 0 });
     } else {
-      controls.start({ opacity: 0, translateY: '-100%' });
+      controls.start({ opacity: 0, translateY: "-100%" });
     }
   }, [isVisible, controls]);
 
-  return(
-    <motion.div 
-    className={`
-    flex fixed top-0 left-0 z-50
-    p-3  text-white
-    bg-white bg-opacity-40  mix-blend-difference
-    w-full justify-between items-center py-5
-    `}
-    initial={{ opacity: 0, translateY: '-100%' }}
-    animate={controls}
-    transition={{ duration: 0.3 }}
-  >
-    <div>
-    <img
-        src={logo}
-        fetchPriority="high"
-        className="absolute rotate-12 object-center"
-        style={{
-          maxWidth: '80px',
-          top: '-8px',
-          translate: '0',
-          left: '20px',
-        }}
-      />
-    </div>
-    <div className="flex w-full justify-between text-xl" style={{
-    maxWidth: '400px'
-    }}>
-    <a href="/">About</a>
-    <a href="/">Why Attend</a>
-    <a href="/">Programs</a>
-    <a href="/">Info</a>
-    <a href="/">Register</a>
-    </div>
-  </motion.div>
-  
+  const menuItems = ["About", "Why Attend", "Programs", "Info", "Register"];
+
+  return (
+    <>
+      {/* Navbar */}
+      <motion.div
+        className="flex fixed top-0 left-0 z-50 p-3 text-white bg-white bg-opacity-40 mix-blend-difference w-full justify-between items-center py-5"
+        initial={{ opacity: 0, translateY: "-100%" }}
+        animate={controls}
+        transition={{ duration: 0.3 }}
+      >
+        {/* Logo */}
+        <img
+          src={logo}
+          className="absolute rotate-12 object-center"
+          style={{
+            maxWidth: "80px",
+            top: "-8px",
+            left: "20px",
+          }}
+        />
+
+        {/* Desktop Menu */}
+        <div
+          className="hidden sm:flex w-full justify-between text-xl"
+          style={{ maxWidth: "400px", marginLeft: "auto", marginRight: "40px" }}
+        >
+          {menuItems.map((item, index) => (
+            <a key={index} href="/" className="hover:underline">
+              {item}
+            </a>
+          ))}
+        </div>
+
+        {/* Hamburger (Mobile Only) */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="sm:hidden z-50 ml-auto mr-4 text-3xl font-bold"
+        >
+          {isMenuOpen ? "×" : "≡"}
+        </button>
+      </motion.div>
+
+      {/* Dropdown Menu (Mobile Only) */}
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={isMenuOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className="sm:hidden fixed top-20 left-0 w-full bg-white bg-opacity-90 z-40 overflow-hidden backdrop-blur-md"
+      >
+        <div className="flex flex-col items-center text-black py-4 space-y-4 text-lg font-medium">
+          {menuItems.map((item, index) => (
+            <a key={index} href="/" className="hover:text-blue-600">
+              {item}
+            </a>
+          ))}
+        </div>
+      </motion.div>
+    </>
   );
 }

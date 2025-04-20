@@ -41,9 +41,6 @@ export default function AtendeesSection() {
   ];
 
   useEffect(() => {
-
-
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".attendees-section",
@@ -53,33 +50,40 @@ export default function AtendeesSection() {
       },
     });
 
-    cardsRef.current.forEach((card, index) => {
-      gsap.set(card, {
-        y: index % 2 === 0 ? -100 : 50,
-        scale: 0.96,
-      });
-
-      tl.to(card, {
-        y: 150,
-        rotate: 0,
+    // Adjustments for touch devices
+    if (ScrollTrigger.isTouch) {
+      // On mobile, scroll trigger can be disabled or behave differently
+      tl.to(cardsRef.current, {
+        y: 100,
         scale: 1,
         ease: "power2.out",
-      }, 0); // all start together
-    });
+        stagger: 0.1,
+      }, 0); // For mobile, stagger cards individually
+    } else {
+      cardsRef.current.forEach((card, index) => {
+        gsap.set(card, {
+          y: index % 2 === 0 ? -100 : 50,
+          scale: 0.96,
+        });
+
+        tl.to(card, {
+          y: 150,
+          rotate: 0,
+          scale: 1,
+          ease: "power2.out",
+        }, 0); // all start together
+      });
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
-
   return (
     <>
-
-
       <section className="attendees-section flex flex-col w-screen min-h-screen justify-center items-center bg-black pt-32 pb-0 overflow-visible">
-
-        <div className="flex max-md:flex-col isolate items-center gap-4">
+        <div className="flex flex-row space-x-6 px-4 sm:flex-wrap sm:justify-center sm:space-x-4">
           {data.map((item, index) => (
             <div
               key={index}
@@ -101,13 +105,13 @@ export default function AtendeesSection() {
                       alt={item.title}
                     />
                     <div className="self-end z-10">
-                        <p className="text-2xl font-semibold" style={{
-                          color: '#fff',
-                          zIndex: '999',
-                          position: 'absolute',
-                          bottom: '20px',
-                          left: '20px',
-                        }}>{item.title}</p>
+                      <p className="text-2xl font-semibold" style={{
+                        color: '#fff',
+                        zIndex: '999',
+                        position: 'absolute',
+                        bottom: '20px',
+                        left: '20px',
+                      }}>{item.title}</p>
                     </div>
                   </div>
 
@@ -123,7 +127,6 @@ export default function AtendeesSection() {
               </div>
             </div>
           ))}
-
         </div>
       </section>
     </>

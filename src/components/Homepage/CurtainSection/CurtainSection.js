@@ -81,7 +81,7 @@ export default function CurtainSection() {
      
         <div
          ref={mainRef}
-          className="relative z-10 min-h-screen bg-white"
+          className="relative z-10 min-h-screen bg-white h-30vh"
         >
              <div
   ref={curtainRef}
