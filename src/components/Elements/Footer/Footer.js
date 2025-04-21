@@ -49,12 +49,12 @@ export default function Footer() {
 
 
         </div>
-        <div className=" z-10 bg-black h-full md:rounded-t-[70px]  overflow-hidden flex flex-col " style={{
+        <div className=" z-10 bg-black h-full h-30vh md:rounded-t-[70px]  overflow-hidden flex flex-col " style={{
                          borderRadius : "50px 23px 0px 0px"
                         }}>
             <div className=" safe-cont relative flex items-center justify-center h-full w-full group ">
-                <div className='md:hidden flex absolute top-0 group-hover:flex flex-col items-center justify-end md:items-center md:justify-center   md:bg-black/50  w-full h-full text-9xl z-20 transition-all duration-700 rounded-t-[70px] pointer-events-none '>
-                    <div className='flex w-fit space-x-4 pointer-events-auto text-lg mt-32 max-md:mb-10'>
+                <div className='md:hidden justify-end  flex absolute top-0 group-hover:flex flex-col items-center md:justify-end md:items-center md:justify-center   md:bg-black/50  w-full h-full text-9xl z-20 transition-all duration-700 rounded-t-[70px] pointer-events-none h-30vh '>
+                    <div className='flex w-fit space-x-4 pointer-events-auto text-lg md:mt-32 mt:4 max-md:mb-10'>
                     <CTAButton src="/#" className=" rounded-2xl ">
             <div className="w-50 h-9 px-5 flex items-center justify-center ">   DOWNLOAD APP</div>
         </CTAButton>
@@ -68,13 +68,13 @@ export default function Footer() {
                 </div>
                 <div className=' flex w-full h-full group-hover:blur-xs justify-center items-center'>
 
-                <p className=" text-center text-8xl md:text-9xl font-medium tracking-widest  group-hover:-rotate-6 transition-all duration-300">
+                <p className=" text-center text-4xl md:text-9xl font-medium tracking-widest  group-hover:-rotate-6 transition-all duration-300">
                     DISRUPT TO RISE
                 </p>
                 </div>
             </div>
 
-            <div className=" safe-cont flex max-md:flex-col text-xl font-medium  w-full py-2 max-md:gap-4  md:justify-between items-center">
+            <div className=" hidden sm:flex safe-cont flex max-md:flex-col text-xl font-medium  w-full py-2 max-md:gap-4  md:justify-between items-center">
                 <div className=' max-md:order-2 px-10'><p>Contact@ <a href="mailto:contact@tngss.startuptn.in">tngss.startuptn.in</a></p> <p>All Rights reserved © 2025</p></div>
                 <div className=' flex justify-around gap-2 md:gap-3'>
                 {data.map((item, index) => (

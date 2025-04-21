@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect,useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FlippingCard from "../../../../components/Elements/FlippingCard";
@@ -12,7 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function AtendeesSection() {
   const cardsRef = useRef([]);
-
+  const [isMobile, setIsMobile] = useState(false);
+  
   const data = [
     {
       img: Frame2,
@@ -42,7 +43,7 @@ export default function AtendeesSection() {
 
   useEffect(() => {
 
-
+    setIsMobile(window.innerWidth < 768);
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -55,7 +56,7 @@ export default function AtendeesSection() {
 
     cardsRef.current.forEach((card, index) => {
       gsap.set(card, {
-        y: index % 2 === 0 ? -100 : 50,
+        y: isMobile ? (index % 2 === 0 ? -50 : 50) : (index % 2 === 0 ? -100 : 50),
         scale: 0.96,
       });
 
