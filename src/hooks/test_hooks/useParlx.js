@@ -1,48 +1,34 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "../../../gsapconfig";
 
+export function useParlx(mainRef) {
+  useGSAP(() => {
+    const isMobile = window.innerWidth < 768;
 
- export function useParlx(mainRef){
-    useGSAP(()=> {
+    const startX = isMobile ? '5%' : '55%';
+    const endX = isMobile ? '-10%' : '-5%';
+    const endscroll = isMobile ? '+=1500' : '+=100';
 
-        let runAnim = gsap.timeline({
+    let runAnim = gsap.timeline({
+      scrollTrigger: {
+        trigger: mainRef.current,
+        start: "top top",
+        end: endscroll,
+        scrub: 1.2,
+        pin: isMobile ? false :true,
+        // markers: true,
+      }
+    });
 
-            scrollTrigger:{
-                trigger:mainRef.current,
-                start:"top top",
-                end:"+=1500",
-                scrub:1.2,
-                pin:true,
-                // markers:true,
-            }
-        }
-        );
-
-        runAnim.add([
-
-            gsap.set('.flags',{
-                x:'55%'
-            
-            }),
-            gsap.to('.flags',{
-                x:'-5%',
-                ease: "power4.inOut",
-                // onComplete: function() {
-
-                // }
-            }),
-
-        ]).to({},{
-            duration:0.1,
+    runAnim
+      .add([
+        gsap.set('.flags', { x: startX }),
+        gsap.to('.flags', {
+          x: endX,
+          ease: "power4.inOut"
         })
-        // .add([
+      ])
+      .to({}, { duration: 0.1 });
 
-        //     gsap.to('',{
-
-        //     })
-
-        // ])
-    
-
-    },{scope: mainRef,dependencies:[mainRef]});
- }
+  }, { scope: mainRef, dependencies: [mainRef] });
+}

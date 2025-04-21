@@ -4,48 +4,21 @@ import herotext from '../../../assets/Nav_logo.png'
 import avatarcir from '../../../assets/avatarcir.svg?url'
 import vector from '../../../assets/Vector.svg?url'
 import CTAButton from '../../Elements/CTAButton';
-import '../../Elements/custom.css'
+import '../../Elements/custom.css';
 
-
-export default function HeroSection({ className = '',ref }) {
+export default function HeroSection({ className = '' }) {
   const heroRef = useRef(null);
-  const videoRef = useRef(null);
-  
-  // useEffect(() => {
-  //   const videoElement = videoRef.current;
-
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         videoElement.play();
-  //       } else {
-  //         videoElement.pause();
-  //       }
-  //     },
-  //     { threshold: 0.1 }
-  //   );
-
-  //   if (videoElement) {
-  //     observer.observe(videoElement);
-  //   }
-
-  //   return () => {
-  //     if (videoElement) {
-  //       observer.unobserve(videoElement);
-  //     }
-  //   };
-  // }, []);
 
   return (
-    <section 
-      ref={heroRef} 
-      className={`relative flex flex-col sticky top-0  w-screen h-screen bg-amber-1000 isolate  ${className} justify-center items-center bg-cover bg-center`}
+    <section
+      ref={heroRef}
+      className={`relative flex flex-col sticky top-0 w-screen h-screen bg-amber-1000 isolate ${className} justify-center items-center bg-cover bg-center h-60vh`}
       id="hero-section"
       style={{
          backgroundImage: `url(${Herobg})`,
        }}>
         <video 
-          ref={videoRef}
+          // ref={videoRef}
           className=' absolute w-full h-full inset-0 z-10 object-cover opacity-25'
           src='../../assets/hero-vid.mp4'
           autoPlay
@@ -114,9 +87,6 @@ export default function HeroSection({ className = '',ref }) {
         className=' object-fill  object-center'
         />
         </div>
-      <div>
-        <p className='font-bold'>30K+</p>
-        <p className=' text-white/50'>Attendees</p>
       </div>
       </div> */}
 

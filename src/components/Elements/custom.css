@@ -33,6 +33,9 @@
         height: 30vh !important;
         display: inline-block;
       }
+      .sectionClass {
+        bottom : -30px !important
+      }
       
   .button-wraper::before {
     content: "";
