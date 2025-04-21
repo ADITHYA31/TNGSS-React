@@ -1,6 +1,7 @@
 import logo from "../../assets/plane_logo.svg?url";
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
+import CTAButton from "./CTAButton";
 
 export default function NavBar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -30,7 +31,7 @@ export default function NavBar() {
     }
   }, [isVisible, controls]);
 
-  const menuItems = ["About", "Why Attend", "Programs", "Info", "Register"];
+  const menuItems = ["About", "Why Attend", "Programs", "Info",];
 
   return (
     <>
@@ -54,7 +55,7 @@ export default function NavBar() {
 
         {/* Desktop Menu */}
         <div
-          className="hidden sm:flex w-full justify-between text-xl"
+          className="hidden sm:flex w-full justify-between items-center text-xl"
           style={{ maxWidth: "400px", marginLeft: "auto", marginRight: "40px" }}
         >
           {menuItems.map((item, index) => (
@@ -62,6 +63,9 @@ export default function NavBar() {
               {item}
             </a>
           ))}
+          <CTAButton className=" !hover:bg-black" contCN=" hover py-3 px-4">
+            Register
+          </CTAButton>
         </div>
 
         {/* Hamburger (Mobile Only) */}

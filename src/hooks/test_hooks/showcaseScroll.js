@@ -21,9 +21,9 @@ export function useShowcaseScroll(mainRef, imagesRef) {
 
 
     const steps = [
-      { txt: "Meet", color: "People",summary : "Meet the right people. Spark the right ideas.</br> Create the future." },
-      { txt: "Find", color: "Spaces",summary : " Your next investor, co-founder, or mentor</br> could be right across the table." },
-      { txt: "Go Beyond", color: "Stage",summary : "Great ideas don’t just happen on stage.</br> Here’s where they get real." },
+      { txt: "Meet", color: "People",summary : "Join global speakers, investors, accelerators, and startup enablers who are redefining the future of innovation and growth." },
+      { txt: "Meeting", color: "Spaces",summary : " Collaborative spaces designed for meaningful connections, where ideas flourish and partnerships take shape in real-time." },
+      { txt: "Beyond", color: "The Stage",summary : "Great ideas don’t just happen on stage.</br> Here’s where they get real." },
     ];
 
     steps.forEach((step, index) => {
