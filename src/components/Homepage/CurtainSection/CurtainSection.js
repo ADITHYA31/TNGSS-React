@@ -17,7 +17,7 @@ export default function CurtainSection() {
     const dummyref = useRef(null);
     const headingRef = useRef(null);
 
-    useSwipeScroll(mainRef, flagsRef, curtainRef); // pass curtainRef into hook
+    useSwipeScroll(sectionRef, flagsRef, curtainRef); // pass curtainRef into hook
   
     
   useEffect(() => {
@@ -60,19 +60,19 @@ export default function CurtainSection() {
     
   }, []);
     return (
-        <div  className="relative w-full">
+        <div  className="">
            <div  className=" relative h-fit  w-full z-10 ">
                 <div ref={sectionRef}
                     style={{
                         transformOrigin: "center",
-                    }} className="absolute opacity-50 custom-gradient custom-size custom-blur custom-translate rounded-full"></div>
+                    }} className="absolute opacity-50 custom-gradient custom-size custom-blur custom-translate rounded-full z-0"></div>
 
                 <div ref={dummyref}
 
-                    className="w-full text-center"
+                    className=" bg-black w-full text-center"
 
                 >
-                    <p ref={headingRef} className="text-white text-6xl md:text-9xl opacity-80 mix-blend-lighten gradient-text-attend">
+                    <p ref={headingRef} className="text-white !bg-black text-6xl md:text-9xl   gradient-text-attend z-10">
                         Why Attend
                     </p>
                 </div>
@@ -81,15 +81,15 @@ export default function CurtainSection() {
      
         <div
          ref={mainRef}
-          className="relative z-10 min-h-screen bg-white h-30vh"
+          className="sticky bottom-0 z-0 min-h-screen bg-white h-30vh"
         >
-             <div
+             {/* <div
   ref={curtainRef}
   className="absolute top-0 left-0 w-full h-full bg-black z-40"
   style={{
     height: "50%",   // Full height of section
   }}
-/>
+/> */}
 
           <GlobalPavSection flagsRef={flagsRef} />
         </div>
