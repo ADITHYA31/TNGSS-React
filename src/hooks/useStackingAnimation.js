@@ -2,67 +2,61 @@ import { useGSAP } from "@gsap/react";
 import gsap from "../../gsapconfig";
 
 export default function useStackingAnimation(containerRef) {
+  useGSAP(() => {
+    const container = containerRef.current;
+    const [heroSection, statsSection, cmSection] = container.children;
 
-    useGSAP(()=>{
+    // Animate container (global effect)
+    gsap.to(container, {
+      scale: 0.95,
+      borderRadius: "0 0 50px 50px",
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: container,
+        start: "bottom 95%",
+        end: "bottom 5%",
+        scrub: 0.8,
+      },
+    });
 
-        // const tl = gsap.timeline({
-        //     scrollTrigger:{
-        //         trigger:'#stats-section',
-        //         start: 'top bottom', // Start when the top of the section enters the viewport
-        //         end: '20% center', // End when the bottom of the section is 80% in the viewport
-        //         scrub: true,
-        //         // markers:true
-        //     }
-        // })
-        // gsap.set('.test',{
-        //     y:'-100%'
-        // },)
-        gsap.to(containerRef.current,{
-            scale:0.95,
-            borderRadius: '0 0 50px 50px',
-            ease:'power2.inout',
-            scrollTrigger:{
-                trigger:containerRef.current,
-                start:'bottom 95%',
-                end:'bottom 5%',
-                scrub:0.8,
-                // markers:true,
-                // pin:true,
-            }
-        })
+    // Animate HeroSection
+    gsap.to(heroSection, {
+      y: "-185px",
+      scale: 0.8,
+      opacity: 0.3,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: container,
+        start: "top top",
+        end: "+=600",
+        scrub: 0.6,
+      },
+    });
 
-        // gsap.to('.bgimage',{
-        //     // opacity:0.4,
-        //     // scale:0.5,
-        //     ease:'power2.inOut',
-        //     scrollTrigger: {
-        //         trigger: '#stats-section',
-        //         start: 'top bottom', // Start when the top of the section enters the viewport
-        //         end: '20% center', // End when the bottom of the section is 80% in the viewport
-        //         scrub: true, // Enable scrubbing for smoother animation
-        //         // markers:true,
-        //     }
-        // })
+    // Animate StatsSection with delay
+    gsap.to(statsSection, {
+      y: "-100px",
+      opacity: 1,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: container,
+        start: "top+=400 top", // starts after Hero animates
+        end: "+=600",
+        scrub: 0.6,
+      },
+    });
 
-        gsap.to('.herotxt',{
-            y:'-185px',
-            scale:0.6,
-            opacity:0.3,
-            ease:'power2.inOut',
-            scrollTrigger:{
-                trigger: containerRef.current,
-                start:'top top',
-                end:'+=650',
-                scrub:0.6
-            }
-        })
-
-        // .set(containerRef,{
-        //     inner
-        // })
-
-        // gsap.timeline({}).add({}).add
-
-
-    },{scope: containerRef.current,dependencies:[containerRef]});
+    // Animate CMSection with more delay
+    gsap.to(cmSection, {
+      y: "-50px",
+      opacity: 1,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: container,
+        start: "top+=900 top", // starts after Stats
+        end: "+=600",
+        scrub: 0.6,
+      },
+    });
+  }, { scope: containerRef, dependencies: [containerRef] });
 }

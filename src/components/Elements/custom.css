@@ -50,15 +50,29 @@
   }
 
   .mobileSec{
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    height: 14%;
+    display: inline-flex;
+            position: relative;
+            width: 100%;
+            height: 14%;
+            justify-content: flex-end;
   }
+  .orangeDot {
+    padding: 20px !important;
+    top: 30% !important;
+    left: 5% !important;
+}
   }
   
   
-
+.orangeDot {
+    padding: 50px;
+    background-color: #F5710C;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    z-index: 9999;
+    left: 0px;
+}
 
 
 @keyframes fade-in {

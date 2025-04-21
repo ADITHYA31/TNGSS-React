@@ -23,7 +23,7 @@ export function useSwipeScroll(mainRef, flagRef, curtainRef,contentHead) {
             trigger:mainRef.current,
             start:'top 95%',
             end:'+=1500',
-            scrub:0.7,
+            scrub:2,
             // markers:true,
         }
     })
@@ -35,7 +35,7 @@ export function useSwipeScroll(mainRef, flagRef, curtainRef,contentHead) {
           trigger: curtainRef.current,
           start: "center center",
           end: "bottom bottom",
-          scrub: 1.4, // smoother, slower transition
+          scrub: 10, // smoother, slower transition
         },
       });
     }, { scope: mainRef });

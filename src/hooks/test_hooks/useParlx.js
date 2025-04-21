@@ -7,14 +7,14 @@ export function useParlx(mainRef) {
 
     const startX = isMobile ? '5%' : '55%';
     const endX = isMobile ? '-10%' : '-5%';
-    const endscroll = isMobile ? '+=1500' : '+=100';
+    const endscroll = isMobile ? '+=1500' : '+=1050';
 
     let runAnim = gsap.timeline({
       scrollTrigger: {
         trigger: mainRef.current,
-        start: "top top",
+        start: "center center",
         end: endscroll,
-        scrub: 1.2,
+        scrub: 4,
         pin: isMobile ? false :true,
         // markers: true,
       }

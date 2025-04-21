@@ -45,7 +45,7 @@ export default function HeroSection({ className = '' }) {
       {/* <div className='relative h-96 w-96 rounded-full z-10 bg-linear-0 from-red-400 to-blue-400 blur-xl'/> */}
       
 
-      <div className='herotxt relative  z-20  h-[50vh] will-change-transform flex flex-col max-w-6xl mb-24' style={{ width:'60%'}}>
+      <div className='herotxt relative  z-20  h-[50vh] h-30vh will-change-transform flex flex-col max-w-6xl md:mb-24' style={{ width:'60%'}}>
       <img
       alt=''
       fill
@@ -53,7 +53,7 @@ export default function HeroSection({ className = '' }) {
       src={herotext}
       style={{
           
-        maxWidth: '75vw'
+        maxWidth: '820px'
     
             }}
       className='object-center '

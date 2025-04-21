@@ -45,15 +45,16 @@ export default function ParallelScroll() {
   {data.map((item, index) => (
     <div
       key={index}
-      className="w-[90%] md:w-xl h-[80vh] bg-[#F3F4F6] rounded-2xl px-4 py-4 shrink-0 h-30vh"
+      className="w-2/3 md:w-1/2 h-[80vh] bg-[#F3F4F6] rounded-2xl px-4 py-4 shrink-0 h-30vh"
     >
       <div
         className="flex flex-col justify-end w-full h-full rounded-2xl bg-cover bg-center"
         style={{
           backgroundImage: `url(${item.img})`,
+          minWidth : '200px'
         }}
       >
-        <div className="text-2xl md:text-4xl text-white px-5 pb-6">
+        <div className="text-xxl md:text-4xl text-white px-5 pb-6">
           <p dangerouslySetInnerHTML={{ __html: item.tag }} />
         </div>
       </div>
