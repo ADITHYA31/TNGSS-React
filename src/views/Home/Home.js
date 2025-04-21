@@ -17,6 +17,12 @@ const Home = () => {
   const [isFadingOut, setIsFadingOut] = useState(false);
   const containerRef = useRef(null);
 
+    useEffect(() => {
+      if (sessionStorage.getItem('preloaderPlayed') === 'true') {
+        setIsLoading(false);
+      }
+    }, []); 
+
   useEffect(() => {
     const anim = lottie.loadAnimation({
       container: containerRef.current,
@@ -26,9 +32,11 @@ const Home = () => {
       animationData: loadingAnimation,
     });
 
+
     anim.addEventListener('complete', () => {
       setIsFadingOut(true); // trigger fade out
       setTimeout(() => {
+        sessionStorage.setItem('preloaderPlayed', 'true');
         setIsLoading(false); // remove loader
         anim.destroy();
       }, 1000); // matches fade duration
@@ -41,7 +49,7 @@ const Home = () => {
     <>
       {isLoading && (
         <div
-          className={`h-full bg-black transition-opacity duration-1000 ${isFadingOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
+          className={`h-[100vh] w-[100vw] bg-black transition-opacity duration-1000 ${isFadingOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
             }`}
         >
           <div ref={containerRef} className="w-full h-full" />

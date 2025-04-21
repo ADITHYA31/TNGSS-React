@@ -38,7 +38,7 @@ export default function SponsSection() {
             ))}
             </div>
 
-            <div className="row2 will-change-transform flex py-2 gap-9 -translate-x-1/2">
+            <div className="row2 will-change-transform flex py-2 gap-9 ">
             {data.sort(() => Math.random() - 0.5).map((item, index) => (
                     <img key={index} src={item.src} alt={`Sponsor ${index + 1}`} className="h-14 w-auto px-3 " />
             ))}

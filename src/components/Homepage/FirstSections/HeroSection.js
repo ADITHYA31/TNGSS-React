@@ -45,13 +45,17 @@ export default function HeroSection({ className = '',ref }) {
     </div>
     <div className=' absolute bottom-0 text-white text-2xl flex justify-between align-end  mt-auto w-full py-3 pb-8 px-12 '>
       <div className=' flex flex-col'>
-      <p className='border-amber-700 pb-2'>3-4 May 2025</p>
+      <p className='border-amber-700 pb-2'> October, 2025</p>
      
       </div>
   
      <div className='flex flex-col text-center items-center justify-center '>
-     <p className='py-4 text-xl'>Codissia, Coimbatore</p>
-     <CTAButton src="/#" className=" rounded-2xl ">
+     <p
+     style={{
+     transform: `translateY(-100px)`,
+     }}
+      className='py-4 text-3xl font-semibold   '>Codissia, Coimbatore</p>
+     <CTAButton src="https://startuptn.getkameleon.com" className=" rounded-2xl ">
             <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> REGISTER NOW</div>
         </CTAButton>
 
@@ -67,7 +71,7 @@ export default function HeroSection({ className = '',ref }) {
         />
         </div>
       <div>
-        <p className='font-bold'>205K+</p>
+        <p className='font-bold'>30K+</p>
         <p className=' text-white/50'>Attendees</p>
       </div>
       </div>

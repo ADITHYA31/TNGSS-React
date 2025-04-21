@@ -10,7 +10,7 @@ import gsap from "../../../gsapconfig";
             scrollTrigger:{
                 trigger:mainRef.current,
                 start:"top top",
-                end:"+=1000",
+                end:"+=1500",
                 scrub:1.2,
                 pin:true,
                 // markers:true,
@@ -21,12 +21,12 @@ import gsap from "../../../gsapconfig";
         runAnim.add([
 
             gsap.set('.flags',{
-                x:'40%'
+                x:'55%'
             
             }),
             gsap.to('.flags',{
                 x:'-5%',
-                ease: "power2.inOut",
+                ease: "power4.inOut",
                 // onComplete: function() {
 
                 // }

@@ -38,9 +38,9 @@ export default function Footer() {
         <div className=" flex flex-col bg-[#18BFDB]  h-[60vh] md:rounded-t-[60px] overflow-hidden" style={{
                          borderRadius : "50px 23px 0px 0px"
                         }}>
-        <div className=" inline-flex whitespace-nowrap w-full  animate-marking text-black font-medium text-4xl md:text-4xl space-x-16 py-3 pt-5 ">
-        {Array(7).fill("3rd-4th May, 2025 . Codissia, Coimbatore").map((text, index) => (
-            <div key={index} className='space-x-16'>
+        <div className=" inline-flex whitespace-nowrap w-full  animate-marking text-black font-medium text-4xl md:text-5xl space-x-11 py-3 pt-5 ">
+        {Array(7).fill("October, 2025 . Codissia, Coimbatore").map((text, index) => (
+            <div key={index} className='space-x-11'>
                 <span >{text}</span>
                 {index < 6 && <span>|</span>}
             </div>
@@ -59,7 +59,7 @@ export default function Footer() {
             <div className="w-50 h-9 px-5 flex items-center justify-center ">   DOWNLOAD APP</div>
         </CTAButton>
 
-        <CTAButton src="/#" className=" rounded-2xl ">
+        <CTAButton src="https://startuptn.getkameleon.com" className=" rounded-2xl ">
             <div className="w-50 h-9 px-5 flex items-center justify-center "> REGISTER NOW</div>
         </CTAButton>
 

@@ -15,8 +15,8 @@ export default function PreFooter() {
 
         <div ref={circleRef} className="absolute top-0  will-change-transform bg-white rounded-full w-[100vh] h-screen mx-auto"></div>
         
-        <div className=" relative flex justify-center items-center h-[70vh] w-screen">
-        <p className="text-black text-6xl text-center md:text-8xl font-bold ">Key Events</p>
+        <div className=" relative flex justify-center items-center h-[60vh] w-screen ">
+        <p className="text-black sticky top-10 text-6xl text-center md:text-8xl font-bold mb-36 ">Key Events</p>
         </div>
 
         </div>

@@ -1,6 +1,7 @@
 import logo from "../../assets/plane_logo.svg?url";
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
+import CTAButton from "./CTAButton";
 
 export default function NavBar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -30,13 +31,13 @@ export default function NavBar() {
     }
   }, [isVisible, controls]);
 
-  const menuItems = ["About", "Why Attend", "Programs", "Info", "Register"];
+  const menuItems = ["About", "Why Attend", "Programs", "Info",];
 
   return (
     <>
       {/* Navbar */}
       <motion.div
-        className="flex fixed top-0 left-0 z-50 p-3 text-white bg-white bg-opacity-40 mix-blend-difference w-full justify-between items-center py-5"
+        className="flex fixed top-0 left-0 z-50 p-3 text-white blur-sm  w-full justify-between items-center py-5 border-b bg-black bg-opacity-80 border-gray-600"
         initial={{ opacity: 0, translateY: "-100%" }}
         animate={controls}
         transition={{ duration: 0.3 }}
@@ -54,7 +55,7 @@ export default function NavBar() {
 
         {/* Desktop Menu */}
         <div
-          className="hidden sm:flex w-full justify-between text-xl"
+          className="hidden sm:flex w-full justify-between items-center text-xl"
           style={{ maxWidth: "400px", marginLeft: "auto", marginRight: "40px" }}
         >
           {menuItems.map((item, index) => (
@@ -62,6 +63,9 @@ export default function NavBar() {
               {item}
             </a>
           ))}
+          <CTAButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black" contCN=" hover py-3 px-4">
+            Register
+          </CTAButton>
         </div>
 
         {/* Hamburger (Mobile Only) */}

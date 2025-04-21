@@ -13,12 +13,12 @@ export default function CMSection() {
       className="sticky overflow-hidden top-0 w-full h-screen z-10 p-2 h-60vh"
     >
       <section
-        className="sticky top-0 h-full w-full bg-white z-20 flex flex-col-reverse md:flex-row items-center justify-center overflow-hidden text-black px-4 h-60vh"
+        className="sticky top-0 h-full w-full bg-white z-20 flex  flex-col-reverse md:flex-row rounded items-center justify-center overflow-hidden text-black px-4 h-60vh"
         style={{
           backgroundImage: `url(${CMbg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          borderRadius: "0.95rem",
+          borderRadius: "0.75rem",
         }}
       >
         {/* Text Section */}
