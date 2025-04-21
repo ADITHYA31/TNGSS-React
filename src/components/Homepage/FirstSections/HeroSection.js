@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import Herobg from '../../../assets/herobg.svg?url'
-import herotext from '../../../assets/Nav_logo.png'
-import avatarcir from '../../../assets/avatarcir.svg?url'
+import startupwhite from '../../../assets/startup-white.png'
+import herobannerlogo from '../../../assets/Group.svg?url'
 import vector from '../../../assets/Vector.svg?url'
 import CTAButton from '../../Elements/CTAButton';
 import '../../Elements/custom.css';
@@ -45,50 +45,56 @@ export default function HeroSection({ className = '' }) {
       {/* <div className='relative h-96 w-96 rounded-full z-10 bg-linear-0 from-red-400 to-blue-400 blur-xl'/> */}
       
 
-      <div className='herotxt relative  z-20  h-[50vh] h-30vh will-change-transform flex flex-col max-w-6xl md:mb-24' style={{ width:'60%'}}>
-      <img
-      alt=''
-      fill
-      priority
-      src={herotext}
-      style={{
-          
-        maxWidth: '820px'
+      <div className="animate-floatUpBounce herotxt relative z-20 h-30vh h-[50vh] will-change-transform flex justify-center items-center text-center md:mb-10 px-4 md:px-10" style={{ width: '100%',flexDirection: 'row' }}>
+  
+  {/* StartupTN Top Logo */}
+  <div className="mr-5">
+    <img
+      alt="StartupTN Logo"
+      src={herobannerlogo}
+      className="object-contain heroBg"
+    />
+  </div>
+
+  {/* Main Layout */}
+  <div className="flex items-center  w-full max-w-7xl" style={{
+    flexDirection: 'column',
+    textAlign: 'left',
+    justifyContent: 'center',
+    maxWidth: '380px'
+  }}>
     
-            }}
-      className='object-center '
+    {/* Left Graphic */}
+    <div className="hidden md:block mr-6 w-full">
+      <img
+        src={startupwhite}
+        alt="Decorative Shape"
+        className="max-w-[200px] object-contain"
+        style={{ maxWidth: '300px' }}
       />
-      <p className=' text-center text-3xl mt-6'>October,2025 | Codissia, Coimbatore</p>
     </div>
+
+    {/* Text Block */}
+    <div className="flex flex-col items-start md:items-start text-left w-full">
+      <p className="text-white font-bold text-left leading-tight">
+        <span className="font-montserrat font-bold block text-4xl md:text-7xl">GLOBAL</span>
+        <span className="font-montserrat  block text-3xl md:text-6xl">STARTUP</span>
+        <span className="font-montserrat  block text-3xl md:text-5xl">SUMMIT -2025</span>
+      </p>
+      <p className=" font-montserrat font-bold text-white text-xl md:text-2xl tracking-widest mt-2 animate-floatUpBounce">
+        DISRUPT TO RISE
+      </p>
+    </div>
+
+ 
+</div>
+      
+    </div>
+    <p className=' text-center text-3xl mt-6'>October, 2025 | Codissia, Coimbatore</p>
     <div className=' absolute bottom-0 text-white text-2xl flex justify-center align-end  mt-auto w-full py-3 pb-8 px-12 z-20 '>
       <CTAButton src="https://startuptn.getkameleon.com" className=" rounded-2xl ">
              <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> REGISTER NOW</div>
          </CTAButton>
-      {/* <div className=' flex flex-col'>
-      <p className='border-amber-700 pb-2'> October, 2025</p>
-     
-      </div>
-  
-     <div className='flex flex-col text-center items-center justify-center '>
-     <p
-     style={{
-     transform: `translateY(-100px)`,
-     }}
-      className='py-4 text-3xl font-semibold   '>Codissia, Coimbatore</p>
-
-     </div> */}
-     
-      {/* <div className='flex gap-3'>
-        <div className='  w-28 relative'>
-
-        <img
-        src= {avatarcir}
-        fill
-        className=' object-fill  object-center'
-        />
-        </div>
-      </div>
-      </div> */}
 
     </div>
      
