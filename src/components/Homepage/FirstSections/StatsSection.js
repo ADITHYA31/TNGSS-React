@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import useStackingAnimation from '../../../hooks/useStackingAnimation';
 import '../../Elements/custom.css';
 import BG from "../../../assets/statsbg.svg?url";
+// import { NumberTicker } from '../../Elements/numberticker';
 
 
 export default function StatsSection({ className = '' }) {
@@ -71,6 +72,7 @@ export default function StatsSection({ className = '' }) {
     >
       <p className="text-3xl sm:text-4xl lg:text-7xl font-bold gradient-text">
         {item.count}+
+        {/* <NumberTicker/> */}
       </p>
       <p className="text-black text-sm sm:text-lg lg:text-3xl mt-2">
         {item.tag}

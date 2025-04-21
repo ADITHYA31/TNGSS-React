@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Herobg from '../../../assets/herobg.svg?url'
 import herotext from '../../../assets/Nav_logo.png'
 import avatarcir from '../../../assets/avatarcir.svg?url'
@@ -9,7 +9,33 @@ import '../../Elements/custom.css'
 
 export default function HeroSection({ className = '',ref }) {
   const heroRef = useRef(null);
+  const videoRef = useRef(null);
   
+  // useEffect(() => {
+  //   const videoElement = videoRef.current;
+
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         videoElement.play();
+  //       } else {
+  //         videoElement.pause();
+  //       }
+  //     },
+  //     { threshold: 0.1 }
+  //   );
+
+  //   if (videoElement) {
+  //     observer.observe(videoElement);
+  //   }
+
+  //   return () => {
+  //     if (videoElement) {
+  //       observer.unobserve(videoElement);
+  //     }
+  //   };
+  // }, []);
+
   return (
     <section 
       ref={heroRef} 
@@ -18,20 +44,15 @@ export default function HeroSection({ className = '',ref }) {
       style={{
          backgroundImage: `url(${Herobg})`,
        }}>
-        <video className=' absolute w-full h-full inset-0 z-10 object-cover opacity-25'
-        src='../../assets/hero-vid.mp4'
-        // width="100%"
-        // height="100%"
-        // controls
-        autoPlay
-        muted
-        playsInline
-        loop
-        // preload='auto'
-
-
+        <video 
+          ref={videoRef}
+          className=' absolute w-full h-full inset-0 z-10 object-cover opacity-25'
+          src='../../assets/hero-vid.mp4'
+          autoPlay
+          muted
+          playsInline
+          loop
         >
-
         </video>
     
       {/* <img
@@ -50,7 +71,8 @@ export default function HeroSection({ className = '',ref }) {
       {/* <div className='relative h-96 w-96 rounded-full z-10 bg-radial from-[#018BFD]  to-transparent blur-3xl opacity-60'/> */}
       {/* <div className='relative h-96 w-96 rounded-full z-10 bg-linear-0 from-red-400 to-blue-400 blur-xl'/> */}
       
-    <div className='herotxt absolute  z-20  h-1/2 will-change-transform flex flex-col max-w-6xl' style={{width: '75%'}}>
+
+      <div className='herotxt relative  z-20  h-[50vh] will-change-transform flex flex-col max-w-6xl mb-24' style={{ width:'60%'}}>
       <img
       alt=''
       fill
@@ -58,7 +80,7 @@ export default function HeroSection({ className = '',ref }) {
       src={herotext}
       style={{
           
-        maxWidth: '50vw'
+        maxWidth: '75vw'
     
             }}
       className='object-center '

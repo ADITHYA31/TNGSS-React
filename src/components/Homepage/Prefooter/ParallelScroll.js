@@ -14,22 +14,22 @@ export default function ParallelScroll() {
     // Create an array of objects with dummy data
     const data = [
         { 
-            img: discover4,
+            img: '../../../assets/ke0.webp',
             tag: 'Elite Investor & Founder Networking Hub'
 
          },
         { 
-            img: discover2,
+            img: '../../../assets/ke1.webp',
             tag: 'Connect & Collaborate at the Pavilion'
 
          },
         { 
-            img: discover3,
+            img: '../../../assets/ke2.webp',
             tag: 'Startup Accelerator Bootcamp <br />'
 
          },
         { 
-            img: discover1,
+            img: '../../../assets/ke3.webp',
             tag: 'Startup Showcase & Thought Leadership Stages'
 
          }

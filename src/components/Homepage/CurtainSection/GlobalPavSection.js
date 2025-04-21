@@ -3,6 +3,13 @@ import flag1 from "../../../assets/UK.svg?url";
 import flag2 from "../../../assets/US.svg?url";
 import flag3 from "../../../assets/India.svg?url";
 import flag4 from "../../../assets/Swiss.svg?url";
+// import flag4 from "../../../assets/Belgium.webp";
+// import flag4 from "../../../assets/Finland.webp";
+// import flag4 from "../../../assets/France.webp";
+// import flag4 from "../../../assets/UAE.webp";
+// import flag4 from "../../../assets/Singapore.webp";
+
+
 import globalpav from "../../../assets/globalpav.svg?url"
 export default function GlobalPavSection({ flagsRef }) {
 
