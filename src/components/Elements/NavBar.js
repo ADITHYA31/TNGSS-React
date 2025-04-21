@@ -37,7 +37,7 @@ export default function NavBar() {
     <>
       {/* Navbar */}
       <motion.div
-        className="flex fixed top-0 left-0 z-50 p-3 text-white blur-sm  w-full justify-between items-center py-5 border-b bg-black border-gray-600"
+        className="flex fixed top-0 left-0 z-50 p-3 text-white blur-sm  w-full justify-between items-center py-5 border-b bg-black bg-opacity-80 border-gray-600"
         initial={{ opacity: 0, translateY: "-100%" }}
         animate={controls}
         transition={{ duration: 0.3 }}
@@ -63,7 +63,7 @@ export default function NavBar() {
               {item}
             </a>
           ))}
-          <CTAButton className=" !hover:bg-black" contCN=" hover py-3 px-4">
+          <CTAButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black" contCN=" hover py-3 px-4">
             Register
           </CTAButton>
         </div>

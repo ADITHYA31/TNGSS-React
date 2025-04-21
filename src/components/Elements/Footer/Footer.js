@@ -59,7 +59,7 @@ export default function Footer() {
             <div className="w-50 h-9 px-5 flex items-center justify-center ">   DOWNLOAD APP</div>
         </CTAButton>
 
-        <CTAButton src="/#" className=" rounded-2xl ">
+        <CTAButton src="https://startuptn.getkameleon.com" className=" rounded-2xl ">
             <div className="w-50 h-9 px-5 flex items-center justify-center "> REGISTER NOW</div>
         </CTAButton>
 

@@ -55,7 +55,7 @@ export default function HeroSection({ className = '',ref }) {
      transform: `translateY(-100px)`,
      }}
       className='py-4 text-3xl font-semibold   '>Codissia, Coimbatore</p>
-     <CTAButton src="/#" className=" rounded-2xl ">
+     <CTAButton src="https://startuptn.getkameleon.com" className=" rounded-2xl ">
             <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> REGISTER NOW</div>
         </CTAButton>
 
@@ -71,7 +71,7 @@ export default function HeroSection({ className = '',ref }) {
         />
         </div>
       <div>
-        <p className='font-bold'>205K+</p>
+        <p className='font-bold'>30K+</p>
         <p className=' text-white/50'>Attendees</p>
       </div>
       </div>
