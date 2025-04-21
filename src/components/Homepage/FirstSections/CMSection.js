@@ -47,7 +47,7 @@ export default function CMSection() {
           <img
             alt="Chief Minister"
             src={CM}
-            className="h-full w-auto max-h-72 md:max-h-full object-contain object-center z-10"
+            className="h-[30%] max-w-3xl max-h-72 md:max-h-full object-contain object-center z-10"
           />
         </div>
       </section>

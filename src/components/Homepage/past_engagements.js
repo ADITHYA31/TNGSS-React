@@ -6,7 +6,7 @@ import pastvd from '../../assets/pasteng.png';
 export default function PastEngagements() {
   return (
     <section
-      className="h-60vh relative px-6 md:px-20 py-10 w-screen min-h-screen overflow-hidden bg-black text-white flex justify-center items-start"
+      className="h-60vh relative px-6 md:px-20 py-10 w-screen min-h-screen overflow-hidden bg-black text-white flex justify-center items-start isolate"
       style={{
         backgroundImage: `url(${pastbg})`,
         backgroundSize: 'cover',
@@ -31,7 +31,7 @@ export default function PastEngagements() {
             style={{ border: `4px solid #fff` }}
           >
             <video
-              src="/past_tngss.mp4"
+              src="../../assets/past_tngss.mp4"
               width="100%"
               height="100%"
               preload="true"

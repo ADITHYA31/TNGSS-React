@@ -67,7 +67,7 @@ const Home = () => {
           <ShowcaseSection />
           <PastEngagements />
           {/* <div className='h-screen w-full bg-purple-950/30 isolate'/> */}
-          <SponsSection />
+          {/* <SponsSection /> */}
 
           <PreFooter />
           <Footer />

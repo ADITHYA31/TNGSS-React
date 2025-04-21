@@ -1,7 +1,8 @@
-import logo from "../../assets/plane_logo.svg?url";
+import logo from "../../assets/Nav_logo.png";
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import CTAButton from "./CTAButton";
+import ShineButton from "./ShineButton";
 
 export default function NavBar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -31,7 +32,7 @@ export default function NavBar() {
     }
   }, [isVisible, controls]);
 
-  const menuItems = ["About", "Why Attend", "Programs", "Info",];
+  const menuItems = ["About", "Why Attend",];
 
   return (
     <>
@@ -45,17 +46,17 @@ export default function NavBar() {
         {/* Logo */}
         <img
           src={logo}
-          className="absolute rotate-12 object-center"
+          className="object-center"
           style={{
-            maxWidth: "80px",
-            top: "-8px",
-            left: "20px",
+            maxWidth: "100px",
+            // top: "-8px",
+            // left: "20px",
           }}
         />
 
         {/* Desktop Menu */}
         <div
-          className="hidden sm:flex w-full justify-between items-center text-xl"
+          className="hidden sm:flex w-full justify-end gap-10 items-center text-xl"
           style={{ maxWidth: "400px", marginLeft: "auto", marginRight: "40px" }}
         >
           {menuItems.map((item, index) => (
@@ -63,9 +64,9 @@ export default function NavBar() {
               {item}
             </a>
           ))}
-          <CTAButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black" contCN=" hover py-3 px-4">
+          <ShineButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black" contCN=" hover py-3 px-4">
             Register
-          </CTAButton>
+          </ShineButton>
         </div>
 
         {/* Hamburger (Mobile Only) */}
