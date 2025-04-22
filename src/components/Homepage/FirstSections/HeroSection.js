@@ -53,7 +53,7 @@ export default function HeroSection({ className = '' }) {
     alt="StartupTN Logo"
     src={herobannerlogo}
     style={{ maxWidth: '300px', minWidth: '220px' }}
-    className="object-contain logo-3d-img"
+    className="object-contain heroBg logo-3d-img"
   />
 </div>
 
@@ -81,7 +81,7 @@ export default function HeroSection({ className = '' }) {
     <div className="flex flex-col items-start md:items-start text-left w-full">
       <p className="text-white font-bold text-left leading-tight">
         <span className="font-montserrat font-bold block text-4xl md:text-7xl">GLOBAL</span>
-        <span className="font-montserrat  block text-2xl md:text-6xl">STARTUP</span>
+        <span className="font-montserrat  block text-4xl md:text-6xl">STARTUP</span>
         <span className="font-montserrat  block text-2xl md:text-5xl">SUMMIT -2025</span>
       </p>
       <p className="text-white text-xl md:text-2xl tracking-widest mt-2 animate-floatUpBounce">
