@@ -1,86 +1,127 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "../../../gsapconfig";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import lottie from "lottie-web";
+import rectangleAnimation from "../../assets/reactangl2.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function useShowcaseScroll(mainRef, imagesRef, txtRef, txtColorRef, summaryRef) {
+export function useShowcaseScroll(mainRef, txtRef, txtColorRef, summaryRefDesktop, summaryRefMobile, lottieRef) {
+
   useGSAP(() => {
     if (
       !mainRef?.current ||
-      !imagesRef?.current ||
       !txtRef?.current ||
       !txtColorRef?.current ||
-      !summaryRef?.current
+      !summaryRefDesktop?.current ||
+      !summaryRefMobile?.current ||
+      !lottieRef?.current
     ) {
       return;
     }
 
     const isMobile = window.innerWidth < 768;
 
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: mainRef.current,
-        start: "top top",
-        end: isMobile ? "+=1500" : "+=3500",
-        scrub: true,
-        pin: true,
-      },
+    const lottieInstance = lottie.loadAnimation({
+      container: lottieRef.current,
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+      animationData: rectangleAnimation,
     });
 
-    const steps = [
-      {
-        txt: "Meet",
-        color: "People",
-        summary:
-          "Join global speakers, investors, accelerators, and startup enablers who are redefining the future of innovation and growth.",
-      },
-      {
-        txt: "Meeting",
-        color: "Spaces",
-        summary:
-          "Collaborative spaces designed for meaningful connections, where ideas flourish and partnerships take shape in real-time.",
-      },
-      {
-        txt: "Beyond",
-        color: "The Stage",
-        summary:
-          "Great ideas don’t just happen on stage. Here’s where they get real.",
-      },
-    ];
+    lottieInstance.addEventListener("DOMLoaded", () => {
+      const totalFrames = lottieInstance.getDuration(true);
+      const frameObj = { frame: 0 };
 
-    steps.forEach((step, index) => {
-      const label = `step-${index}`;
-
-      timeline.addLabel(label);
-
-      timeline.to(
-        imagesRef.current,
-        {
-          y: `-${index * (isMobile ? 40 : 25)}%`,
-          ease: "power3.inOut",
-          duration: 1,
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: mainRef.current,
+          start: "bottom bottom",
+          end:  "+=1000",
+          scrub: true,
+          pin: true,
         },
-        label
-      );
+      });
 
-      // Instead of animating text letter-by-letter, we fade in the change
-      timeline.to(
-        {},
-        {
-          duration: 0.1,
-          onUpdate: () => {
-            if (txtRef.current) txtRef.current.innerText = step.txt;
-            if (txtColorRef.current) txtColorRef.current.innerText = step.color;
-            if (summaryRef.current) summaryRef.current.innerText = step.summary;
-          },
-        },
-        label
-      );
+      timeline.to(frameObj, {
+        frame: totalFrames - 1,
+        ease: "none",
+        onUpdate: () => {
+          const current = Math.round(frameObj.frame);
+          lottieInstance.goToAndStop(current, true);
+        
+          const updateText = (txt, colorTxt, summaryTxt) => {
+            txtRef.current.innerText = txt;
+            txtColorRef.current.innerText = colorTxt;
+            if (summaryRefDesktop.current) summaryRefDesktop.current.innerText = summaryTxt;
+            if (summaryRefMobile.current) summaryRefMobile.current.innerText = summaryTxt;
+          };
+        
+          if (current < totalFrames * 0.33) {
+            updateText(
+              "Meet",
+              "People",
+              "Join global speakers, investors, accelerators, and startup enablers who are redefining the future of innovation and growth."
+            );
+          } else if (current >= totalFrames * 0.33 && current < totalFrames * 0.66) {
+            updateText(
+              "Meeting",
+              "Spaces",
+              "Collaborative spaces designed for meaningful connections, where ideas flourish and partnerships take shape in real-time."
+            );
+          } else if (current >= totalFrames * 0.66 && current < totalFrames * 0.99) {
+            updateText(
+              "Beyond",
+              "The Stage",
+              "Great ideas don’t just happen on stage. Here’s where they get real."
+            );
+          }
+        }
+        
+      });
+
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 300);
     });
 
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 300);
+    return () => {
+      lottieInstance?.destroy();
+    };
   }, { scope: mainRef });
 }
+
+
+
+
+// 
+// timeline.to(
+//   txtRef.current,
+//   {
+//     text: step.txt,
+//     ease: "power3.inOut",
+//     duration: 1,
+//   },
+//   label
+// );
+
+// timeline.to(
+//   txtColorRef.current,
+//   {
+//     text: step.color,
+//     ease: "power3.inOut",
+//     duration: 1,
+//   },
+//   label
+// );
+
+// timeline.to(
+//   summaryRef.current,
+//   {
+//     text: step.summary,
+//     ease: "power3.inOut",
+//     duration: 1,
+//   },
+//   label
+// );

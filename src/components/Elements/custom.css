@@ -87,11 +87,11 @@
   
 
  .orangeDot {
-     padding: 50px;
+     padding: 30px;
      background-color: #F5710C;
      border-radius: 50%;
      position: absolute;
-     top: 50px;
+     top: 20px;
      z-index: 9999;
      left: 0px;
  }
