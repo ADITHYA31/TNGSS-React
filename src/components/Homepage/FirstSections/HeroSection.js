@@ -20,7 +20,7 @@ export default function HeroSection({ className = '' }) {
         <video 
           // ref={videoRef}
           className=' absolute w-full h-full inset-0 z-10 object-cover opacity-25'
-          src='../../assets/hero-vid.mp4'
+          src='https://divsh6mubpk9o.cloudfront.net/hero-vid.mp4'
           autoPlay
           muted
           playsInline
