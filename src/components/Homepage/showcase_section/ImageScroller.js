@@ -1,8 +1,6 @@
 // components/ImageScroller.jsx
 import { forwardRef } from 'react';
-import meetppl from '../../../assets/meetppl.svg?url';
-import meetspcs from '../../../assets/meetingspaces.svg?url';
-import byndstage from '../../../assets/beyondstage.svg?url';
+
 
 const ImageScroller = forwardRef(function ImageScroller({ mobile = false }, ref) {
     return (
@@ -15,7 +13,7 @@ const ImageScroller = forwardRef(function ImageScroller({ mobile = false }, ref)
           className={`flex flex-col will-change-transform ${mobile ? 'block' : 'hidden sm:flex'}`}
           style={{ height: mobile ? '200vh' : '400vh' }}
         >
-          {[meetppl, meetspcs, byndstage].map((img, i) => (
+          {['../../../assets/meetpeople.webp','../../../assets/meetingspaces.webp', '../../../assets/beyondstage.webp'].map((img, i) => (
             <div key={i} className="w-full h-screen">
               <img src={img} className="w-full h-full object-cover" />
             </div>
