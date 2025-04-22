@@ -38,13 +38,13 @@ export default function SpeakerCarousel() {
       }}
     >
       {/* Header + CTA */}
-      <div className={`px-6 sm:px-10 lg:px-20  md:absolute w-full top-10 ${window.innerWidth < 768 ? 'flex justify-between items-center' : ''}`}>
+      {/* <div className={`px-6 sm:px-10 lg:px-20  md:absolute w-full top-10 ${window.innerWidth < 768 ? 'flex justify-between items-center' : ''}`}>
         <h1 className="text-4xl md:mb-5 md:mt-5 sm:text-6xl font-bold text-white mb-2 ">Speakers</h1>
         <span className="hidden sm:block border-b border-white w-1/4 mb-6 mt-20" />
         <CTAButton src="/#" className="lg:hidden rounded-2xl">
           <div className="px-6 py-2 text-white">View All</div>
         </CTAButton>
-      </div>
+      </div> */}
 
       {/* Orange Dot */}
       {/* <span className="hidden lg:block absolute top-20 right-20 w-5 h-5 bg-orange-500 rounded-full z-10" /> */}
@@ -54,18 +54,19 @@ export default function SpeakerCarousel() {
         
         <div className="hidden lg:flex flex-col text-white w-1/3 mt-20">
           <h2 className="text-4xl font-bold leading-snug whitespace-pre-line">
-            {speakers[index].name.replace(' ', '\n')}
+          Who’s speaking?
           </h2>
-          <p className="mt-6 text-2xl">{speakers[index].desc}</p>
+          {/* <p className="mt-6 text-2xl">{speakers[index].desc}</p>
           <CTAButton src="/#" className="mt-8 rounded-2xl">
           <div className="w-30 h-10 px-14  pt-1 flex items-cente text-xl text-white">View All</div>
-          </CTAButton>
+          </CTAButton> */}
         </div>
 
         <div className="relative w-full sm:w-2/3 h-screen h-60vh overflow-hidden px-10">
             {/* <span className='hidden lg:flex orangeDot'></span> */}
-            <div className=' absolute inset-0 bg-black z-30 opacity-25 bg-blur '></div>
-            <div
+            <div className=' absolute inset-0 z-40 bg-black bg-opacity-80 backdrop-blur-2xl bg-blur flex justify-center items-center '>
+        <p className='text-7xl font-semibold text-[#F5710C]'>Stay Tuned !</p>
+      </div>            <div
               className="absolute top-1/2 transform -translate-y-1/2 flex transition-all duration-700 gap-x-4"
               style={{
                 transform: `translateX(-${index * (window.innerWidth < 768 ? 110 : 55)}%)`,
@@ -196,12 +197,12 @@ export default function SpeakerCarousel() {
           </div> */}
 
       {/* Mobile Info */}
-      <div className="lg:hidden text-white text-center mt-8">
+      {/* <div className="lg:hidden text-white text-center mt-8">
         <h2 className="text-2xl font-bold whitespace-pre-line">
           {speakers[index].name.replace(' ', '\n')}
         </h2>
         <p className="mt-2 text-lg">{speakers[index].desc}</p>
-      </div>
+      </div> */}
     </div>
   );
 }
