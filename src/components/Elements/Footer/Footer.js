@@ -35,7 +35,7 @@ export default function Footer() {
     ]
     return(
         <div className="bg-white isolate">
-        <div className=" flex flex-col bg-[#18BFDB]  h-[60vh] md:rounded-t-[60px] overflow-hidden" style={{
+        <div className=" flex flex-col bg-[#18BFDB] h-[60vh] md:rounded-t-[60px] overflow-hidden" style={{
                          borderRadius : "50px 23px 0px 0px"
                         }}>
         <div className=" inline-flex whitespace-nowrap w-full  animate-marking text-black font-medium text-4xl md:text-5xl space-x-11 py-3 pt-5 ">
@@ -49,7 +49,7 @@ export default function Footer() {
 
 
         </div>
-        <div className=" z-10 bg-black h-full h-30vh md:rounded-t-[70px]  overflow-hidden flex flex-col " style={{
+        <div className="  z-10 bg-black md:h-full h-2/3 md:rounded-t-[70px]  overflow-hidden flex flex-col " style={{
                          borderRadius : "50px 23px 0px 0px"
                         }}>
             <div className=" safe-cont relative flex items-center justify-center h-full w-full group ">

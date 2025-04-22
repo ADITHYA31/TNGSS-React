@@ -23,7 +23,7 @@ export function useSwipeScroll(mainRef, flagRef, curtainRef,contentHead) {
             trigger:mainRef.current,
             start:'top 95%',
             end:'+=1500',
-            scrub:2,
+            scrub:6,
             // markers:true,
         }
     })
