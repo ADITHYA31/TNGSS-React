@@ -17,7 +17,7 @@ export default function CurtainSection() {
   const dummyref = useRef(null);
   const headingRef = useRef(null);
 
-  useSwipeScroll(mainRef, flagsRef, curtainRef); // pass curtainRef into hook
+  // useSwipeScroll(mainRef, flagsRef, curtainRef); // pass curtainRef into hook
 
 
   useEffect(() => {
@@ -72,7 +72,7 @@ export default function CurtainSection() {
           className="w-full text-center"
 
         >
-          <p ref={headingRef} className="text-white text-6xl md:text-9xl opacity-80 mix-blend-lighten gradient-text-attend">
+          <p ref={headingRef} className="text-white text-6xl md:text-9xl opacity-80 mix-blend-lighten gradient-text-attend mt-10">
             Why Attend
           </p>
         </div>

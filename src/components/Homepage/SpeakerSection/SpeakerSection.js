@@ -47,7 +47,7 @@ export default function SpeakerCarousel() {
       </div>
 
       {/* Orange Dot */}
-      <span className="hidden lg:block absolute top-20 right-20 w-5 h-5 bg-orange-500 rounded-full z-10" />
+      {/* <span className="hidden lg:block absolute top-20 right-20 w-5 h-5 bg-orange-500 rounded-full z-10" /> */}
 
       {/* Carousel */}
       <section className="flex flex-col lg:flex-row items-center justify-center px-6 sm:px-10 lg:px-20 py-15 ">
@@ -63,7 +63,8 @@ export default function SpeakerCarousel() {
         </div>
 
         <div className="relative w-full sm:w-2/3 h-screen h-60vh overflow-hidden px-10">
-            <span className='hidden lg:flex orangeDot'></span>
+            {/* <span className='hidden lg:flex orangeDot'></span> */}
+            <div className=' absolute inset-0 bg-black z-30 opacity-25 bg-blur '></div>
             <div
               className="absolute top-1/2 transform -translate-y-1/2 flex transition-all duration-700 gap-x-4"
               style={{
@@ -86,7 +87,7 @@ export default function SpeakerCarousel() {
 
 
             {/* Left Arrow */}
-            {index > 0 && (
+            {/* {index > 0 && (
               <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-40">
                 <button
                   onClick={handlePrev}
@@ -103,11 +104,11 @@ export default function SpeakerCarousel() {
                   </svg>
                 </button>
               </div>
-            )}
+            )} */}
 
 
             {/* Right Arrow */}
-            {index < speakers.length - 1 && (
+            {/* {index < speakers.length - 1 && (
               <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-40">
                 <button
                   onClick={handleNext}
@@ -124,7 +125,7 @@ export default function SpeakerCarousel() {
                   </svg>
                 </button>
               </div>
-            )}
+            )} */}
 
           </div>
       </section>

@@ -35,11 +35,11 @@ export default function StatsSection({ className = '' }) {
       ref={contentRef}
       style={{
         background:
-          'linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)',
+          'linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%) ',
         borderRadius: '0.75rem',
         height: '100vh'
       }}
-      className={`sticky overflow-hidden top-0 w-full h-full lg:h-screen z-10 p-2 ${className}`}
+      className={` overflow-hidden sticky top-0 w-full h-full lg:h-screen z-10 p-2 ${className}`}
       id="stats-section"
     >
       <div

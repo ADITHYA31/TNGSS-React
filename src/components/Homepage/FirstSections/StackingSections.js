@@ -12,8 +12,8 @@ export default function StackingSections() {
     return (
       <div ref={stackcontainer} className="relative isolate overflow-clip will-change-transform z-20">
         <HeroSection />
-        <StatsSection />
         <CMSection />
+        <StatsSection />
       </div>
     );
   }

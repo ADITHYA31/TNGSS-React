@@ -40,7 +40,7 @@ export default function NavBar() {
     <>
       {/* Navbar */}
       <motion.div
-        className={` navbar flex fixed top-0 left-0 z-50 p-3 text-white blur-sm  w-full justify-between items-center py-5 border-b ${isScrolled ? 'bg-black':'bg-transparent'} bg-opacity-40 border-gray-600`}
+        className={` navbar flex fixed top-0 left-0 z-50 px-5 text-white blur-sm  w-full justify-between items-center py-5 border-b ${isScrolled ? 'bg-black':'bg-transparent'} bg-opacity-10 border-gray-600`}
         initial={{ opacity: 0, translateY: "-100%" }}
         animate={controls}
         transition={{ duration: 0.3 }}
@@ -67,7 +67,7 @@ export default function NavBar() {
             </a>
           ))}
           <ShineButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black " contCN="!bg-none py-3 px-4">
-           Book your stall
+           Book Your Stall
           </ShineButton>
           <ShineButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black" contCN=" hover py-3 px-4">
             Register Now

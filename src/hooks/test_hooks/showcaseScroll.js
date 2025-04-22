@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "../../../gsapconfig";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import lottie from "lottie-web";
-import rectangleAnimation from "../../assets/reactangl2.json";
+import rectangleAnimation from "../../assets/test.json";
 
 gsap.registerPlugin(ScrollTrigger);
 

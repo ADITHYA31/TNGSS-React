@@ -12,7 +12,7 @@ export default function HeroSection({ className = '' }) {
   return (
     <section
       ref={heroRef}
-      className={`relative flex flex-col sticky top-0 w-screen h-screen bg-amber-1000 isolate ${className} justify-center items-center bg-cover bg-center`}
+      className={`flex flex-col sticky top-0 w-screen h-screen bg-amber-1000 isolate ${className} justify-center items-center bg-cover bg-center`}
       id="hero-section"
       style={{
          backgroundImage: `url(${Herobg})`,
@@ -45,14 +45,14 @@ export default function HeroSection({ className = '' }) {
       {/* <div className='relative h-96 w-96 rounded-full z-10 bg-linear-0 from-red-400 to-blue-400 blur-xl'/> */}
       
 
-      <div className="animate-floatUpBounce herotxt relative z-20 h-30vh h-[50vh] will-change-transform flex justify-center items-center text-center md:mb-10 px-4 md:px-10" style={{ width: '100%',flexDirection: 'row' }}>
+      <div className="herotxt  relative z-20 h-30vh h-[50vh] will-change-transform flex justify-center items-center gap-4 text-center md:mb-10 px-4 md:px-10" style={{ width: '100%',flexDirection: 'row' }}>
   
   {/* StartupTN Top Logo */}
-  <div className="mr-2 logo-3d-wrapper">
+  <div className=" logo-3d-wrapper">
   <img
     alt="StartupTN Logo"
     src={herobannerlogo}
-    style={{ maxWidth: '300px', minWidth: '220px' }}
+    style={{ maxWidth: '50%' }}
     className="object-contain heroBg logo-3d-img"
   />
 </div>
@@ -68,12 +68,12 @@ export default function HeroSection({ className = '' }) {
   }}>
     
     {/* Left Graphic */}
-    <div className="hidden md:block mr-6 w-full">
+    <div className=" w-full">
       <img
         src={startupwhite}
         alt="Decorative Shape"
-        className="max-w-[200px] object-contain"
-        style={{ maxWidth: '300px' }}
+        className=" "
+        style={{ maxWidth: '60%' }}
       />
     </div>
 
@@ -81,10 +81,10 @@ export default function HeroSection({ className = '' }) {
     <div className="flex flex-col items-start md:items-start text-left w-full">
       <p className="text-white font-bold text-left leading-tight">
         <span className="font-montserrat font-bold block text-4xl md:text-7xl">GLOBAL</span>
-        <span className="font-montserrat  block text-4xl md:text-6xl">STARTUP</span>
+        <span className="font-montserrat  block text-4xl md:text-7xl">STARTUP</span>
         <span className="font-montserrat  block text-2xl md:text-5xl">SUMMIT -2025</span>
       </p>
-      <p className="text-white text-xl md:text-2xl tracking-widest mt-2 animate-floatUpBounce">
+      <p className="text-white text-lg md:text-4xl tracking-[0.2rem] mt-2 animate-floatUpBounce" style={{ letterSpacing:'0.3rem'}}>
         DISRUPT TO RISE
       </p>
     </div>

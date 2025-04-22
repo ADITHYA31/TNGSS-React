@@ -85,7 +85,11 @@
     transform: rotateY(360deg);
   }
   
-
+  .bg-blur{
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+  
  .orangeDot {
      padding: 30px;
      background-color: #F5710C;

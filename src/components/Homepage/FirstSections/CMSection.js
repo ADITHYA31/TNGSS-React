@@ -10,10 +10,10 @@ export default function CMSection() {
           "linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)",
         borderRadius: "0.75rem",
       }}
-      className="sticky overflow-hidden top-10 w-full h-screen z-10 p-2 "
+      className=" sticky top-0  overflow-hidden  w-full h-screen z-10 p-2 "
     >
       <section
-        className="sticky top-0 h-full w-full bg-white z-20 flex  flex-col-reverse md:flex-row rounded items-center justify-center overflow-hidden text-black px-4 "
+        className=" cm-cont h-full w-full bg-white z-20 flex  flex-col-reverse md:flex-row rounded items-center justify-center overflow-hidden text-black px-4 "
         style={{
           backgroundImage: `url(${CMbg})`,
           backgroundSize: "cover",

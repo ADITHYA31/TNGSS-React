@@ -62,7 +62,7 @@ const summaryRefMobile = useRef(null);
          Meet the right people. Spark the right ideas. <br /> Create the future.
        </div>
      </div>
-     <div ref={lottieRef} className="w-80 h-80 my-6 mx-auto" />
+     <div ref={lottieRef} className="max-w-2xl h-auto my-6 mx-auto" />
      
      <CTAButton src="https://startuptn.getkameleon.com" className="flex sm:hidden rounded-2xl mt-10 transform -rotate-6">
           <div className="w-70 h-10 px-6 py-7 flex items-center justify-center ">
