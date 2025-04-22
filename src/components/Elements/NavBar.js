@@ -28,7 +28,7 @@ export default function NavBar() {
 
   useEffect(() => {
     if (isVisible) {
-      controls.start({ opacity: 0.6, translateY: 0 });
+      controls.start({ opacity: 1, translateY: 0 });
     } else {
       controls.start({ opacity: 0, translateY: "-100%" });
     }
