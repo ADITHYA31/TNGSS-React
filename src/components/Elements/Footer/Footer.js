@@ -49,7 +49,7 @@ export default function Footer() {
 
 
         </div>
-        <div className="  z-10 bg-black md:h-full h-2/3 md:rounded-t-[70px]  overflow-hidden flex flex-col " style={{
+        <div className="  z-10 bg-black md:h-full h-2/3 md:rounded-t-[70px]  overflow-hidden flex flex-col h-60vh " style={{
                          borderRadius : "50px 23px 0px 0px"
                         }}>
             <div className=" safe-cont relative flex items-center justify-center h-full w-full group ">

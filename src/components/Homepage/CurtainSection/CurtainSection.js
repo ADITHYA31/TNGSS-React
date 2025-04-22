@@ -1,4 +1,4 @@
-import { useEffect,useRef } from "react";
+import { useEffect, useRef } from "react";
 import GlobalPavSection from "./GlobalPavSection";
 import { useSwipeScroll } from "../../../hooks/useSwipeScroll";
 import AtendeesSection from "./AttendeesCatSection/AttendeesCatSection";
@@ -10,16 +10,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default function CurtainSection() {
-    const flagsRef = useRef(null);
-    const mainRef = useRef(null);
-    const curtainRef = useRef(null); 
-    const sectionRef = useRef(null); // Ref for the whole section to animate background
-    const dummyref = useRef(null);
-    const headingRef = useRef(null);
+  const flagsRef = useRef(null);
+  const mainRef = useRef(null);
+  const curtainRef = useRef(null);
+  const sectionRef = useRef(null); // Ref for the whole section to animate background
+  const dummyref = useRef(null);
+  const headingRef = useRef(null);
 
-    useSwipeScroll(mainRef, flagsRef, curtainRef); // pass curtainRef into hook
-  
-    
+  useSwipeScroll(mainRef, flagsRef, curtainRef); // pass curtainRef into hook
+
+
   useEffect(() => {
     // Fade-out effect for "Why Attend" section with scroll
     gsap.fromTo(
@@ -52,49 +52,50 @@ export default function CurtainSection() {
         scrollTrigger: {
           trigger: dummyref.current,
           start: "top top",
-          end:'+=1200',
+          end: '+=1200',
           scrub: 0.4,
         },
       }
     );
-    
+
   }, []);
-    return (
-        <div  className="relative w-full">
-           <div  className=" relative h-fit  w-full z-10 ">
-                <div ref={sectionRef}
-                    style={{
-                        transformOrigin: "center",
-                    }} className="absolute opacity-50 custom-gradient custom-size custom-blur custom-translate rounded-full"></div>
+  return (
+    <div className="relative w-full">
+      <div className=" relative h-fit  w-full z-10 ">
+        <div ref={sectionRef}
+          style={{
+            transformOrigin: "center",
+          }} className="absolute opacity-50 custom-gradient custom-size custom-blur custom-translate rounded-full"></div>
 
-                <div ref={dummyref}
+        <div ref={dummyref}
 
-                    className="w-full text-center"
+          className="w-full text-center"
 
-                >
-                    <p ref={headingRef} className="text-white text-6xl md:text-9xl opacity-80 mix-blend-lighten gradient-text-attend">
-                        Why Attend
-                    </p>
-                </div>
-                <AtendeesSection />
-                </div>
-     
-        <div
-         ref={mainRef}
-          className="relative z-10 min-h-screen bg-white h-30vh"
         >
-             <div
-  ref={curtainRef}
-  className="absolute top-0 left-0 w-full h-full bg-black z-40"
-  style={{
-    height: "50%",   // Full height of section
-  }}
-/>
-
-          <GlobalPavSection flagsRef={flagsRef} />
+          <p ref={headingRef} className="text-white text-6xl md:text-9xl opacity-80 mix-blend-lighten gradient-text-attend">
+            Why Attend
+          </p>
         </div>
+        <AtendeesSection />
       </div>
-      
-    );
-  }
-  
+
+      <div
+        ref={mainRef}
+        className="relative z-10 min-h-screen bg-white h-30vh"
+      >
+        <div
+          ref={curtainRef}
+          className="hidden lg:flex absolute top-0 left-0 w-full h-full bg-black z-40"
+          style={{
+            height: "50%",   // Full height of section
+          }}
+        />
+
+        <GlobalPavSection flagsRef={flagsRef} />
+      </div>
+
+
+    </div>
+
+  );
+}

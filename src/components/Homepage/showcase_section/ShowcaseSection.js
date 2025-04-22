@@ -63,10 +63,12 @@ export default function ShowcaseSection() {
         isMobile ? (
           <div className="min-h-screen w-full flex flex-col items-center text-center text-white px-6 py-10 relative z-10">
             <div className="sticky top-0 h-screen flex flex-col items-center text-center text-white px-6 py-10">
-              <div ref={txtRef} className="text-4xl font-bold">Meet</div>
-              <div ref={txtColorRef} className="text-4xl font-bold" style={{ color: '#F5710C' }}>People</div>
+              <div ref={txtRef} className="text-6xl font-bold">Meet</div>
+              <div ref={txtColorRef} className="text-6xl font-bold" style={{ color: '#F5710C' }}>People</div>
               <ImageScroller ref={imgConRef} mobile />
-              <img className="mt-4 w-3/4 max-w-xs" src={logo} alt="CTA Button" />
+              <CTAButton src="https://startuptn.getkameleon.com" className="rounded-2xl mt-10">
+             <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> DOWNLOAD NOW</div>
+         </CTAButton>
 
               <div ref={summaryRef} className="text-xl py-4 leading-relaxed">
                 Meet the right people. Spark the right ideas.<br />Create the future.
@@ -96,7 +98,7 @@ export default function ShowcaseSection() {
     left: '17%'
 
                 }} src={logo} alt="CTA Button" />
-              <CTAButton src="https://startuptn.getkameleon.com" className=" rounded-2xl ">
+              <CTAButton src="https://startuptn.getkameleon.com" className="rounded-2xl transform -rotate-6">
              <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> DOWNLOAD NOW</div>
          </CTAButton>
               </div>

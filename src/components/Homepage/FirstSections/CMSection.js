@@ -29,7 +29,7 @@ export default function CMSection() {
             contribution of StartupTN to this effort is significant. StartupTN’s
             activities align perfectly with the State Government’s initiatives to
             make <b>Tamil Nadu</b> the{" "}
-            <span className="bg-gradient-to-r from-blue-500 to-blue-200 text-black px-2 py-0.5 rounded-md">
+            <span className="animate-floatUpBounce bg-gradient-to-r from-blue-500 to-blue-200 text-black px-2 py-0.5 rounded-md">
               Number One State
             </span>{" "}
             in all fields.”

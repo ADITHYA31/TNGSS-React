@@ -28,7 +28,7 @@ export default function NavBar() {
 
   useEffect(() => {
     if (isVisible) {
-      controls.start({ opacity: 1, translateY: 0 });
+      controls.start({ opacity: 0.6, translateY: 0 });
     } else {
       controls.start({ opacity: 0, translateY: "-100%" });
     }
@@ -83,7 +83,7 @@ export default function NavBar() {
       {/* Dropdown Menu (Mobile Only) */}
       <motion.div
         initial={{ height: 0, opacity: 0 }}
-        animate={isMenuOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+        animate={isMenuOpen ? { height: "auto", opacity: 0.6 } : { height: 0, opacity: 0 }}
         transition={{ duration: 0.3 }}
         className="sm:hidden fixed top-20 left-0 w-full bg-white bg-opacity-90 z-40 overflow-hidden backdrop-blur-md"
       >

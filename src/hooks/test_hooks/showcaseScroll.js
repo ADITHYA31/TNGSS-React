@@ -1,10 +1,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "../../../gsapconfig";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/TextPlugin";
 
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
-
+gsap.registerPlugin(ScrollTrigger);
 
 export function useShowcaseScroll(mainRef, imagesRef, txtRef, txtColorRef, summaryRef) {
   useGSAP(() => {
@@ -66,32 +64,16 @@ export function useShowcaseScroll(mainRef, imagesRef, txtRef, txtColorRef, summa
         label
       );
 
+      // Instead of animating text letter-by-letter, we fade in the change
       timeline.to(
-        txtRef.current,
+        {},
         {
-          text: step.txt,
-          ease: "power3.inOut",
-          duration: 1,
-        },
-        label
-      );
-
-      timeline.to(
-        txtColorRef.current,
-        {
-          text: step.color,
-          ease: "power3.inOut",
-          duration: 1,
-        },
-        label
-      );
-
-      timeline.to(
-        summaryRef.current,
-        {
-          text: step.summary,
-          ease: "power3.inOut",
-          duration: 1,
+          duration: 0.1,
+          onUpdate: () => {
+            if (txtRef.current) txtRef.current.innerText = step.txt;
+            if (txtColorRef.current) txtColorRef.current.innerText = step.color;
+            if (summaryRef.current) summaryRef.current.innerText = step.summary;
+          },
         },
         label
       );

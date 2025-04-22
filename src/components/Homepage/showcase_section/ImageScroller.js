@@ -7,7 +7,7 @@ import byndstage from '../../../assets/beyondstage.svg?url';
 const ImageScroller = forwardRef(function ImageScroller({ mobile = false }, ref) {
     return (
       <div
-        className={`relative  ${mobile ? ' w-3/4' : 'md:w-1/4 '} mt-10 md:mt-0 overflow-hidden rounded-2xl md:border-4 border-white bg-white transform rotate-12`}
+        className={`relative  ${mobile ? ' w-3/4 transform rotate-6' : 'md:w-1/4 transform rotate-12 '} mt-10 md:mt-0 overflow-hidden rounded-2xl md:border-4 border-white bg-white`}
         style={{ height: mobile ? '40%' : '60%' }}
       >
         <div
