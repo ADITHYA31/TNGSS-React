@@ -6,19 +6,16 @@ import rectangleAnimation from "../../assets/reactangl2.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function useShowcaseScroll(mainRef, txtRef, txtColorRef, summaryRefDesktop, summaryRefMobile, lottieRef) {
-
+export function useShowcaseScroll(someref, txtRef, txtColorRef, summaryRefDesktop, summaryRefMobile, lottieRef) {
   useGSAP(() => {
     if (
-      !mainRef?.current ||
+      !someref?.current ||
       !txtRef?.current ||
       !txtColorRef?.current ||
       !summaryRefDesktop?.current ||
       !summaryRefMobile?.current ||
       !lottieRef?.current
-    ) {
-      return;
-    }
+    ) return;
 
     const isMobile = window.innerWidth < 768;
 
@@ -30,98 +27,49 @@ export function useShowcaseScroll(mainRef, txtRef, txtColorRef, summaryRefDeskto
       animationData: rectangleAnimation,
     });
 
-    lottieInstance.addEventListener("DOMLoaded", () => {
-      const totalFrames = lottieInstance.getDuration(true);
-      const frameObj = { frame: 0 };
+    const totalFrames = lottieInstance.totalFrames || 120; // fallback value if not available immediately
+    const frameObj = { frame: 0 };
 
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: mainRef.current,
-          start: "bottom bottom",
-          end:  "+=1000",
-          scrub: true,
-          pin: true,
-        },
-      });
-
-      timeline.to(frameObj, {
-        frame: totalFrames - 1,
-        ease: "none",
-        onUpdate: () => {
-          const current = Math.round(frameObj.frame);
-          lottieInstance.goToAndStop(current, true);
-        
-          const updateText = (txt, colorTxt, summaryTxt) => {
-            txtRef.current.innerText = txt;
-            txtColorRef.current.innerText = colorTxt;
-            if (summaryRefDesktop.current) summaryRefDesktop.current.innerText = summaryTxt;
-            if (summaryRefMobile.current) summaryRefMobile.current.innerText = summaryTxt;
-          };
-        
-          if (current < totalFrames * 0.33) {
-            updateText(
-              "Meet",
-              "People",
-              "Join global speakers, investors, accelerators, and startup enablers who are redefining the future of innovation and growth."
-            );
-          } else if (current >= totalFrames * 0.33 && current < totalFrames * 0.66) {
-            updateText(
-              "Meeting",
-              "Spaces",
-              "Collaborative spaces designed for meaningful connections, where ideas flourish and partnerships take shape in real-time."
-            );
-          } else if (current >= totalFrames * 0.66 && current < totalFrames * 0.99) {
-            updateText(
-              "Beyond",
-              "The Stage",
-              "Great ideas don’t just happen on stage. Here’s where they get real."
-            );
-          }
-        }
-        
-      });
-
-      setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 300);
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: someref.current,
+        start: "top top",
+        end: "+=1000",
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+      },
     });
 
-    return () => {
-      lottieInstance?.destroy();
-    };
-  }, { scope: mainRef });
+    timeline.to(frameObj, {
+      frame: totalFrames - 1,
+      ease: "none",
+      onUpdate: () => {
+        const current = Math.round(frameObj.frame);
+        lottieInstance.goToAndStop(current, true);
+
+        if (current < totalFrames * 0.33) {
+          txtRef.current.innerText = "Meet";
+          txtColorRef.current.innerText = "People";
+          summaryRefDesktop.current.innerText = "Join global speakers, investors, accelerators, and startup enablers who are redefining the future of innovation and growth.";
+          summaryRefMobile.current.innerText = "Join global speakers, investors, accelerators, and startup enablers who are redefining the future of innovation and growth.";
+        } else if (current < totalFrames * 0.66) {
+          txtRef.current.innerText = "Meeting";
+          txtColorRef.current.innerText = "Spaces";
+          summaryRefDesktop.current.innerText = "Collaborative spaces designed for meaningful connections, where ideas flourish and partnerships take shape in real-time.";
+          summaryRefMobile.current.innerText = "Collaborative spaces designed for meaningful connections, where ideas flourish and partnerships take shape in real-time.";
+        } else {
+          txtRef.current.innerText = "Beyond";
+          txtColorRef.current.innerText = "The Stage";
+          summaryRefDesktop.current.innerText = "Great ideas don’t just happen on stage. Here’s where they get real.";
+          summaryRefMobile.current.innerText = "Great ideas don’t just happen on stage. Here’s where they get real.";
+        }
+      },
+    });
+
+    ScrollTrigger.refresh();
+
+    return () => lottieInstance?.destroy();
+  }, { scope: someref });
 }
-
-
-
-
-// 
-// timeline.to(
-//   txtRef.current,
-//   {
-//     text: step.txt,
-//     ease: "power3.inOut",
-//     duration: 1,
-//   },
-//   label
-// );
-
-// timeline.to(
-//   txtColorRef.current,
-//   {
-//     text: step.color,
-//     ease: "power3.inOut",
-//     duration: 1,
-//   },
-//   label
-// );
-
-// timeline.to(
-//   summaryRef.current,
-//   {
-//     text: step.summary,
-//     ease: "power3.inOut",
-//     duration: 1,
-//   },
-//   label
-// );
