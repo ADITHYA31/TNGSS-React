@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import speaker1 from '../../../assets/image1.png';
 import speaker2 from '../../../assets/image2.png';
 import speaker3 from '../../../assets/image3.png';
-import speakerbg from '../../../assets/speakerbg.png';
+import speakerbg from '../../../assets/speakersbg.svg?url';
 import CTAButton from '../../Elements/CTAButton';
 
 const speakers = [

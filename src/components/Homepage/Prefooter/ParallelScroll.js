@@ -1,10 +1,7 @@
  
 import { useParlx } from "../../../hooks/test_hooks/useParlx";
 import { useRef } from "react";
-import discover1 from '../../../assets/discover1.png';
-import discover2 from '../../../assets/discover2.png';
-import discover3 from '../../../assets/discover3.png';
-import discover4 from '../../../assets/discover4.png';
+
 
 export default function ParallelScroll() {
     const globalpavilion = useRef(null);
