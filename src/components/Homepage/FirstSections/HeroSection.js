@@ -48,16 +48,19 @@ export default function HeroSection({ className = '' }) {
       <div className="animate-floatUpBounce herotxt relative z-20 h-30vh h-[50vh] will-change-transform flex justify-center items-center text-center md:mb-10 px-4 md:px-10" style={{ width: '100%',flexDirection: 'row' }}>
   
   {/* StartupTN Top Logo */}
-  <div className="mr-5">
-    <img
-      alt="StartupTN Logo"
-      src={herobannerlogo}
-      className="object-contain heroBg"
-    />
-  </div>
+  <div className="mr-2 logo-3d-wrapper">
+  <img
+    alt="StartupTN Logo"
+    src={herobannerlogo}
+    style={{ maxWidth: '300px', minWidth: '220px' }}
+    className="object-contain logo-3d-img"
+  />
+</div>
+
+
 
   {/* Main Layout */}
-  <div className="flex items-center  w-full max-w-7xl" style={{
+  <div className="flex items-center  w-full max-w-6xl" style={{
     flexDirection: 'column',
     textAlign: 'left',
     justifyContent: 'center',
@@ -78,10 +81,10 @@ export default function HeroSection({ className = '' }) {
     <div className="flex flex-col items-start md:items-start text-left w-full">
       <p className="text-white font-bold text-left leading-tight">
         <span className="font-montserrat font-bold block text-4xl md:text-7xl">GLOBAL</span>
-        <span className="font-montserrat  block text-3xl md:text-6xl">STARTUP</span>
-        <span className="font-montserrat  block text-3xl md:text-5xl">SUMMIT -2025</span>
+        <span className="font-montserrat  block text-2xl md:text-6xl">STARTUP</span>
+        <span className="font-montserrat  block text-2xl md:text-5xl">SUMMIT -2025</span>
       </p>
-      <p className=" font-montserrat font-bold text-white text-xl md:text-2xl tracking-widest mt-2 animate-floatUpBounce">
+      <p className="text-white text-xl md:text-2xl tracking-widest mt-2 animate-floatUpBounce">
         DISRUPT TO RISE
       </p>
     </div>

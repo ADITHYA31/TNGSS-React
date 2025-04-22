@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function useSwipeScroll(mainRef, flagRef, curtainRef,contentHead) {
     useGSAP(() => {
+      const isMobile = window.innerWidth < 768; 
       // Set initial position
   
       gsap.set(curtainRef.current, {
@@ -22,7 +23,7 @@ export function useSwipeScroll(mainRef, flagRef, curtainRef,contentHead) {
         scrollTrigger:{
             trigger:mainRef.current,
             start:'top 95%',
-            end:'+=1500',
+            end:isMobile ? '+=800' :'+=1500',
             scrub:6,
             // markers:true,
         }

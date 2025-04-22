@@ -71,6 +71,20 @@
      }
  }
 
+ .logo-3d-wrapper {
+    perspective: 1000px;
+    display: inline-block;
+  }
+  
+  .logo-3d-img {
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+  }
+  
+  .logo-3d-wrapper:hover .logo-3d-img {
+    transform: rotateY(360deg);
+  }
+  
 
  .orangeDot {
      padding: 50px;
@@ -170,7 +184,7 @@
   
     100% {
       transform: translateY(0);
-      scale: 0.3;
+      scale: 1;
     }
   }
 

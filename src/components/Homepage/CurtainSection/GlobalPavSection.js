@@ -63,12 +63,12 @@ export default function GlobalPavSection({ flagsRef }) {
 
     return (
      
-        <section className=" h-30vh relative min-h-screen w-full flex flex-col justify-center bg-cover bg-center  overflow-x-hidden {"
+          <section className=" h-30vh relative min-h-screen w-full flex flex-col justify-center bg-cover bg-center  overflow-x-hidden {"
         style={{
             backgroundImage: `url(${globalpav})`,
           }}>
         <div className="w-full text-center pb-12 ">
-        <p className="text-white lg:text-9xl md:text-9xl text-5xl font-bold text-left px-12 ">Global Pavilion</p>
+        <p className="text-white lg:text-9xl md:text-9xl text-4xl font-bold text-left px-12 ">Global Pavilion</p>
       </div>
             <div ref={flagsRef} className="flex self-end w-full h-fit gap-3 will-change-transform">
                 {flags.map((flag, index) => (
