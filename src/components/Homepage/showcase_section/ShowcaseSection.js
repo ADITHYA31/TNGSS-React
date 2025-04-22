@@ -66,19 +66,7 @@ export default function ShowcaseSection() {
               <div ref={txtRef} className="text-4xl font-bold">Meet</div>
               <div ref={txtColorRef} className="text-4xl font-bold" style={{ color: '#F5710C' }}>People</div>
               <ImageScroller ref={imgConRef} mobile />
-              <div className='relative w-full' style={{  
-    margin: '50px 0px 50px 0px',
-
-                }}>
-                <img className="absolute w-5/6" style={{  
-    top: '-40px',
-    left: '13%'
-
-                }} src={logo} alt="CTA Button" />
-              <CTAButton src="https://startuptn.getkameleon.com" className=" rounded-2xl ">
-             <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> REGISTER NOW</div>
-         </CTAButton>
-              </div>
+              <img className="mt-4 w-3/4 max-w-xs" src={logo} alt="CTA Button" />
 
               <div ref={summaryRef} className="text-xl py-4 leading-relaxed">
                 Meet the right people. Spark the right ideas.<br />Create the future.
@@ -109,7 +97,7 @@ export default function ShowcaseSection() {
 
                 }} src={logo} alt="CTA Button" />
               <CTAButton src="https://startuptn.getkameleon.com" className=" rounded-2xl ">
-             <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> REGISTER NOW</div>
+             <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> DOWNLOAD NOW</div>
          </CTAButton>
               </div>
             

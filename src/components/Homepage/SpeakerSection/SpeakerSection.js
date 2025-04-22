@@ -49,8 +49,8 @@ export default function SpeakerCarousel() {
 
         <div className="flex w-full max-w-screen-xl items-center justify-between px-8 relative h-30vh">
           {/* Left Speaker Info */}
-          <div className="hidden lg:flex flex text-white relative flex-col absolute"
-            style={{ top: '8%', left: '-10px' }}
+          <div className="hidden lg:flex flex text-white relative flex-col"
+            style={{ top: '8%', left: '-1%' }}
           >
             <p
               className="block pb-5 text-5xl font-bold whitespace-pre-line"

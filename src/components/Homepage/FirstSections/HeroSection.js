@@ -12,7 +12,7 @@ export default function HeroSection({ className = '' }) {
   return (
     <section
       ref={heroRef}
-      className={`relative flex flex-col sticky top-0 w-screen h-screen bg-amber-1000 isolate ${className} justify-center items-center bg-cover bg-center h-60vh`}
+      className={`relative flex flex-col sticky top-0 w-screen h-screen bg-amber-1000 isolate ${className} justify-center items-center bg-cover bg-center`}
       id="hero-section"
       style={{
          backgroundImage: `url(${Herobg})`,
