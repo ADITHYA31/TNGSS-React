@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
 import loadingAnimation from '../../assets/preloader.json';
-import mobileAnimation from '../../assets/mobile _anim.json'; // <-- mobile version
+import mobileAnimation from '../../assets/mobile_anim.json'; // <-- mobile version
 import logo from "../../assets/Nav_logo.png";
 import NavBar from '../../components/Elements/NavBar';
 import Footer from '../../components/Elements/Footer/Footer';

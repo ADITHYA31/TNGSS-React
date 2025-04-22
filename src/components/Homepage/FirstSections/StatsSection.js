@@ -16,7 +16,7 @@ export default function StatsSection({ className = '' }) {
     { count: 100, tag: 'Side Events' },
     { count: 100, tag: 'Investor Connects' },
     { count: 100, tag: 'Speakers' },
-    { count: 75, tag: 'Incubation Participation' },
+    { count: 75, tag: 'Incubators Participation' },
   ];
 
   // Create refs for each counter
