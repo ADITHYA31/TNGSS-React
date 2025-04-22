@@ -69,7 +69,7 @@ export default function StatsSection({ className = '' }) {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-52 lg:gap-y-20 z-10">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-20 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-52 lg:gap-y-20 z-10">
           {data.map((item, index) => (
             <div
               key={index}
@@ -77,7 +77,7 @@ export default function StatsSection({ className = '' }) {
             >
               <p
                 ref={counterRefs[index]}
-                className="text-3xl sm:text-4xl lg:text-7xl font-bold gradient-text"
+                className="text-5xl sm:text-4xl lg:text-7xl font-bold gradient-text"
               >
                 0+
               </p>
