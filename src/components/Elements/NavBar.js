@@ -58,7 +58,7 @@ export default function NavBar() {
 
         {/* Desktop Menu */}
         <div
-          className="hidden sm:flex w-full justify-end gap-10 items-center text-xl"
+          className="hidden sm:flex w-full justify-end gap-5 items-center text-xl"
           style={{ maxWidth: "400px", marginLeft: "auto", marginRight: "40px" }}
         >
           {menuItems.map((item, index) => (
@@ -66,8 +66,11 @@ export default function NavBar() {
               {item}
             </a>
           ))}
+          <ShineButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black " contCN="!bg-none py-3 px-4">
+           Book your stall
+          </ShineButton>
           <ShineButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black" contCN=" hover py-3 px-4">
-            Register
+            Register Now
           </ShineButton>
         </div>
 
