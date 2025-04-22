@@ -82,6 +82,12 @@
      left: 0px;
  }
 
+ .navbar {
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+ }
+
  .heroBg {
      max-width: 300px;
      min-width: 220px;

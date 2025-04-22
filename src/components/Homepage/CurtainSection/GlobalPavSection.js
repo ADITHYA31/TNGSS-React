@@ -34,6 +34,31 @@ export default function GlobalPavSection({ flagsRef }) {
             w: '300',
             h: '100',
         },
+        {
+            src: "../../../assets/Belgium.webp",
+            w: '300',
+            h: '100',
+        },
+        {
+            src: "../../../assets/Finland.webp",
+            w: '300',
+            h: '100',
+        },
+        {
+            src: "../../../assets/France.webp",
+            w: '300',
+            h: '100',
+        },
+        {
+            src: "../../../assets/UAE.webp",
+            w: '300',
+            h: '100',
+        },
+        {
+            src: "../../../assets/Singapore.webp",
+            w: '300',
+            h: '100',
+        },
     ];
 
     return (
