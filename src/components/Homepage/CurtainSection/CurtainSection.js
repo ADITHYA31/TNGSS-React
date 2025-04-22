@@ -79,7 +79,7 @@ export default function CurtainSection() {
         <AtendeesSection />
       </div>
 
-      <div
+      {/* <div
         ref={mainRef}
         className="relative z-10 min-h-screen bg-white h-30vh"
       >
@@ -92,7 +92,7 @@ export default function CurtainSection() {
         />
 
         <GlobalPavSection flagsRef={flagsRef} />
-      </div>
+      </div> */}
 
 
     </div>
