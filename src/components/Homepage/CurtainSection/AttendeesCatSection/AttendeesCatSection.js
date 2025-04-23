@@ -7,6 +7,7 @@ import Frame1 from "../../../../assets/investorcrd.png";
 import Frame2 from "../../../../assets/corporatecrd.png";
 import Frame3 from "../../../../assets/aspirantcrd.png";
 import Frame4 from "../../../../assets/startupcrd.png";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,10 +17,10 @@ export default function AtendeesSection() {
   
   const data = [
     {
-      img: Frame2,
-      title: "Corporate",
-      des: "Discover cutting-edge innovations, gain insights from industry leaders, and connect with startups shaping tomorrow.",
-      foot: "Innovate, connect, and transform.",
+      img: Frame3,
+      title: "Startups",
+      des: "Starting, building, or scaling your Startup? The Tamil Nadu Global Startup Summit 2025 is your launchpad to success.",
+      foot: "Scale faster, network smarter, and fund your startup.",
     },
     {
       img: Frame1,
@@ -31,17 +32,23 @@ export default function AtendeesSection() {
       img: Frame4,
       title: "Aspirants",
       des: "Whether you're a student, aspiring entrepreneur, or young innovator, this is your chance to gain knowledge, find opportunities, and take the first step toward building something extraordinary.",
-      foot: "Your future starts here: network, learn, and grow.",
+      foot: "Your future starts here : network, learn, and grow.",
     },
     {
-      img: Frame3,
-      title: "Startups",
-      des: "Starting, building, or scaling your Startup? The Tamil Nadu Global Startup Summit 2025 is your launchpad to success.",
-      foot: "Scale faster, network smarter, and fund your startup.",
+      img: Frame2,
+      title: "Corporates",
+      des: "Discover cutting-edge innovations, gain insights from industry leaders, and connect with startups shaping tomorrow.",
+      foot: "Innovate, connect, and transform.",
+    },
+        {
+      img: Frame2,
+      title: "Corporates",
+      des: "Discover cutting-edge innovations, gain insights from industry leaders, and connect with startups shaping tomorrow.",
+      foot: "Innovate, connect, and transform.",
     },
   ];
 
-  useEffect(() => {
+  useGSAP(() => {
 
     setIsMobile(window.innerWidth < 768);
 
@@ -71,7 +78,7 @@ export default function AtendeesSection() {
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, []);
+  },);
 
 
   return (

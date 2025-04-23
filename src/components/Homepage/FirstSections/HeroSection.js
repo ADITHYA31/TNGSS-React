@@ -19,7 +19,7 @@ export default function HeroSection({ className = '' }) {
        }}>
         <video 
           // ref={videoRef}
-          className=' absolute w-full h-full inset-0 z-10 object-cover opacity-25'
+          className=' absolute w-full h-full inset-0 z-10 object-cover opacity-60'
           src='https://divsh6mubpk9o.cloudfront.net/hero-vid.mp4'
           autoPlay
           muted
@@ -45,16 +45,17 @@ export default function HeroSection({ className = '' }) {
       {/* <div className='relative h-96 w-96 rounded-full z-10 bg-linear-0 from-red-400 to-blue-400 blur-xl'/> */}
       
 
-      <div className="herotxt  relative z-20 h-30vh h-[50vh] will-change-transform flex justify-center items-center gap-4 text-center md:mb-10 px-4 md:px-10" style={{ width: '100%',flexDirection: 'row' }}>
-  
+  <div className='herotxt z-20'>
+      <div className=" animate-floatUpBounce  relative  h-30vh h-[50vh] will-change-transform flex justify-center items-center gap-4 text-center md:mb-10 px-4 md:px-10 " style={{ width: '100%',flexDirection: 'row' }}>
+
   {/* StartupTN Top Logo */}
-  <div className=" logo-3d-wrapper">
+  <div className=" logo-3d-wrapper animate-floatUpBounce">
   <img
     alt="StartupTN Logo"
     src={herobannerlogo}
     style={{ maxWidth: '50%' }}
     className="object-contain heroBg logo-3d-img"
-  />
+    />
 </div>
 
 
@@ -74,7 +75,7 @@ export default function HeroSection({ className = '' }) {
         alt="Decorative Shape"
         className=" "
         style={{ maxWidth: '60%' }}
-      />
+        />
     </div>
 
     {/* Text Block */}
@@ -82,20 +83,21 @@ export default function HeroSection({ className = '' }) {
       <p className="text-white font-bold text-left leading-tight">
         <span className="font-montserrat font-bold block text-4xl md:text-7xl">GLOBAL</span>
         <span className="font-montserrat  block text-4xl md:text-7xl">STARTUP</span>
-        <span className="font-montserrat  block text-2xl md:text-5xl">SUMMIT -2025</span>
+        <span className="font-montserrat  block text-2xl md:text-5xl">SUMMIT - 2025</span>
       </p>
       <p className="text-white text-lg md:text-4xl tracking-[0.2rem] mt-2 animate-floatUpBounce" style={{ letterSpacing:'0.3rem'}}>
         DISRUPT TO RISE
       </p>
     </div>
 
+        </div>
  
 </div>
       
     </div>
-    <p className=' text-center text-3xl mt-6'>October, 2025 | Codissia, Coimbatore</p>
+    <p className=' text-center text-3xl md:text-4xl mb-24 z-30'>October, 2025 | Codissia, Coimbatore</p>
     <div className=' absolute bottom-0 text-white text-2xl flex justify-center align-end  mt-auto w-full py-3 pb-8 px-12 z-20 mb-32 md:mb-12 '>
-      <CTAButton src="https://startuptn.getkameleon.com" className=" rounded-2xl ">
+      <CTAButton src="https://startuptn.getkameleon.com" className=" rounded-2xl hover:scale-105">
              <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> REGISTER NOW</div>
          </CTAButton>
 

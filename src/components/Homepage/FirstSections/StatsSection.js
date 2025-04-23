@@ -13,10 +13,10 @@ export default function StatsSection({ className = '' }) {
     { count: 100, tag: 'Ecosystem Partners' },
     { count: 30000, tag: 'Attendees' },
     { count: 750, tag: 'Stalls' },
-    { count: 100, tag: 'Side Events' },
+    { count: 100, tag: 'Partner Events' },
     { count: 100, tag: 'Investor Connects' },
     { count: 100, tag: 'Speakers' },
-    { count: 75, tag: 'Incubators Participation' },
+    { count: 75, tag: 'Incubators ' },
   ];
 
   // Create refs for each counter
@@ -63,7 +63,7 @@ export default function StatsSection({ className = '' }) {
         <div className="hidden lg:flex justify-center items-center relative h-full w-xs max-w-[100vh]">
           <div className="absolute flex justify-center -rotate-90 w-[calc(100vh-1rem)] pl-14">
             <p className="relative text-black md:text-8xl font-semibold mx-auto">
-              Grow with A dynamic community
+              Grow With A Dynamic Community
             </p>
           </div>
         </div>

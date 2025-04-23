@@ -38,7 +38,7 @@ export default function CMSection() {
             - Thiru. M.K. Stalin
           </span>
           <span className="text-sm md:text-xl">
-            Hon'ble Chief Minister of Tamil Nadu
+            Hon'ble Chief Minister <br/> Government of Tamil Nadu
           </span>
         </div>
 
@@ -47,7 +47,7 @@ export default function CMSection() {
           <img
             alt="Chief Minister"
             src={CM}
-            className="h-[30%] max-w-3xl max-h-72 md:max-h-full object-contain object-center z-10"
+            className="h-[40%] max-w-3xl max-h-72 md:max-h-full object-contain object-center z-10"
           />
         </div>
       </section>

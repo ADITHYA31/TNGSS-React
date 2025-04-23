@@ -28,6 +28,17 @@ export default function useStackingAnimation(containerRef) {
         scrub:0.8,
       }
     })
+    gsap.to(container,{
+      scale:0.96,
+      // opacity:0.6,
+      ease:'power3.inOut',
+      scrollTrigger:{
+        trigger:statsSection,
+        start:'bottom bottom',
+        end:'bottom 40%',
+        scrub:0.8,
+      }
+    })
     // Animate container (global effect)
     // gsap.to(container, {
     //   scale: 0.95,

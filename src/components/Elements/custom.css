@@ -81,9 +81,9 @@
     transform-style: preserve-3d;
   }
   
-  .logo-3d-wrapper:hover .logo-3d-img {
+  /* .logo-3d-wrapper:hover .logo-3d-img {
     transform: rotateY(360deg);
-  }
+  } */
   
   .bg-blur{
     -webkit-backdrop-filter: blur(30px);
@@ -422,6 +422,26 @@
      color: inherit;
      border-top-width: 1px
  }
+ @layer utilities {
+     .h-\[custom\] {
+         height: var(--custom);
+     }
+     .h-\[50vh\] {
+         height: 50vh;
+     }
+     .h-\[100px\] {
+         height: 100px;
+     }
+     /* .h-\[25%\] {
+         height: 25%;
+     } */
+     .h-\[45vh\] {
+         height: 45vh;
+     }
+     /* Add more classes as needed for different values and units */
+ }
+
+
 
  h1,
  h2,

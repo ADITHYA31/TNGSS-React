@@ -6,7 +6,7 @@ import pastvd from '../../assets/pasteng.png';
 export default function PastEngagements() {
   return (
     <section
-      className="h-60vh relative px-6 md:px-20 py-10 w-screen min-h-screen overflow-hidden bg-black text-white flex justify-center items-start isolate"
+      className="h-60vh relative px-6 md:px-20 py-10 w-screen min-h-screen overflow-hidden bg-white text-white flex justify-center items-start isolate"
       style={{
         backgroundImage: `url(${pastbg})`,
         backgroundSize: 'cover',
@@ -17,11 +17,11 @@ export default function PastEngagements() {
         {/* Heading and Text */}
         <div className="flex flex-col md:flex-row md:justify-between md:mb-16 space-y-6 md:space-y-0">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-left md:text-center">
-            Past Engagement
+            Past Engagements
           </h1>
-          <p className="text-lg md:text-3xl w-full md:w-1/2">
+          {/* <p className="text-lg md:text-3xl w-full md:w-1/2">
             Nurtured young entrepreneurs with training programs, bootcamps, and mentorship initiatives to build a strong pipeline of future founders.
-          </p>
+          </p> */}
         </div>
 
         {/* Video Section */}

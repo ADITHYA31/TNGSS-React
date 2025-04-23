@@ -34,7 +34,7 @@ export function useShowcaseScroll(someref, txtRef, txtColorRef, summaryRefDeskto
       scrollTrigger: {
         trigger: someref.current,
         start: "top top",
-        end: "+=1000",
+        end: "+=2000",
         scrub: true,
         pin: true,
         anticipatePin: 1,
@@ -44,9 +44,10 @@ export function useShowcaseScroll(someref, txtRef, txtColorRef, summaryRefDeskto
 
     timeline.to(frameObj, {
       frame: totalFrames - 1,
-      ease: "none",
+      ease:'power3.inOut',
+    
       onUpdate: () => {
-        const current = Math.round(frameObj.frame);
+        const current = Math.round(frameObj.frame );
         lottieInstance.goToAndStop(current, true);
 
         if (current < totalFrames * 0.33) {

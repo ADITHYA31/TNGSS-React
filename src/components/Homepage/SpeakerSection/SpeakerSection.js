@@ -37,6 +37,7 @@ export default function SpeakerCarousel() {
         backgroundPosition: 'center',
       }}
     >
+
       {/* Header + CTA */}
       {/* <div className={`px-6 sm:px-10 lg:px-20  md:absolute w-full top-10 ${window.innerWidth < 768 ? 'flex justify-between items-center' : ''}`}>
         <h1 className="text-4xl md:mb-5 md:mt-5 sm:text-6xl font-bold text-white mb-2 ">Speakers</h1>
@@ -64,8 +65,11 @@ export default function SpeakerCarousel() {
 
         <div className="relative w-full sm:w-2/3 h-screen h-60vh overflow-hidden px-10">
             {/* <span className='hidden lg:flex orangeDot'></span> */}
-            <div className=' absolute inset-0 z-40 bg-black bg-opacity-80 backdrop-blur-2xl bg-blur flex justify-center items-center '>
-        <p className='text-7xl font-semibold text-[#F5710C]'>Stay Tuned !</p>
+            <div className=' absolute inset-0 z-40 bg-black bg-opacity-80 backdrop-blur-2xl bg-blur flex flex-col gap-4 justify-center items-center '>
+            <h2 className=" block md:hidden text-4xl font-bold text-center leading-snug whitespace-pre-line">
+          Who’s speaking?
+          </h2>
+        <p className='text-6xl md:text-7xl font-semibold text-[#F5710C]'>Stay Tuned !</p>
       </div>            <div
               className="absolute top-1/2 transform -translate-y-1/2 flex transition-all duration-700 gap-x-4"
               style={{

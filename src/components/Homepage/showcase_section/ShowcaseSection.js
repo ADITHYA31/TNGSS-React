@@ -53,7 +53,7 @@ const summaryRefMobile = useRef(null);
          <CTAButton src="https://startuptn.getkameleon.com" className="rounded-2xl transform -rotate-6">
            <div className="w-70 h-10 px-6 py-7 flex items-center justify-center ">
              <img className="px-2" src={vector} />
-             DOWNLOAD NOW
+             Register Now
            </div>
          </CTAButton>
        </div>
@@ -62,16 +62,19 @@ const summaryRefMobile = useRef(null);
          Meet the right people. Spark the right ideas. <br /> Create the future.
        </div>
      </div>
+     <div className=' relative '>
+
      <div ref={lottieRef} className="max-w-2xl h-auto my-6 mx-auto" />
-     
-     <CTAButton src="https://startuptn.getkameleon.com" className="flex sm:hidden rounded-2xl mt-10 transform -rotate-6">
-          <div className="w-70 h-10 px-6 py-7 flex items-center justify-center ">
+     <CTAButton src="https://startuptn.getkameleon.com" className=" absolute bottom-14 left-1/2  -translate-x-2/3  flex sm:hidden rounded-2xl justify-center items-center  transform " contCN=' justify-center gap-2 items-center flex p-4 '>
+          {/* <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "> */}
             <img className="px-2" src={vector} />
-            DOWNLOAD NOW
-          </div>
+            Register Now
+          {/* </div> */}
         </CTAButton>
        
-       <div ref={summaryRefDesktop} className="flex sm:hidden md:text-lg text-xl py-6 leading-relaxed">
+     </div>
+     
+       <div ref={summaryRefDesktop} className="flex sm:hidden md:text-lg text-xl py-6 text-center leading-relaxed">
          Meet the right people. Spark the right ideas. <br /> Create the future.
        </div>
    </div>

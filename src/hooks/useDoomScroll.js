@@ -11,7 +11,7 @@ export function useDoomScroll(mainRef, circleRef) {
         scale: 0.4,
       },
       {
-        scale: isMobile ? 1.2 : 3, // Less scale on mobile
+        scale: isMobile ? 1.8 : 3, // Less scale on mobile
         scrollTrigger: {
           trigger: mainRef.current,
           start: "top bottom",

@@ -9,11 +9,11 @@ import X from '../../../assets/x.svg?url';
 
 export default function Footer() {
   const data = [
-    { img: facebook, link: '/' },
-    { img: insta, link: '/' },
-    { img: yt, link: '/' },
-    { img: LinkedIn, link: '/' },
-    { img: X, link: '/' },
+    { img: facebook, link: 'https://www.facebook.com/TheStartupTN/' },
+    { img: insta, link: 'https://www.instagram.com/thestartuptn/' },
+    { img: yt, link: 'https://www.youtube.com/channel/UCr0du18taGeXH35dZZD4RnQ' },
+    { img: LinkedIn, link: 'https://www.linkedin.com/company/thestartuptn/?originalSubdomain=in' },
+    { img: X, link: 'https://x.com/TheStartupTN' },
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function Footer() {
           <div className="safe-cont group flex items-center justify-center h-full w-full relative">
             {/* DISRUPT TO RISE Text */}
             <div className="flex w-full h-full justify-center items-center">
-              <p className="text-3xl sm:text-5xl md:text-7xl text-white text-center font-medium tracking-widest group-hover:-rotate-6 transition-all duration-300">
+              <p className="text-3xl sm:text-5xl md:text-9xl text-white text-center font-medium tracking-widest group-hover:-rotate-6 transition-all duration-300">
                 DISRUPT TO RISE
               </p>
             </div>
@@ -51,7 +51,7 @@ export default function Footer() {
             {/* Hover-only CTA for desktop */}
             <div className="hidden md:flex flex-row justify-even items-center gap-4 absolute top-10 bottom-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <CTAButton src="/#" className="rounded-2xl">
-                <div className="w-60 h-10 px-10  flex items-center justify-center">DOWNLOAD APP</div>
+                <div className="w-60 h-10 px-10  flex items-center justify-center">Book Your Stall</div>
               </CTAButton>
               <CTAButton
                 src="https://startuptn.getkameleon.com"
@@ -64,7 +64,7 @@ export default function Footer() {
             {/* Always-visible CTAs on mobile */}
             <div className="md:hidden absolute bottom-5 w-full flex flex-row justify-even items-center gap-4 px-4">
               <CTAButton src="/#" className="rounded-2xl w-full">
-                <div className="w-50 h-9 px-5  flex items-center justify-center">DOWNLOAD APP</div>
+                <div className="w-50 h-9 px-5  flex items-center justify-center">Book Your Stall</div>
               </CTAButton>
               <CTAButton
                 src="https://startuptn.getkameleon.com"
@@ -80,9 +80,9 @@ export default function Footer() {
             {/* Contact */}
             <div className="text-center md:text-left">
               <p>
-                Contact: <a href="mailto:contact@tngss.startuptn.in">tngss.startuptn.in</a>
+                Contact: <a href="mailto:events@startuptn.in">events@startuptn.in</a>
               </p>
-              <p>All Rights Reserved © 2025</p>
+              <p className=' hidden md:block'>All Rights Reserved © 2025</p>
             </div>
 
             {/* Social Icons */}
@@ -96,10 +96,13 @@ export default function Footer() {
                   />
                 </a>
               ))}
+
             </div>
 
             {/* Policy Links */}
+            <p className=' block md:hidden '>All Rights Reserved © 2025</p>
             <div className="flex gap-6 justify-center">
+
               <p className="cursor-pointer">Terms & Conditions</p>
               <p className="cursor-pointer">Privacy Policy</p>
             </div>

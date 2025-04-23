@@ -58,15 +58,15 @@ export default function NavBar() {
 
         {/* Desktop Menu */}
         <div
-          className="hidden sm:flex w-full justify-end gap-5 items-center text-xl"
-          style={{ maxWidth: "400px", marginLeft: "auto", marginRight: "40px" }}
+          className=" flex w-full justify-end gap-5 items-center text-xl"
+          style={{ maxWidth: "400px", marginLeft: "auto",  }}
         >
           {menuItems.map((item, index) => (
             <a key={index} href="/" className="hover:underline">
               {item}
             </a>
           ))}
-          <ShineButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black " contCN="!bg-none py-3 px-4">
+          <ShineButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black hidden md:block" contCN="!bg-none py-3 px-4">
            Book Your Stall
           </ShineButton>
           <ShineButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black" contCN=" hover py-3 px-4">
@@ -75,12 +75,12 @@ export default function NavBar() {
         </div>
 
         {/* Hamburger (Mobile Only) */}
-        <button
+        {/* <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="sm:hidden z-50 ml-auto mr-4 text-3xl font-bold"
         >
           {isMenuOpen ? "×" : "≡"}
-        </button>
+        </button> */}
       </motion.div>
 
       {/* Dropdown Menu (Mobile Only) */}
