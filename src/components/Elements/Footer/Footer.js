@@ -105,9 +105,8 @@ export default function Footer() {
             {/* Policy Links */}
             <p className=' block md:hidden '>All Rights Reserved © 2025</p>
             <div className="flex gap-6 justify-center">
-
-              <p className="cursor-pointer">Terms & Conditions</p>
-              <p className="cursor-pointer">Privacy Policy</p>
+              <p className="cursor-pointer"><a href='terms-and-condition'>Terms & Conditions</a></p>
+              <p className="cursor-pointer"><a href='privacy-policy'>Privacy Policy</a></p>
             </div>
           </div>
         </div>
