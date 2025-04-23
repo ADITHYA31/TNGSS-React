@@ -46,6 +46,8 @@ export default function NavBar() {
         transition={{ duration: 0.3 }}
       >
         {/* Logo */}
+        <a href="/">
+
         <img
           src={logo}
           className="object-center"
@@ -54,7 +56,8 @@ export default function NavBar() {
             // top: "-8px",
             // left: "20px",
           }}
-        />
+          />
+        </a>
 
         {/* Desktop Menu */}
         <div
