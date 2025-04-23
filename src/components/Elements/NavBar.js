@@ -69,10 +69,10 @@ export default function NavBar() {
               {item}
             </a>
           ))}
-          <ShineButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black hidden md:block" contCN="!bg-none py-3 px-4">
+          <ShineButton src="https://event.startuptn.in/register" className=" !hover:bg-black hidden md:block" contCN="!bg-none py-3 px-4">
            Book Your Stall
           </ShineButton>
-          <ShineButton src="https://startuptn.getkameleon.com" className=" !hover:bg-black" contCN=" hover py-3 px-4">
+          <ShineButton src="https://event.startuptn.in/" className=" !hover:bg-black" contCN=" hover py-3 px-4">
             Register Now
           </ShineButton>
         </div>

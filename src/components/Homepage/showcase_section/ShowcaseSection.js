@@ -50,7 +50,7 @@ const summaryRefMobile = useRef(null);
         
        <div className="hidden md:block relative w-full" style={{ margin: '50px 0px 50px 0px' }}>
          <img className="absolute w-2/3" style={{ top: '-60px', left: '17%' }} src={logo} alt="CTA Button" />
-         <CTAButton src="https://startuptn.getkameleon.com" className="rounded-2xl transform -rotate-6">
+         <CTAButton src="https://event.startuptn.in/" className="rounded-2xl transform -rotate-6">
            <div className="w-70 h-10 px-6 py-7 flex items-center justify-center ">
              <img className="px-2" src={vector} />
              Register Now
@@ -65,7 +65,7 @@ const summaryRefMobile = useRef(null);
      <div className=' relative '>
 
      <div ref={lottieRef} className="max-w-2xl h-auto my-6 mx-auto" />
-     <CTAButton src="https://startuptn.getkameleon.com" className=" absolute bottom-14 left-1/2  -translate-x-2/3  flex sm:hidden rounded-2xl justify-center items-center  transform " contCN=' justify-center gap-2 items-center flex p-4 '>
+     <CTAButton src="https://event.startuptn.in/" className=" absolute bottom-14 left-1/2  -translate-x-2/3  flex sm:hidden rounded-2xl justify-center items-center  transform " contCN=' justify-center gap-2 items-center flex p-4 '>
           {/* <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "> */}
             <img className="px-2" src={vector} />
             Register Now
