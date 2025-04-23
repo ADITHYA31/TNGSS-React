@@ -15,45 +15,53 @@ export default function RainScrollBackground({ scrollTargetRef }) {
   const animationRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  useGSAP(() => {
-    let totalFrames = 0;
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsMobile(window.innerWidth < 768);
     }
- // Add is mobile state
-    const anim = lottie.loadAnimation({
-      container: containerRef.current,
-      renderer: "svg",
-      loop: false,
-      autoplay: false,
-      animationData: isMobile?rainDataMob:rainData ,
-    });
+  }, []);
 
-    animationRef.current = anim;
-
-    anim.addEventListener("DOMLoaded", () => {
-      totalFrames = anim.totalFrames;
-
-      // ONLY setup scrollTrigger after totalFrames is accurate
-      ScrollTrigger.create({
-        trigger: scrollTargetRef.current,
-        start: "top top",
-        end: "+=4500",
-        scrub: true,
-        onUpdate: (self) => {
-          const progress = 1 - self.progress; // reverse direction
-          anim.goToAndStop(progress * totalFrames, true);
-        },
+  useGSAP(() => {
+    let totalFrames = 0;
+  
+    // Delay to let layout stabilize
+    setTimeout(() => {
+      const anim = lottie.loadAnimation({
+        container: containerRef.current,
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        animationData: isMobile ? rainDataMob : rainData,
       });
-    });
-
-
-  }, { dependencies:[scrollTargetRef]});
+  
+      animationRef.current = anim;
+  
+      anim.addEventListener("DOMLoaded", () => {
+        totalFrames = anim.totalFrames;
+  
+        ScrollTrigger.create({
+          trigger: scrollTargetRef.current,
+          start: "top top",
+          end: "+=4500",
+          scrub: true,
+          onUpdate: (self) => {
+            const progress = 1 - self.progress;
+            anim.goToAndStop(progress * totalFrames, true);
+          },
+        });
+  
+        ScrollTrigger.refresh(); // just in case
+      });
+    }, 200); // 🔧 delay 200ms — adjust if needed
+  }, { dependencies: [scrollTargetRef, isMobile] });
+  
 
   return (
     <div
-      ref={containerRef}
-      className="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none opacity-70"
-    />
+  ref={containerRef}
+  className="lottie-container absolute inset-0 pointer-events-none opacity-70 z-0"
+/>
+
+  
   );
 }

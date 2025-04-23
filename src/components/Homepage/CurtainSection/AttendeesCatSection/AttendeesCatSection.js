@@ -113,7 +113,6 @@ export default function AtendeesSection() {
                     <div className="self-end z-10">
                         <p className="text-2xl font-semibold" style={{
                           color: '#fff',
-                          zIndex: '999',
                           position: 'absolute',
                           bottom: '20px',
                           left: '20px',

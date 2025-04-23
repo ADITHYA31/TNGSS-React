@@ -20,6 +20,23 @@
 
  /* /media queries/// */
 
+ /* Force Lottie SVG to fill screen */
+.lottie-container svg {
+    width: 100vw !important;
+    height: 100vh !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    display: block;
+  }
+  
+  .flip-front,
+.flip-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Safari fix */
+}
+
+
  @media (max-width: 767px) {
      .h-60vh {
          max-height: 60vh !important;
