@@ -56,7 +56,7 @@ export default function StatsSection({ className = '' }) {
 
         <div className="block lg:hidden text-center mb-4">
           <p className="text-black text-2xl sm:text-3xl md:text-5xl font-semibold">
-            Grow with A dynamic community
+            Grow With A Dynamic Community
           </p>
         </div>
 
