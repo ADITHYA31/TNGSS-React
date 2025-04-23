@@ -25,7 +25,7 @@ export default function Footer() {
         {/* Marquee */}
         <div className="inline-flex whitespace-nowrap w-full animate-marking text-black font-medium text-2xl sm:text-4xl md:text-5xl space-x-8 py-3 pt-5 px-4">
           {Array(7)
-            .fill('October, 2025 · Codissia, Coimbatore')
+            .fill('Codissia Trade Fair Complex, Coimbatore')
             .map((text, index) => (
               <div key={index} className="space-x-4">
                 <span>{text}</span>
@@ -80,7 +80,10 @@ export default function Footer() {
             {/* Contact */}
             <div className="text-center md:text-left">
               <p>
-                Contact: <a href="mailto:events@startuptn.in">events@startuptn.in</a>
+                Contact: <a href="mailto:events@startuptn.in"> <u>events@startuptn.in</u></a>
+              </p>
+              <p>
+                phone: <a href="tel:+914422256789"><u>(+91) 4422256789</u></a> / <a href="tel:+91155343"><u>155343</u></a>
               </p>
               <p className=' hidden md:block'>All Rights Reserved © 2025</p>
             </div>

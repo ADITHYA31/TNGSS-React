@@ -34,7 +34,7 @@ const summaryRefMobile = useRef(null);
   return (
     <section
       ref={showcaseRef}
-      className="relative h-[300vh] w-screen overflow-hidden isolate"
+      className="relative h-screen w-screen overflow-hidden isolate"
     >
       <RainScrollBackground scrollTargetRef={showcaseRef} />
       {/* Background Image */}

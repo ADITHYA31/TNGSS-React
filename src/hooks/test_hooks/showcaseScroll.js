@@ -34,8 +34,8 @@ export function useShowcaseScroll(someref, txtRef, txtColorRef, summaryRefDeskto
       scrollTrigger: {
         trigger: someref.current,
         start: "top top",
-        end: "+=2000",
-        scrub: true,
+        end: "+=1500",
+        scrub: 0.6,
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
@@ -44,7 +44,7 @@ export function useShowcaseScroll(someref, txtRef, txtColorRef, summaryRefDeskto
 
     timeline.to(frameObj, {
       frame: totalFrames - 1,
-      ease:'power3.inOut',
+      // ease:'power3.inOut',
     
       onUpdate: () => {
         const current = Math.round(frameObj.frame );

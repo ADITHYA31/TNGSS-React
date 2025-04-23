@@ -3,16 +3,18 @@ import lottie from "lottie-web";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import rainData from "../assets/rain.json";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function RainScrollBackground({ scrollTargetRef }) {
   const containerRef = useRef(null);
   const animationRef = useRef(null);
-
-  useEffect(() => {
+  
+  useGSAP(() => {
     let totalFrames = 0;
-
+    
+    const isMobile = window.innerWidth < 768; // Add is mobile state
     const anim = lottie.loadAnimation({
       container: containerRef.current,
       renderer: "svg",
@@ -39,10 +41,8 @@ export default function RainScrollBackground({ scrollTargetRef }) {
       });
     });
 
-    return () => {
-      anim.destroy();
-    };
-  }, [scrollTargetRef]);
+
+  }, { dependencies:[scrollTargetRef]});
 
   return (
     <div

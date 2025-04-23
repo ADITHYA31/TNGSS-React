@@ -95,7 +95,10 @@ export default function HeroSection({ className = '' }) {
 </div>
       
     </div>
-    <p className=' text-center text-3xl md:text-4xl mb-24 z-30'>October, 2025 | Codissia, Coimbatore</p>
+    <p className=' text-center text-3xl md:text-5xl mb-5 md:mb-12  z-30'>Codissia Trade Fair Complex, Coimbatore</p>
+    <p className=' text-center text-2xl md:text-3xl mb-24 z-30'>Dates will be announced soon !</p>
+
+    
     <div className=' absolute bottom-0 text-white text-2xl flex justify-center align-end  mt-auto w-full py-3 pb-8 px-12 z-20 mb-32 md:mb-12 '>
       <CTAButton src="https://event.startuptn.in/" className=" rounded-2xl hover:scale-105">
              <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> REGISTER NOW</div>
