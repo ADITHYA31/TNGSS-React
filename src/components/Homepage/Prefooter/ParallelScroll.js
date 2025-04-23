@@ -11,22 +11,22 @@ export default function ParallelScroll() {
     // Create an array of objects with dummy data
     const data = [
         { 
-            img: '../../../assets/ke0.webp',
+            img: '../../../assets/ke0.jpeg',
             tag: 'Elite Investor & Founder Networking Hub'
 
          },
         { 
-            img: '../../../assets/ke1.webp',
+            img: '../../../assets/ke1.jpg',
             tag: 'Connect & Collaborate at the Pavilion'
 
          },
         { 
-            img: '../../../assets/ke2.webp',
+            img: '../../../assets/ke2.jpg',
             tag: 'Startup Accelerator Bootcamp <br />'
 
          },
         { 
-            img: '../../../assets/ke3.webp',
+            img: '../../../assets/ke3.jpg',
             tag: 'Startup Showcase & Thought Leadership Stages'
 
          }
@@ -37,18 +37,18 @@ export default function ParallelScroll() {
             ref={globalpavilion}
             className="relative min-h-screen  w-screen isolate bg-white h-60vh"
         >
-            <div className="w-full h-full flex flex-col justify-center overflow-hidden h-60vh">
+            <div className="w-full h-full flex flex-col justify-center overflow-hidden h-60vh ">
             <div className="flags flex w-full gap-3 will-change-transform md:flex-nowrap md:overflow-hidden overflow-x-auto">
   {data.map((item, index) => (
     <div
       key={index}
-      className="w-2/3 md:w-1/2 h-[80vh] bg-[#F3F4F6] rounded-2xl px-4 py-4 shrink-0 h-60vh"
+      className="!w-3/4 md:w-1/2 h-[80vh] bg-[#F3F4F6] rounded-2xl px-4 py-4 shrink-0 h-60vh"
     >
       <div
         className="flex flex-col justify-end w-full h-full rounded-2xl bg-cover bg-center"
         style={{
           backgroundImage: `url(${item.img})`,
-          minWidth : '230px'
+          minWidth : '300px'
         }}
       >
         <div className="text-xxl md:text-4xl text-white px-5 pb-6">
