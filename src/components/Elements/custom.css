@@ -417,6 +417,14 @@
      -webkit-tap-highlight-color: transparent
  }
 
+ @media (min-width: 768px) {
+     /* Add your styles for medium screens and above here */
+    .mdh-70vh{
+        height: 70vh;
+    }
+     /* Add more utility classes as needed */
+ }
+
  hr {
      height: 0;
      color: inherit;
@@ -429,6 +437,9 @@
      .h-\[50vh\] {
          height: 50vh;
      }
+     .h-\[70vh\] {
+        height: 70vh;
+    }
      .h-\[100px\] {
          height: 100px;
      }

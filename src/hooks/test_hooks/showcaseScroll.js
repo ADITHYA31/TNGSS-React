@@ -63,8 +63,8 @@ export function useShowcaseScroll(someref, txtRef, txtColorRef, summaryRefDeskto
         } else {
           txtRef.current.innerText = "Beyond";
           txtColorRef.current.innerText = "The Stage";
-          summaryRefDesktop.current.innerText = "Great ideas don’t just happen on stage. Here’s where they get real.";
-          summaryRefMobile.current.innerText = "Great ideas don’t just happen on stage. Here’s where they get real.";
+          summaryRefDesktop.current.innerText = "Explore dynamic networking zones, immersive exhibits, hands-on demos, one-on-one investor meetings, mentorship sessions, and much more that make the TNGSS a truly holistic experience.";
+          summaryRefMobile.current.innerText = "Explore dynamic networking zones, immersive exhibits, hands-on demos, one-on-one investor meetings, mentorship sessions, and much more that make the TNGSS a truly holistic experience.";
         }
       },
     });

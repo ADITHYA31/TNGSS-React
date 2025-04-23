@@ -7,6 +7,8 @@ import Frame1 from "../../../../assets/investorcrd.png";
 import Frame2 from "../../../../assets/corporatecrd.png";
 import Frame3 from "../../../../assets/aspirantcrd.png";
 import Frame4 from "../../../../assets/startupcrd.png";
+import Frame5 from "../../../../assets/ecosyscard.jpg";
+
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -37,14 +39,14 @@ export default function AtendeesSection() {
     {
       img: Frame2,
       title: "Corporates",
-      des: "Discover cutting-edge innovations, gain insights from industry leaders, and connect with startups shaping tomorrow.",
-      foot: "Innovate, connect, and transform.",
+      des: "Explore emerging innovations, engage with future-ready startups and collaborate for strategic growth opportunities.",
+      foot: "Collaborate and Transform",
     },
         {
-      img: Frame2,
-      title: "Corporates",
-      des: "Discover cutting-edge innovations, gain insights from industry leaders, and connect with startups shaping tomorrow.",
-      foot: "Innovate, connect, and transform.",
+      img: Frame5,
+      title: "Ecosystem Enablers",
+      des: "Connect with global stakeholders, discover high-impact startups, and collaborate to strengthen the innovation ecosystem.",
+      foot: "",
     },
   ];
 
