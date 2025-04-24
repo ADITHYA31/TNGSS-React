@@ -67,7 +67,7 @@ export default function CurtainSection() {
           style={{
             transformOrigin: "center",
           }} className="absolute opacity-50 custom-gradient will-change-transform custom-size custom-blur custom-translate rounded-full"></div>
-[]
+
         <div ref={dummyref}
 
           className="w-full text-center"
