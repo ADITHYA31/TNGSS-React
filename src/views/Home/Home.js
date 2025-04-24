@@ -18,8 +18,9 @@ import PastEngagements from '../../components/Homepage/past_engagements';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [isMobile, setIsMobile]   = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef(null);
+  const animRef = useRef(null); // <- track animation instance
 
   // 1) sessionStorage + mobile check
   useEffect(() => {
@@ -38,28 +39,35 @@ const Home = () => {
       document.body.style.overflow = '';
       return;
     }
+
     document.body.style.overflow = 'hidden';
 
-    const anim = lottie.loadAnimation({
+    animRef.current = lottie.loadAnimation({
       container: containerRef.current,
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      rendererSettings:{
-        preserveAspectRatio: 'xMidYMid slice'
-      },
       animationData: isMobile ? mobileAnimation : loadingAnimation,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice',
+      },
     });
 
-    anim.addEventListener('complete', () => {
-      // Mark played and trigger unmount -> fade via motion.div exit
+    const onComplete = () => {
       sessionStorage.setItem('preloaderPlayed', 'true');
       setIsLoading(false);
-      anim.destroy();
-    });
+      // Clean up the animation safely
+      animRef.current?.destroy();
+      animRef.current = null;
+    };
+
+    animRef.current.addEventListener('complete', onComplete);
 
     return () => {
-      anim.destroy();
+      // Cleanup on unmount or when dependencies change
+      animRef.current?.removeEventListener('complete', onComplete);
+      animRef.current?.destroy();
+      animRef.current = null;
       document.body.style.overflow = '';
     };
   }, [isMobile, isLoading]);
@@ -76,16 +84,14 @@ const Home = () => {
             exit={{ opacity: 0, transition: { duration: 3 } }}
             className="fixed h-screen w-screen inset-0 z-50 overflow-hidden bg-black"
           >
-            <div ref={containerRef} className="w-auto h-auto relative">
-
-            </div>
+            <div ref={containerRef} className="w-auto h-auto relative"> </div>
           </motion.div>
       </AnimatePresence>
         )}
 
       <div
         className="home-fade-in bg-black text-white font-urbanist scrollbar-hide scroll-smooth"
-        
+
       >
         <NavBar />
         <StackingSections />
