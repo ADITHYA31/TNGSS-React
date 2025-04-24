@@ -22,7 +22,7 @@ export default function CMSection() {
         }}
       >
         {/* Text Section */}
-        <div className="flex flex-col items-start justify-center w-full md:w-1/2 space-y-4 px-4 md:px-6 text-left mb-4 md:mb-0">
+        <div className="flex flex-col items-start justify-center w-full md:w-1/2 space-y-1 px-4 md:px-6 text-left mb-4 md:mb-0">
           <p className="text-base md:text-4xl">
             “The government is focusing on{" "}
             <b>Integrated Industrial Development</b> in the State, and the
@@ -37,7 +37,7 @@ export default function CMSection() {
           <span className="font-semibold text-lg md:text-3xl">
             - Thiru. M.K. Stalin
           </span>
-          <span className="text-sm md:text-xl">
+          <span className="text-sm md:text-xl !mt-0">
             Hon'ble Chief Minister <br/> Government of Tamil Nadu
           </span>
         </div>

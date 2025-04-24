@@ -55,11 +55,11 @@ export default function PastEngagements() {
                   background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8) 3%, rgba(0, 0, 0, 0))'
                   }}
               >
-                <div className='p-5 rounded-full bg-accent'>
+                <div className='p-4 md:p-5 rounded-full bg-accent'>
 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-20 w-20 text-white"
+                  className=" h-14 w-14 md:h-20 md:w-20 text-white"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   >

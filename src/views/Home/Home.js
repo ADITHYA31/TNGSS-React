@@ -45,6 +45,9 @@ const Home = () => {
       renderer: 'svg',
       loop: false,
       autoplay: true,
+      rendererSettings:{
+        preserveAspectRatio: 'xMidYMid slice'
+      },
       animationData: isMobile ? mobileAnimation : loadingAnimation,
     });
 
@@ -73,10 +76,8 @@ const Home = () => {
             exit={{ opacity: 0, transition: { duration: 3 } }}
             className="fixed h-screen w-screen inset-0 z-50 overflow-hidden bg-black"
           >
-            <div ref={containerRef} className="w-full relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <img src={logo} alt="Logo" className="w-16 h-16" />
-              </div>
+            <div ref={containerRef} className="w-auto h-auto relative">
+
             </div>
           </motion.div>
       </AnimatePresence>

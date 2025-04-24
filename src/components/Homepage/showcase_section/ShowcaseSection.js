@@ -71,7 +71,7 @@ const summaryRefMobile = useRef(null);
      <div className=' relative h-fit '>
 
      <div ref={lottieRef} className="max-w-2xl h-full  mx-auto" />
-     <CTAButton src="https://event.startuptn.in/" className=" absolute bottom-14 left-1/2  -translate-x-2/3  flex sm:hidden rounded-2xl justify-center items-center  transform " contCN=' justify-center  items-center flex p-3  '>
+     <CTAButton src="https://event.startuptn.in/" className=" absolute bottom-11 left-1/2  -translate-x-2/3  flex sm:hidden rounded-2xl justify-center items-center  transform rotate-6 " contCN=' justify-center  items-center flex p-3  '>
           {/* <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "> */}
             <img className="px-2" src={vector} />
             Book Your pass
