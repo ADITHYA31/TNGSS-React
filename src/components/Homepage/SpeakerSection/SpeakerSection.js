@@ -69,7 +69,7 @@ export default function SpeakerCarousel() {
             <h2 className=" block md:hidden text-4xl font-bold text-center leading-snug whitespace-pre-line">
           Who’s speaking?
           </h2>
-        <p className='text-6xl md:text-7xl font-semibold text-[#F5710C]'>Stay Tuned !</p>
+        <p className='text-6xl md:text-7xl font-semibold text-[#F5710C]'>Stay Tuned!</p>
       </div>            <div
               className="absolute top-1/2 transform -translate-y-1/2 flex transition-all duration-700 gap-x-4"
               style={{

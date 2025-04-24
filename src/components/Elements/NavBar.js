@@ -40,7 +40,7 @@ export default function NavBar() {
     <>
       {/* Navbar */}
       <motion.div
-        className={` navbar flex fixed top-0 left-0 z-50 px-5 text-white blur-sm  w-full justify-between items-center py-5 border-b ${isScrolled ? 'bg-black':'bg-transparent'} bg-opacity-10 border-gray-600`}
+        className={` navbar flex fixed top-0 left-0 z-50 px-5 text-white blur-sm  w-full justify-between items-center py-5 pb-1 border-b ${isScrolled ? 'bg-black':'bg-transparent'} bg-opacity-10 border-gray-600`}
         initial={{ opacity: 0, translateY: "-100%" }}
         animate={controls}
         transition={{ duration: 0.3 }}
@@ -52,7 +52,7 @@ export default function NavBar() {
           src={logo}
           className="object-center"
           style={{
-            maxWidth: "100px",
+            maxWidth: "130px",
             // top: "-8px",
             // left: "20px",
           }}
@@ -69,10 +69,10 @@ export default function NavBar() {
               {item}
             </a>
           ))}
-          <ShineButton src="https://event.startuptn.in/register" className=" !hover:bg-black hidden md:block" contCN="!bg-none py-3 px-4">
+          <ShineButton src="https://event.startuptn.in/register" className=" !hover:bg-black hidden md:block" contCN="!bg-none py-2 px-4">
            Book Your Stall
           </ShineButton>
-          <ShineButton src="https://event.startuptn.in/" className=" !hover:bg-black" contCN=" hover py-3 px-4">
+          <ShineButton src="https://event.startuptn.in/" className=" !hover:bg-black" contCN=" hover py-2 px-4">
             Register Now
           </ShineButton>
         </div>

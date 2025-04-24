@@ -19,12 +19,13 @@ export default function useStackingAnimation(containerRef) {
 
     gsap.to('.cm-cont',{
       scale:0.96,
+      y:'-100',
       opacity:0.5,
       ease:'power3.inOut',
       scrollTrigger:{
         trigger:statsSection,
         start:'top bottom',
-        end:'top 40%',
+        end:'top top',
         scrub:0.8,
       }
     })

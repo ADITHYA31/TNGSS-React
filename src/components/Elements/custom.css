@@ -107,6 +107,9 @@
     backdrop-filter: blur(30px);
   }
   
+  .bg-accent{
+    background-color: #F5710C;
+  }
  .orangeDot {
      padding: 30px;
      background-color: #F5710C;
@@ -430,6 +433,7 @@
  :host,
  html {
      -webkit-text-size-adjust: 100%;
+     font-family: var(--font-urbanist);
      tab-size: 4;
      line-height: 1.5;
      font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
@@ -1411,6 +1415,9 @@
      transition-duration: .7s
  }
 
+ .h-fit {
+     height: fit-content;
+ }
 
 
  .content-\[\'\'\] {

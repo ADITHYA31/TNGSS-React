@@ -45,14 +45,20 @@ export default function ParallelScroll() {
       className="!w-3/4 md:w-1/2 h-[80vh] bg-[#F3F4F6] rounded-2xl px-4 py-4 shrink-0 h-60vh"
     >
       <div
-        className="flex flex-col justify-end w-full h-full rounded-2xl bg-cover bg-center"
+        className=" w-full h-full rounded-2xl bg-cover bg-center"
         style={{
           backgroundImage: `url(${item.img})`,
           minWidth : '300px'
         }}
       >
-        <div className="text-xxl md:text-4xl text-white px-5 pb-6">
+        <div className="flex flex-col justify-end w-full h-full rounded-2xl"
+        style={{
+        background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8) 5%, rgba(0, 0, 0, 0))'
+        }}
+        >
+        <div className="text-2xl md:text-4xl text-white px-5 pb-6">
           <p dangerouslySetInnerHTML={{ __html: item.tag }} />
+        </div>
         </div>
       </div>
     </div>

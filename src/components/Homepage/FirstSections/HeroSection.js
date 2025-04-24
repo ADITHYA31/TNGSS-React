@@ -12,7 +12,7 @@ export default function HeroSection({ className = '' }) {
   return (
     <section
       ref={heroRef}
-      className={`flex flex-col sticky top-0 w-screen h-screen bg-amber-1000 isolate ${className} justify-center items-center bg-cover bg-center`}
+      className={`flex flex-col sticky top-0 w-screen h-screen  isolate ${className} justify-center items-center bg-cover bg-center`}
       id="hero-section"
       style={{
          backgroundImage: `url(${Herobg})`,
@@ -45,8 +45,8 @@ export default function HeroSection({ className = '' }) {
       {/* <div className='relative h-96 w-96 rounded-full z-10 bg-linear-0 from-red-400 to-blue-400 blur-xl'/> */}
       
 
-  <div className='herotxt z-20 will-change-transform'>
-      <div className=" animate-floatUpBounce  relative  h-30vh h-[50vh] will-change-transform flex justify-center items-center gap-4 text-center md:mb-10 px-4 md:px-10 " style={{ width: '100%',flexDirection: 'row' }}>
+  <div className='herotxt z-20 will-change-transform mt-32'>
+      <div className=" animate-floatUpBounce  relative  h-fit h-[50vh] will-change-transform flex justify-center items-center gap-4 text-center  px-4 md:px-10 " style={{ width: '100%',flexDirection: 'row' }}>
 
   {/* StartupTN Top Logo */}
   <div className=" logo-3d-wrapper animate-floatUpBounce">
@@ -95,8 +95,8 @@ export default function HeroSection({ className = '' }) {
 </div>
       
     </div>
-    <p className=' text-center text-3xl md:text-5xl mb-5 md:mb-12  z-30'>Codissia Trade Fair Complex, Coimbatore</p>
-    <p className=' text-center text-2xl md:text-3xl mb-24 z-30'>Dates will be announced soon !</p>
+    <p className=' text-center text-3xl md:text-5xl mb-5 md:mb-7 mt-24  z-30'>Codissia Trade Fair Complex, Coimbatore</p>
+    <p className=' text-center text-2xl md:text-3xl mb-24 z-30'>Dates will be announced soon!</p>
 
     
     <div className=' absolute bottom-0 text-white text-2xl flex justify-center align-end  mt-auto w-full py-3 pb-8 px-12 z-20 mb-32 md:mb-12 '>

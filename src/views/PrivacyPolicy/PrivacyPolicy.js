@@ -12,8 +12,8 @@ const PrivacyPolicy = () => {
   };
 
   return (
-    <>
-      <Helmet>
+    <div className='font-urbanist'>
+      <Helmet className="font-urbanist">
         <title>Privacy Policy | TNGSS App</title>
         <meta
           name="description"
@@ -98,7 +98,7 @@ const PrivacyPolicy = () => {
 
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

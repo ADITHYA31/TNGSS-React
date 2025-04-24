@@ -5,11 +5,12 @@ export default function ShineButton({
   src = '/'
 }) {
   return (
-    <a href={src}>
       <a 
+      className=""
+      href={src}
         role="button" 
         style={{
-          lineHeight: '12px',
+          lineHeight: '',
           textAlign : 'center',
           display: 'inline-block'
         }}
@@ -42,6 +43,5 @@ export default function ShineButton({
             </div>
         </div>
       </a>
-    </a>
   );
 }

@@ -50,12 +50,12 @@ const summaryRefMobile = useRef(null);
         className="absolute inset-0 object-cover object-center w-full h-full -z-10"
       />
 <div className=" md:flex w-full h-screen sticky top-0 justify-around items-center px-8 z-10 md:py-0 py-20">
-     <div className="flex flex-col justify-center space-y-4 w-full md:w-1/3 text-white text-center">
-       <div ref={txtRef} className="text-6xl font-bold">Meet</div>
-       <div ref={txtColorRef} className="text-6xl font-bold" style={{ color: '#F5710C' }}>People</div>
+     <div className="flex flex-col justify-center space-y-2 md:space-y-4 w-full md:w-1/3 text-white text-center">
+       <p ref={txtRef} className="text-6xl font-bold">Meet</p>
+       <p ref={txtColorRef} className="text-6xl font-bold " style={{ color: '#F5710C' }}>People</p>
         
        <div className="hidden md:block relative w-full" style={{ margin: '50px 0px 50px 0px' }}>
-         <img className="absolute w-2/3" style={{ top: '-60px', left: '17%' }} src={logo} alt="CTA Button" />
+         <img className="absolute w-2/3" style={{ top: '-140%', left: '17%' }} src={logo} alt="CTA Button" />
          <CTAButton src="https://event.startuptn.in/" className="rounded-2xl transform -rotate-6">
            <div className="w-70 h-10 px-6 py-7 flex items-center justify-center ">
              <img className="px-2" src={vector} />
@@ -68,10 +68,10 @@ const summaryRefMobile = useRef(null);
          Meet the right people. Spark the right ideas. <br /> Create the future.
        </div>
      </div>
-     <div className=' relative '>
+     <div className=' relative h-fit '>
 
-     <div ref={lottieRef} className="max-w-2xl h-auto my-6 mx-auto" />
-     <CTAButton src="https://event.startuptn.in/" className=" absolute bottom-14 left-1/2  -translate-x-2/3  flex sm:hidden rounded-2xl justify-center items-center  transform " contCN=' justify-center gap-2 items-center flex p-4 '>
+     <div ref={lottieRef} className="max-w-2xl h-full  mx-auto" />
+     <CTAButton src="https://event.startuptn.in/" className=" absolute bottom-14 left-1/2  -translate-x-2/3  flex sm:hidden rounded-2xl justify-center items-center  transform " contCN=' justify-center  items-center flex p-3  '>
           {/* <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "> */}
             <img className="px-2" src={vector} />
             Register Now
