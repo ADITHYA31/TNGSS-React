@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import CTAButton from "./CTAButton";
 import ShineButton from "./ShineButton";
+import vector from '../../assets/Vector.svg?url'
+
 
 export default function NavBar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -72,8 +74,8 @@ export default function NavBar() {
           <ShineButton src="https://event.startuptn.in/register" className=" !hover:bg-black hidden md:block" contCN="!bg-none py-2 px-4">
            Book Your Stall
           </ShineButton>
-          <ShineButton src="https://event.startuptn.in/" className=" !hover:bg-black" contCN=" hover py-2 px-4">
-            Register Now
+          <ShineButton src="https://event.startuptn.in/" className=" !hover:bg-black flex " contCN=" hover py-2 px-2 ">
+          <img className="px-2 inline-block" src={vector}/>Book Your pass
           </ShineButton>
         </div>
 

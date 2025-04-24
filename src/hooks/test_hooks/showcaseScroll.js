@@ -63,8 +63,8 @@ export function useShowcaseScroll(someref, txtRef, txtColorRef, summaryRefDeskto
         } else {
           txtRef.current.innerText = "Beyond";
           txtColorRef.current.innerText = "The Stage";
-          summaryRefDesktop.current.innerText = "Explore dynamic networking zones, immersive exhibits, hands-on demos, one-on-one investor meetings, mentorship sessions, and much more that make the TNGSS a truly holistic experience.";
-          summaryRefMobile.current.innerText = "Explore dynamic networking zones, immersive exhibits, hands-on demos, one-on-one investor meetings, mentorship sessions, and much more that make the TNGSS a truly holistic experience.";
+          summaryRefDesktop.current.innerText = "Experience dynamic networking, immersive exhibits, live demos, investor meets, mentorship, and more";
+          summaryRefMobile.current.innerText = "Experience dynamic networking, immersive exhibits, live demos, investor meets, mentorship, and more";
         }
       },
     });

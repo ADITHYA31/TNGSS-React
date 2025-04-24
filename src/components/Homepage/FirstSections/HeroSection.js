@@ -101,7 +101,7 @@ export default function HeroSection({ className = '' }) {
     
     <div className=' absolute bottom-0 text-white text-2xl flex justify-center align-end  mt-auto w-full py-3 pb-8 px-12 z-20 mb-32 md:mb-12 '>
       <CTAButton src="https://event.startuptn.in/" className=" rounded-2xl hover:scale-105">
-             <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> REGISTER NOW</div>
+             <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> Book Your pass</div>
          </CTAButton>
 
     </div>
