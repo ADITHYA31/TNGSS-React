@@ -13,7 +13,7 @@ export default function CMSection() {
       className=" sticky top-0  overflow-hidden  w-full h-screen z-10 p-2 "
     >
       <section
-        className=" cm-cont h-full w-full bg-white z-20 flex  flex-col-reverse md:flex-row rounded items-center justify-center overflow-hidden text-black px-4 "
+        className=" cm-cont h-full w-full bg-white z-20 flex  flex-col-reverse md:flex-row rounded items-center justify-center overflow-hidden text-black px-4 will-change-transform "
         style={{
           backgroundImage: `url(${CMbg})`,
           backgroundSize: "cover",

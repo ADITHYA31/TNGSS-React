@@ -45,7 +45,7 @@ export default function HeroSection({ className = '' }) {
       {/* <div className='relative h-96 w-96 rounded-full z-10 bg-linear-0 from-red-400 to-blue-400 blur-xl'/> */}
       
 
-  <div className='herotxt z-20'>
+  <div className='herotxt z-20 will-change-transform'>
       <div className=" animate-floatUpBounce  relative  h-30vh h-[50vh] will-change-transform flex justify-center items-center gap-4 text-center md:mb-10 px-4 md:px-10 " style={{ width: '100%',flexDirection: 'row' }}>
 
   {/* StartupTN Top Logo */}

@@ -77,10 +77,8 @@ export default function AtendeesSection() {
       }, 0); // all start together
     });
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  },);
+
+  },{dependencies:[]});
 
 
   return (

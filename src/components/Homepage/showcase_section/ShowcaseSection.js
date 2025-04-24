@@ -80,7 +80,7 @@ const summaryRefMobile = useRef(null);
        
      </div>
      
-       <div ref={summaryRefDesktop} className="flex sm:hidden md:text-lg text-xl py-6 text-center leading-relaxed">
+       <div ref={summaryRefDesktop} className="flex sm:hidden md:text-lg text-xl pb-6 text-center leading-relaxed">
          Meet the right people. Spark the right ideas. <br /> Create the future.
        </div>
    </div>

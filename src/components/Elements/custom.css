@@ -254,6 +254,10 @@
      filter: blur(70px);
  }
 
+ .will-change-transform {
+    will-change: transform;
+ }
+
  .custom-translate {
      transform: translateY(-70%);
  }
@@ -1407,9 +1411,7 @@
      transition-duration: .7s
  }
 
- .will-change-transform {
-     will-change: transform
- }
+
 
  .content-\[\'\'\] {
      --tw-content: "";

@@ -4,6 +4,7 @@ import { useSwipeScroll } from "../../../hooks/useSwipeScroll";
 import AtendeesSection from "./AttendeesCatSection/AttendeesCatSection";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +21,7 @@ export default function CurtainSection() {
   // useSwipeScroll(mainRef, flagsRef, curtainRef); // pass curtainRef into hook
 
 
-  useEffect(() => {
+  useGSAP(() => {
     // Fade-out effect for "Why Attend" section with scroll
     gsap.fromTo(
       headingRef.current,
@@ -58,21 +59,21 @@ export default function CurtainSection() {
       }
     );
 
-  }, []);
+  }, {dependencies:[sectionRef]});
   return (
     <div className="relative w-full">
       <div className=" relative h-fit  w-full z-10 ">
         <div ref={sectionRef}
           style={{
             transformOrigin: "center",
-          }} className="absolute opacity-50 custom-gradient custom-size custom-blur custom-translate rounded-full"></div>
-
+          }} className="absolute opacity-50 custom-gradient will-change-transform custom-size custom-blur custom-translate rounded-full"></div>
+[]
         <div ref={dummyref}
 
           className="w-full text-center"
 
         >
-          <p ref={headingRef} className="text-white text-6xl md:text-9xl opacity-80 mix-blend-lighten gradient-text-attend mt-10">
+          <p ref={headingRef} className="text-white will-change-transform text-6xl md:text-9xl opacity-80 mix-blend-lighten gradient-text-attend mt-10">
             Why Attend
           </p>
         </div>
