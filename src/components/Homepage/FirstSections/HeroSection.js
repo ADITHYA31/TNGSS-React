@@ -98,7 +98,7 @@ export default function HeroSection({ className = '' }) {
       
     </div>
     <p className=' text-center text-3xl md:text-5xl mb-5 md:mb-7 mt-14 md:mt-24  z-30'><img className='w-6 md:w-9 inline mb-1  mr-1 text-white' src={pin}/>Codissia Trade Fair Complex, Coimbatore</p>
-    <p className=' text-center text-2xl md:text-3xl mb-24 z-30'>Dates will be announced soon!</p>
+    <p className=' text-center text-2xl md:text-3xl mb-14 md:mb-24 z-30'>Dates will be announced soon!</p>
 
     
     <div className='  text-white text-2xl flex justify-center align-end   py-3  z-20 '>
