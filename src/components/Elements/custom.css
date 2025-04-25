@@ -32,8 +32,8 @@
   
   .flip-front,
 .flip-back {
-    -webkit-backface-visibility: hidden !important; /* Safari fix */
-    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden; /* Safari fix */
+    backface-visibility: hidden;
 }
 
 

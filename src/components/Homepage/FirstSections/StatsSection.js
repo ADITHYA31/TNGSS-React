@@ -39,7 +39,7 @@ export default function StatsSection({ className = '' }) {
         borderRadius: '0.75rem',
         height: '100vh'
       }}
-      className={` overflow-hidden sticky top-0 w-full h-full lg:h-screen z-10 p-2 ${className}`}
+      className={` overflow-hidden sticky top-0 w-full h-full lg:h-screen z-10 p-2 my-24 ${className}`}
       id="stats-section"
     >
       <div

@@ -13,8 +13,8 @@ const FlippingCard = forwardRef(({ children, className = '', flipinvert = false,
       className={`flip-card w-80 h-96 radius-2xl ${className}`}
     >
       <div className={`flip-inner radius-2xl ${flipinvert ? 'invert' : ''}`}>
-        <div className="flip-front backface-hidden  ">{frontContent}</div>
-        <div className="flip-back backface-hidden ">{backContent}</div>
+        <div className="flip-front">{frontContent}</div>
+        <div className="flip-back">{backContent}</div>
       </div>
     </div>
   );
