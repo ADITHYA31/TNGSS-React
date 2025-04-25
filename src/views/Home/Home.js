@@ -15,6 +15,7 @@ import ShowcaseSection from '../../components/Homepage/showcase_section/Showcase
 import SponsSection from '../../components/Homepage/SponsSection';
 import SpeakerSection from '../../components/Homepage/SpeakerSection/SpeakerSection';
 import PastEngagements from '../../components/Homepage/past_engagements';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -75,6 +76,13 @@ const Home = () => {
   return (
     <>
       {/* AnimatePresence will detect when isLoading goes false and play exit */}
+      <Helmet className="font-urbanist">
+        <title>Tamil Nadu Global Startup Summit 2025 | Empowering Innovation & Entrepreneurship</title>
+        <meta
+          name="description"
+          content="Join the Tamil Nadu Global Startup Summit 2025 – a premier platform connecting startups, investors, policymakers, and global innovators. Explore opportunities, network, and drive impact. Powered by StartupTN."
+        />
+      </Helmet>
         {isLoading && (
       <AnimatePresence>
           <motion.div
