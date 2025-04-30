@@ -8,12 +8,13 @@ export default function useStackingAnimation(containerRef) {
 
     gsap.to('.herotxt',{
       y:'-200',
+      opacity:0.4,
       ease:'power3.inOut',
       scrollTrigger:{
-        trigger:containerRef.current,
+        trigger:heroSection,
         start:'top top',
-        end:'+=600',
-        scrub:0.8,
+        end:'',
+        scrub:0.9,
       }
     })
 

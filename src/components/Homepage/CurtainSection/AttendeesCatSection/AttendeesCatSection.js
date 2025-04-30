@@ -34,7 +34,7 @@ export default function AtendeesSection() {
       img: Frame4,
       title: "Aspirants",
       des: "Whether you're a student, aspiring entrepreneur, or young innovator, this is your chance to gain knowledge, find opportunities, and take the first step toward building something extraordinary.",
-      foot: "Your future starts here: network, learn, and grow.",
+      foot: "Your future starts here : network, learn, and grow.",
     },
     {
       img: Frame2,
@@ -77,21 +77,23 @@ export default function AtendeesSection() {
       }, 0); // all start together
     });
 
-
-  },{dependencies:[]});
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  },);
 
 
   return (
     <>
 
 
-      <section className="attendees-section flex flex-col w-screen min-h-screen justify-center items-center bg-black pt-32 pb-0 overflow-visible">
+      <section className="attendees-section flex flex-col w-screen min-h-screen justify-center items-center bg-black py-20 px-20 overflow-y-visible overflow-x-visible">
 
-        <div className="flex max-md:flex-col isolate items-center gap-4">
+        <div className="flex max-md:flex-col isolate max-w-7xl md:mr-14  justify-center items-center  md:gap-1">
           {data.map((item, index) => (
             <div
               key={index}
-              className="relative pt-24" // More breathing space
+              className="relative mt-32 md:mt-7" // More breathing space
             >
               <div
                 ref={(el) => (cardsRef.current[index] = el)} // Shift ref here
@@ -102,26 +104,19 @@ export default function AtendeesSection() {
                   className={`${index % 2 === 0 ? "rotate-6" : "-rotate-6"
                     } hover:z-50 rounded-2xl`} // No overflow here
                 >
-                  <div className="relative w-80 h-96 rounded-2xl overflow-hidden gradient-border "> {/* Card shape */}
+                  <div className="relative w-80 h-96 rounded-2xl overflow-hidden "> {/* Card shape */}
                     <img
                       src={item.img}
                       className="w-full h-full object-cover object-center absolute inset-0 radius-2xl gradient-border "
                       alt={item.title}
                     />
-                    <div className=" relative flex w-full h-full rounded-2xl  z-10"
-                    style={{
-                    background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8) 5%, rgba(0, 0, 0, 0))'
-                    }}
-                    >
-
-                    <div className="self-end ">
+                    <div className="self-end z-10">
                         <p className="text-2xl font-semibold" style={{
                           color: '#fff',
                           position: 'absolute',
                           bottom: '20px',
                           left: '20px',
                         }}>{item.title}</p>
-                    </div>
                     </div>
                   </div>
 

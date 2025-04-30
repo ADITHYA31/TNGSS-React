@@ -75,7 +75,7 @@ export default function NavBar() {
            Book Your Stall
           </ShineButton>
           <ShineButton src="https://event.startuptn.in/" className=" !hover:bg-black flex " contCN=" hover py-2 px-2 ">
-          <img className="px-2 inline-block" src={vector}/>Book Your pass
+          <img className="px-2 inline-block" src={vector}/>Book Your Pass
           </ShineButton>
         </div>
 

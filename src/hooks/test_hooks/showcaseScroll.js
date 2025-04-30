@@ -35,7 +35,7 @@ export function useShowcaseScroll(someref, txtRef, txtColorRef, summaryRefDeskto
         trigger: someref.current,
         start: "top top",
         end: "+=1500",
-        scrub: 0.6,
+        scrub: 0.9,
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,

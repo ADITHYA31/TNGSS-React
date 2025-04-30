@@ -14,7 +14,7 @@ export default function HeroSection({ className = '' }) {
   return (
     <section
       ref={heroRef}
-      className={`flex flex-col sticky top-0 w-screen h-screen  isolate ${className} justify-center items-center bg-cover bg-center`}
+      className={`flex flex-col sticky top-0 w-screen h-screen  isolate md:px-12  ${className} justify-center items-center bg-cover bg-center`}
       id="hero-section"
       style={{
          backgroundImage: `url(${Herobg})`,
@@ -47,7 +47,7 @@ export default function HeroSection({ className = '' }) {
       {/* <div className='relative h-96 w-96 rounded-full z-10 bg-linear-0 from-red-400 to-blue-400 blur-xl'/> */}
       
 
-  <div className='herotxt z-20 will-change-transform mt-32'>
+  <div className=' relative herotxt z-20 md:mt-20 will-change-transform '>
       <div className=" animate-floatUpBounce  relative  h-fit h-[50vh] will-change-transform flex justify-center items-center gap-4 text-center  px-4 md:px-10 " style={{ width: '100%',flexDirection: 'row' }}>
 
   {/* StartupTN Top Logo */}
@@ -97,13 +97,13 @@ export default function HeroSection({ className = '' }) {
 </div>
       
     </div>
-    <p className=' text-center text-3xl md:text-5xl mb-5 md:mb-7 mt-14 md:mt-24  z-30'><img className='w-6 md:w-9 inline mb-1  mr-1 text-white' src={pin}/>Codissia Trade Fair Complex, Coimbatore</p>
-    <p className=' text-center text-2xl md:text-3xl mb-14 md:mb-24 z-30'>Dates will be announced soon!</p>
+    <p className=' text-center text-3xl md:text-5xl mb-5 md:mb-7 mt-14 md:mt-12  z-30'><img className='w-6 md:w-9 inline mb-1  mr-1 text-white' src={pin}/>Codissia Trade Fair Complex, Coimbatore</p>
+    <p className=' text-center text-2xl md:text-3xl mb-14 md:mb-4 z-30'>Dates will be announced soon!</p>
 
     
-    <div className='  text-white text-2xl flex justify-center align-end   py-3  z-20 '>
+    <div className=' absolute bottom-36 md:bottom-6 text-white text-2xl flex justify-center align-end   py-3 z-20   '>
       <CTAButton src="https://event.startuptn.in/" className=" rounded-2xl hover:scale-105">
-             <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> Book Your pass</div>
+             <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> Book Your Pass</div>
          </CTAButton>
 
     </div>

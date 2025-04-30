@@ -9,7 +9,7 @@ export default function StatsSection({ className = '' }) {
   useStackingAnimation(contentRef);
 
   const data = [
-    { count: 10, tag: 'Global Startup Stakeholders' },
+    { count: 20, tag: 'Global Startup Stakeholders' },
     { count: 100, tag: 'Ecosystem Partners' },
     { count: 30000, tag: 'Attendees' },
     { count: 750, tag: 'Stalls' },
