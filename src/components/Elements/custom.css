@@ -32,8 +32,8 @@
   
   .flip-front,
 .flip-back {
-    -webkit-backface-visibility: hidden; /* Safari fix */
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden !important; /* Safari fix */
+    backface-visibility: hidden !important;
 }
 
 
@@ -1430,8 +1430,8 @@
  }
 
  .backface-hidden {
-     -webkit-backface-visibility:hidden;
-     backface-visibility: hidden;
+     -webkit-backface-visibility:hidden !important;
+     backface-visibility: hidden !important;
  }
 
  .perspective-midrange {
