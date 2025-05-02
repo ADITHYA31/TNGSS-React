@@ -81,7 +81,6 @@ const WhyAttend = () => {
 
       {!isLoading && (
         <div className="home-fade-in bg-black text-white font-urbanist scrollbar-hide scroll-smooth" style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
-          <NavBar />
           <div className="relative isolate overflow-clip will-change-transform z-20">
             <HeroSection title={"The Ultimate Global Gathering for Founders"}/>
             <WhySwiper />
@@ -90,7 +89,6 @@ const WhyAttend = () => {
           <PitchBattleSection title={'Startup Pitch Battle'} description={'Codissia Trade Fair Complex, Coimbatore.'}/>
           <SpeakersSection/>
           <USPSection />
-          <Footer />
         </div>
       )}
     </>

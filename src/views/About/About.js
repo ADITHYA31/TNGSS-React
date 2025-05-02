@@ -12,14 +12,12 @@ import GetInvolvedSection from '../../components/About/GetInvolvedSection';
 const About = () => {
   return (
     <div style={{backgroundColor:'black'}}>
-        <NavBar/>
         <HeroSection title={"About Us"} subtitle={"TNGSS Conversations: Where Ideas Collide"}/>
         <IntroMissionSection/>
         <WhyTamilNaduSection/>
         <FocusAreasSection/>
         <KeyFocusSection/>
         <GetInvolvedSection/>
-        <Footer/>
     </div>
   );
 };

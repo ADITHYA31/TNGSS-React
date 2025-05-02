@@ -101,14 +101,12 @@ const Home = () => {
         className="home-fade-in bg-black text-white font-urbanist scrollbar-hide scroll-smooth"
 
       >
-        <NavBar />
         <StackingSections />
         <CurtainSection />
         <SpeakerSection />
         <ShowcaseSection />
         <PastEngagements />
         <PreFooter />
-        <Footer />
       </div>
     </>
   );

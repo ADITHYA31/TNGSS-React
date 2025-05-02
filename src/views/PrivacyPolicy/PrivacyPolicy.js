@@ -21,7 +21,6 @@ const PrivacyPolicy = () => {
         />
       </Helmet>
 
-      <NavBar />
       <div className="home-fade-in bg-black text-white font-urbanist scrollbar-hide scroll-smooth px-6 py-12 md:px-20 lg:px-40">
         <div className="relative w-full">
           <div className=" relative h-fit  w-full ">
@@ -97,7 +96,6 @@ const PrivacyPolicy = () => {
           </div></div>
 
       </div>
-      <Footer />
     </div>
   );
 };
