@@ -67,16 +67,17 @@ const WhyTamilNaduSection = () => {
       style={{ backgroundImage: `url(${background})` }}
     >
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">
           {/* Gradient Image Frame */}
           <div className="flex justify-center">
-            <div className="p-[3px] bg-gradient-to-br from-blue-500 via-green-500 to-yellow-400 rounded-3xl">
-              <div className="bg-black rounded-3xl p-2">
-                <img
-                  src={images[imageIndex]}
-                  alt="Why Tamil Nadu"
-                  className="rounded-2xl max-h-[500px] w-full object-cover transition-opacity duration-700"
-                />
+            <div className="p-[3px] ">
+              <div className=" rounded-3xl p-2">
+              <img
+  src={images[imageIndex]}
+  alt="Why Tamil Nadu"
+  className="w-[80%] md:w-[60%] mx-auto rounded-[25px] shadow-xl border-4 border-white  rounded-2xl object-cover transition-opacity duration-700"
+/>
+
               </div>
             </div>
           </div>

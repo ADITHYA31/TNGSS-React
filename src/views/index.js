@@ -4,3 +4,4 @@ export { default as About } from './About';
 export { default as PrivacyPolicy } from './PrivacyPolicy';
 export { default as TermsandCondition } from './TermsAndCondition';
 export { default as WhyAttend } from './WhyAttend';
+export { default as Speakers} from './Speakers';

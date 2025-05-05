@@ -4,7 +4,7 @@ import bgImage from '../../assets/img/image.png';
 const HeroSection = ({ className = '', title, subtitle }) => {
   return (
     <section
-      className={`flex flex-col sticky top-0 w-screen h-screen bg-amber-1000 isolate ${className} justify-center items-center bg-cover bg-center`}
+      className={` z-0 flex flex-col w-screen h-screen bg-amber-1000 isolate ${className} justify-center items-center bg-cover bg-center`}
       id="hero-section"
       style={{
         backgroundImage: `url(${bgImage})`,
