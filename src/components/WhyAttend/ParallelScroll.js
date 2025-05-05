@@ -31,7 +31,7 @@ export default function ParallelScroll() {
               className="w-2/3 md:w-1/2 h-[80vh]  rounded-2xl px-4 py-4 shrink-0 h-30vh"
             >
               <div
-                className="flex flex-col justify-end w-full h-full rounded-2xl bg-cover bg-center"
+                className="flex flex-col justify-end w-full h-full rounded-2xl bg-cover bg-center "
                 style={{
                   backgroundImage: `url(${item.image})`,
                   minWidth: '200px'

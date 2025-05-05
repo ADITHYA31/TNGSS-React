@@ -210,32 +210,40 @@ export default function FocusAreasSection() {
       msOverflowStyle: "none",
     }}
   >
-    <div 
-      ref={contentRef}
-      className="flex"
-    >
+    <div ref={contentRef} className="flex">
       {duplicatedItems.map((it, i) => (
         <div
           key={i}
-          className={`inline-block w-80 md:w-96 lg:w-[500px] h-64 md:h-80 mx-4 rounded-2xl border-4 ${it.bd} bg-center bg-cover relative`}
-          style={{ 
-            backgroundImage: `url(${it.img})`,
-            flexShrink: 0
+          className="inline-block mx-4"
+          style={{
+            background: "linear-gradient(to right, #0055FF, #18BFDB, #F5710C, #EC473E)",
+            padding: "2px",
+            borderRadius: "1rem", // match tailwind's rounded-2xl
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 rounded-2xl" />
-          <div className="relative z-10 p-6 flex flex-col justify-end h-full">
-            <h3 className="text-xl font-semibold mb-2">{it.title}</h3>
-            <p className="text-sm mb-4">{it.desc}</p>
-            <a href="#" className="text-white font-semibold underline">
-              Read More
-            </a>
+          {/* Inner card with image and overlay */}
+          <div
+            className="w-60 md:w-96 lg:w-[500px] h-48 md:h-64 rounded-2xl bg-center bg-cover relative"
+            style={{
+              backgroundImage: `url(${it.img})`,
+              flexShrink: 0,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 rounded-2xl" />
+            <div className="relative z-10 p-6 flex flex-col justify-end h-full text-white">
+              <h3 className="text-xl font-semibold mb-2">{it.title}</h3>
+              <p className="text-sm mb-4">{it.desc}</p>
+              <a href="#" className="font-semibold underline">
+                Read More
+              </a>
+            </div>
           </div>
         </div>
       ))}
     </div>
   </div>
 </div>
+
 
       </div>
     </section>

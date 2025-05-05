@@ -119,8 +119,9 @@ const HeroSection = ({ className = '' }) => {
     <img
       src={innerImage}
       alt="Digital Abstract"
-      className="absolute -left-3 md:-left-40 bottom-1/4 w-1/3  rounded-2xl shadow-lg "
-      style={{width:"80%"}}
+      className="absolute -left-3 md:-left-40 bottom-16 w-1/3 rounded-2xl shadow-lg md:bottom-24"
+
+      style={{width:"95%"}}
 
     />
   </div>

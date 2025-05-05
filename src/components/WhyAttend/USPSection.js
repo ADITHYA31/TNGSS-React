@@ -22,7 +22,7 @@ export default function USPSection() {
 
             <div ref={mainRef} className="relative flex justify-center">
                 <div className="relative flex justify-center items-center h-[60vh] w-screen h-30vh ">
-                    <p className="text-white sticky top-10 text-6xl text-center md:text-8xl font-bold md:mb-36 md-10">Key Highlights</p>
+                    <p className="text-white sticky top-10 text-6xl text-center md:text-8xl font-bold md:mb-36 md-10">TNGSS USP</p>
                 </div>
             </div>
 

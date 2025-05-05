@@ -24,4 +24,35 @@
     }
     
   }
+  .custom-arrow-button {
+    position: absolute;
+    right: -1rem; /* -right-4 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem;  /* w-12 */
+    height: 3rem; /* h-12 */
+    background-color: #f97316; /* bg-orange-500 */
+    border-radius: 9999px; /* rounded-full */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+  }
   
+  .custom-arrow-button:hover {
+    background-color: #ea580c; /* hover:bg-orange-600 */
+  }
+  
+  .arrow-icon {
+    color: white;
+  }
+  
+  .gradient-border {
+    background: linear-gradient(to right, #0055FF, #18BFDB, #F5710C, #EC473E);
+    padding: 2px;
+    border-radius: 1.5rem; /* same as Tailwind's rounded-3xl */
+  }

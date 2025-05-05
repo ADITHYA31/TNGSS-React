@@ -53,12 +53,17 @@ export default function SpeakersSection() {
           {speakers.map((speaker, idx) => (
             <div
               key={idx}
-              className={`relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg`}
+              className={`relative w-full aspect-[3/4]  overflow-hidden shadow-lg rounded-xl`}
+              style={{
+                background: "linear-gradient(to right, #0055FF, #18BFDB, #F5710C, #EC473E)",
+                padding:"2px"
+              }}
             >
               <img
                 src={speaker.image}
                 alt={speaker.name}
                 className="w-full h-full object-cover"
+             
               />
               <div className="absolute bottom-0 w-full px-4 py-3 bg-gradient-to-t from-black/70 to-transparent text-white">
                 <h5 className="text-lg font-semibold font-urbanist">{speaker.name}</h5>

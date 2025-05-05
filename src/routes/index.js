@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import RouteWithLayout from '../components/RouteWithLayout';
-import { Home, NotFound,WhyAttend,About,PrivacyPolicy,TermsandCondition,Speakers } from '../views'; // Assuming you have a layout component
+import { Home, NotFound,WhyAttend,About,PrivacyPolicy,TermsandCondition,Speakers,Faq } from '../views'; // Assuming you have a layout component
 
 const AppRoutes = () => {
   return (
@@ -11,7 +11,7 @@ const AppRoutes = () => {
       <Route path="/about-us" element={<RouteWithLayout  component={About} />} />
       <Route path="/why-attend" element={<RouteWithLayout  component={WhyAttend} />} />
    <Route path="/speakers" element={<RouteWithLayout  component={Speakers} />} />
-      
+   <Route path="/faq" element={<RouteWithLayout  component={Faq} />} />
       <Route path="/privacy-policy" element={<RouteWithLayout  component={PrivacyPolicy} />} />
       <Route path="/terms-and-condition" element={<RouteWithLayout  component={TermsandCondition} />} />
       <Route path="/" element={<Navigate to="/home" />} />
