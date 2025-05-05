@@ -56,3 +56,30 @@
     padding: 2px;
     border-radius: 1.5rem; /* same as Tailwind's rounded-3xl */
   }
+  .text-gradient {
+    background: linear-gradient(to right, #0055FF, #18BFDB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* margin-left: 7px; */
+  }
+  .orange-circle {
+    width:25px; /* Adjust size for the circle */
+    height:25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #F5710C; /* Orange color */
+    color: white;
+    font-size: 1.25rem; /* Adjust the font size for "+" and "-" */
+    transition: background-color 0.3s;
+  }
+  .get-text{
+    color: #18BFDB;
+  }
+  .signup-bg{
+    /* background-color: rgb(196, 190, 190); */
+    background-color: #242323 !important;
+    
+    /* width: 900px; */
+  }
