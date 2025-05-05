@@ -6,3 +6,4 @@ export { default as TermsandCondition } from './TermsAndCondition';
 export { default as WhyAttend } from './WhyAttend';
 export { default as Speakers} from './Speakers';
 export { default as Faq} from './Faq';
+export { default as Program} from './Program';

@@ -82,7 +82,7 @@ const Speakers = () => {
 
 
         <div
-  className="bg-cover bg-center flex flex-col w-screen h-screen justify-start max-w-6xl mx-auto"
+  className="bg-cover bg-center flex flex-col w-screen h-screen justify-start "
   style={{ backgroundImage: `url(${bgImage})` }}
 >
   <div className="w-full max-w-7xl px-4 pt-32 mt-4">
