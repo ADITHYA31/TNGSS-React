@@ -96,57 +96,51 @@
 // };
 
 // export default KeyFocusSection;
-import React, { useState, useEffect ,useRef} from "react";
+import React, { useState, useEffect } from "react";
+import { FaArrowRight } from "react-icons/fa";
 import icon1 from "../../assets/img/ai-technology.png";
 import icon2 from "../../assets/img/diversity.png";
 import icon3 from "../../assets/img/robustness.png";
-
 
 const KeyFocusSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
-  const marqueeRef = useRef(null);
 
   const items = [
     {
-      title: "Ethical AI",
-      description:
-        "Connect with top investors and breakthrough startups using curated networking, dedicated meeting zones, and exclusive lounges, designed to maximize opportunities and accelerate success.",
-      icon: icon1,
-      read: "Read More"
-    },
-    {
       title: "Diversity",
-      description:
-        "Connect with top investors and breakthrough startups using curated networking, dedicated meeting zones, and exclusive lounges, designed to maximize opportunities and accelerate success.",
+      description: "Connect with top investors and breakthrough startups using curated networking, dedicated meeting zones, and exclusive lounges, designed to maximize opportunities and accelerate success.",
       icon: icon2,
       read: "Read More"
     },
     {
       title: "Robust",
-      description:
-        "Connect with top investors and breakthrough startups using curated networking, dedicated meeting zones, and exclusive lounges, designed to maximize opportunities and accelerate success.",
+      description: "Connect with top investors and breakthrough startups using curated networking, dedicated meeting zones, and exclusive lounges, designed to maximize opportunities and accelerate success.",
       icon: icon3,
       read: "Read More"
     },
     {
       title: "Sustainability",
-      description:
-        "Connect with top investors and breakthrough startups using curated networking, dedicated meeting zones, and exclusive lounges, designed to maximize opportunities and accelerate success.",
+      description: "Connect with top investors and breakthrough startups using curated networking, dedicated meeting zones, and exclusive lounges, designed to maximize opportunities and accelerate success.",
       icon: icon3,
+      read: "Read More"
+    },
+    {
+      title: "Ethical AI",
+      description: "Connect with top investors and breakthrough startups using curated networking, dedicated meeting zones, and exclusive lounges, designed to maximize opportunities and accelerate success.",
+      icon: icon1,
+      read: "Read More"
+    },
+    {
+      title: "Innovation",
+      description: "Connect with top investors and breakthrough startups using curated networking, dedicated meeting zones, and exclusive lounges, designed to maximize opportunities and accelerate success.",
+      icon: icon2,
       read: "Read More"
     },
   ];
 
-  const gradients = [
-    "linear-gradient(135deg, #0055FF, #18BFDB)",
-    "linear-gradient(135deg, #18BFDB, #F5710C)",
-    "linear-gradient(135deg, #F5710C, #EC473E)",
-    "linear-gradient(135deg, #EC473E, #0055FF)",
-  ];
-
-  // Update visibleCount on resize
+  // Auto-scroll effect
   useEffect(() => {
     const updateCount = () => {
       if (window.innerWidth < 640) setVisibleCount(1);
@@ -155,111 +149,84 @@ const KeyFocusSection = () => {
     };
     updateCount();
     window.addEventListener("resize", updateCount);
-    return () => window.removeEventListener("resize", updateCount);
-  }, []);
-
-  // Auto-advance every 3s when not paused
-  useEffect(() => {
-    const maxIndex = items.length - visibleCount;
-    const iv = setInterval(() => {
+    
+    const interval = setInterval(() => {
       if (!isPaused) {
-        setCurrentIndex((i) => (i >= maxIndex ? 0 : i + 1));
+        setCurrentIndex(prev => (prev + 1) % (items.length - visibleCount + 1));
       }
     }, 3000);
-    return () => clearInterval(iv);
-  }, [visibleCount, items.length, isPaused]);
-
-  // Handle pause on hover
-  const handleMouseEnter = () => {
-    setIsPaused(true);
-    if (marqueeRef.current) {
-      marqueeRef.current.style.animationPlayState = 'paused';
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setIsPaused(false);
-    if (marqueeRef.current) {
-      marqueeRef.current.style.animationPlayState = 'running';
-    }
-  };
-
-  // Handle click to stop/start
-  const handleCardClick = () => {
-    setIsPaused(prev => !prev);
-    if (marqueeRef.current) {
-      marqueeRef.current.style.animationPlayState = isPaused ? 'running' : 'paused';
-    }
-  };
-
-  const looped = [...items, ...items];
+    
+    return () => {
+      window.removeEventListener("resize", updateCount);
+      clearInterval(interval);
+    };
+  }, [visibleCount, isPaused, items.length]);
 
   return (
-    <section className="bg-black text-white py-16 px-4 overflow-hidden">
-      <div>
+    <section className="bg-black text-white py-16 px-4 font-urbanist">
+      <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Key Areas to Focus
         </h2>
 
         <div 
-          className="relative w-full overflow-hidden mt-5"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          className="relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
-          <div
-            ref={marqueeRef}
-            className="flex animate-marquee"
-            style={{ animationDuration: "20s" }} // adjust speed here
-          >
-            {looped.map((item, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {items.slice(currentIndex, currentIndex + visibleCount).map((item, index) => (
               <div
-                key={idx}
-                className={`
-                  flex-shrink-0 
-                  w-full sm:w-1/2 lg:w-1/3 
-                  px-2 sm:px-4 lg:px-6
-                  transition-transform duration-300 hover:scale-105
-                  cursor-pointer
-                `}
-                onClick={handleCardClick}
+                key={`${item.title}-${index}`}
+                className="relative rounded-3xl overflow-visible" // Changed to overflow-visible
+                style={{
+                  background: "linear-gradient(to right, #0055FF, #18BFDB, #F5710C, #EC473E)",
+                  padding: "2px",
+                  height: "250px",
+                }}
               >
-                <div 
-                  className="p-[2px] rounded-xl mb-4 hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
-                  style={{
-                    background: ["#0055FF","#18BFDB","#F5710C","#EC473E"][idx % 4],
-                  }}
-                >
-                  <div className="bg-black rounded-xl p-6 h-full hover:bg-gray-900 transition-colors duration-300">
-                    <img
-                      src={item.icon}
-                      alt={item.title}
-                      className="w-12 h-12 mb-4"
-                    />
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-300 text-sm">
-                      {item.description}
-                    </p>
-                    <p className="text-white-300 text-sm mt-3 font-bold hover:text-blue-400 transition-colors duration-300">
-                      {item.read}
-                    </p>
-                  </div>
+                <div className="w-full h-full rounded-3xl bg-black p-6 flex flex-col">
+                  <img
+                    src={item.icon}
+                    alt={item.title}
+                    className="w-12 h-12 mb-4"
+                  />
+                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-300 mb-4">{item.description}</p>
+                  <a href="#" className="font-semibold underline">
+                    {item.read}
+                  </a>
                 </div>
+
+                {/* Arrow on last visible card */}
+                {index === visibleCount - 1 && (
+                  <button 
+                    className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2
+                      w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center
+                      transition-all duration-300 hover:bg-orange-600 hover:scale-110 z-10 custom-arrow-button right-con"
+                    onClick={() => setCurrentIndex((prev) => (prev + 1) % (items.length - visibleCount + 1))}
+                  >
+                    <FaArrowRight className="text-white text-lg" />
+                  </button>
+                )}
               </div>
             ))}
           </div>
         </div>
-      </div>
 
-      {/* marquee animation */}
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee linear infinite;
-        }
-      `}</style>
+        {/* Dots Navigation */}
+        <div className="flex justify-center md:justify-end mt-6 gap-2">
+          {Array.from({ length: items.length - visibleCount + 1 }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                currentIndex === index ? "bg-[#18BFDB] scale-110" : "bg-gray-500"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

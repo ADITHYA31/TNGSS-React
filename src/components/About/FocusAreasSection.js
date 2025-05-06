@@ -110,7 +110,149 @@
 // };
 
 // export default FocusAreasSection;
-import React, { useRef, useEffect, useState } from "react";
+// import React, { useRef, useEffect, useState } from "react";
+// import area1 from "../../assets/img/area-to-focus-1.png";
+// import area2 from "../../assets/img/area-to-focus-2.png";
+// import area3 from "../../assets/img/area-to-focus-3.png";
+
+// const focusItems = [
+//   { 
+//     title: "Programs & Initiatives", 
+//     desc: "Connect...", 
+//     img: area1, 
+
+//   },
+//   { 
+//     title: "Programs & Initiatives", 
+//     desc: "Connect ...", 
+//     img: area2, 
+
+//   },
+//   { 
+//     title: "Programs & Initiatives", 
+//     desc: "Connect...", 
+//     img: area3, 
+
+//   },
+//   { 
+//     title: "Programs & Initiatives", 
+//     desc: "connect...", 
+//     img: area1, 
+
+//   },
+// ];
+
+// export default function FocusAreasSection() {
+//   const containerRef = useRef(null);
+//   const contentRef = useRef(null);
+//   const [isPaused, setIsPaused] = useState(false);
+//   const animationRef = useRef(null);
+//   const scrollPosRef = useRef(0);
+//   const scrollSpeed = 30; // pixels per second (lower = slower)
+
+//   const animateScroll = (timestamp) => {
+//     if (!containerRef.current || !contentRef.current) return;
+    
+//     const container = containerRef.current;
+//     const content = contentRef.current;
+    
+//     // Reset position when scrolled all the way
+//     if (scrollPosRef.current >= content.scrollWidth) {
+//       scrollPosRef.current = 0;
+//       container.scrollLeft = 0;
+//     } else {
+//       scrollPosRef.current += scrollSpeed / 60; // Divide by ~60fps
+//       container.scrollLeft = scrollPosRef.current;
+//     }
+    
+//     if (!isPaused) {
+//       animationRef.current = requestAnimationFrame(animateScroll);
+//     }
+//   };
+
+//   useEffect(() => {
+//     if (!isPaused) {
+//       animationRef.current = requestAnimationFrame(animateScroll);
+//     }
+//     return () => {
+//       if (animationRef.current) {
+//         cancelAnimationFrame(animationRef.current);
+//       }
+//     };
+//   }, [isPaused]);
+
+//   // Duplicate content for seamless looping
+//   const duplicatedItems = [...focusItems, ...focusItems];
+
+//   return (
+//     <section 
+//       className="relative bg-black text-white py-16 font-urbanist"
+//       onMouseEnter={() => setIsPaused(true)}
+//       onMouseLeave={() => setIsPaused(false)}
+//     >
+//       <div className=" px-4">
+//         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+//           Key Areas to Focus
+//         </h2>
+
+//         {/* News Ticker Style Container */}
+// {/* News Ticker Style Container */}
+// <div className="relative overflow-hidden mt-8">
+//   {/* Continuous Scrolling Content */}
+//   <div
+//     ref={containerRef}
+//     className="flex overflow-x-hidden whitespace-nowrap"
+//     onMouseEnter={() => setIsPaused(true)}
+//     onMouseLeave={() => setIsPaused(false)}
+//     onClick={() => setIsPaused(true)} // ⬅️ this pauses scroll on click
+//     style={{
+//       scrollbarWidth: "none",
+//       msOverflowStyle: "none",
+//     }}
+//   >
+//     <div ref={contentRef} className="flex">
+//       {duplicatedItems.map((it, i) => (
+//         <div
+//           key={i}
+//           className="inline-block mx-4"
+//           style={{
+//             background: "linear-gradient(to right, #0055FF, #18BFDB, #F5710C, #EC473E)",
+//             padding: "2px",
+//             borderRadius: "1rem", // match tailwind's rounded-2xl
+//           }}
+//         >
+//           {/* Inner card with image and overlay */}
+//           <div
+//             className="w-60 md:w-96 lg:w-[500px] h-48 md:h-64 rounded-2xl bg-center bg-cover relative"
+//             style={{
+//               backgroundImage: `url(${it.img})`,
+//               flexShrink: 0,
+//             }}
+//           >
+//             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 rounded-2xl" />
+//             <div className="relative z-10 p-6 flex flex-col justify-end h-full text-white">
+//               <h3 className="text-xl font-semibold mb-2">{it.title}</h3>
+//               <p className="text-sm mb-4">{it.desc}</p>
+//               <a href="#" className="font-semibold underline">
+//                 Read More
+//               </a>
+//             </div>
+//           </div>
+//         </div>
+//       ))}
+//     </div>
+//   </div>
+// </div>
+
+
+//       </div>
+//     </section>
+//   );
+// }
+
+"use client";
+import React, { useState, useEffect } from "react";
+import { FaArrowRight } from "react-icons/fa";
 import area1 from "../../assets/img/area-to-focus-1.png";
 import area2 from "../../assets/img/area-to-focus-2.png";
 import area3 from "../../assets/img/area-to-focus-3.png";
@@ -118,134 +260,180 @@ import area3 from "../../assets/img/area-to-focus-3.png";
 const focusItems = [
   { 
     title: "Programs & Initiatives", 
-    desc: "Connect...", 
-    img: area1, 
-    bd: "border-blue-500" 
+    desc: "Correct", 
+    img: area1,
+    linkText: "Read More"
+  },
+  { 
+    title: "Skill Development", 
+    desc: "Learn & Grow", 
+    img: area2,
+    linkText: "Read More"
+  },
+  { 
+    title: "Community Events", 
+    desc: "Janus.", 
+    img: area3,
+    linkText: "Read More"
+  },
+  { 
+    title: "Innovation Hub", 
+    desc: "Explore ideas", 
+    img: area1,
+    linkText: "Read More"
+  },
+  { 
+    title: "Skill Development", 
+    desc: "Correct", 
+    img: area1,
+    linkText: "Read More"
+  },
+  { 
+    title: "Innovation Hub", 
+    desc: "Learn & Grow", 
+    img: area2,
+    linkText: "Read More"
   },
   { 
     title: "Programs & Initiatives", 
-    desc: "Connect ...", 
-    img: area2, 
-    bd: "border-yellow-400" 
+    desc: "Janus.", 
+    img: area3,
+    linkText: "Read More"
   },
   { 
-    title: "Programs & Initiatives", 
-    desc: "Connect...", 
-    img: area3, 
-    bd: "border-sky-400" 
-  },
-  { 
-    title: "Programs & Initiatives", 
-    desc: "connect...", 
-    img: area1, 
-    bd: "border-blue-500" 
+    title: "Innovation Hub", 
+    desc: "Explore ideas", 
+    img: area1,
+    linkText: "Read More"
   },
 ];
 
 export default function FocusAreasSection() {
-  const containerRef = useRef(null);
-  const contentRef = useRef(null);
-  const [isPaused, setIsPaused] = useState(false);
-  const animationRef = useRef(null);
-  const scrollPosRef = useRef(0);
-  const scrollSpeed = 30; // pixels per second (lower = slower)
-
-  const animateScroll = (timestamp) => {
-    if (!containerRef.current || !contentRef.current) return;
-    
-    const container = containerRef.current;
-    const content = contentRef.current;
-    
-    // Reset position when scrolled all the way
-    if (scrollPosRef.current >= content.scrollWidth) {
-      scrollPosRef.current = 0;
-      container.scrollLeft = 0;
-    } else {
-      scrollPosRef.current += scrollSpeed / 60; // Divide by ~60fps
-      container.scrollLeft = scrollPosRef.current;
-    }
-    
-    if (!isPaused) {
-      animationRef.current = requestAnimationFrame(animateScroll);
-    }
-  };
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
-    if (!isPaused) {
-      animationRef.current = requestAnimationFrame(animateScroll);
-    }
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+      setIsTablet(window.innerWidth >= 640 && window.innerWidth < 1024);
     };
-  }, [isPaused]);
 
-  // Duplicate content for seamless looping
-  const duplicatedItems = [...focusItems, ...focusItems];
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const itemsPerSlide = isMobile ? 1 : isTablet ? 2 : 4;
+  const totalSlides = Math.ceil(focusItems.length / itemsPerSlide);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [totalSlides]);
+
+  const getVisibleItems = () => {
+    const start = currentSlide * itemsPerSlide;
+    return focusItems.slice(start, start + itemsPerSlide);
+  };
 
   return (
-    <section 
-      className="relative bg-black text-white py-16 font-urbanist"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      <div className=" px-4">
+    <section className="bg-black text-white py-16 font-urbanist px-4">
+      <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Key Areas to Focus
+        Key Areas to Focus
         </h2>
 
-        {/* News Ticker Style Container */}
-{/* News Ticker Style Container */}
-<div className="relative overflow-hidden mt-8">
-  {/* Continuous Scrolling Content */}
-  <div
-    ref={containerRef}
-    className="flex overflow-x-hidden whitespace-nowrap"
-    onMouseEnter={() => setIsPaused(true)}
-    onMouseLeave={() => setIsPaused(false)}
-    onClick={() => setIsPaused(true)} // ⬅️ this pauses scroll on click
-    style={{
-      scrollbarWidth: "none",
-      msOverflowStyle: "none",
-    }}
-  >
-    <div ref={contentRef} className="flex">
-      {duplicatedItems.map((it, i) => (
-        <div
-          key={i}
-          className="inline-block mx-4"
-          style={{
-            background: "linear-gradient(to right, #0055FF, #18BFDB, #F5710C, #EC473E)",
-            padding: "2px",
-            borderRadius: "1rem", // match tailwind's rounded-2xl
-          }}
-        >
-          {/* Inner card with image and overlay */}
-          <div
-            className="w-60 md:w-96 lg:w-[500px] h-48 md:h-64 rounded-2xl bg-center bg-cover relative"
-            style={{
-              backgroundImage: `url(${it.img})`,
-              flexShrink: 0,
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 rounded-2xl" />
-            <div className="relative z-10 p-6 flex flex-col justify-end h-full text-white">
-              <h3 className="text-xl font-semibold mb-2">{it.title}</h3>
-              <p className="text-sm mb-4">{it.desc}</p>
-              <a href="#" className="font-semibold underline">
-                Read More
-              </a>
-            </div>
+        <div className="relative">
+          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6`}>
+            {getVisibleItems().map((item, index) => (
+              <div
+                key={index}
+                className="relative rounded-3xl overflow-hidden group"
+                style={{
+                  background: "linear-gradient(to right, #0055FF, #18BFDB, #F5710C, #EC473E)",
+                  padding: "2px",
+                  height: "300px",
+                }}
+              >
+                <div className="w-full h-full rounded-3xl overflow-hidden relative bg-black">
+                  <div
+                    className="w-full h-full transition-transform duration-500 group-hover:scale-110"
+                    style={{
+                      backgroundImage: `url(${item.img})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-black/50 p-6 flex flex-col justify-end">
+                      <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
+                      <p className="text-sm mt-1">{item.desc}</p>
+                      <a href="#" className="font-semibold underline mt-1">
+                        {item.linkText}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
+
+          {/* Custom Arrow Button - positioned outside the cards */}
+          {getVisibleItems().length > 0 && (
+            <button
+              className="custom-arrow-button"
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % totalSlides)}
+            >
+              <FaArrowRight className="text-white" />
+            </button>
+          )}
         </div>
-      ))}
-    </div>
-  </div>
-</div>
 
+        {/* Dots Navigation */}
+        <div className="flex justify-center md:justify-end mt-6 gap-2">
+          {Array.from({ length: totalSlides }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                currentSlide === index ? "bg-[#18BFDB] scale-110" : "bg-gray-500"
+              }`}
+            />
+          ))}
+        </div>
 
+        {/* Buttons at the bottom */}
+   
       </div>
+
+      <style jsx>{`
+        .custom-arrow-button {
+          position: absolute;
+          right: -1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 3rem;
+          height: 3rem;
+          background-color: #f97316;
+          border-radius: 9999px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10;
+          transition: background-color 0.3s ease;
+          border: none;
+          cursor: pointer;
+          opacity: 0.7;
+        }
+        .custom-arrow-button:hover {
+          opacity: 1;
+          background-color: #ea580c;
+        }
+      `}</style>
     </section>
   );
 }
+

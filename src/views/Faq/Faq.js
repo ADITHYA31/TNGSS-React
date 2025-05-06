@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import NavBar from '../../components/Elements/NavBar';
 import Footer from '../../components/Elements/Footer/Footer';
 import bgImage from '../../assets/img/image.png';
+import GradientBdrCard from '../../components/Elements/GradientBorderCard';
 
 
 
@@ -362,21 +363,16 @@ const Faq = () => {
       </div>
     </div>
 
-      <Footer />
+    
     </div>
   );
 };
 
 const FaqSection = ({ sectionNumber, title, items }) => {
   return (
-    <section className="p-6 md:p-10 my-5 bg-black  rounded-3xl md:rounded-[50px] w-full max-w-7xl
-    "
-    style={{
-      background: "linear-gradient(#000, #000) padding-box, linear-gradient(to right, #0070f3, #00c3ff,#F5710C, #EC473E) border-box",
-      border: "2px solid transparent",
-      borderRadius: "8px",
-    }}
+    <section className=" my-5 bg-black  rounded-3xl md:rounded-[50px] w-full max-w-7xl gradient-border"
     >
+      <div className='gradient-inner p-6 md:p-10'>
       <header className="flex items-center mb-5 ">
         <h2 className="mr-4 text-4xl md:text-5xl sm:text-3xl font-bold text-[#0099ff] text-gradient">{sectionNumber}</h2>
         <h2 className="text-3xl md:text-5xl sm:text-3xl font-bold text-[#0099ff] text-gradient">{title}</h2>
@@ -393,7 +389,35 @@ const FaqSection = ({ sectionNumber, title, items }) => {
           />
         ))}
       </div>
+      </div>
+   
     </section>
+  //   <GradientBdrCard className=" my-5 w-full max-w-7xl rounded-3xl md:rounded-[50px] bg-black">
+  //   <header className="flex items-center flex-wrap mb-5 p-6 md:p-">
+  //     <h2 className="mr-4 text-4xl sm:text-3xl md:text-5xl font-bold text-[#0099ff] text-gradient">
+  //       {sectionNumber}
+  //     </h2>
+  //     <h2 className="text-3xl sm:text-3xl md:text-5xl font-bold text-[#0099ff] text-gradient">
+  //       {title}
+  //     </h2>
+  //   </header>
+
+  //   <h3 className="mb-5 text-2xl md:text-4xl font-light text-white ml-1 md:ml-4">
+  //     FAQs
+  //   </h3>
+
+  //   <div className="flex flex-col space-y-4">
+  //     {items.map((item) => (
+  //       <FaqItem
+  //         key={item.id}
+  //         id={item.id}
+  //         title={item.title}
+  //         content={item.content}
+  //         initialExpanded={item.initialExpanded}
+  //       />
+  //     ))}
+  //   </div>
+  // </GradientBdrCard>
   );
 };
 

@@ -273,7 +273,7 @@
  }
 
  .gradient-inner {
-     border-radius: 10px;
+     border-radius: 19px;
      /* Slightly less than outer radius to simulate inset */
      background-color: black;
      width: 100%;

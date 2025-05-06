@@ -1,6 +1,7 @@
 import React from "react";
 import introImg from "../../assets/img/intro-mission-image.png";
-import introBackground from "../../assets/img/light-background.png";
+import introBackground from "../../assets/img/about-sec-pg.png";
+import GradientBdrCard from "../Elements/GradientBorderCard";
 
 const IntroMissionSection = () => {
   return (
@@ -54,14 +55,18 @@ const IntroMissionSection = () => {
     //     </div>
     //   </div>
     // </div>
-    <div
-      className="min-h-screen px-4 md:px-16 py-10 bg-cover bg-center bg-no-repeat font-urbanist"
+    <GradientBdrCard
+      className="min-h-screen p-1  font-urbanist about-border"
+      
+    >
+      <div 
       style={{
         backgroundImage: `url(${introBackground})`,
+      
+
       }}
-    >
-      {/* Overlay to make text readable */}
-      <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 md:p-10 ">
+      className="bg-cover bg-center bg-no-repeat">
+    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 md:p-10 ">
         {/* Introduction */}
         <h2 className="text-4xl font-semibold text-black mb-4">Introduction</h2>
         <p className="text-gray-800 mb-3 text-base md:text-lg">
@@ -74,11 +79,11 @@ const IntroMissionSection = () => {
         {/* Image and Mission */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Image */}
-          <div className="flex justify-center items-center">
+          < div className="flex justify-center items-center">
             <img
               src={introImg}
               alt="about"
-              className="  flex justify-center items-center rounded-[25px] w-full h-auto shadow-xl border-[3px] border-transparent hover:border-orange-400 transition duration-300"
+              className="  flex justify-center items-center  w-full h-auto shadow-xl border-[2px] border-transparent hover:border-orange-400 transition duration-300"
             />
           </div>
 
@@ -94,7 +99,10 @@ const IntroMissionSection = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      {/* Overlay to make text readable */}
+  
+    </GradientBdrCard>
   );
 };
 

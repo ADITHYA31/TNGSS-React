@@ -13,7 +13,7 @@ import bgImage from '../../assets/img/image.png';
 
 const About = () => {
   return (
-    <div style={{backgroundColor:'black'}}>
+    <div style={{backgroundColor:'black'}} className='w-screen'>
         {/* <HeroSection title={"About Us"} subtitle={"TNGSS Conversations: Where Ideas Collide"}/> */}
         <div
   className="bg-cover bg-center flex flex-col w-screen h-screen justify-center items-center"

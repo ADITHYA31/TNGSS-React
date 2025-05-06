@@ -32,8 +32,7 @@
     right: -1rem; /* -right-4 */
     top: 50%;
     transform: translateY(-50%);
-    width: 3rem;  /* w-12 */
-    height: 3rem; /* h-12 */
+  /* h-12 */
     background-color: #f97316; /* bg-orange-500 */
     border-radius: 9999px; /* rounded-full */
     display: flex;
@@ -45,7 +44,10 @@
     cursor: pointer;
     opacity: 0.7;
   }
+  .right-con{
+    right: 10px !important;
   
+  }
   .custom-arrow-button:hover {
     background-color: #ea580c; /* hover:bg-orange-600 */
   }
@@ -178,4 +180,6 @@ button.bg-cyan-500.text-white {
   .sub-text{
     color: #17BFDB;
   }
-  
+  .about-border{
+    border-radius: 0px !important;
+  }

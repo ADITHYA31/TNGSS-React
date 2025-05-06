@@ -211,7 +211,7 @@ const EventCard = ({ event }) => {
       <div className="bg-[#1A1A1A]/90 border border-gray-800 rounded-lg overflow-hidden shadow-md">
         <div className="p-4">
           <h3 className="text-lg font-bold text-white mb-1">{event.title}</h3>
-          <p className="text-gray-400 text-sm">
+          <p className="text-white text-sm">
             {event.time} - {event.endTime} • {event.location}
           </p>
         </div>
@@ -223,8 +223,8 @@ const EventCard = ({ event }) => {
             {event.speakers.map((speaker, index) => (
               <div key={index} className="text-sm">
                 <p className="text-white font-medium">{speaker.name}</p>
-                <p className="text-gray-400">{speaker.title}</p>
-                <p className="text-gray-400">{speaker.organization}</p>
+                <p className="text-white">{speaker.title}</p>
+                <p className="text-white">{speaker.organization}</p>
               </div>
             ))}
           </div>
@@ -235,7 +235,7 @@ const EventCard = ({ event }) => {
           <h4 className="sub-text  text-sm font-semibold mb-2">SESSION HOST</h4>
           <div className="text-sm text-white">
             <p className="font-medium">{event.host.name}</p>
-            <p className="text-gray-400">{event.host.title}</p>
+            <p className="text-white">{event.host.title}</p>
           </div>
         </div>
       </div>
