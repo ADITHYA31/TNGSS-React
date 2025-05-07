@@ -50,18 +50,20 @@ export default function CarouselSection() {
     }
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (isMobile) {
-        setActiveSlide((prevIndex) => (prevIndex + 1) % slides.length);
-      } else {
-        const maxSlide = Math.ceil(slides.length / 2) - 1;
-        setActiveSlide((prevIndex) => (prevIndex + 1) % (maxSlide + 1));
-      }
-    }, 3000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (isMobile) {
+  //       setActiveSlide((prevIndex) => (prevIndex + 1) % slides.length);
+  //     } else {
+  //       const maxSlide = Math.ceil(slides.length / 2) - 1;
+  //       setActiveSlide((prevIndex) => (prevIndex + 1) % (maxSlide + 1));
+  //     }
+  //   }, 3000);
   
-    return () => clearInterval(interval);
-  }, [slides.length, isMobile]);
+  //   return () => clearInterval(interval);
+  // }, [slides.length, isMobile]);
+  
+  
 
   // Get visible slides based on device
   const getVisibleSlides = () => {
@@ -83,11 +85,12 @@ export default function CarouselSection() {
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-5xl font-light text-center mb-8 md:mb-16">This is why</h2>
 
-        <div className="relative">
+        <div className="relative focus-slide-animation"
+        key={activeSlide}>
           {/* Mobile: Single Slide */}
           <div className="md:hidden">
             <div
-              className="w-full relative rounded-3xl overflow-hidden"
+              className="w-full relative rounded-3xl overflow-hidden "
               style={{
                 background: "linear-gradient(to right, #0055FF, #18BFDB, #F5710C, #EC473E)",
                 padding: "2px",
@@ -96,7 +99,7 @@ export default function CarouselSection() {
             >
               <div className="w-full h-full rounded-3xl overflow-hidden relative">
                 <div
-                  className="w-full h-full"
+                  className="w-full h-full "
                   style={{
                     backgroundImage: `url(${visibleSlides[0].image})`,
                     backgroundSize: "cover",

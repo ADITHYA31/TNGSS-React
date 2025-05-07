@@ -23,28 +23,34 @@ export default function ParallelScroll() {
       ref={globalpavilion}
       className="relative min-h-screen w-screen isolate h-auto" // Adjusted to fit content
     >
-      <div className="w-full h-full flex flex-col justify-center overflow-hidden">
-        <div className="flags flex w-full gap-3 will-change-transform md:flex-nowrap md:overflow-hidden overflow-x-auto">
-          {data.map((item, index) => (
-            <div
-              key={index}
-              className="w-2/3 md:w-1/2 h-[80vh]  rounded-2xl px-4 py-4 shrink-0 h-30vh"
-            >
-              <div
-                className="flex flex-col justify-end w-full h-full rounded-2xl bg-cover bg-center "
-                style={{
-                  backgroundImage: `url(${item.image})`,
-                  minWidth: '200px'
-                }}
-              >
-                <div className="text-xxl md:text-4xl text-white px-5 pb-6">
-                  <p dangerouslySetInnerHTML={{ __html: item.tag }} />
-                </div>
-              </div>
-            </div>
-          ))}
+<div className="w-full h-full flex flex-col justify-center overflow-hidden">
+  <div className="flags flex w-full gap-3 md:flex-nowrap overflow-x-auto scrollbar-hide">
+    {data.map((item, index) => (
+      <div
+        key={index}
+        className="min-w-[280px] md:min-w-[300px] h-[400px] flex-shrink-0 rounded-2xl overflow-hidden relative"
+      >
+        {/* Image */}
+        <img
+          src={item.image}
+          alt={`flag-${index}`}
+          className="w-full h-full object-cover"
+          style={{height:"400px"}}
+        />
+
+        {/* Text overlay at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-5 pb-6 pt-10">
+          <p
+            className="text-xl md:text-3xl text-white"
+            dangerouslySetInnerHTML={{ __html: item.tag }}
+          />
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
+
     </section>
   );
 }

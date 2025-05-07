@@ -76,19 +76,17 @@ const Speakers = () => {
       },
     ];
   return (
-    <div style={{backgroundColor:'black'}} >
-        <NavBar/>
-        {/* <HeroSection title={"Speakers"} subtitle={"TNGSS Conversations: Where Ideas Collide"}/> */}
-
-
+    <div style={{ backgroundColor: 'black' }}>
+    <NavBar />
+  
         <div
-  className="bg-cover bg-center flex flex-col w-screen h-screen justify-start "
+  className="bg-cover bg-center flex flex-col w-screen h-screen justify-center items-center"
   style={{ backgroundImage: `url(${bgImage})` }}
 >
-  <div className="w-full max-w-7xl px-4 pt-32 mt-4">
+  <div className="w-full max-w-7xl px-4">
     <div className="flex flex-col gap-5 animate-fadeInLeft mb-5 font-urbanist">
-    <h1 className="text-4xl md:text-8xl sm:text-2xl  bg-gradient-to-r from-gray-200 via-white to-gray-300 bg-clip-text text-transparent animate-wave bg-[length:200%_100%]">
-    Speakers
+    <h1 className="text-5xl md:text-8xl sm:text-2xl  bg-gradient-to-r from-gray-200 via-white to-gray-300 bg-clip-text text-transparent animate-wave bg-[length:200%_100%]">
+   Speakers
 </h1>
 
       <p className="text-white text-2xl animate-fadeInLeft delay-200">
@@ -97,78 +95,73 @@ const Speakers = () => {
     </div>
   </div>
 </div>
-        <div className="relative  bg-black">
-        <div className="container mx-auto px-4 py-20 -mt-20"> 
-          <div className='w-full flex justify-center'>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 px-4 sm:px-6">
 
-{speakers.map((item, index) => (
-  <div key={index} className="relative">
-    <div ref={(el) => (cardsRef.current[index] = el)} className="will-change-transform">
-      <FlippingCardNarrow flipinvert className=" rounded-2xl">
-        {/* Front of Card */}
-        <div className="relative w-80 h-96 rounded-2xl overflow-hidden">
-          <img
-            src={item.
-              profile_image}
-            className="w-full h-full object-cover object-center absolute inset-0 radius-2xl gradient-border"
-            alt={item.title}
-          />
-          <div className="self-end z-10">
-            <p className="text-2xl font-semibold text-white absolute bottom-7 left-5">
-              {item.name}
-            </p>
-            <p className="  text-white absolute bottom-1 left-5">
-              {item.designation}
-            </p>
-          </div>
-        </div>
-        
-        {/* Back of Card */}
-        {/* <GradientBdrCard className="text-left w-80 h-96 rounded-2xl overflow-hidden bg-black">
-          <div className="flex flex-col w-full h-full p-5 text-white">
-            <p className="text-3xl py-2">{item.name}</p>
-            <p className="flex-1">{item.des}</p>
-            <p className="mt-auto">{item.foot}</p>
-          </div>
-        </GradientBdrCard> */}
-        <GradientBdrCard className="text-left w-full aspect-[3/4] rounded-2xl overflow-hidden bg-black">
-  <div className="flex flex-col h-full p-6 text-white">
-    {/* Header with decorative element */}
-    <div className="relative pb-6 mb-6">
-      <h3 className=" text-l sm:text-l leading-tight">
+{/* Card Section */}
+<div className="relative z-10 bg-black -mt-32 pt-32">
+  <div className="container mx-auto px-4 py-20">
+    <div className="w-full flex justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 px-4 sm:px-6">
+        {speakers.map((item, index) => (
+          <div key={index} className="relative">
+            <div ref={(el) => (cardsRef.current[index] = el)} className="will-change-transform">
+              <FlippingCardNarrow flipinvert className="rounded-2xl">
+                {/* Front of Card */}
+                <div className="relative w-80 h-96 rounded-2xl overflow-hidden mt-36">
+                  <img
+                    src={item.profile_image}
+                    className="w-full h-full object-cover object-center absolute inset-0 radius-2xl gradient-border"
+                    alt={item.title}
+                  
+                  />
+                  <div className="self-end z-10">
+                    <p className="text-2xl font-semibold text-white absolute bottom-7 left-5">
+                      {item.name}
+                    </p>
+                    <p className="text-white absolute bottom-1 left-5">
+                      {item.designation}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Back of Card */}
+                <GradientBdrCard className="text-left w-full aspect-[3/4] rounded-2xl overflow-hidden bg-black  mt-36">
+  <div className="flex flex-col w-80 h-96 p-6 text-white">
+    <div className="relative pb-6 ">
+      <h3 className="text-l sm:text-l leading-tight">
         Unlock the future of
-        
-        <br></br><span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">
+        <br />
+        <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">
           innovation
-        </span>  at <span className='text-l sm:text-l font-bold'>Tamil Nadu
-        Global Startup Summit
-        2025.</span>
+        </span>{' '}
+        at <span className="text-l sm:text-l font-bold">Tamil Nadu Global Startup Summit 2025.</span>
       </h3>
-  
     </div>
-
-    {/* Speaker Content */}
-    <div className="flex-1 overflow-y-auto">
+    <div className="flex-1 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] mb-5 pr-4">
+      {/* Chrome, Safari and Opera */}
+      <style jsx>{`
+        .flex-1::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
       <h4 className="text-xl sm:text-2xl font-semibold mb-3">{item.name}</h4>
       <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-      {item.bio}
+        {item.bio}
       </p>
     </div>
   </div>
 </GradientBdrCard>
-      </FlippingCardNarrow>
+              </FlippingCardNarrow>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
-))}
 </div>
-          </div>
-
-        </div>
-      </div>
-
-        <Footer/>
-    </div>
+  
+    
+  </div>
+  
   );
 };
 export default Speakers;

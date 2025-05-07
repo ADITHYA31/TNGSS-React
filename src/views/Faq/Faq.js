@@ -370,7 +370,7 @@ const Faq = () => {
 
 const FaqSection = ({ sectionNumber, title, items }) => {
   return (
-    <section className=" my-5 bg-black  rounded-3xl md:rounded-[50px] w-full max-w-7xl gradient-border"
+    <section className=" my-5 bg-black  rounded-3xl md:rounded-[50px] w-full  gradient-border m-3"
     >
       <div className='gradient-inner p-6 md:p-10'>
       <header className="flex items-center mb-5 ">

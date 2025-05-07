@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Calendar, ChevronDown } from 'lucide-react';
 // import './index.css';
 import bgImage from '../../assets/img/image.png';
+import program from '../../assets/img/pro.png'
+
 
 
 // FilterDropdown Component
@@ -132,131 +134,88 @@ const DateSelector = ({ activeDay, setActiveDay }) => {
   );
 };
 
-// EventCard Component
+
 const EventCard = ({ event }) => {
   return (
-    // <div className="relative">
-    //   <div className="absolute left-0 top-0 w-4 h-4 bg-orange-500 rounded-full mt-1"></div>
-      
-    //   <div className="ml-8">
-    //     <div className="flex items-center mb-2">
-    //       <div className="text-gray-300 font-medium mr-4">{event.time}</div>
-    //       <div className="bg-cyan-500 text-xs font-medium px-3 py-1 rounded-full mr-4">
-    //         Completed
-    //       </div>
-    //       <div className="bg-gray-800 text-white text-xs px-3 py-1 rounded-md">
-    //         {event.type}
-    //       </div>
-    //     </div>
-        
-    //     <div className="bg-gray-900 border border-gray-800 rounded-md overflow-hidden">
-    //       <div className="p-4">
-    //         <h3 className="text-xl font-medium mb-1">{event.title}</h3>
-    //         <p className="text-gray-400 text-sm">
-    //           {event.time} - {event.endTime} • {event.location}
-    //         </p>
-    //       </div>
-          
-    //       <div className="border-t border-gray-800 p-4">
-    //         <h4 className="text-cyan-500 text-sm font-medium mb-3">SPEAKERS</h4>
-    //         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-    //           {event.speakers.map((speaker, index) => (
-    //             <div key={index} className="text-sm">
-    //               <p className="font-medium">{speaker.name}</p>
-    //               <p className="text-gray-400">{speaker.title}</p>
-    //               <p className="text-gray-400">{speaker.organization}</p>
-    //             </div>
-    //           ))}
-    //         </div>
-    //       </div>
-          
-    //       <div className="border-t border-gray-800 p-4">
-    //         <h4 className="text-cyan-500 text-sm font-medium mb-3">SESSION HOST</h4>
-    //         <div className="text-sm">
-    //           <p className="font-medium">{event.host.name}</p>
-    //           <p className="text-gray-400">{event.host.title}</p>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-<div className="relative pl-10">
-  <div className="flex flex-row items-start space-x-4">
-    {/* Time + Completed */}
-    <div className="flex flex-col items-start space-y-2">
-      <div className="text-white font-semibold">{event.time}</div>
-      <span className=" text-white text-xs px-3 py-1 rounded-full com-button">
-        Completed
-      </span>
-    </div>
+    <div className="relative flex items-start">
+      {/* Left Side - Time and Status */}
+      <div className=" flex flex-col items-start">
+        <div className="text-white font-semibold">{event.time}</div>
+        <span className="bg-[#F5710C] text-white text-xs px-3 py-1 rounded-full mt-1 com-button">
+          Completed
+        </span>
+      </div>
 
-    {/* Orange Dot + Line */}
-    <div className="flex flex-col items-center mt-1">
-      <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-      <div className="w-px h-10 bg-gray-600"></div>
-    </div>
+      {/* Center - Orange Ball (will align with vertical line) */}
+      <div className="relative flex flex-col items-center w-8">
+        <div className="w-6 h-6 rounded-full border-4 border-black bg-[#F5710C] z-10 orange-ball "
+            />
+      </div>
 
-    {/* Type Button + Below Card */}
-    <div className="flex flex-col space-y-4">
-      <div>
-      <span className="type-button rounded-xl py-2 px-3 
-      "
+      {/* Right Side - Main Content */}
+      <div className="flex-1  items-start pl-3"
    >
-        {event.type}
-      </span>
-      </div>
-    
+    <div className='gradient-border-wrapper'>
+    <span className="inline-block bg-gray-700 text-white py-2 px-3  type-button">
+          {event.type}
+        </span>
 
-      {/* Event Content Card */}
-      <div className="bg-[#1A1A1A]/90 border border-gray-800 rounded-lg overflow-hidden shadow-md">
-        <div className="p-4">
-          <h3 className="text-lg font-bold text-white mb-1">{event.title}</h3>
-          <p className="text-white text-sm">
-            {event.time} - {event.endTime} • {event.location}
-          </p>
-        </div>
-
-        {/* Speakers */}
-        <div className="border-t border-gray-800 p-4">
-          <h4 className="sub-text text-sm font-semibold mb-2">SPEAKERS</h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {event.speakers.map((speaker, index) => (
-              <div key={index} className="text-sm">
-                <p className="text-white font-medium">{speaker.name}</p>
-                <p className="text-white">{speaker.title}</p>
-                <p className="text-white">{speaker.organization}</p>
-              </div>
-            ))}
+    </div>
+ 
+        <div className="bg-[#1A1A1A]/90 border border-gray-800 rounded-lg overflow-hidden shadow-md">
+          <div className="p-4">
+            <h3 className="text-lg font-bold text-white mb-1">{event.title}</h3>
+            <p className="text-white text-bold">
+              {event.time} - {event.endTime} • {event.location}
+            </p>
           </div>
-        </div>
 
-        {/* Host */}
-        <div className="border-t border-gray-800 p-4">
-          <h4 className="sub-text  text-sm font-semibold mb-2">SESSION HOST</h4>
-          <div className="text-sm text-white">
-            <p className="font-medium">{event.host.name}</p>
-            <p className="text-white">{event.host.title}</p>
+          <div className="border-t border-gray-800 p-4">
+            <h4 className="text-[#17BFDB] text-xl font-semibold mb-2 get-text">SPEAKERS</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {event.speakers.map((speaker, index) => (
+                <div key={index} className="text-md">
+                  <p className="text-white font-medium">{speaker.name}</p>
+                  <p className="text-white text-bold">{speaker.title}</p>
+                  <p className="text-white text-bold">{speaker.organization}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 p-4">
+            <h4 className="text-[#17BFDB] text-xl font-semibold mb-2 get-text">SESSION HOST</h4>
+            <div className="text-md text-white">
+              <p className="font-medium">{event.host.name}</p>
+              <p className="text-white text-bold">{event.host.title}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-
   );
 };
+  
+  const EventList = ({ events }) => {
+    return (
+      <div className="relative">
+      {/* Vertical Line */}
+      <div 
+        className="absolute left-1/6 top-0 bottom-0 w-0.5 bg-gray-600 transform -translate-x-1/2 "
+        style={{ marginLeft: '6.2rem' }} // Adjust this to align perfectly with the dots
+      />
 
-// EventList Component
-const EventList = ({ events }) => {
-  return (
-    <div className="space-y-8">
-      {events.map(event => (
-        <EventCard key={event.id} event={event} />
-      ))}
+      {/* Event Cards */}
+      <div className="space-y-10">
+        {events.map((event) => (
+          <EventCard key={event.id} event={event} />
+        ))}
+      </div>
     </div>
-  );
-};
+
+    );
+  };
+  
 
 // Main App Component
 function App() {
@@ -291,8 +250,8 @@ function App() {
     },
     {
       id: 2,
-      time: '10:00 AM',
-      endTime: '10:40 AM',
+      time: '10:40 AM',
+      endTime: '11.15 AM',
       title: 'Smart App vs. Super App: The Ultimate Showdown',
       location: 'Hall 204A&B - Codissia',
       type: 'Opening Session',
@@ -316,8 +275,8 @@ function App() {
     },
     {
       id: 3,
-      time: '10:00 AM',
-      endTime: '10:40 AM',
+      time: '11.15 AM',
+      endTime: '12.30 PM',
       title: 'Seamless Transactions: The Digital Shift in Commercial Payments',
       location: 'Hall 204A&B - Codissia',
       type: 'Opening Session',
@@ -343,23 +302,32 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black text-white font-sans">
-                <div
-  className="bg-cover bg-center flex flex-col w-screen h-screen justify-center items-center"
+<div
+  className="bg-cover bg-center w-screen  flex items-center"
   style={{ backgroundImage: `url(${bgImage})` }}
 >
-  <div className="w-full max-w-7xl px-4 pt-32 mt-5">
-    <div className="flex flex-col gap-5 animate-fadeInLeft mb-5 font-urbanist text-white">
-    <h1 className="text-6xl md:text-8xl sm:text-2xl  ">
-Programs
-</h1>
-
-      <p className="text-white text-2xl animate-fadeInLeft delay-200">
-     Exploring the Core of TNGSS'25
+  <div className="w-full max-w-7xl mx-auto px-4  mt-5 flex flex-col md:flex-row items-center justify-between">
+    {/* Left Column: Text */}
+    <div className="w-full md:w-1/2 mb-10 md:mb-0 text-white font-urbanist animate-fadeInLeft">
+      <h1 className="text-4xl sm:text-6xl md:text-8xl mb-4">Programs</h1>
+      <p className="text-xl sm:text-2xl">
+        Exploring the Core of TNGSS'25
       </p>
+    </div>
+
+    {/* Right Column: Image */}
+    <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden ">
+      <img
+        src={program}
+        alt="Programs"
+        className="w-full h-auto object-cover max-h-full program-image "
+      />
     </div>
   </div>
 </div>
-      <div className="max-w-7xl mx-auto px-4 py-8 ">
+
+
+      <div className="max-w-7xl mx-auto px-4 py-8 p-5">
         {/* Top navigation row */}
         <div className="flex flex-col sm:flex-row items-center justify-between mb-8 space-y-4 sm:space-y-0 bg-gray-600 pl-3 pr-3 p-2 ">
           <DateSelector 
@@ -401,8 +369,14 @@ Programs
                 <span>28th August 2024</span>
               </div>
             </div>
-            
-            <EventList events={events} />
+            {showPartnerEvents ? (
+              <div className="flex flex-col items-center justify-center py-20">
+                <div className="text-4xl font-bold text-gray-400 mb-4">Coming Soon</div>
+                <p className="text-xl text-gray-500">Partner events will be announced shortly</p>
+              </div>
+            ) : (
+              <EventList events={events} />
+            )}
           </div>
         </div>
       </div>
@@ -411,3 +385,4 @@ Programs
 }
 
 export default App;
+
