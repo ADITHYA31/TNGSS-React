@@ -21,9 +21,14 @@ const About = () => {
 >
   <div className="w-full max-w-7xl px-4 pt-32 mt-5">
     <div className="flex flex-col gap-5 animate-fadeInLeft mb-5 font-urbanist">
-    <h1 className="text-8xl md:text-8xl sm:text-2xl  bg-gradient-to-r from-gray-200 via-white to-gray-300 bg-clip-text text-transparent animate-wave bg-[length:200%_100%]">
+    {/* <h1 className="text-8xl md:text-8xl sm:text-2xl  bg-gradient-to-r from-gray-200 via-white to-gray-300 bg-clip-text text-transparent animate-wave bg-[length:200%_100%]">
     About Us
+</h1> */}
+<h1 className="text-8xl md:text-8xl sm:text-2xl text-gradient animate-gradient">
+  About Us
 </h1>
+
+
 
       <p className="text-white text-2xl animate-fadeInLeft delay-200">
       TNGSS Conversations: Where Ideas Collide

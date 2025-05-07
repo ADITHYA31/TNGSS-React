@@ -204,9 +204,9 @@ const Faq = () => {
       >
         <div className="w-full max-w-7xl px-4 pt-32 mt-5">
           <div className="flex flex-col gap-5 mb-5 font-urbanist">
-            <h1 className="text-4xl md:text-8xl bg-gradient-to-r from-gray-200 via-white to-gray-300 bg-clip-text text-transparent">
-              FAQ
-            </h1>
+          <h1 className="text-8xl md:text-8xl sm:text-2xl text-gradient animate-gradient">
+  Faq
+</h1>
             <p className="text-white text-xl md:text-2xl">
             Frequently asked questions on TNGSS 2025
             </p>

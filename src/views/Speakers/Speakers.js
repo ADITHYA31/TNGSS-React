@@ -85,8 +85,8 @@ const Speakers = () => {
 >
   <div className="w-full max-w-7xl px-4">
     <div className="flex flex-col gap-5 animate-fadeInLeft mb-5 font-urbanist">
-    <h1 className="text-5xl md:text-8xl sm:text-2xl  bg-gradient-to-r from-gray-200 via-white to-gray-300 bg-clip-text text-transparent animate-wave bg-[length:200%_100%]">
-   Speakers
+    <h1 className="text-8xl md:text-8xl sm:text-2xl text-gradient animate-gradient">
+  Speakers
 </h1>
 
       <p className="text-white text-2xl animate-fadeInLeft delay-200">

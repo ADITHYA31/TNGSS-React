@@ -308,8 +308,10 @@ function App() {
 >
   <div className="w-full max-w-7xl mx-auto px-4  mt-5 flex flex-col md:flex-row items-center justify-between">
     {/* Left Column: Text */}
-    <div className="w-full md:w-1/2 mb-10 md:mb-0 text-white font-urbanist animate-fadeInLeft">
-      <h1 className="text-4xl sm:text-6xl md:text-8xl mb-4">Programs</h1>
+    <div className="w-full md:w-1/2  md:mb-0 text-white font-urbanist animate-fadeInLeft program-text">
+    <h1 className="text-6xl md:text-8xl  text-gradient animate-gradient mb-6">
+  Programs
+</h1>
       <p className="text-xl sm:text-2xl">
         Exploring the Core of TNGSS'25
       </p>
