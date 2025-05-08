@@ -1,9 +1,11 @@
 import React from "react";
 import backgroundImage from "../../assets/img/light-background.png";
+import introBackground from "../../assets/img/about-sec-pg.png";
 import tim from "../../assets/img/tim.png";
 import steve from "../../assets/img/steve.png";
 import marc from "../../assets/img/marc.png";
 import mohammad from "../../assets/img/mohammad.png";
+import GradientBdrCard from "../Elements/GradientBorderCard";
 
 const speakers = [
   {
@@ -37,15 +39,20 @@ export default function SpeakersSection() {
     <div
       className="min-h-screen w-full"
     >
-      <section
-        className="w-full h-full bg-white rounded-xl px-4 py-10"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+      <GradientBdrCard
+        className="w-full h-full bg-border-radius "
+     
       >
-        <h2 className="text-3xl md:text-5xl text-black font-urbanist text-[#111] mb-10 text-center md:text-left md:ml-[80px] px-4 md:px-10">
+        <div
+           style={{
+            backgroundImage: `url(${introBackground})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            
+          }}
+          className="px-4 py-10"
+        >
+               <h2 className="text-3xl md:text-5xl text-black font-urbanist text-[#111] mb-10 text-center md:text-left md:ml-[80px] px-4 md:px-10">
           Who’s Coming
         </h2>
 
@@ -72,7 +79,10 @@ export default function SpeakersSection() {
             </div>
           ))}
         </div>
-      </section>
+
+        </div>
+   
+      </GradientBdrCard>
     </div>
   );
 }

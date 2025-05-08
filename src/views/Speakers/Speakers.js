@@ -76,23 +76,27 @@ const Speakers = () => {
       },
     ];
   return (
-    <div style={{ backgroundColor: 'black' }}>
+    <div style={{ backgroundColor: 'black',overflowX:"hidden" }}>
     <NavBar />
   
-        <div
-  className="bg-cover bg-center flex flex-col w-screen h-screen justify-center items-center"
+
+      <div
+  className="bg-cover bg-center flex w-full h-[80vh] items-center pl-20"
   style={{ backgroundImage: `url(${bgImage})` }}
 >
-  <div className="w-full max-w-7xl px-4">
-    <div className="flex flex-col gap-5 animate-fadeInLeft mb-5 font-urbanist">
-    <h1 className="text-8xl md:text-8xl sm:text-2xl text-gradient animate-gradient">
-  Speakers
-</h1>
-
-      <p className="text-white text-2xl animate-fadeInLeft delay-200">
+  <div className="w-full max-w-7xl px-4 flex">
+    {/* Left col-6 with centered content */}
+    <div className="w-full md:w-1/2 flex flex-col  gap-5 font-urbanist ">
+      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] 2xl:text-[11rem] text-gradient animate-gradient">
+      Speakers
+      </h1>
+      <p className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl animate-fadeInLeft delay-200">
       Be the Voice of Innovation at TNGSS'25
       </p>
     </div>
+
+    {/* Right col-6 empty */}
+    <div className="hidden md:block w-1/2"></div>
   </div>
 </div>
 

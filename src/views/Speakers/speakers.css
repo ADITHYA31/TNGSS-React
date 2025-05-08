@@ -9,6 +9,15 @@
       background-position: 0% center;
     }
   }
+  html,body{
+    overflow-x: hidden;
+  }
+  .bg-border-radius{
+    border-radius: 0px !important;
+  }
+  .absloute-about-img{
+    width: 95% !important;
+  }
   
   .wave-text {
     font-size: 3.75rem; /* text-6xl equivalent */
@@ -29,19 +38,19 @@
   }
   
 
-  @keyframes slideRightFade {
+  @keyframes slideLeftToRight {
     0% {
-      opacity: 0;
-      transform: translateX(30px);
+      transform: translateX(-30px);
+    
     }
     100% {
-      opacity: 1;
       transform: translateX(0);
+   
     }
   }
   
   .focus-slide-animation {
-    animation: slideRightFade 0.6s ease-in-out forwards;
+    animation: slideLeftToRight 1.5s ease-out forwards;
   }
   .orange-ball {
     background-color: #f97316;
@@ -74,6 +83,7 @@
     left: 10px !important;
   
   }
+  
   .right-con-1{
     right:43px !important;
   
@@ -135,10 +145,11 @@
     padding: 2px;
     border-radius: 1.5rem; /* same as Tailwind's rounded-3xl */
   }
-  .text-gradient {
+  .text-gradient-1 {
     background: linear-gradient(to right, #0055FF, #18BFDB);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    /* font-size:70px !important; */
     /* margin-left: 7px; */
   }
   .orange-circle {
@@ -301,6 +312,10 @@ button.bg-cyan-500.text-white {
     .image-width{
       width:200px;
       height: 450px;
+    }
+    .absloute-about-img{
+      width: 85% !important;
+   
     }
     
   }

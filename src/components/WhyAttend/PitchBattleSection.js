@@ -1,7 +1,7 @@
 import React from "react";
 import backgroundImage from "../../assets/img/blue-fiber-bg.png";
 
-export const PitchBattleSection = ({ title, description }) => {
+export const PitchBattleSection = ({ title, description,background }) => {
   return (
     <section
       style={{
@@ -11,7 +11,7 @@ export const PitchBattleSection = ({ title, description }) => {
         justifyContent: "flex-start", // Left align
         alignItems: "center",
         padding: "0 5%", // Responsive side padding
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${background})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

@@ -105,13 +105,13 @@ const HeroSection = ({ className = '' }) => {
         </div>
 
         {/* Right Column - Images */}
-        <div className="w-full md:w-1/2 relative flex justify-center items-center mt-8 md:mt-0 lg:pl-12">
-  <div className="relative w-[70%] max-w-md md:max-w-lg mt-8 ">
+        <div className="w-full md:w-1/2 relative flex justify-center items-center mt-8 md:mt-0 lg:pl-12 ">
+  <div className="relative w-[70%] max-w-md md:max-w-lg mt-8 p-5 ">
     {/* Outer Image */}
     <img
       src={outerImage}
       alt="Event Crowd"
-      className="w-full rounded-3xl shadow-xl"
+      className="w-full rounded-3xl shadow-xl "
       // style={{width:"80%"}}
     />
 
@@ -119,9 +119,9 @@ const HeroSection = ({ className = '' }) => {
     <img
       src={innerImage}
       alt="Digital Abstract"
-      className="absolute -left-3 md:-left-40 bottom-16 w-1/3 rounded-2xl shadow-lg md:bottom-24"
+      className="absolute -left-3 md:-left-40 bottom-16 w-1/3 rounded-2xl shadow-lg md:bottom-24 absloute-about-img"
 
-      style={{width:"95%"}}
+      
 
     />
   </div>

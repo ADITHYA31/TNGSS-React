@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import NavBar from '../../components/Elements/NavBar';
 import Footer from '../../components/Elements/Footer/Footer';
 import bgImage from '../../assets/img/image.png';
-import GradientBdrCard from '../../components/Elements/GradientBorderCard';
-
-
 
 const Faq = () => {
   const [selectedOption, setSelectedOption] = useState('email');
@@ -29,11 +26,8 @@ const Faq = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Add your form submission logic here
   };
 
-
-  
   const faqSections = [
     {
       sectionNumber: "01",
@@ -42,7 +36,7 @@ const Faq = () => {
         {
           id: "general1",
           title: "General",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
+          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features,Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
           initialExpanded: true,
         },
         {
@@ -193,26 +187,31 @@ const Faq = () => {
       ],
     },
   ];
-  
 
   return (
     <div className="bg-black font-urbanist">
       <NavBar />
       <div
-        className="bg-cover bg-center flex flex-col w-full h-screen justify-center items-center"
-        style={{ backgroundImage: `url(${bgImage})` }}
-      >
-        <div className="w-full max-w-7xl px-4 pt-32 mt-5">
-          <div className="flex flex-col gap-5 mb-5 font-urbanist">
-          <h1 className="text-8xl md:text-8xl sm:text-2xl text-gradient animate-gradient">
-  Faq
-</h1>
-            <p className="text-white text-xl md:text-2xl">
-            Frequently asked questions on TNGSS 2025
-            </p>
-          </div>
-        </div>
-      </div>
+  className="bg-cover bg-center flex w-full h-[80vh] items-center pl-20"
+  style={{ backgroundImage: `url(${bgImage})` }}
+>
+  <div className="w-full max-w-7xl px-4 flex">
+    {/* Left col-6 with centered content */}
+    <div className="w-full md:w-1/2 flex flex-col  gap-5 font-urbanist ">
+      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] 2xl:text-[11rem] text-gradient animate-gradient">
+        Faq
+      </h1>
+      <p className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl animate-fadeInLeft delay-200">
+        Frequently asked questions on TNGSS 2025
+      </p>
+    </div>
+
+    {/* Right col-6 empty */}
+    <div className="hidden md:block w-1/2"></div>
+  </div>
+</div>
+
+
 
       <div className="flex flex-col items-center py-10 px-5 bg-black w-full">
         {faqSections.map((section, index) => (
@@ -224,8 +223,8 @@ const Faq = () => {
           />
         ))}
       </div>
-      <div className="min-h-screen w-full flex gap-5 items-center justify-center ">
-      <div className="w-full  flex flex-col md:flex-row">
+      <div className=" w-full flex gap-5 items-center justify-center pb-5 mb-5">
+      <div className="w-full  flex flex-col md:flex-row pb-5">
         {/* Left Section */}
         <div className="w-full md:w-1/3 p-6 md:p-10 md:ml-16">
           <h1 className="text-4xl md:text-5xl font-light mb-10 get-text mr-2">Get In Touch</h1>
@@ -361,84 +360,63 @@ const Faq = () => {
           </form>
         </div>
       </div>
+
     </div>
 
-    
+     
     </div>
   );
 };
 
 const FaqSection = ({ sectionNumber, title, items }) => {
+  const [activeItemId, setActiveItemId] = useState(
+    items.find(item => item.initialExpanded)?.id || null
+  );
+
+  const handleItemClick = (itemId) => {
+    setActiveItemId(prevId => (prevId === itemId ? null : itemId));
+  };
+
   return (
-    <section className=" my-5 bg-black  rounded-3xl md:rounded-[50px] w-full  gradient-border m-3"
-    >
+    <section className="my-5 bg-black rounded-3xl md:rounded-[50px] w-full gradient-border m-3">
       <div className='gradient-inner p-6 md:p-10'>
-      <header className="flex items-center mb-5 ">
-        <h2 className="mr-4 text-4xl md:text-5xl sm:text-3xl font-bold text-[#0099ff] text-gradient">{sectionNumber}</h2>
-        <h2 className="text-3xl md:text-5xl sm:text-3xl font-bold text-[#0099ff] text-gradient">{title}</h2>
-      </header>
-      <h3 className="mb-5 text-2xl md:text-4xl font-light text-white ml-4">FAQs</h3>
-      <div className="flex flex-col ">
-        {items.map((item) => (
-          <FaqItem
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            content={item.content}
-            initialExpanded={item.initialExpanded}
-          />
-        ))}
+        <header className="flex items-center mb-5">
+          <h2 className="mr-4 text-4xl md:text-5xl sm:text-3xl font-bold text-[#0099ff] text-gradient-1">
+            {sectionNumber}
+          </h2>
+          <h2 className="text-3xl md:text-5xl sm:text-3xl font-bold text-[#0099ff] text-gradient-1">
+            {title}
+          </h2>
+        </header>
+        <h3 className="mb-5 text-2xl md:text-4xl font-light text-white ml-4">FAQs</h3>
+        <div className="flex flex-col">
+          {items.map((item) => (
+            <FaqItem
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              content={item.content}
+              isExpanded={activeItemId === item.id}
+              onToggle={() => handleItemClick(item.id)}
+            />
+          ))}
+        </div>
       </div>
-      </div>
-   
     </section>
-  //   <GradientBdrCard className=" my-5 w-full max-w-7xl rounded-3xl md:rounded-[50px] bg-black">
-  //   <header className="flex items-center flex-wrap mb-5 p-6 md:p-">
-  //     <h2 className="mr-4 text-4xl sm:text-3xl md:text-5xl font-bold text-[#0099ff] text-gradient">
-  //       {sectionNumber}
-  //     </h2>
-  //     <h2 className="text-3xl sm:text-3xl md:text-5xl font-bold text-[#0099ff] text-gradient">
-  //       {title}
-  //     </h2>
-  //   </header>
-
-  //   <h3 className="mb-5 text-2xl md:text-4xl font-light text-white ml-1 md:ml-4">
-  //     FAQs
-  //   </h3>
-
-  //   <div className="flex flex-col space-y-4">
-  //     {items.map((item) => (
-  //       <FaqItem
-  //         key={item.id}
-  //         id={item.id}
-  //         title={item.title}
-  //         content={item.content}
-  //         initialExpanded={item.initialExpanded}
-  //       />
-  //     ))}
-  //   </div>
-  // </GradientBdrCard>
   );
 };
 
-const FaqItem = ({ title, content, id, initialExpanded = false }) => {
-  const [isExpanded, setIsExpanded] = useState(initialExpanded);
-
-  const toggleExpansion = () => {
-    setIsExpanded(!isExpanded);
-  };
-
-
+const FaqItem = ({ title, content, id, isExpanded, onToggle }) => {
   return (
     <div className="mb-4">
       <button
-        className="flex justify-between items-center border-b-2 border-gray-900  p-4 w-full text-xl  md:text-2xl font-light text-white  hover:bg-gray-900 transition-all"
-        onClick={toggleExpansion}
+        className="flex justify-between items-center border-b-2 border-gray-900 p-4 w-full text-xl md:text-2xl font-light text-white hover:bg-gray-900 transition-all"
+        onClick={onToggle}
         aria-expanded={isExpanded}
         aria-controls={`faq-content-${id}`}
       >
         {title}
-  <div className="orange-circle">
+        <div className="orange-circle">
           <span className="text-white text-xl font-bold">
             {isExpanded ? "-" : "+"}
           </span>
@@ -447,7 +425,7 @@ const FaqItem = ({ title, content, id, initialExpanded = false }) => {
       {isExpanded && (
         <div
           id={`faq-content-${id}`}
-          className="px-4 py-2 text-white text-base md:text-xl border-l-2 border-blue-500 "
+          className="px-4 py-2 text-white text-base md:text-xl border-l-2 border-blue-500"
         >
           {content}
         </div>

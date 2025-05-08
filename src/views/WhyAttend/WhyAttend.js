@@ -86,7 +86,7 @@ const WhyAttend = () => {
             <WhySwiper />
           </div>
           <ActivitiesSection/>
-          <PitchBattleSection title={'Startup Pitch Battle'} description={'Codissia Trade Fair Complex, Coimbatore.'}/>
+
           <SpeakersSection/>
           <USPSection />
         </div>

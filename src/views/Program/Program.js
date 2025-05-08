@@ -309,10 +309,10 @@ function App() {
   <div className="w-full max-w-7xl mx-auto px-4  mt-5 flex flex-col md:flex-row items-center justify-between">
     {/* Left Column: Text */}
     <div className="w-full md:w-1/2  md:mb-0 text-white font-urbanist animate-fadeInLeft program-text">
-    <h1 className="text-6xl md:text-8xl  text-gradient animate-gradient mb-6">
+    <h1 className="text-5xl md:text-8xl sm:text-5xl text-gradient animate-gradient  lg:text-8xl mb-6">
   Programs
 </h1>
-      <p className="text-xl sm:text-2xl">
+      <p className="text-white text-xl animate-fadeInLeft delay-200  md:text-4xl">
         Exploring the Core of TNGSS'25
       </p>
     </div>
