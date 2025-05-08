@@ -3,7 +3,8 @@ import introImg from "../../assets/img/intro-mission-image.png";
 import introBackground from "../../assets/img/about-sec-pg.png";
 import GradientBdrCard from "../Elements/GradientBorderCard";
 
-const IntroMissionSection = () => {
+const IntroMissionSection = ({data}) => {
+  console.log(data)
   return (
     // <div className="w-full min-h-screen p-8 md:p-16 relative">
     //   <style>{`
@@ -66,15 +67,15 @@ const IntroMissionSection = () => {
 
       }}
       className="bg-cover bg-center bg-no-repeat">
-    <div className=" backdrop-blur-sm rounded-xl p-6 md:p-10 ">
+    <div className=" backdrop-blur-sm rounded-xl p-6 md:p-10  min-h-screen">
         {/* Introduction */}
-        <h2 className="text-4xl font-semibold text-black mb-4">Introduction</h2>
-        <p className="text-gray-800 mb-3 text-base md:text-lg">
-          Overview - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <p className="text-gray-800 mb-12 text-base md:text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
+        <h2 className="text-4xl font-semibold text-black mb-4">{data?.features[0].Title||'Introduction'}</h2>
+        <p className="text-gray-800 mb-3 text-base md:text-lg"
+           dangerouslySetInnerHTML={{
+             __html: data?.features[0].description.replace(/\n/g, '<br  />') || ''
+           }}
+        />
+
 
         {/* Image and Mission */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -89,13 +90,12 @@ const IntroMissionSection = () => {
 
           {/* Mission */}
           <div>
-            <h2 className="text-4xl font-semibold text-black mb-4">Mission</h2>
-            <p className="text-gray-800 mb-3 text-base md:text-lg">
-              Overview - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <p className="text-gray-800 text-base md:text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <h2 className="text-4xl font-semibold text-black mb-4">{data?.features[1].Title}</h2>
+            <p className="text-gray-800 mb-3 text-base md:text-lg"
+            dangerouslySetInnerHTML={{
+             __html: data?.features[0].description.replace(/\n/g, '<br  />') || ''
+           }}     />
+
           </div>
         </div>
       </div>

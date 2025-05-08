@@ -110,7 +110,7 @@ const Speakers = () => {
             <div ref={(el) => (cardsRef.current[index] = el)} className="will-change-transform">
               <FlippingCardNarrow flipinvert className="rounded-2xl">
                 {/* Front of Card */}
-                <div className="relative w-80 h-96 rounded-2xl overflow-hidden mt-36">
+                <div className="relative w-80 h-96 rounded-2xl overflow-hidden mt-36 ">
                   <img
                     src={item.profile_image}
                     className="w-full h-full object-cover object-center absolute inset-0 radius-2xl gradient-border"

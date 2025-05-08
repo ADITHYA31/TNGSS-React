@@ -12,6 +12,23 @@ import bgImage from '../../assets/img/image.png';
 
 
 const About = () => {
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      try {
+        const response = await fetch(`${process.env.STRAPI_URL}api/aboutus?pLevel`); // Replace with your CMS API endpoint
+        const data = await response.json();
+        setContent(data.data);
+        // console.log(content.data)
+      } catch (error) {
+        console.error('Error fetching content:', error);
+      }
+    };
+
+    fetchContent();
+  }, []);
+
   return (
     <div style={{backgroundColor:'black'}} >
         {/* <HeroSection title={"About Us"} subtitle={"TNGSS Conversations: Where Ideas Collide"}/> */}
@@ -35,12 +52,12 @@ const About = () => {
     <div className="hidden md:block w-1/2"></div>
   </div>
 </div>
-
-        <IntroMissionSection/>
-        <WhyTamilNaduSection/>
-        <FocusAreasSection/>
-        <KeyFocusSection/>
-        <GetInvolvedSection/>
+      
+        <IntroMissionSection data={content?.Section1}/>
+        <WhyTamilNaduSection data={content?.Section2}/>
+        <FocusAreasSection data={content?.Section3}/>
+        <KeyFocusSection data={content?.Section4}/>
+        <GetInvolvedSection data={content?.Section5}/>
     </div>
   );
 };

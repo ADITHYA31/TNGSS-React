@@ -3,18 +3,6 @@ import lottie from 'lottie-web';
 import loadingAnimation from '../../assets/preloader.json';
 import mobileAnimation from '../../assets/mobile_anim.json'; // <-- mobile version
 import logo from "../../assets/Nav_logo.png";
-import NavBar from '../../components/Elements/NavBar';
-import Footer from '../../components/Elements/Footer/Footer';
-import StackingSections from '../../components/Homepage/FirstSections/StackingSections';
-import PreFooter from '../../components/Homepage/Prefooter/PreFooter';
-import CurtainSection from '../../components/Homepage/CurtainSection/CurtainSection';
-import ShowcaseSection from '../../components/Homepage/showcase_section/ShowcaseSection';
-import SponsSection from '../../components/Homepage/SponsSection';
-import SpeakerSection from '../../components/Homepage/SpeakerSection/SpeakerSection';
-import PastEngagements from '../../components/Homepage/past_engagements';
-import CMSection from '../../components/Homepage/FirstSections/CMSection';
-import StatsSection from '../../components/Homepage/FirstSections/StatsSection';
-import useStackingAnimation from '../../hooks/useStackingAnimation';
 import HeroSection from '../../components/WhyAttend/HeroSection';
 import WhySwiper from '../../components/WhyAttend/WhySwiper';
 import USPSection from '../../components/WhyAttend/USPSection';
@@ -28,6 +16,7 @@ const WhyAttend = () => {
   const containerRef = useRef(null);
   const logoRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [data, setData] = useState(null); // State to hold fetched data
 
   useEffect(() => {
     // Check if the preloader already played
@@ -41,7 +30,19 @@ const WhyAttend = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${process.env.STRAPI_URL}api/whyattend-startup?pLevel`); // Replace with your actual endpoint
+        const result = await response.json();
+        setData(result.data); // Assuming the data structure has a 'data' field
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const anim = lottie.loadAnimation({

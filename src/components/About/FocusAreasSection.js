@@ -16,7 +16,7 @@ const focusItems = [
   { title: "Innovation Hub", desc: "Explore ideas", img: area1, linkText: "Read More" },
 ]
 
-export default function FocusAreasSection() {
+export default function FocusAreasSection({data}) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
   const [isTablet, setIsTablet] = useState(false)

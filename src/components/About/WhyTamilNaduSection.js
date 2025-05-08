@@ -6,51 +6,51 @@ import background from '../../assets/img/why-tamilnadu-background.png';
 
 const images = [img1, img2, img3];
 
-const WhyTamilNaduSection = () => {
+const WhyTamilNaduSection = ({data}) => {
   console.log({ img1, img2, img3, background });
 
   const [imageIndex, setImageIndex] = useState(0);
   const sectionRef = useRef(null);
   const isAnimating = useRef(false);
 
-  useEffect(() => {
-    const section = sectionRef.current;
+  // useEffect(() => {
+  //   const section = sectionRef.current;
 
-    const handleWheel = (e) => {
-      if (!section) return;
+  //   const handleWheel = (e) => {
+  //     if (!section) return;
 
-      const rect = section.getBoundingClientRect();
-      const fullView = rect.top <= 0 && rect.bottom >= window.innerHeight;
+  //     const rect = section.getBoundingClientRect();
+  //     const fullView = rect.top <= 0 && rect.bottom >= window.innerHeight;
 
-      if (!fullView) return;
+  //     if (!fullView) return;
 
-      const scrollingDown = e.deltaY > 0;
-      const scrollingUp = e.deltaY < 0;
+  //     const scrollingDown = e.deltaY > 0;
+  //     const scrollingUp = e.deltaY < 0;
 
-      if (
-        (scrollingDown && imageIndex < images.length - 1) ||
-        (scrollingUp && imageIndex > 0)
-      ) {
-        e.preventDefault();
+  //     if (
+  //       (scrollingDown && imageIndex < images.length - 1) ||
+  //       (scrollingUp && imageIndex > 0)
+  //     ) {
+  //       e.preventDefault();
 
-        if (isAnimating.current) return;
-        isAnimating.current = true;
+  //       if (isAnimating.current) return;
+  //       isAnimating.current = true;
 
-        setImageIndex((prev) =>
-          scrollingDown
-            ? Math.min(prev + 1, images.length - 1)
-            : Math.max(prev - 1, 0)
-        );
+  //       setImageIndex((prev) =>
+  //         scrollingDown
+  //           ? Math.min(prev + 1, images.length - 1)
+  //           : Math.max(prev - 1, 0)
+  //       );
 
-        setTimeout(() => {
-          isAnimating.current = false;
-        }, 700);
-      }
-    };
+  //       setTimeout(() => {
+  //         isAnimating.current = false;
+  //       }, 700);
+  //     }
+  //   };
 
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => window.removeEventListener('wheel', handleWheel);
-  }, [imageIndex]);
+  //   window.addEventListener('wheel', handleWheel, { passive: false });
+  //   return () => window.removeEventListener('wheel', handleWheel);
+  // }, [imageIndex]);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -84,13 +84,9 @@ const WhyTamilNaduSection = () => {
 
           {/* Text Content */}
           <div>
-            <h2 className="text-4xl font-bold mb-6">Why Tamil Nadu</h2>
+            <h2 className="text-4xl font-bold mb-6">{data?.Title}</h2>
             <p className="text-lg leading-relaxed">
-              Change drives progress, and TNGSS 2025 focuses on how startups can break barriers and seize new
-              opportunities. The theme “Disrupt to Rise” highlights that groundbreaking ideas emerge from those who
-              challenge, rethink, and redefine industries. Tamil Nadu’s startup ecosystem is evolving across diverse
-              sectors, with businesses finding success by adapting to change. This summit serves as a platform for
-              entrepreneurs, investors, and industry experts to drive change through innovation.
+            {data?.description}
             </p>
           </div>
         </div>

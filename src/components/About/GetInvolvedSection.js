@@ -109,7 +109,7 @@ const involvedItems = [
 ];
 
 
-const GetInvolvedSection = () => {
+const GetInvolvedSection = ({data}) => {
   const scrollRef = useRef(null);
   const [isScrolling, setIsScrolling] = useState(true);
   const [scrollSpeed] = useState(0.7);
@@ -146,20 +146,16 @@ const GetInvolvedSection = () => {
         <div className="mb-12 flex flex-wrap md:flex-nowrap gap-8 py-16 px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="w-full md:w-4/12">
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] leading-snug whitespace-pre-line">
-              How to get{"\n"}Involved
+              {data?.Heading}
             </h2>
           </div>
           <div className="w-full md:w-8/12 text-base sm:text-lg text-gray-300 space-y-4">
-            <p className="mt-6 text-xl sm:text-2xl">
-              Overview—Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <p className="mt-6 text-xl sm:text-2xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <p className="mt-6 text-xl sm:text-2xl"
+            dangerouslySetInnerHTML={{
+            __html: data?.description.replace(/\n/g, '<br  />') || ''
+            }}
+            />
+
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from '../../components/Elements/NavBar';
 import Footer from '../../components/Elements/Footer/Footer';
 import bgImage from '../../assets/img/image.png';
@@ -10,6 +10,22 @@ const Faq = () => {
     phone: '',
     address: ''
   });
+  const [faqSections, setFaqSections] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      console.log(`${process.env.STRAPI_URL}api/faq?pLevel`)
+      try {
+        const response = await fetch(`${process.env.STRAPI_URL}api/faq?pLevel`);
+        const data = await response.json();
+        setFaqSections(data.data.FAQs);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
@@ -28,169 +44,8 @@ const Faq = () => {
     console.log('Form submitted:', formData);
   };
 
-  const faqSections = [
-    {
-      sectionNumber: "01",
-      title: "GENERAL",
-      items: [
-        {
-          id: "general1",
-          title: "General",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features,Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-          initialExpanded: true,
-        },
-        {
-          id: "general2",
-          title: "Registration",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "general3",
-          title: "App",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "general4",
-          title: "Startups",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-      ],
-    },
-    {
-      sectionNumber: "02",
-      title: "REGISTRATION",
-      items: [
-        {
-          id: "registration1",
-          title: "General",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "registration2",
-          title: "Registration",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "registration3",
-          title: "App",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "registration4",
-          title: "Startups",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-      ],
-    },
-    {
-      sectionNumber: "03",
-      title: "APP",
-      items: [
-        {
-          id: "app1",
-          title: "General",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "app2",
-          title: "Registration",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "app3",
-          title: "App",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "app4",
-          title: "Startups",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-      ],
-    },
-    {
-      sectionNumber: "04",
-      title: "STARTUPS",
-      items: [
-        {
-          id: "startups1",
-          title: "General",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "startups2",
-          title: "Registration",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "startups3",
-          title: "App",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "startups4",
-          title: "Startups",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-      ],
-    },
-    {
-      sectionNumber: "05",
-      title: "INVESTORS",
-      items: [
-        {
-          id: "investors1",
-          title: "General",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "investors2",
-          title: "Registration",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "investors3",
-          title: "App",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "investors4",
-          title: "Startups",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-      ],
-    },
-    {
-      sectionNumber: "06",
-      title: "CORPORATES",
-      items: [
-        {
-          id: "corporates1",
-          title: "General",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "corporates2",
-          title: "Registration",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "corporates3",
-          title: "App",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-        {
-          id: "corporates4",
-          title: "Startups",
-          content: "Here you'll find answers to the most common questions about our platform. We cover everything from basic functionality to advanced features.",
-        },
-      ],
-    },
-  ];
-
   return (
     <div className="bg-black font-urbanist">
-      <NavBar />
       <div
   className="bg-cover bg-center flex w-full h-[80vh] items-center pl-20"
   style={{ backgroundImage: `url(${bgImage})` }}
@@ -217,9 +72,13 @@ const Faq = () => {
         {faqSections.map((section, index) => (
           <FaqSection
             key={index}
-            sectionNumber={section.sectionNumber}
-            title={section.title}
-            items={section.items}
+            sectionNumber={'0' + (index + 1)}
+            title={section.category}
+            items={section.questions.map(question => ({
+              id: question.id,
+              title: question.Title,
+              content: question.Answer
+            }))}
           />
         ))}
       </div>
@@ -425,9 +284,12 @@ const FaqItem = ({ title, content, id, isExpanded, onToggle }) => {
       {isExpanded && (
         <div
           id={`faq-content-${id}`}
-          className="px-4 py-2 text-white text-base md:text-xl border-l-2 border-blue-500"
+          className="px-4 py-2 text-white text-base md:text-xl border-l-2 border-blue-500 "
+          dangerouslySetInnerHTML={{
+            __html:content.replace(/\n/g, '<br  />') || ''
+          }}
         >
-          {content}
+          {/* {content} */}
         </div>
       )}
     </div>

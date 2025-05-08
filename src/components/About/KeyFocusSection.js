@@ -5,7 +5,7 @@ import icon1 from "../../assets/img/ai-technology.png"
 import icon2 from "../../assets/img/diversity.png"
 import icon3 from "../../assets/img/robustness.png"
 
-const KeyFocusSection = () => {
+const KeyFocusSection = ({data}) => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [screenSize, setScreenSize] = useState("desktop") // 'mobile', 'tablet', or 'desktop'
 
