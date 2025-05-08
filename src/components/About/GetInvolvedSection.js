@@ -165,32 +165,43 @@ const GetInvolvedSection = () => {
 
         {/* Auto-Scroll Cards */}
         <div
-          ref={scrollRef}
-          className="overflow-x-auto whitespace-nowrap py-4"
+  ref={scrollRef}
+  className="overflow-x-auto whitespace-nowrap py-4"
+  style={{
+    scrollbarWidth: "none",
+    msOverflowStyle: "none",
+  }}
+  onMouseEnter={() => setIsScrolling(false)}
+  onMouseLeave={() => setIsScrolling(true)}
+>
+  <div className="inline-flex gap-4 pl-4">
+    {loopedItems.map((item, index) => (
+      <div
+        key={index}
+        className="flex-shrink-0"
+        style={{ width: "calc(33.33% - 11px)" }}
+        onClick={() => setIsScrolling(false)}
+      >
+        {/* Gradient Border Wrapper */}
+        <div
+          className="p-1 rounded-xl"
           style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
+            background:
+              "linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)",
           }}
-          onMouseEnter={() => setIsScrolling(false)}
-          onMouseLeave={() => setIsScrolling(true)}
         >
-          <div className="inline-flex gap-4 pl-4">
-            {loopedItems.map((item, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0"
-                style={{ width: "calc(33.33% - 11px)" }}
-                onClick={() => setIsScrolling(false)}
-              >
-                <img
-                  src={item.image}
-                  alt={`Involved item ${index + 1}`}
-                  className="rounded-xl object-cover w-full h-auto min-h-[200px] max-h-[300px] hover:cursor-pointer"
-                />
-              </div>
-            ))}
-          </div>
+          {/* Image */}
+          <img
+            src={item.image}
+            alt={`Involved item ${index + 1}`}
+            className=" object-cover w-full h-auto min-h-[200px] max-h-[300px] hover:cursor-pointer"
+          />
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         <style jsx>{`
           div::-webkit-scrollbar {

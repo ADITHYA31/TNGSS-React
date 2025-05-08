@@ -105,27 +105,30 @@ const HeroSection = ({ className = '' }) => {
         </div>
 
         {/* Right Column - Images */}
-        <div className="w-full md:w-1/2 relative flex justify-center items-center mt-8 md:mt-0 lg:pl-12 ">
-  <div className="relative w-[70%] max-w-md md:max-w-lg mt-8 p-5 ">
-    {/* Outer Image */}
-    <img
-      src={outerImage}
-      alt="Event Crowd"
-      className="w-full rounded-3xl shadow-xl "
-      // style={{width:"80%"}}
-    />
+        <div className="w-full md:w-1/2 relative flex justify-center items-center mt-8 md:mt-0 lg:pl-12">
+  <div className="relative w-[70%] max-w-md md:max-w-lg mt-8 p-5">
+    
+    {/* Gradient Border Wrapper */}
+    <div className="p-1 rounded-3xl" style={{
+      background: 'linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)'
+    }}>
+      {/* Outer Image */}
+      <img
+        src={outerImage}
+        alt="Event Crowd"
+        className="w-full rounded-3xl shadow-xl"
+      />
+    </div>
 
     {/* Inner Image */}
     <img
       src={innerImage}
       alt="Digital Abstract"
       className="absolute -left-3 md:-left-40 bottom-16 w-1/3 rounded-2xl shadow-lg md:bottom-24 absloute-about-img"
-
-      
-
     />
   </div>
 </div>
+
 
       </div>
     </section>
