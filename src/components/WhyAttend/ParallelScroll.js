@@ -67,7 +67,7 @@ export default function ParallelScroll({ cont = [] }) {
         minHeight: isMobile ? "auto" : "400px", 
         display: 'flex', 
         justifyContent: 'center', 
-        alignItems: 'center'
+        alignItems: 'center',
       }}
     >
       <div className="w-full h-full flex flex-col justify-center overflow-hidden items-center">
@@ -111,24 +111,25 @@ export default function ParallelScroll({ cont = [] }) {
           </div>
         ) : (
           // Desktop View
-          <div className="flags flex w-full gap-3 md:flex-nowrap overflow-x-auto scrollbar-hide px-4">
-            {cont.map((item, index) => (
-              <div key={index} className="min-w-[280px] md:min-w-[300px] h-[400px] flex-shrink-0 relative" style={gradientBorderStyle}>
-                <div style={innerContentStyle}>
-                  <img
-                    src={getImageUrl(item) || "/placeholder.svg"}
-                    alt={item?.tag || item?.title || "Card image"}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    style={{ display: "block", width: "300px", height: "auto" }}
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-5 pb-6 pt-10">
-                    <p className="text-xl md:text-3xl text-white font-bold">{item?.tag || item?.title}</p>
+            <div className="flags flex w-full gap-3 md:flex-nowrap overflow-x-auto scrollbar-hide px-4 pr-4">
+              {cont.map((item, index) => (
+                <div key={index} className="min-w-[280px] md:min-w-[300px] h-[400px] flex-shrink-0 relative" style={gradientBorderStyle}>
+                  <div style={innerContentStyle}>
+                    <img
+                      src={getImageUrl(item) || "/placeholder.svg"}
+                      alt={item?.tag || item?.title || "Card image"}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      style={{ display: "block", width: "300px", height: "auto" }}
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-5 pb-6 pt-10">
+                      <p className="text-xl md:text-3xl text-white font-bold">{item?.tag || item?.title}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+
         )}
       </div>
     </section>
