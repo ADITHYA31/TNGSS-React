@@ -268,12 +268,12 @@
  .gradient-border {
      padding: 4px;
      /* Simulates border width */
-     border-radius: 20px;
+     /* border-radius: 20px; */
      background: linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%);
  }
 
  .gradient-inner {
-     border-radius: 19px;
+     border-radius: inherit;
      /* Slightly less than outer radius to simulate inset */
      background-color: black;
      width: 100%;

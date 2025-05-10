@@ -34,7 +34,7 @@ const About = () => {
         {/* <HeroSection title={"About Us"} subtitle={"TNGSS Conversations: Where Ideas Collide"}/> */}
 
       <div
-  className="bg-cover bg-center flex w-full h-[80vh] items-center pl-20"
+  className="bg-cover bg-center flex w-full h-[80vh] items-center md:pl-20"
   style={{ backgroundImage: `url(${bgImage})` }}
 >
   <div className="w-full max-w-7xl px-4 flex">

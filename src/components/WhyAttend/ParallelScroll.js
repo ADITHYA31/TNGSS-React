@@ -1,7 +1,12 @@
 import { useRef, useState } from "react";
 import { useParlx } from "../../hooks/test_hooks/useParlx";
 
-export default function ParallelScroll({ cont = [] }) {
+export default function ParallelScroll({ cont = [    { tag: 'Networking', image: networking },
+  { tag: 'Mobile App', image: mobileApp },
+  { tag: 'Meeting Spaces', image: meetingspace },
+  { tag: 'New Partnerships', image: networking },
+  { tag: 'Investors', image: networking },] }) {
+
   const globalpavilion = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 

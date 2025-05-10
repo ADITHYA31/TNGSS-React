@@ -17,6 +17,7 @@ export default function Footer() {
     { img: X, link: 'https://x.com/TheStartupTN' },
   ];
   const [data, setData] = useState([]);
+  const [isHome, setIsHome] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,8 +34,12 @@ export default function Footer() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    setIsHome(window.location.pathname === '/home');
+  }, []);
+
   return (
-    <div className="bg-white isolate">
+    <div className={isHome ? "bg-white isolate" : "bg-black isolate"}>
       <div
         className="flex flex-col bg-[#18BFDB] h-[60vh] md:rounded-t-[60px] overflow-hidden"
         style={{ borderRadius: '50px 23px 0px 0px' }}

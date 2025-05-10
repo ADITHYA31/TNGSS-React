@@ -145,8 +145,13 @@ const GetInvolvedSection = ({data}) => {
         {/* Header (unchanged) */}
         <div className="mb-12 flex flex-wrap md:flex-nowrap gap-8 py-16 px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="w-full md:w-4/12">
-            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] leading-snug whitespace-pre-line">
-              {data?.Heading}
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] leading-snug whitespace-pre-line"
+                        dangerouslySetInnerHTML={{
+                          __html: data?.Heading.replace(/\\n/g, '<br  />') || ''
+                          }}
+            
+            >
+              
             </h2>
           </div>
           <div className="w-full md:w-8/12 text-base sm:text-lg text-gray-300 space-y-4">
@@ -180,18 +185,20 @@ const GetInvolvedSection = ({data}) => {
       >
         {/* Gradient Border Wrapper */}
         <div
-          className="p-1 rounded-xl"
+          className="p-1 rounded-xl overflow-hidden"
           style={{
             background:
               "linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)",
           }}
         >
+          <div className="overflow-hidden" style={{ borderRadius: 'inherit' }}>
           {/* Image */}
           <img
             src={`${process.env.STRAPI_URL}${item?.background.url}`}
             alt={`Involved item ${index + 1}`}
             className=" object-cover w-full h-auto min-h-[200px] max-h-[300px] hover:cursor-pointer"
-          />
+            />
+            </div>
         </div>
       </div>
     ))}

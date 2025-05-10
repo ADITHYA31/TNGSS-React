@@ -57,7 +57,7 @@ const IntroMissionSection = ({data}) => {
     //   </div>
     // </div>
     <GradientBdrCard
-      className="min-h-screen p-1  font-urbanist about-border"
+      className="min-h-screen p-1 rounded-md  font-urbanist about-border"
       
     >
       <div 
@@ -78,18 +78,18 @@ const IntroMissionSection = ({data}) => {
 
 
         {/* Image and Mission */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:mt-12 items-start">
           {/* Image */}
-          < div className="flex justify-center items-center">
+          <GradientBdrCard className="flex justify-center items-center">
             <img
               src={`${process.env.STRAPI_URL}${data?.features[1].Creative?.url}`}
               alt="about"
               className="  flex justify-center items-center  w-full h-auto "
             />
-          </div>
+          </GradientBdrCard>
 
           {/* Mission */}
-          <div>
+          <div className="flex flex-col mt-10 h-full">
             <h2 className="text-4xl font-semibold text-black mb-4">{data?.features[1].Title}</h2>
             <p className="text-gray-800 mb-3 text-base md:text-lg"
             dangerouslySetInnerHTML={{
