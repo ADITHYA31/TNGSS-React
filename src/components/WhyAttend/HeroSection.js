@@ -105,30 +105,36 @@ const HeroSection = ({data, className = '' }) => {
           </div>
         </div>
 
-        {/* Right Column - Images */}
-        <div className="w-full md:w-1/2 relative flex justify-center items-center mt-8 md:mt-0 lg:pl-12">
-  <div className="relative w-[70%] max-w-md md:max-w-lg mt-8 p-5">
-    
-    {/* Gradient Border Wrapper */}
-    <div className="p-1 rounded-3xl" style={{
-      background: 'linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)'
-    }}>
-      {/* Outer Image */}
+<div className="w-full md:w-1/2 relative flex justify-center items-center mt-8 md:mt-0 lg:pl-12">
+  <div className="relative w-[70%] max-w-md md:max-w-lg mt-8">
+    {/* Outer Image with Gradient Border */}
+    <div className="relative  rounded-3xl p-1" 
+      style={{
+        background: 'linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)'
+      }}>
       <img
-        src={`${process.env.STRAPI_URL}${data?.Major?.url}`}
+        src={`${process.env.STRAPI_URL || ''}${data?.Major?.url}`}
         alt="Event Crowd"
-        className="w-full rounded-3xl shadow-xl"
+        className=" rounded-3xl shadow-xl object-cover overlay-pic"
+        
       />
     </div>
 
-    {/* Inner Image */}
-    <img
-      src={`${process.env.STRAPI_URL}${data?.Minor?.url}`}
-      alt="Digital Abstract"
-      className="absolute -left-3 md:-left-40 bottom-16 w-1/3 rounded-2xl shadow-lg md:bottom-24 absloute-about-img"
-    />
+    {/* Inner Image with Gradient Border */}
+    <div className="absolute -left-3 md:-left-40 bottom-32 w-1/3 rounded-2xl p-1 shadow-lg md:bottom-32 "
+      style={{
+        background: 'linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)',
+        width: "95%"
+      }}>
+      <img
+        src={`${process.env.STRAPI_URL || ''}${data?.Major?.url}`}
+        alt="Digital Abstract"
+        className="w-full rounded-2xl"
+      />
+    </div>
   </div>
 </div>
+
 
 
       </div>
