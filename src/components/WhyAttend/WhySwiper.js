@@ -1,24 +1,16 @@
 "use client"
 import { useState, useEffect } from "react"
-import { ChevronRight, ChevronLeft } from "lucide-react"
-import img from "../../assets/img/this-is-why-grid-background.png"
+import { ChevronRight } from "lucide-react"
 
-export default function CarouselSection() {
+export default function CarouselSection({ data }) {
   const [activeSlide, setActiveSlide] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
 
-  const slides = [
-    { title: "Networking Opportunities", image: img },
-    { title: "Investors", image: img },
-    { title: "Global Reach", image: img },
-    { title: "Expert Mentors", image: img },
-    { title: "Innovation Hub", image: img },
-    { title: "Growth Resources", image: img },
-    { title: "Funding Access", image: img },
-    { title: "Industry Connections", image: img },
-    { title: "Market Insights", image: img },
-    { title: "Strategic Partners", image: img },
-  ]
+  // Dynamically generated slides from the data prop
+  const slides = data?.cards?.map((card) => ({
+    title: card.title,
+    image: `${process.env.STRAPI_URL}${card.background?.formats?.medium?.url || card.background?.url}`,
+  })) || []
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,7 +26,6 @@ export default function CarouselSection() {
     if (isMobile) {
       setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
     } else {
-      // For desktop, ensure we don't go beyond the last pair
       const maxSlide = Math.ceil(slides.length / 2) - 1
       setActiveSlide((prev) => (prev === maxSlide ? 0 : prev + 1))
     }
@@ -44,25 +35,21 @@ export default function CarouselSection() {
     if (isMobile) {
       setActiveSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
     } else {
-      // For desktop, ensure we loop back from first to last pair
       const maxSlide = Math.ceil(slides.length / 2) - 1
       setActiveSlide((prev) => (prev === 0 ? maxSlide : prev - 1))
     }
   }
 
-  // Calculate the transform value for the sliding effect
   const getTransformValue = () => {
-    if (isMobile) {
-      return `translateX(-${activeSlide * 100}%)`
-    } else {
-      return `translateX(-${activeSlide * 100}%)`
-    }
+    return `translateX(-${activeSlide * 100}%)`
   }
 
   return (
     <div className="w-full bg-black text-white py-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-light text-center mb-8 md:mb-16">This is why</h2>
+        <h2 className="text-3xl md:text-5xl font-light text-center mb-8 md:mb-16">
+          {data?.Heading || "This is why"}
+        </h2>
 
         <div className="relative overflow-hidden">
           {/* Mobile Carousel */}
@@ -145,25 +132,17 @@ export default function CarouselSection() {
             </div>
           </div>
 
-          {/* Navigation Arrows */}
-          {/* <button
-            onClick={prevSlide}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 z-10"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button> */}
-
+          {/* Next Slide Button */}
           <button
             onClick={nextSlide}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 z-10 custom-arrow-button left-con"
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 z-10"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
         </div>
 
-        {/* Responsive Dots */}
+        {/* Dots */}
         <div className="flex justify-center md:justify-end gap-2 mt-8">
           {Array.from({
             length: isMobile ? slides.length : Math.ceil(slides.length / 2),

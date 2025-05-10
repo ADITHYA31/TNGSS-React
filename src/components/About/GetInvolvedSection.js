@@ -167,11 +167,11 @@ const GetInvolvedSection = ({data}) => {
     scrollbarWidth: "none",
     msOverflowStyle: "none",
   }}
-  onMouseEnter={() => setIsScrolling(false)}
-  onMouseLeave={() => setIsScrolling(true)}
+  // onMouseEnter={() => setIsScrolling(false)}
+  // onMouseLeave={() => setIsScrolling(true)}
 >
   <div className="inline-flex gap-4 pl-4">
-    {loopedItems.map((item, index) => (
+    {data?.cards.map((item, index) => (
       <div
         key={index}
         className="flex-shrink-0"
@@ -188,7 +188,7 @@ const GetInvolvedSection = ({data}) => {
         >
           {/* Image */}
           <img
-            src={item.image}
+            src={`${process.env.STRAPI_URL}${item?.background.url}`}
             alt={`Involved item ${index + 1}`}
             className=" object-cover w-full h-auto min-h-[200px] max-h-[300px] hover:cursor-pointer"
           />
@@ -209,7 +209,7 @@ const GetInvolvedSection = ({data}) => {
         <div className="mt-12 flex justify-center">
           <CTAButton className="rounded-2xl">
             <div className="h-12 px-6 sm:px-10 flex items-center justify-center text-base sm:text-lg font-semibold">
-              JOIN THE ECOSYSTEM
+              {data?.cta}
             </div>
           </CTAButton>
         </div>

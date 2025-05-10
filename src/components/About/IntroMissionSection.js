@@ -82,7 +82,7 @@ const IntroMissionSection = ({data}) => {
           {/* Image */}
           < div className="flex justify-center items-center">
             <img
-              src={introImg}
+              src={`${process.env.STRAPI_URL}${data?.features[1].Creative?.url}`}
               alt="about"
               className="  flex justify-center items-center  w-full h-auto "
             />

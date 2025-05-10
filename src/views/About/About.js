@@ -17,7 +17,7 @@ const About = () => {
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        const response = await fetch(`${process.env.STRAPI_URL}api/aboutus?pLevel`); // Replace with your CMS API endpoint
+        const response = await fetch(`${process.env.STRAPI_URL}/api/aboutus?pLevel`); // Replace with your CMS API endpoint
         const data = await response.json();
         setContent(data.data);
         // console.log(content.data)

@@ -51,7 +51,7 @@ export default function FocusAreasSection({data}) {
   return (
     <section className="bg-black text-white py-16 font-urbanist px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Key Areas to Focus</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{data?.Heading}</h2>
 
         <div className="relative overflow-hidden">
           {/* Carousel container */}
@@ -66,7 +66,7 @@ export default function FocusAreasSection({data}) {
                   key={slideIndex}
                   className="w-full flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
                 >
-                  {focusItems
+                  {data?.cards
                     .slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide)
                     .map((item, itemIndex) => (
                       <div
@@ -82,14 +82,14 @@ export default function FocusAreasSection({data}) {
                           <div
                             className="w-full h-full transition-transform duration-500 group-hover:scale-110"
                             style={{
-                              backgroundImage: `url(${item.img})`,
+                              backgroundImage: `url(${process.env.STRAPI_URL}${item?.background?.url})`,
                               backgroundSize: "cover",
                               backgroundPosition: "center",
                             }}
                           >
                             <div className="absolute inset-0 bg-black/50 p-6 flex flex-col justify-end">
                               <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
-                              <p className="text-sm mt-1">{item.desc}</p>
+                              <p className="text-sm mt-1">{item.description}</p>
                               <a href="#" className="font-semibold underline mt-1">
                                 {item.linkText}
                               </a>

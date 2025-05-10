@@ -14,9 +14,9 @@ const Faq = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log(`${process.env.STRAPI_URL}api/faq?pLevel`)
+      // console.log(`${process.env.STRAPI_URL}/api/faq?pLevel`)
       try {
-        const response = await fetch(`${process.env.STRAPI_URL}api/faq?pLevel`);
+        const response = await fetch(`${process.env.STRAPI_URL}/api/faq?pLevel`);
         const data = await response.json();
         setFaqSections(data.data.FAQs);
       } catch (error) {

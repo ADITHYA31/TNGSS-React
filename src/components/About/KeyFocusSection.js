@@ -74,7 +74,7 @@ const KeyFocusSection = ({data}) => {
 
   // Determine cards per view based on screen size
   const cardsPerView = screenSize === "mobile" ? 1 : screenSize === "tablet" ? 2 : 3
-  const totalSlides = Math.ceil(items.length / cardsPerView)
+  const totalSlides = Math.ceil(data?.cards.length / cardsPerView)
 
   const handleNext = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides)
@@ -96,7 +96,7 @@ const KeyFocusSection = ({data}) => {
   return (
     <section className="bg-black text-white py-16 px-4 font-urbanist">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Key Areas to Focus</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{data?.Heading}</h2>
 
         {/* Carousel container with overflow hidden */}
         <div className="relative overflow-hidden">
@@ -110,7 +110,7 @@ const KeyFocusSection = ({data}) => {
                 key={slideIndex}
                 className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
               >
-                {items.slice(slideIndex * cardsPerView, (slideIndex + 1) * cardsPerView).map((item, itemIndex) => (
+                {data?.cards.slice(slideIndex * cardsPerView, (slideIndex + 1) * cardsPerView).map((item, itemIndex) => (
                   <div
                     key={`slide-${slideIndex}-item-${itemIndex}`}
                     className="relative rounded-3xl overflow-visible"

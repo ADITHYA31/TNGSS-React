@@ -76,7 +76,7 @@ import innerImage from '../../assets/img/abstract-background-with-low-poly-desig
 import outerImage from '../../assets/img/image 120.png';
 import '../../views/Speakers/speakers.css'
 
-const HeroSection = ({ className = '' }) => {
+const HeroSection = ({data, className = '' }) => {
   return (
     <section
       className={`w-full min-h-screen bg-cover bg-center flex items-center relative ${className}`}
@@ -86,10 +86,11 @@ const HeroSection = ({ className = '' }) => {
         {/* Left Column - Text Content */}
         <div className="w-full md:w-1/2 text-center md:text-left space-y-12 sm:text-start lg:pl-12 ultimate-text ">
 
-          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl font-light leading-tight md:leading-snug sm:mt-[45px]">
-            <span className="font-light block">The Ultimate</span>
-            <span className="font-medium block">Global Gathering</span>
-            <span className="font-light block">for Founders</span>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl font-light leading-tight md:leading-snug sm:mt-[45px]"
+          dangerouslySetInnerHTML={{
+            __html: data?.Title.replace(/\n/g, '<br  />') || ''
+            }}
+          >
           </h1>
           
           <div className="flex justify-center md:justify-start">
@@ -98,7 +99,7 @@ const HeroSection = ({ className = '' }) => {
               className="rounded-2xl w-full md:w-auto mt-5"
             >
               <div className="w-50 h-9 px-5 flex items-center justify-center md:justify-start text-lg md:text-xl">
-                REGISTER NOW
+               {data?.cta}
               </div>
             </CTAButton>
           </div>
@@ -114,7 +115,7 @@ const HeroSection = ({ className = '' }) => {
     }}>
       {/* Outer Image */}
       <img
-        src={outerImage}
+        src={`${process.env.STRAPI_URL}${data?.Major?.url}`}
         alt="Event Crowd"
         className="w-full rounded-3xl shadow-xl"
       />
@@ -122,7 +123,7 @@ const HeroSection = ({ className = '' }) => {
 
     {/* Inner Image */}
     <img
-      src={innerImage}
+      src={`${process.env.STRAPI_URL}${data?.Minor?.url}`}
       alt="Digital Abstract"
       className="absolute -left-3 md:-left-40 bottom-16 w-1/3 rounded-2xl shadow-lg md:bottom-24 absloute-about-img"
     />
