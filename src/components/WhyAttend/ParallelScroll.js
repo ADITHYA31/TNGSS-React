@@ -72,7 +72,7 @@ export default function ParallelScroll({ cont = [] }) {
           ) : (
             // ✅ Desktop View
             <div
-              className="flags flex w-full gap-4 overflow-x-auto snap-x snap-mandatory pb-8 px-4"
+              className="flags flex  gap-4 overflow-x-visible snap-x snap-mandatory pb-8 px-4"
               style={{ scrollbarWidth: 'none' }}
             >
               {cont.map((item, index) => (
@@ -86,7 +86,7 @@ export default function ParallelScroll({ cont = [] }) {
                       background: 'linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)'
                     }}
                   >
-                    <div className="rounded-2xl relative w-full h-full shadow-lg">
+                    <div className="rounded-2xl relative w-full h-full shadow-lg overflow-hidden ">
                       <img
                         src={getImageUrl(item)}
                         alt={item?.tag || item?.title || "Card image"}

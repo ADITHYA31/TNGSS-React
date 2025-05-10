@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import CTAButton from '../CTAButton';
 import './custom.css';
 import '../../Elements/custom.css';
@@ -8,13 +9,29 @@ import LinkedIn from '../../../assets/LinkedIn.svg?url';
 import X from '../../../assets/x.svg?url';
 
 export default function Footer() {
-  const data = [
+  const links = [
     { img: facebook, link: 'https://www.facebook.com/TheStartupTN/' },
     { img: insta, link: 'https://www.instagram.com/thestartuptn/' },
     { img: yt, link: 'https://www.youtube.com/channel/UCr0du18taGeXH35dZZD4RnQ' },
     { img: LinkedIn, link: 'https://www.linkedin.com/company/thestartuptn/?originalSubdomain=in' },
     { img: X, link: 'https://x.com/TheStartupTN' },
   ];
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${process.env.STRAPI_URL}/api/footer?pLevel`);
+        const result = await response.json();
+        setData(result.data);
+        console.log(data)
+      } catch (error) {
+        console.error('Error fetching social links:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="bg-white isolate">
@@ -25,7 +42,7 @@ export default function Footer() {
         {/* Marquee */}
         <div className="inline-flex whitespace-nowrap w-full animate-marking text-black font-medium text-2xl sm:text-4xl md:text-5xl space-x-8 py-3 pt-5 px-4">
           {Array(7)
-            .fill('Codissia Trade Fair Complex, Coimbatore')
+            .fill(data?.banner)
             .map((text, index) => (
               <div key={index} className="space-x-4">
                 <span>{text}</span>
@@ -80,17 +97,17 @@ export default function Footer() {
             {/* Contact */}
             <div className="text-center md:text-left">
               <p>
-                Contact: <a href="mailto:events@startuptn.in"> <u>events@startuptn.in</u></a>
+                Contact: <a href={`mailto:${data?.email||'events@startuptn.in'}`}> <u>{data?.email||'events@startuptn.in'}</u></a>
               </p>
               <p>
-                phone: <a href="tel:+914422256789"><u>(+91) 4422256789</u></a> / <a href="tel:+91155343"><u>155343</u></a>
+                phone: <a href={`tel:+91${data?.phone1||'4422256789'}`}><u>(+91) {data?.phone1||'4422256789'}</u></a> / <a href={`tel:+91${data?.phone2||'55343'}`}><u>{data?.phone2||'155343'}</u></a>
               </p>
               <p className=' hidden md:block'>All Rights Reserved © 2025</p>
             </div>
 
             {/* Social Icons */}
             <div className="flex gap-3 justify-center">
-              {data.map((item, index) => (
+              {links.map((item, index) => (
                 <a key={index} href={item.link} className="rounded-full w-10 h-10">
                   <img
                     src={item.img}
@@ -99,7 +116,6 @@ export default function Footer() {
                   />
                 </a>
               ))}
-
             </div>
 
             {/* Policy Links */}
