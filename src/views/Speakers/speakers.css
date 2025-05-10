@@ -326,3 +326,23 @@ button.bg-cyan-500.text-white {
     }
     
   }
+  
+    .overlay-pic{
+      height:500px;
+      width: 400px !important;
+      
+    }
+     .main-pic{
+      height:500px ;
+    }
+    
+
+  @media (max-width:767px) {
+    .overlay-pic{
+      height: 400px;
+    }
+    .main-pic{
+      height: 400px ;
+    }
+    
+  }

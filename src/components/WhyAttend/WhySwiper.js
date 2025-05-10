@@ -135,7 +135,7 @@ export default function CarouselSection({ data }) {
           {/* Next Slide Button */}
           <button
             onClick={nextSlide}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 z-10"
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 z-10 custom-arrow-button"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6" />

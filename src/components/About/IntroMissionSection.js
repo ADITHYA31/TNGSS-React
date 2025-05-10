@@ -80,13 +80,17 @@ const IntroMissionSection = ({data}) => {
         {/* Image and Mission */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Image */}
-          < div className="flex justify-center items-center">
-            <img
-              src={`${process.env.STRAPI_URL}${data?.features[1].Creative?.url}`}
-              alt="about"
-              className="  flex justify-center items-center  w-full h-auto "
-            />
-          </div>
+        <div className="flex justify-center items-center rounded-md p-1 rounded-xl" // Added padding and rounded corners to the wrapper
+  style={{
+    background: "linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)",
+  }}
+>
+  <img
+    src={`${process.env.STRAPI_URL}${data?.features[1].Creative?.url}`}
+    alt="about"
+    className="w-full h-auto rounded-xl" // Slightly smaller border radius for the image
+  />
+</div>
 
           {/* Mission */}
           <div>
