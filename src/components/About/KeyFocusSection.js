@@ -113,7 +113,7 @@ const KeyFocusSection = ({data}) => {
                 {data?.cards.slice(slideIndex * cardsPerView, (slideIndex + 1) * cardsPerView).map((item, itemIndex) => (
                   <div
                     key={`slide-${slideIndex}-item-${itemIndex}`}
-                    className="relative rounded-3xl overflow-visible"
+                    className=" rounded-3xl overflow-visible"
                     style={{
                       background: "linear-gradient(to right, #0055FF, #18BFDB, #F5710C, #EC473E)",
                       padding: "2px",
@@ -137,13 +137,23 @@ const KeyFocusSection = ({data}) => {
           {/* Navigation Arrows - Only show when needed */}
           {items.length > cardsPerView && (
             <>
-          
+          <button
+  className="absolute left-7 top-1/2 -translate-y-1/2 -translate-x-1/2
+   bg-orange-500 rounded-full flex items-center justify-center
+    transition-all duration-300 hover:bg-orange-600 hover:scale-110 z-10 
+    custom-arrow-button custom-pic-position"
+  onClick={handlePrev}
+  aria-label="Previous slide"
+>
+  <FaArrowLeft className="text-white text-lg" />
+</button>
+
 
               <button
                 className="absolute right-7 top-1/2 -translate-y-1/2 translate-x-1/2
-                  w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center
+                   bg-orange-500 rounded-full flex items-center justify-center
                   transition-all duration-300 hover:bg-orange-600 hover:scale-110 z-10 
-  custom-arrow-button "
+  custom-arrow-button  custom-pic-position-1"
                 onClick={handleNext}
                 aria-label="Next slide"
               >

@@ -1,20 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa"
-import area1 from "../../assets/img/area-to-focus-1.png"
-import area2 from "../../assets/img/area-to-focus-2.png"
-import area3 from "../../assets/img/area-to-focus-3.png"
-
-const focusItems = [
-  { title: "Programs & Initiatives", desc: "Correct", img: area1, linkText: "Read More" },
-  { title: "Skill Development", desc: "Learn & Grow", img: area2, linkText: "Read More" },
-  { title: "Community Events", desc: "Janus.", img: area3, linkText: "Read More" },
-  { title: "Innovation Hub", desc: "Explore ideas", img: area1, linkText: "Read More" },
-  { title: "Skill Development", desc: "Correct", img: area1, linkText: "Read More" },
-  { title: "Innovation Hub", desc: "Learn & Grow", img: area2, linkText: "Read More" },
-  { title: "Programs & Initiatives", desc: "Janus.", img: area3, linkText: "Read More" },
-  { title: "Innovation Hub", desc: "Explore ideas", img: area1, linkText: "Read More" },
-]
 
 export default function FocusAreasSection({data}) {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -33,7 +19,7 @@ export default function FocusAreasSection({data}) {
   }, [])
 
   const itemsPerSlide = isMobile ? 1 : isTablet ? 2 : 4
-  const totalSlides = Math.ceil(focusItems.length / itemsPerSlide)
+  const totalSlides = Math.ceil(data?.cards?.length / itemsPerSlide) || 1
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides)
@@ -43,7 +29,6 @@ export default function FocusAreasSection({data}) {
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1))
   }
 
-  // Calculate the transform value for the sliding effect
   const getTransformValue = () => {
     return `translateX(-${currentSlide * 100}%)`
   }
@@ -67,7 +52,7 @@ export default function FocusAreasSection({data}) {
                   className="w-full flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
                 >
                   {data?.cards
-                    .slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide)
+                    ?.slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide)
                     .map((item, itemIndex) => (
                       <div
                         key={itemIndex}
@@ -120,10 +105,16 @@ export default function FocusAreasSection({data}) {
           {/* Navigation arrows */}
           {totalSlides > 1 && (
             <>
-           
+              <button
+                className="absolute left-2 top-1/2 transform -translate-y-1/2  hover:bg-black/70 rounded-full p-2 z-10 flex items-center justify-center custom-arrow-button"
+                onClick={prevSlide}
+                aria-label="Previous slide"
+              >
+                <FaArrowLeft className="text-white" />
+              </button>
 
               <button
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 z-10 flex items-center justify-center custom-arrow-button"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2  hover:bg-black/70 rounded-full p-2 z-10 flex items-center justify-center custom-arrow-button"
                 onClick={nextSlide}
                 aria-label="Next slide"
               >
