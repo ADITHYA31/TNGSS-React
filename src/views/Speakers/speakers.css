@@ -75,6 +75,12 @@
     cursor: pointer;
     opacity: 0.7;
   }
+  .custom-bg{
+     background-color: #f97316;
+     opacity: 0.7;
+      width: 2rem !important;
+  height: 2rem !important;
+  }
   .right-con{
     right: 10px !important;
   
