@@ -191,12 +191,13 @@ const GetInvolvedSection = ({data}) => {
               "linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)",
           }}
         >
-          <div className="overflow-hidden" style={{ borderRadius: 'inherit' }}>
+          <div className="overflow-hidden " style={{ borderRadius: 'inherit' }}>
           {/* Image */}
           <img
             src={`${process.env.STRAPI_URL}${item?.background.url}`}
             alt={`Involved item ${index + 1}`}
-            className=" object-cover w-full h-auto min-h-[200px] max-h-[300px] hover:cursor-pointer"
+            
+            className=" object-cover  hover:cursor-pointer"
             />
             </div>
         </div>

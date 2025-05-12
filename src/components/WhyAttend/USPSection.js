@@ -18,7 +18,7 @@ export default function USPSection({ data }) {
   if (!data) return null
 
   return (
-    <div className="relative overflow-x-hidden min-h-screen"
+    <div className="relative overflow-x-hidden md:min-h-screen"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
@@ -27,7 +27,7 @@ export default function USPSection({ data }) {
       }}
     >
       <div
-        className="relative overflow-x-hidden min-h-screen"
+        className="relative overflow-x-hidden "
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',

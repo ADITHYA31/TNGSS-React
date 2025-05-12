@@ -57,7 +57,7 @@ const IntroMissionSection = ({data}) => {
     //   </div>
     // </div>
     <GradientBdrCard
-      className="min-h-screen p-1 rounded-md  font-urbanist about-border"
+      className="min-h-screen p-1 rounded-md  font-urbanist "
       
     >
       <div 

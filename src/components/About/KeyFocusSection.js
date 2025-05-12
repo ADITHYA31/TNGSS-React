@@ -121,7 +121,7 @@ const KeyFocusSection = ({data}) => {
                     }}
                   >
                     <div className="w-full h-full rounded-3xl bg-black p-6 flex flex-col">
-                      <img src={item.icon || "/placeholder.svg"} alt={item.title} className="w-12 h-12 mb-4" />
+                      <img src={item?.background?.url ? `${process.env.STRAPI_URL}${item?.background.url}` : "/placeholder.svg"} alt={item.title} className="w-12 h-12 mb-4" />
                       <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                       <p className="text-sm text-gray-300 mb-4 line-clamp-3">{item.description}</p>
                       <a href="#" className="font-semibold underline mt-auto">
