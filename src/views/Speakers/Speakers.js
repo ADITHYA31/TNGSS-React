@@ -81,12 +81,12 @@ const Speakers = () => {
   
 
       <div
-  className="bg-cover bg-center flex w-full h-screen items-center pl-20"
+  className="bg-cover bg-center flex w-full h-screen items-center md:pl-20"
   style={{ backgroundImage: `url(${bgImage})` }}
 >
   <div className="w-full max-w-7xl px-4 flex">
     {/* Left col-6 with centered content */}
-    <div className="w-full md:w-1/2 flex flex-col  gap-5 font-urbanist ">
+    <div className="w-full md:w-1/2 flex flex-col  gap-5 font-urbanist justify-start items-start">
       <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] 2xl:text-[11rem] text-gradient animate-gradient">
       Speakers
       </h1>
