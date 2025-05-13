@@ -1,123 +1,36 @@
-// import React, { useRef, useEffect } from "react";
-// import involved1 from "../../assets/img/involved-1.png";
-// import involved2 from "../../assets/img/involved-2.png";
-// import CTAButton from "../Elements/CTAButton";
-
-// const involvedItems = [
-//   { image: involved1 },
-//   { image: involved2 },
-//   { image: involved1 },
-//   { image: involved2 },
-//   { image: involved1 },
-// ];
-
-// const GetInvolvedSection = () => {
-//   const scrollRef = useRef(null);
-
-//   useEffect(() => {
-//     const container = scrollRef.current;
-//     if (!container) return;
-
-//     let scrollSpeed = 1;
-
-//     function autoScroll() {
-//       container.scrollLeft += scrollSpeed;
-
-//       if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-//         container.scrollLeft = 0;
-//       }
-
-//       requestAnimationFrame(autoScroll);
-//     }
-
-//     autoScroll();
-//   }, []);
-
-//   const loopedItems = [...involvedItems, ...involvedItems];
-
-//   return (
-//     <section className="w-full bg-black text-white">
-//       <div>
-//         {/* Header */}
-//         <div className="mb-12 flex flex-wrap md:flex-nowrap gap-8 py-16 px-4 sm:px-6 md:px-12 lg:px-20">
-//           <div className="w-full md:w-4/12">
-//           <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] leading-snug whitespace-pre-line">
-//             How to get{"\n"}Involved
-//           </h2>
-
-//           </div>
-//           <div className="w-full md:w-8/12 text-base sm:text-lg text-gray-300 space-y-4">
-//             <p className="mt-6 text-xl sm:text-2xl">
-//               Overview—Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-//               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-//             </p>
-//             <p className="mt-6 text-xl sm:text-2xl">
-//               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-//               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-//               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-//               nisi ut aliquip ex ea commodo consequat.
-//             </p>
-//           </div>
-//         </div>
-
-//         {/* Auto-Scroll Cards */}
-//         <div
-//           ref={scrollRef}
-//           className="overflow-x-auto whitespace-nowrap hide-scrollbar"
-//         >
-//           <div className="flex gap-6 sm:gap-8 md:gap-20 ml-4 sm:ml-6 md:ml-12">
-//             {loopedItems.map((item, index) => (
-//               <div
-//                 key={index}
-//                 className="min-w-[250px] sm:min-w-[300px] md:min-w-[350px] lg:min-w-[300px] rounded-2xl border border-blue-400 bg-black/40 p-2 flex-shrink-0"
-//               >
-//                 <img
-//                   src={item.image}
-//                   alt={`Involved item ${index + 1}`}
-//                   className="rounded-xl w-full h-[200px] sm:h-[250px] md:h-[280px] lg:h-[300px] object-cover"
-//                 />
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* CTA Button */}
-//         <div className="mt-12 flex justify-center">
-//           <CTAButton className="rounded-2xl">
-//             <div className="h-12 px-6 sm:px-10 flex items-center justify-center text-base sm:text-lg font-semibold">
-//               JOIN THE ECOSYSTEM
-//             </div>
-//           </CTAButton>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default GetInvolvedSection;
-import React, { useRef, useEffect,useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import involved1 from "../../assets/img/involved-1.png";
 import involved2 from "../../assets/img/involved-2.png";
 import CTAButton from "../Elements/CTAButton";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const involvedItems = [
-  { image: involved1 },
-  { image: involved2 },
-  { image: involved1 },
-  { image: involved2 },
-  { image: involved1 },
-];
-
-
-const GetInvolvedSection = ({data}) => {
-  const scrollRef = useRef(null);
+const GetInvolvedSection = ({ data }) => {
+  // Desktop auto-scroll setup
+  const desktopScrollRef = useRef(null);
   const [isScrolling, setIsScrolling] = useState(true);
   const [scrollSpeed] = useState(0.7);
   const animationRef = useRef(null);
 
-  const handleScroll = () => {
-    const container = scrollRef.current;
-    if (!container || !isScrolling) return;
+  // Mobile slider setup
+  const [isMobile, setIsMobile] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const mobileSliderRef = useRef(null);
+
+  // Check if mobile
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
+  // Desktop auto-scroll logic (unchanged from your original)
+  const handleDesktopScroll = () => {
+    const container = desktopScrollRef.current;
+    if (!container || !isScrolling || isMobile) return;
 
     container.scrollLeft += scrollSpeed;
     
@@ -125,87 +38,161 @@ const GetInvolvedSection = ({data}) => {
       container.scrollLeft = 0;
     }
     
-    animationRef.current = requestAnimationFrame(handleScroll);
+    animationRef.current = requestAnimationFrame(handleDesktopScroll);
   };
 
   useEffect(() => {
-    animationRef.current = requestAnimationFrame(handleScroll);
+    animationRef.current = requestAnimationFrame(handleDesktopScroll);
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isScrolling]);
+  }, [isScrolling, isMobile]);
 
-  const loopedItems = [...involvedItems, ...involvedItems];
+  // Mobile slider logic
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+    if (mobileSliderRef.current) {
+      mobileSliderRef.current.scrollTo({
+        left: index * mobileSliderRef.current.offsetWidth,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const nextSlide = () => {
+    const nextIndex = (currentSlide + 1) % data?.cards.length;
+    goToSlide(nextIndex);
+  };
+
+  const prevSlide = () => {
+    const prevIndex = (currentSlide - 1 + data?.cards.length) % data?.cards.length;
+    goToSlide(prevIndex);
+  };
+
+  // Auto-scroll for mobile
+ 
 
   return (
     <section className="w-full bg-black text-white pb-5 font-urbanist">
       <div>
-        {/* Header (unchanged) */}
+        {/* Header */}
         <div className="mb-12 flex flex-wrap md:flex-nowrap gap-8 py-16 px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="w-full md:w-4/12">
-            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] leading-snug whitespace-pre-line"
-                        dangerouslySetInnerHTML={{
-                          __html: data?.Heading.replace(/\\n/g, '<br  />') || ''
-                          }}
-            
-            >
-              
-            </h2>
+            <h2 
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] leading-snug whitespace-pre-line"
+              dangerouslySetInnerHTML={{
+                __html: data?.Heading.replace(/\\n/g, '<br  />') || ''
+              }}
+            />
           </div>
           <div className="w-full md:w-8/12 text-base sm:text-lg text-gray-300 space-y-4">
-            <p className="mt-6 text-xl sm:text-2xl"
-            dangerouslySetInnerHTML={{
-            __html: data?.description.replace(/\n/g, '<br  />') || ''
-            }}
+            <p 
+              className="mt-6 text-xl sm:text-2xl"
+              dangerouslySetInnerHTML={{
+                __html: data?.description.replace(/\n/g, '<br  />') || ''
+              }}
             />
-
           </div>
         </div>
 
-        {/* Auto-Scroll Cards */}
-        <div
-  ref={scrollRef}
-  className="overflow-x-auto whitespace-nowrap py-4"
-  style={{
-    scrollbarWidth: "none",
-    msOverflowStyle: "none",
-  }}
-  // onMouseEnter={() => setIsScrolling(false)}
-  // onMouseLeave={() => setIsScrolling(true)}
->
-  <div className="inline-flex gap-4 pl-4">
-    {data?.cards.map((item, index) => (
-      <div
-        key={index}
-        className="flex-shrink-0"
-        style={{ width: "calc(33.33% - 11px)" }}
-        onClick={() => setIsScrolling(false)}
-      >
-        {/* Gradient Border Wrapper */}
-        <div
-          className="p-1 rounded-xl overflow-hidden"
-          style={{
-            background:
-              "linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)",
-          }}
-        >
-          <div className="overflow-hidden " style={{ borderRadius: 'inherit' }}>
-          {/* Image */}
-          <img
-            src={`${process.env.STRAPI_URL}${item?.background.url}`}
-            alt={`Involved item ${index + 1}`}
-            
-            className=" object-cover  hover:cursor-pointer"
-            />
+        {/* Desktop View - Auto-scrolling cards (your original implementation) */}
+        <div className="hidden md:block">
+          <div
+            ref={desktopScrollRef}
+            className="overflow-x-auto whitespace-nowrap py-4"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+            onMouseEnter={() => setIsScrolling(false)}
+            onMouseLeave={() => setIsScrolling(true)}
+          >
+            <div className="inline-flex gap-4 pl-4">
+              {data?.cards.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0"
+                  style={{ width: "calc(33.33% - 11px)" }}
+                >
+                  <div
+                    className="p-1 rounded-xl overflow-hidden"
+                    style={{
+                      background: "linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)",
+                    }}
+                  >
+                    <div className="overflow-hidden" style={{ borderRadius: 'inherit' }}>
+                      <img
+                        src={`${process.env.STRAPI_URL}${item?.background.url}`}
+                        alt={`Involved item ${index + 1}`}
+                        className="object-cover hover:cursor-pointer w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-</div>
 
+        {/* Mobile View - Slider with arrows and dots */}
+        <div className="md:hidden relative">
+          <div 
+            ref={mobileSliderRef}
+            className="overflow-hidden whitespace-nowrap scroll-smooth"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {data?.cards.map((item, index) => (
+              <div 
+                key={index} 
+                className="inline-block w-full px-4"
+                style={{ transition: "transform 0.5s ease" }}
+              >
+                <div className="p-1 rounded-xl overflow-hidden mx-auto" style={{
+                  background: "linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)",
+                  maxWidth: "400px"
+                }}>
+                  <div className="overflow-hidden" style={{ borderRadius: 'inherit' }}>
+                    <img
+                      src={`${process.env.STRAPI_URL}${item?.background.url}`}
+                      alt={`Involved item ${index + 1}`}
+                      className="object-cover w-full h-auto"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button 
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 transform -translate-y-1/2  text-white p-2 rounded-full z-10 custom-arrow-button"
+            aria-label="Previous slide"
+          >
+            <FaChevronLeft size={24} />
+          </button>
+          <button 
+            onClick={nextSlide}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 custom-arrow-button"
+            aria-label="Next slide"
+          >
+            <FaChevronRight size={24} />
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center mt-4 space-x-2">
+            {data?.cards.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full ${currentSlide === index ? 'bg-[#18BFDB] scale-110' : 'bg-gray-500'}`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
 
         <style jsx>{`
           div::-webkit-scrollbar {
@@ -213,7 +200,7 @@ const GetInvolvedSection = ({data}) => {
           }
         `}</style>
 
-        {/* CTA Button (unchanged) */}
+        {/* CTA Button */}
         <div className="mt-12 flex justify-center">
           <CTAButton className="rounded-2xl">
             <div className="h-12 px-6 sm:px-10 flex items-center justify-center text-base sm:text-lg font-semibold">
