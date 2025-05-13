@@ -9,9 +9,9 @@
       background-position: 0% center;
     }
   }
-  html,body{
+  /* html,body{
     overflow-x: hidden;
-  }
+  } */
   .bg-border-radius{
     border-radius: 0px !important;
   }
