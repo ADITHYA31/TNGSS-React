@@ -113,7 +113,7 @@ const HeroSection = ({data, className = '' }) => {
         background: 'linear-gradient(148.59deg, #0055FF 2.92%, #07BCCE 23.28%, #F7750C 80.11%, #FF0000 97.63%)'
       }}>
       <img
-        src={`${process.env.STRAPI_URL || outerImage}${data?.Major?.url}`}
+        src={`${process.env.STRAPI_URL}${data?.Major?.url}`||outerImage}
         alt="Event Crowd"
         className=" rounded-3xl shadow-xl object-cover overlay-pic"
         
@@ -127,7 +127,7 @@ const HeroSection = ({data, className = '' }) => {
         width: "95%"
       }}>
       <img
-        src={`${process.env.STRAPI_URL || innerImage}${data?.Major?.url}`}
+        src={`${process.env.STRAPI_URL}${data?.Major?.url}`||innerImage}
         alt="Digital Abstract"
         className="w-full rounded-2xl"
       />
