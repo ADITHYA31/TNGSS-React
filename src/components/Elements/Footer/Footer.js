@@ -62,9 +62,9 @@ export default function Footer() {
           style={{ borderRadius: '50px 23px 0px 0px' }}
         >
           {/* Group enables hover detection */}
-          <div className="safe-cont group flex items-center justify-center h-full w-full relative">
+          <div className="safe-cont group flex items-center  justify-center h-full w-full relative">
             {/* DISRUPT TO RISE Text */}
-            <div className="flex w-full h-full justify-center items-center">
+            <div className="flex w-full h-full justify-center group-hover:opacity-40 transition-opacity duration-300  items-center">
               <p className="text-3xl sm:text-5xl md:text-9xl text-white text-center font-medium tracking-widest group-hover:-rotate-6 transition-all duration-300">
                 DISRUPT TO RISE
               </p>

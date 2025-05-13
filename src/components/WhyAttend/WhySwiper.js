@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
-import { ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function CarouselSection({ data }) {
   const [activeSlide, setActiveSlide] = useState(0)
@@ -139,7 +139,7 @@ export default function CarouselSection({ data }) {
   className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 z-10 custom-arrow-button"
   aria-label="Previous slide"
 >
-  <ChevronRight className="w-6 h-6 rotate-180" />
+  <ChevronLeft className="w-6 h-6 rotate-180" />
 </button>
 
           <button

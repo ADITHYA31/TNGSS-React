@@ -76,7 +76,7 @@ export default function ParallelScroll({ cont = [
         alignItems: 'center',
       }}
     >
-      <div className="w-full h-full flex flex-col justify-center overflow-hidden items-center">
+      <div className="w-full h-full flex flex-col md:items-center justify-center overflow-hidden items-center">
         {/* Mobile View */}
         {isMobile ? (
           <div className="w-full relative flex flex-col items-center justify-center pb-12">
