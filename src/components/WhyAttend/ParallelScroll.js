@@ -31,7 +31,7 @@ export default function ParallelScroll({ cont = [
     if (!item) return "/placeholder.svg";
     return typeof item?.image === "string"
       ? item.image
-      : `${process.env.STRAPI_URL}${
+      : `https://cms.tngss.startuptn.in${
           item?.image?.formats?.medium?.url ||
           item?.image?.url ||
           item?.background?.formats?.medium?.url ||

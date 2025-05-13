@@ -73,7 +73,7 @@ const WhyTamilNaduSection = ({data}) => {
             <div className="p-[3px] ">
               <div className=" rounded-3xl p-2">
               <img
-  src={`${process.env.STRAPI_URL}${data?.Creative?.formats.medium.url}`}
+  src={`https://cms.tngss.startuptn.in${data?.Creative?.formats.medium.url}`}
   alt="Why Tamil Nadu"
   className="w-[80%] md:w-[60%] mx-auto rounded-[25px] shadow-xl border-4 border-white  rounded-2xl object-cover transition-opacity duration-700"
 />

@@ -9,7 +9,7 @@ export default function CarouselSection({ data }) {
   // Dynamically generated slides from the data prop
   const slides = data?.cards?.map((card) => ({
     title: card.title,
-    image: `${process.env.STRAPI_URL}${card.background?.formats?.medium?.url || card.background?.url}`,
+    image: `https://cms.tngss.startuptn.in${card.background?.formats?.medium?.url || card.background?.url}`,
   })) || []
 
   useEffect(() => {

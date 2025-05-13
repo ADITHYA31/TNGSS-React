@@ -124,7 +124,7 @@ const GetInvolvedSection = ({ data }) => {
                   >
                     <div className="overflow-hidden" style={{ borderRadius: 'inherit' }}>
                       <img
-                        src={`${process.env.STRAPI_URL}${item?.background.url}`}
+                        src={`https://cms.tngss.startuptn.in${item?.background.url}`}
                         alt={`Involved item ${index + 1}`}
                         className="object-cover hover:cursor-pointer w-full"
                       />
@@ -155,7 +155,7 @@ const GetInvolvedSection = ({ data }) => {
                 }}>
                   <div className="overflow-hidden" style={{ borderRadius: 'inherit' }}>
                     <img
-                      src={`${process.env.STRAPI_URL}${item?.background.url}`}
+                      src={`https://cms.tngss.startuptn.in${item?.background.url}`}
                       alt={`Involved item ${index + 1}`}
                       className="object-cover w-full h-auto"
                     />

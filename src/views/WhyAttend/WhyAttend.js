@@ -12,7 +12,7 @@ const WhyAttend = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${process.env.STRAPI_URL}/api/whyattend-startup?pLevel`); // Replace with your actual endpoint
+        const response = await fetch(`https://cms.tngss.startuptn.in/api/whyattend-startup?pLevel`); // Replace with your actual endpoint
         const result = await response.json();
         setData(result.data); // Assuming the data structure has a 'data' field
       } catch (error) {

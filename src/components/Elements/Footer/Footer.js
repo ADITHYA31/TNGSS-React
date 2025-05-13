@@ -22,7 +22,7 @@ export default function Footer() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${process.env.STRAPI_URL}/api/footer?pLevel`);
+        const response = await fetch(`https://cms.tngss.startuptn.in/api/footer?pLevel`);
         const result = await response.json();
         setData(result.data);
         console.log(data)

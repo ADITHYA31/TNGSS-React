@@ -59,7 +59,7 @@ export default function ActivitiesSection({ data }) {
             title={currentActivity.title}
             description={currentActivity.description}
             background={
-              `${process.env.STRAPI_URL}${currentActivity.background?.formats?.medium?.url || currentActivity.background?.url || ''}`
+              `https://cms.tngss.startuptn.in${currentActivity.background?.formats?.medium?.url || currentActivity.background?.url || ''}`
              
             }
           />

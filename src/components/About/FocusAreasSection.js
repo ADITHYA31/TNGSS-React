@@ -67,7 +67,7 @@ export default function FocusAreasSection({data}) {
                           <div
                             className="w-full h-full transition-transform duration-500 group-hover:scale-110"
                             style={{
-                              backgroundImage: `url(${process.env.STRAPI_URL}${item?.background?.url})`,
+                              backgroundImage: `url(https://cms.tngss.startuptn.in${item?.background?.url})`,
                               backgroundSize: "cover",
                               backgroundPosition: "center",
                             }}

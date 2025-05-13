@@ -82,7 +82,7 @@ const IntroMissionSection = ({data}) => {
           {/* Image */}
           <GradientBdrCard className="flex justify-center items-center">
             <img
-              src={`${process.env.STRAPI_URL}${data?.features[1].Creative?.url}`}
+              src={`https://cms.tngss.startuptn.in${data?.features[1].Creative?.url}`}
               alt="about"
               className="  flex justify-center items-center  w-full h-auto "
             />
