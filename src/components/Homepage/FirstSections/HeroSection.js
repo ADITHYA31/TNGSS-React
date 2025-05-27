@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Herobg from '../../../assets/herobg.svg?url'
 import startupwhite from '../../../assets/startup-white.png'
 import herobannerlogo from '../../../assets/Group.svg?url'
@@ -10,6 +10,23 @@ import '../../Elements/custom.css';
 
 export default function HeroSection({ className = '' }) {
   const heroRef = useRef(null);
+  const [data, setData] = useState([]);
+  const [isHome, setIsHome] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://cms.tngss.startuptn.in/api/footer?pLevel`);
+        const result = await response.json();
+        setData(result.data);
+        // console.log(data)
+      } catch (error) {
+        console.error('Error fetching social links:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <section
@@ -98,7 +115,7 @@ export default function HeroSection({ className = '' }) {
       
     </div>
     <p className=' text-center text-3xl md:text-5xl mb-5 md:mb-7 mt-14 md:mt-12  z-30'><img className='w-6 md:w-9 inline mb-1  mr-1 text-white' src={pin}/>Codissia Trade Fair Complex, Coimbatore</p>
-    <p className=' text-center text-2xl md:text-3xl mb-14 md:mb-4 z-30'>Dates will be announced soon!</p>
+    <p className='text-center text-2xl md:text-3xl mb-14 md:mb-4 z-30'>{data.banner && data?.banner.split(',')[0].trim()}</p>
 
     
     <div className=' absolute bottom-36 md:bottom-6 text-white text-2xl flex justify-center align-end   py-3 z-20   '>

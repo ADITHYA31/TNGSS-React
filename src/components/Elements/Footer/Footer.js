@@ -25,7 +25,7 @@ export default function Footer() {
         const response = await fetch(`https://cms.tngss.startuptn.in/api/footer?pLevel`);
         const result = await response.json();
         setData(result.data);
-        console.log(data)
+        // console.log(data)
       } catch (error) {
         console.error('Error fetching social links:', error);
       }
