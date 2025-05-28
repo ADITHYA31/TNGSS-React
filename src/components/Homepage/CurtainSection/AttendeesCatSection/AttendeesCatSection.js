@@ -87,7 +87,7 @@ export default function AtendeesSection() {
     <>
 
 
-      <section className="attendees-section flex flex-col w-screen min-h-screen justify-center items-center bg-black py-20 px-20 overflow-y-visible overflow-x-visible">
+      <section className="attendees-section flex flex-col w-screen min-h-screen justify-center items-center bg-black py-20 px-20 overflow-y-visible">
 
         <div className="flex max-md:flex-col isolate max-w-7xl md:mr-14  justify-center items-center  md:gap-1">
           {data.map((item, index) => (
