@@ -58,7 +58,7 @@ export default function AtendeesSection() {
       scrollTrigger: {
         trigger: ".attendees-section",
         start: "top bottom", // starts below viewport
-        end: "bottom top",   // ends above viewport
+        end: "bottom center",   // ends above viewport
         scrub: 0.5, // Smooth transition for card animations
       },
     });
@@ -70,11 +70,13 @@ export default function AtendeesSection() {
       });
 
       tl.to(card, {
-        y: 150,
-        rotate: 0,
+        y: 0,
+        //  rotate: isMobile ? (index % 2 === 0 ? -50 : 50) : (index % 2 === 0 ? -100 : 50),
+        // rotate:(index % 2 === 0 ? -4 : 4) ,
         scale: 1,
         ease: "power2.out",
-      }, 0); // all start together
+      }
+      , 0); // all start together
     });
 
     return () => {
@@ -89,28 +91,32 @@ export default function AtendeesSection() {
 
       <section className="attendees-section flex flex-col w-screen min-h-screen justify-center items-center bg-black py-20 px-20 overflow-y-visible">
 
-        <div className="flex max-md:flex-col isolate max-w-7xl md:mr-14  justify-center items-center  md:gap-1">
+        <div className="flex max-md:flex-col isolate  md:mr-14 mt-24   items-center  md:gap-1">
           {data.map((item, index) => (
             <div
               key={index}
-              className="relative mt-32 md:mt-7" // More breathing space
+              className=" mt-32 md:mt-0 hover:z-50" // More breathing space
             >
               <div
                 ref={(el) => (cardsRef.current[index] = el)} // Shift ref here
-                className="will-change-transform" // Helps smooth transforms
+                className="will-change-transform " // Helps smooth transforms
               >
                 <FlippingCard
                   flipinvert
                   className={`${index % 2 === 0 ? "rotate-6" : "-rotate-6"
-                    } hover:z-50 rounded-2xl`} // No overflow here
+                    } relative  rounded-2xl`} // No overflow here
                 >
-                  <div className="relative w-80 h-96 rounded-2xl overflow-hidden "> {/* Card shape */}
+                  <div className="relative w-80 h-96 rounded-2xl overflow-hidden isolate "> {/* Card shape */}
+                    <div className=" absolute inset-0 z-10 bg-gradient-to-t from-black to-transparent">
+
+                    </div>
+
                     <img
                       src={item.img}
                       className="w-full h-full object-cover object-center absolute inset-0 radius-2xl gradient-border "
                       alt={item.title}
                     />
-                    <div className="self-end z-10">
+                    <div className=" relative self-end z-20">
                         <p className="text-2xl font-semibold" style={{
                           color: '#fff',
                           position: 'absolute',

@@ -15,7 +15,7 @@ export function useDoomScroll(mainRef, circleRef) {
         scrollTrigger: {
           trigger: mainRef.current,
           start: "top bottom",
-          end: "bottom 75%",
+          end: "bottom 37%",
           scrub: true,
           // markers: true,
         },

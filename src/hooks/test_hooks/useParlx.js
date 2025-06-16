@@ -7,28 +7,33 @@ export function useParlx(mainRef) {
 
     const startX = isMobile ? '5%' : '55%';
     const endX = isMobile ? '-10%' : '-5%';
-    const endscroll = isMobile ? '+=1500' : '+=1050';
+    const endscroll = isMobile ? '' : '+=1050';
 
     let runAnim = gsap.timeline({
       scrollTrigger: {
         trigger: mainRef.current,
-        start: "center center",
-        end: endscroll,
-        scrub: 4,
-        pin: isMobile ? false :true,
+        start:"top bottom",
+        end: endscroll ,
+        scrub: 2,
+        // pin: isMobile ? false :true,
         // markers: true,
       }
     });
 
-    runAnim
-      .add([
-        gsap.set('.flags', { x: startX }),
-        gsap.to('.flags', {
-          x: endX,
-          ease: "power4.inOut"
-        })
-      ])
-      .to({}, { duration: 0.1 });
+    if(!isMobile){
+
+      runAnim
+        .add([
+          gsap.set('.flags', { x: startX }),
+          gsap.to('.flags', {
+            x: endX,
+            ease: "power5.inOut"
+          })
+        ])
+        // .to({}, { duration: 0.1 }
+
+        // );
+    }
 
   }, { scope: mainRef, dependencies: [mainRef] });
 }
