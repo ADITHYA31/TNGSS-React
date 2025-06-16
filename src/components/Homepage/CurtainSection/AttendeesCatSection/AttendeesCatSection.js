@@ -95,7 +95,7 @@ export default function AtendeesSection() {
           {data.map((item, index) => (
             <div
               key={index}
-              className=" mt-32 md:mt-0 hover:z-50" // More breathing space
+              className=" mt-32 md:mt-0 hover:z-50 isolate" // More breathing space
             >
               <div
                 ref={(el) => (cardsRef.current[index] = el)} // Shift ref here
@@ -103,20 +103,19 @@ export default function AtendeesSection() {
               >
                 <FlippingCard
                   flipinvert
-                  className={`${index % 2 === 0 ? "rotate-6" : "-rotate-6"
-                    } relative  rounded-2xl`} // No overflow here
+                  className={` ${index % 2 === 0 ? "rotate-6" : "-rotate-6"
+                    }  rounded-2xl`} // No overflow here
                 >
-                  <div className="relative w-80 h-96 rounded-2xl overflow-hidden isolate "> {/* Card shape */}
-                    <div className=" absolute inset-0 z-10 bg-gradient-to-t from-black to-transparent">
+                  <div className="relative w-80 h-96 flex isolate rounded-2xl overflow-hidden  "> {/* Card shape */}
 
-                    </div>
 
                     <img
                       src={item.img}
                       className="w-full h-full object-cover object-center absolute inset-0 radius-2xl gradient-border "
                       alt={item.title}
                     />
-                    <div className=" relative self-end z-20">
+                    <div className=" pt-14 self-end bg-gradient-to-t  from-black to-transparent"
+>
                         <p className="text-2xl font-semibold" style={{
                           color: '#fff',
                           position: 'absolute',

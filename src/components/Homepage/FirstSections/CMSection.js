@@ -1,5 +1,5 @@
 import React from "react";
-import CM from "../../../assets/CM.svg?url";
+import CM from "../../../assets/CM.png";
 import CMbg from "../../../assets/CMbg.svg?url";
 
 export default function CMSection() {
