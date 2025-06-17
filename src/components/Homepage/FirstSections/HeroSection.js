@@ -31,8 +31,8 @@ export default function HeroSection({ className = '' }) {
   return (
     <section
       ref={heroRef}
-      className={`flex flex-col sticky top-0 w-screen h-screen  isolate md:px-12  ${className} justify-center items-center bg-cover bg-center`}
-      id="hero-section"
+      className={`flex flex-col  sticky top-0 w-screen h-screen  isolate md:px-12  ${className} justify-center items-center bg-cover bg-center`}
+      id="hero-section" 
       style={{
          backgroundImage: `url(${Herobg})`,
        }}>
@@ -118,7 +118,7 @@ export default function HeroSection({ className = '' }) {
     <p className='text-center text-2xl md:text-3xl mb-14 md:mb-4 z-30'>{data.banner && data?.banner.split(',')[0].trim()}</p>
 
     
-    <div className=' absolute bottom-36 md:bottom-6 text-white text-2xl flex justify-center align-end   py-3 z-20   '>
+    <div className=' absolute bottom-20 md:bottom-6 text-white text-2xl flex justify-center align-end   py-3 z-20   '>
       <CTAButton src="https://event.startuptn.in/" className=" rounded-2xl hover:scale-105">
              <div className="w-70 h-10 px-6 py-7 flex items-center justify-center "><img className="px-2" src={vector}/> Book Your Pass</div>
          </CTAButton>
