@@ -42,11 +42,12 @@ export default function RainScrollBackground({ scrollTargetRef }) {
         ScrollTrigger.create({
           trigger: scrollTargetRef.current,
           start: "top top",
-          end: "+=4500",
+          end: "+=8000",
+          
           scrub: true,
           onUpdate: (self) => {
             const progress = 1 - self.progress;
-            anim.goToAndStop(progress * totalFrames, true);
+            anim.goToAndStop(progress * totalFrames*0.2, true);
           },
         });
   

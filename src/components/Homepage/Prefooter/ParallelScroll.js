@@ -35,10 +35,11 @@ export default function ParallelScroll() {
     return (
         <section
             ref={globalpavilion}
-            className="relative min-h-screen  w-screen isolate bg-white h-60vh"
+            className="min-h-screen z-20  w-screen h-60vh"
         >
-            <div className="w-full h-full flex flex-col justify-center overflow-hidden h-60vh ">
-            <div className="flags flex w-full gap-3 will-change-transform md:flex-nowrap md:overflow-hidden overflow-y-visible overflow-x-auto">
+            <div ref={globalpavilion} className=" w-full h-full  bg-white flex flex-col justify-center overflow-hidden h-60vh ">
+
+            <div className="flags  flex w-full  gap-3 will-change-transform md:flex-nowrap md:overflow-hidden overflow-y-visible overflow-x-auto">
   {data.map((item, index) => (
     <div
       key={index}
@@ -67,6 +68,6 @@ export default function ParallelScroll() {
 
 
             </div>
-        </section>
+   </section>
     );
 }

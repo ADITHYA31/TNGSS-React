@@ -3,11 +3,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FlippingCard from "../../../../components/Elements/FlippingCard";
 import GradientBdrCard from "../../../../components/Elements/GradientBorderCard";
-import Frame1 from "../../../../assets/investorcrd.png";
-import Frame2 from "../../../../assets/corporatecrd.png";
-import Frame3 from "../../../../assets/aspirantcrd.png";
-import Frame4 from "../../../../assets/startupcrd.png";
-import Frame5 from "../../../../assets/ecosyscard.jpg";
+import Frame1 from "../../../../assets/attendees/2.webp";
+import Frame2 from "../../../../assets/attendees/4.webp";
+import Frame3 from "../../../../assets/attendees/1.webp";
+import Frame4 from "../../../../assets/attendees/3.webp";
+import Frame5 from "../../../../assets/attendees/5.webp";
 
 import { useGSAP } from "@gsap/react";
 
