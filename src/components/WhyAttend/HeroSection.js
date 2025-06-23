@@ -79,7 +79,7 @@ import '../../views/Speakers/speakers.css'
 const HeroSection = ({data, className = '' }) => {
   return (
     <section
-      className={`w-full min-h-screen bg-cover bg-center flex items-center relative ${className}`}
+      className={`w-full min-h-screen bg-cover bg-center overflow-x-hidden flex items-center relative ${className}`}
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 flex flex-col md:flex-col  lg:flex-row    xl:flex-row   items-center justify-between gap-8 md:gap-12 lg:gap-16">

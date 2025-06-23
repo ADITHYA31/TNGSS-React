@@ -1,11 +1,14 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa"
 
-export default function FocusAreasSection({data}) {
+export default function FocusAreasSection({ data }) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
   const [isTablet, setIsTablet] = useState(false)
+
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
 
   useEffect(() => {
     const handleResize = () => {
@@ -33,19 +36,44 @@ export default function FocusAreasSection({data}) {
     return `translateX(-${currentSlide * 100}%)`
   }
 
+  // Swipe handlers
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    const deltaX = touchStartX.current - touchEndX.current
+
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX > 0) {
+        nextSlide()
+      } else {
+        prevSlide()
+      }
+    }
+  }
+
   return (
     <section className="bg-black text-white py-16 font-urbanist px-4">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{data?.Heading}</h2>
 
         <div className="relative overflow-hidden">
-          {/* Carousel container */}
-          <div className="overflow-hidden">
+          {/* Carousel container with swipe listeners */}
+          <div
+            className="overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: getTransformValue() }}
             >
-              {/* Generate slides based on itemsPerSlide */}
               {Array.from({ length: totalSlides }).map((_, slideIndex) => (
                 <div
                   key={slideIndex}
@@ -106,7 +134,7 @@ export default function FocusAreasSection({data}) {
           {totalSlides > 1 && (
             <>
               <button
-                className="absolute left-2 top-1/2 transform -translate-y-1/2  hover:bg-black/70 rounded-full p-2 z-10 flex items-center justify-center custom-arrow-button"
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 hover:bg-black/70 rounded-full p-2 z-10 flex items-center justify-center custom-arrow-button"
                 onClick={prevSlide}
                 aria-label="Previous slide"
               >
@@ -114,7 +142,7 @@ export default function FocusAreasSection({data}) {
               </button>
 
               <button
-                className="absolute right-2 top-1/2 transform -translate-y-1/2  hover:bg-black/70 rounded-full p-2 z-10 flex items-center justify-center custom-arrow-button"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 hover:bg-black/70 rounded-full p-2 z-10 flex items-center justify-center custom-arrow-button"
                 onClick={nextSlide}
                 aria-label="Next slide"
               >

@@ -5,18 +5,19 @@ import CTAButton from "../Elements/CTAButton";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const GetInvolvedSection = ({ data }) => {
-  // Desktop auto-scroll setup
   const desktopScrollRef = useRef(null);
   const [isScrolling, setIsScrolling] = useState(true);
   const [scrollSpeed] = useState(0.7);
   const animationRef = useRef(null);
 
-  // Mobile slider setup
   const [isMobile, setIsMobile] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const mobileSliderRef = useRef(null);
 
-  // Check if mobile
+  // Swipe tracking refs
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
   useEffect(() => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -27,17 +28,16 @@ const GetInvolvedSection = ({ data }) => {
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
-  // Desktop auto-scroll logic (unchanged from your original)
   const handleDesktopScroll = () => {
     const container = desktopScrollRef.current;
     if (!container || !isScrolling || isMobile) return;
 
     container.scrollLeft += scrollSpeed;
-    
+
     if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
       container.scrollLeft = 0;
     }
-    
+
     animationRef.current = requestAnimationFrame(handleDesktopScroll);
   };
 
@@ -50,13 +50,12 @@ const GetInvolvedSection = ({ data }) => {
     };
   }, [isScrolling, isMobile]);
 
-  // Mobile slider logic
   const goToSlide = (index) => {
     setCurrentSlide(index);
     if (mobileSliderRef.current) {
       mobileSliderRef.current.scrollTo({
         left: index * mobileSliderRef.current.offsetWidth,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
@@ -71,8 +70,25 @@ const GetInvolvedSection = ({ data }) => {
     goToSlide(prevIndex);
   };
 
-  // Auto-scroll for mobile
- 
+  // 🟩 Touch Handlers
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const deltaX = touchStartX.current - touchEndX.current;
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+  };
 
   return (
     <section className="w-full bg-black text-white pb-5 font-urbanist">
@@ -97,7 +113,7 @@ const GetInvolvedSection = ({ data }) => {
           </div>
         </div>
 
-        {/* Desktop View - Auto-scrolling cards (your original implementation) */}
+        {/* Desktop Auto-scrolling */}
         <div className="hidden md:block">
           <div
             ref={desktopScrollRef}
@@ -136,12 +152,15 @@ const GetInvolvedSection = ({ data }) => {
           </div>
         </div>
 
-        {/* Mobile View - Slider with arrows and dots */}
+        {/* Mobile View - with swipe support */}
         <div className="md:hidden relative">
           <div 
             ref={mobileSliderRef}
             className="overflow-hidden whitespace-nowrap scroll-smooth"
             style={{ scrollbarWidth: "none" }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             {data?.cards.map((item, index) => (
               <div 
@@ -168,7 +187,7 @@ const GetInvolvedSection = ({ data }) => {
           {/* Navigation Arrows */}
           <button 
             onClick={prevSlide}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2  text-white p-2 rounded-full z-10 custom-arrow-button"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full z-10 custom-arrow-button"
             aria-label="Previous slide"
           >
             <FaChevronLeft size={24} />
@@ -181,7 +200,7 @@ const GetInvolvedSection = ({ data }) => {
             <FaChevronRight size={24} />
           </button>
 
-          {/* Dots Indicator */}
+          {/* Dots */}
           <div className="flex justify-center mt-4 space-x-2">
             {data?.cards.map((_, index) => (
               <button
@@ -200,7 +219,7 @@ const GetInvolvedSection = ({ data }) => {
           }
         `}</style>
 
-        {/* CTA Button */}
+        {/* CTA */}
         <div className="mt-12 flex justify-center">
           <CTAButton className="rounded-2xl">
             <div className="h-12 px-6 sm:px-10 flex items-center justify-center text-base sm:text-lg font-semibold">

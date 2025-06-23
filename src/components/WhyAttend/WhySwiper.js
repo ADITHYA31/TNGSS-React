@@ -1,12 +1,14 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function CarouselSection({ data }) {
   const [activeSlide, setActiveSlide] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
 
-  // Dynamically generated slides from the data prop
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
+
   const slides = data?.cards?.map((card) => ({
     title: card.title,
     image: `https://cms.tngss.startuptn.in${card.background?.formats?.medium?.url || card.background?.url}`,
@@ -44,6 +46,29 @@ export default function CarouselSection({ data }) {
     return `translateX(-${activeSlide * 100}%)`
   }
 
+  // Swipe Handlers
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    const deltaX = touchStartX.current - touchEndX.current
+
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX > 0) {
+        // Swiped left
+        nextSlide()
+      } else {
+        // Swiped right
+        prevSlide()
+      }
+    }
+  }
+
   return (
     <div className="w-full bg-black text-white py-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
@@ -53,7 +78,12 @@ export default function CarouselSection({ data }) {
 
         <div className="relative overflow-hidden">
           {/* Mobile Carousel */}
-          <div className="md:hidden relative">
+          <div
+            className="md:hidden relative"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: getTransformValue() }}
@@ -132,15 +162,14 @@ export default function CarouselSection({ data }) {
             </div>
           </div>
 
-          {/* Next Slide Button */}
-          {/* Prev Slide Button */}
-<button
-  onClick={prevSlide}
-  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 z-10 custom-arrow-button"
-  aria-label="Previous slide"
->
-  <ChevronLeft className="w-6 h-6 rotate-180" />
-</button>
+          {/* Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 z-10 custom-arrow-button"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-6 h-6 rotate-180" />
+          </button>
 
           <button
             onClick={nextSlide}
