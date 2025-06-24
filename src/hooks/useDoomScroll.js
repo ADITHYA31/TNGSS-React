@@ -39,7 +39,7 @@ export function useDoomScroll(mainRef, circleRef, txtRef) {
     txtFadeAnim.to(
       txtRef.current,
       {
-        opacity: 0
+        opacity: isMobile?1:0
       }
     );
   }, { scope: mainRef, dependencies: [mainRef] });
