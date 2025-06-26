@@ -151,7 +151,7 @@ const KeyFocusSection = ({ data }) => {
           {items.length > cardsPerView && (
             <>
               <button
-                className="absolute left-7 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-orange-500 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-orange-600 hover:scale-110 z-10 custom-arrow-button custom-pic-position"
+                className="absolute left-7 hidden md:flex top-1/2 -translate-y-1/2 -translate-x-1/2 bg-orange-500 rounded-full  items-center justify-center transition-all duration-300 hover:bg-orange-600 hover:scale-110 z-10 custom-arrow-button custom-pic-position"
                 onClick={handlePrev}
                 aria-label="Previous slide"
               >
@@ -159,7 +159,7 @@ const KeyFocusSection = ({ data }) => {
               </button>
 
               <button
-                className="absolute right-7 top-1/2 -translate-y-1/2 translate-x-1/2 bg-orange-500 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-orange-600 hover:scale-110 z-10 custom-arrow-button custom-pic-position-1"
+                className="absolute right-7 hidden md:flex top-1/2 -translate-y-1/2 translate-x-1/2 bg-orange-500 rounded-full  items-center justify-center transition-all duration-300 hover:bg-orange-600 hover:scale-110 z-10 custom-arrow-button custom-pic-position-1"
                 onClick={handleNext}
                 aria-label="Next slide"
               >

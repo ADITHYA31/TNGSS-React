@@ -36,7 +36,12 @@ export default function NavBar() {
     }
   }, [isVisible, controls]);
 
-  const menuItems = [];
+  const menuItems = [
+    { name: "About Us", link: "/about-us" },
+    { name: "Why Attend", link: "/why-attend" },
+    // { name: "Item 2", link: "/" },
+    { name: "Faq", link: "/faq" },
+  ];
 
   return (
     <>
@@ -61,48 +66,54 @@ export default function NavBar() {
           />
         </a>
 
-        {/* Desktop Menu */}
-        <div
-          className=" flex w-full justify-end gap-5 items-center text-xl"
-          style={{ maxWidth: "400px", marginLeft: "auto",  }}
-        >
+        <div className=" hidden  lg:absolute left-1/2 md:flex gap-5 text-lg transform lg:-translate-x-1/2">
           {menuItems.map((item, index) => (
-            <a key={index} href="/" className="hover:underline">
-              {item}
+            <a key={index} href={item.link} className="underline">
+              {item.name}
             </a>
           ))}
+        </div>
+
+        {/* Desktop Menu */}
+        <div
+          className=" flex gap-3  md:gap-5 items-center text-xl "
+          // style={{ maxWidth: "400px",  }}
+        >
+
           <ShineButton src="https://event.startuptn.in/register" className=" !hover:bg-black hidden md:block" contCN="!bg-none py-2 px-4">
            Book Your Stall
           </ShineButton>
           <ShineButton src="https://event.startuptn.in/" className=" !hover:bg-black flex " contCN=" hover py-2 px-2 ">
           <img className="px-2 inline-block" src={vector}/>Book Your Pass
           </ShineButton>
-        </div>
+          <div>
 
         {/* Hamburger (Mobile Only) */}
-        {/* <button
+        <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="sm:hidden z-50 ml-auto mr-4 text-3xl font-bold"
+          className="md:hidden z-50 w-6 ml-auto mr-4 text-5xl font-bold"
         >
           {isMenuOpen ? "×" : "≡"}
-        </button> */}
-      </motion.div>
-
-      {/* Dropdown Menu (Mobile Only) */}
+        </button>
       <motion.div
         initial={{ height: 0, opacity: 0 }}
-        animate={isMenuOpen ? { height: "auto", opacity: 0.6 } : { height: 0, opacity: 0 }}
+        animate={isMenuOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="sm:hidden fixed top-20 left-0 w-full bg-white bg-opacity-90 z-40 overflow-hidden backdrop-blur-md"
+        className="sm:hidden  absolute top-24 left-0 w-full bg-black  z-40 overflow-hidden backdrop-blur-md"
       >
-        <div className="flex flex-col items-center text-black py-4 space-y-4 text-lg font-medium">
+        <div className="flex flex-col items-center text-white py-4 space-y-4 text-lg font-medium">
           {menuItems.map((item, index) => (
-            <a key={index} href="/" className="hover:text-blue-600">
-              {item}
+            <a key={index} href={item.link} className="hover:text-blue-600">
+              {item.name}
             </a>
           ))}
         </div>
       </motion.div>
+          </div>
+        </div>
+
+      </motion.div>
+
     </>
   );
 }

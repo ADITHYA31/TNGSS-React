@@ -187,14 +187,14 @@ const GetInvolvedSection = ({ data }) => {
           {/* Navigation Arrows */}
           <button 
             onClick={prevSlide}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full z-10 custom-arrow-button"
+            className="absolute left-2 top-1/2 hidden md:flex transform -translate-y-1/2 text-white p-2 rounded-full z-10 custom-arrow-button"
             aria-label="Previous slide"
           >
             <FaChevronLeft size={24} />
           </button>
           <button 
             onClick={nextSlide}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 custom-arrow-button"
+            className="absolute right-2 top-1/2 hidden md:flex transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 custom-arrow-button"
             aria-label="Next slide"
           >
             <FaChevronRight size={24} />

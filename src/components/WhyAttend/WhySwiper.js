@@ -165,7 +165,7 @@ export default function CarouselSection({ data }) {
           {/* Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-2 top-1/2 -translate-y-1/2 translate-x-100   bg-black/50 hover:bg-black/70 rounded-full p-2 z-10 custom-arrow-button"
+            className="absolute left-2 top-1/2  hidden md:flex -translate-y-1/2 translate-x-100   bg-black/50 hover:bg-black/70 rounded-full p-2 z-10 custom-arrow-button"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-6 h-6 rotate-180" />
@@ -173,7 +173,7 @@ export default function CarouselSection({ data }) {
 
           <button
             onClick={nextSlide}
-            className="absolute right-2 top-1/2 -translate-y-1/2  bg-black/50 hover:bg-black/70 rounded-full p-2 z-10 custom-arrow-button"
+            className="absolute right-2 top-1/2 hidden md:flex -translate-y-1/2  bg-black/50 hover:bg-black/70 rounded-full p-2 z-10 custom-arrow-button"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6" />

@@ -134,7 +134,7 @@ export default function FocusAreasSection({ data }) {
           {totalSlides > 1 && (
             <>
               <button
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 hover:bg-black/70 rounded-full p-2 z-10 flex items-center justify-center custom-arrow-button"
+                className="absolute left-2 hidden md:flex top-1/2 transform -translate-y-1/2 hover:bg-black/70 rounded-full p-2 z-10  items-center justify-center custom-arrow-button"
                 onClick={prevSlide}
                 aria-label="Previous slide"
               >
@@ -142,7 +142,7 @@ export default function FocusAreasSection({ data }) {
               </button>
 
               <button
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 hover:bg-black/70 rounded-full p-2 z-10 flex items-center justify-center custom-arrow-button"
+                className="absolute right-2 hidden md:flex top-1/2 transform -translate-y-1/2 hover:bg-black/70 rounded-full p-2 z-10  items-center justify-center custom-arrow-button"
                 onClick={nextSlide}
                 aria-label="Next slide"
               >
