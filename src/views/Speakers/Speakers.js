@@ -3,11 +3,7 @@ import logo from "../../assets/Nav_logo.png";
 import NavBar from '../../components/Elements/NavBar';
 import Footer from '../../components/Elements/Footer/Footer';
 import HeroSection from '../../components/About/HeroSection';
-import Frame1 from "../../assets/investorcrd.png";
-import Frame2 from "../../assets/corporatecrd.png";
-import Frame3 from "../../assets/aspirantcrd.png";
-import Frame4 from "../../assets/startupcrd.png";
-import Frame5 from "../../assets/ecosyscard.jpg";
+import blank from "../../assets/blank.png";
 import FlippingCardNarrow from '../../components/Elements/FlippingCardNarrow';
 import GradientBdrCard from '../../components/Elements/GradientBorderCard';
 import bgImage from '../../assets/img/image.png';
@@ -43,41 +39,9 @@ const Speakers = () => {
     fetchSpeakers();
   }, []);
 
-  const data = [
-      {
-        img: Frame3,
-        title: "Startups",
-        des: "Starting, building, or scaling your Startup? The Tamil Nadu Global Startup Summit 2025 is your launchpad to success.",
-        foot: "Scale faster, network smarter, and fund your startup.",
-      },
-      {
-        img: Frame1,
-        title: "Investors",
-        des: "Discover high-potential startups and game-changing innovations at Tamil Nadu Global Startup Summit 2025.",
-        foot: "Discover, connect, and invest in the next big startup.",
-      },
-      {
-        img: Frame4,
-        title: "Aspirants",
-        des: "Whether you're a student, aspiring entrepreneur, or young innovator, this is your chance to gain knowledge, find opportunities, and take the first step toward building something extraordinary.",
-        foot: "Your future starts here : network, learn, and grow.",
-      },
-      {
-        img: Frame2,
-        title: "Corporates",
-        des: "Explore emerging innovations, engage with future-ready startups and collaborate for strategic growth opportunities.",
-        foot: "Collaborate and Transform",
-      },
-          {
-        img: Frame5,
-        title: "Ecosystem Enablers",
-        des: "Connect with global stakeholders, discover high-impact startups, and collaborate to strengthen the innovation ecosystem.",
-        foot: "",
-      },
-    ];
+
   return (
     <div style={{ backgroundColor: 'black',overflowX:"hidden" }}>
-    <NavBar />
   
 
       <div
@@ -110,13 +74,15 @@ const Speakers = () => {
             <div ref={(el) => (cardsRef.current[index] = el)} className="will-change-transform">
               <FlippingCardNarrow flipinvert className="rounded-2xl">
                 {/* Front of Card */}
-                <div className="relative w-80 h-96 rounded-2xl overflow-hidden mt-36 ">
+                <div className="relative w-80 h-96 rounded-2xl  overflow-hidden mt-36 ">
+                  <div className='bg-black'>
                   <img
-                    src={item.profile_image}
+                    src={ blank}
                     className="w-full h-full object-cover object-center absolute inset-0 radius-2xl gradient-border"
                     alt={item.title}
                   
                   />
+                  </div>
                   <div className="self-end z-10">
                     <p className="text-2xl font-semibold text-white absolute bottom-7 left-5">
                       {item.name}
