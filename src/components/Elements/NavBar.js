@@ -69,7 +69,7 @@ export default function NavBar() {
 
         <div className=" hidden  lg:absolute left-1/2 md:flex  text-xl transform  gap-4  lg:-translate-x-1/2">
           {menuItems.map((item, index) => (
-            <a key={index} href={item.link} >
+            <a key={index} href={item.link} className=" hover:underline " >
               {item.name}
             </a>
           ))}
