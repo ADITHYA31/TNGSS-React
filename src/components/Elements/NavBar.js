@@ -67,9 +67,9 @@ export default function NavBar() {
           />
         </a>
 
-        <div className=" hidden  lg:absolute left-1/2 md:flex gap-5 text-lg transform lg:-translate-x-1/2">
+        <div className=" hidden  lg:absolute left-1/2 md:flex  text-xl transform  gap-4  lg:-translate-x-1/2">
           {menuItems.map((item, index) => (
-            <a key={index} href={item.link} className="underline">
+            <a key={index} href={item.link} >
               {item.name}
             </a>
           ))}
