@@ -5,7 +5,7 @@ export function useParlx(mainRef) {
   useGSAP(() => {
     const isMobile = window.innerWidth < 768;
 
-    const startX = isMobile ? '5%' : '20%';
+    const startX = isMobile ? '5%' : '10%';
     const endX = isMobile ? '-10%' : '-5%';
     const endscroll = isMobile ? '' : '+=1050';
 
