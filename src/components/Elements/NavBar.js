@@ -67,13 +67,13 @@ export default function NavBar() {
           />
         </a>
 
-        <div className=" hidden  lg:absolute left-1/2 md:flex  text-xl transform  gap-4  lg:-translate-x-1/2">
+        {/* <div className=" hidden  lg:absolute left-1/2 md:flex  text-xl transform  gap-4  lg:-translate-x-1/2">
           {menuItems.map((item, index) => (
             <a key={index} href={item.link} className=" hover:underline " >
               {item.name}
             </a>
           ))}
-        </div>
+        </div> */}
 
         {/* Desktop Menu */}
         <div
@@ -90,12 +90,12 @@ export default function NavBar() {
           <div>
 
         {/* Hamburger (Mobile Only) */}
-        <button
+        {/* <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden z-50 w-6 ml-auto mr-4 text-5xl font-bold"
         >
           {isMenuOpen ? "×" : "≡"}
-        </button>
+        </button> */}
       <motion.div
         initial={{ height: 0, opacity: 0 }}
         animate={isMenuOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
