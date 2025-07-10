@@ -96,12 +96,22 @@ const GetInvolvedSection = ({ data }) => {
         {/* Header */}
         <div className="mb-12 flex flex-wrap md:flex-nowrap gap-8 py-16 px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="w-full md:w-4/12">
-            <h2 
+            {/* <h2 
               className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] leading-snug whitespace-pre-line"
               dangerouslySetInnerHTML={{
                 __html: data?.Heading.replace(/\\n/g, '<br  />') || ''
               }}
-            />
+            /> */}
+
+            {data?.Heading?.split("\\n").map((line, idx) => (
+  <h2
+    key={idx}
+    className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] leading-[1.2] mb-3 font-semibold"
+  >
+    {line}
+  </h2>
+))}
+
           </div>
           <div className="w-full md:w-8/12 text-base sm:text-lg text-gray-300 space-y-4">
             <p 
@@ -220,8 +230,8 @@ const GetInvolvedSection = ({ data }) => {
         `}</style>
 
         {/* CTA */}
-        <div className="mt-12 flex justify-center">
-          <CTAButton className="rounded-2xl">
+        <div className="mt-4 flex justify-center">
+          <CTAButton className="rounded-2xl mb-8">
             <div className="h-12 px-6 sm:px-10 flex items-center justify-center text-base sm:text-lg font-semibold">
               {data?.cta}
             </div>

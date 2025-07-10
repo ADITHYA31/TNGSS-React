@@ -8,7 +8,7 @@ const RouteWithLayout = ({  component: Component }) => {
 
   const lenis = useLenis((lenis) => {
     // called every scroll
-    console.log(lenis)
+    // console.log(lenis)
   })
 
   return (

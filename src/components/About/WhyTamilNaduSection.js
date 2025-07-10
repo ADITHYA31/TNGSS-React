@@ -66,7 +66,7 @@ const WhyTamilNaduSection = ({data}) => {
       className="min-h-screen bg-cover bg-center bg-no-repeat flex items-center text-white font-urbanist"
       style={{ backgroundImage: `url(${background})` }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto p-4 sm:px-4 sm:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">
           {/* Gradient Image Frame */}
           <div className="flex justify-center">
@@ -84,10 +84,14 @@ const WhyTamilNaduSection = ({data}) => {
 
           {/* Text Content */}
           <div>
-            <h2 className="text-4xl font-bold mb-6">{data?.Title}</h2>
-            <p className="text-lg leading-relaxed">
-            {data?.description}
-            </p>
+         <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6">
+  {data?.Title}
+</h2>
+
+<p className="text-base md:text-lg lg:text-xl leading-relaxed">
+  {data?.description}
+</p>
+
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import introBackground from "../../assets/img/about-sec-pg.png";
 import GradientBdrCard from "../Elements/GradientBorderCard";
 
 const IntroMissionSection = ({data}) => {
-  console.log(data)
+  // console.log(data)
   return (
     // <div className="w-full min-h-screen p-8 md:p-16 relative">
     //   <style>{`
@@ -69,8 +69,12 @@ const IntroMissionSection = ({data}) => {
       className="bg-cover bg-center bg-no-repeat">
     <div className=" backdrop-blur-sm rounded-xl p-6 md:p-10  min-h-screen">
         {/* Introduction */}
-        <h2 className="text-4xl font-semibold text-black mb-4">{data?.features[0].Title||'Introduction'}</h2>
-        <p className="text-gray-800 mb-3 text-base md:text-lg"
+<h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-black mb-4">
+  {data?.features[0].Title || 'Introduction'}
+</h2>
+
+   <p className="text-gray-800 mb-3 text-lg md:text-xl"
+
            dangerouslySetInnerHTML={{
              __html: data?.features[0].description.replace(/\n/g, '<br  />') || ''
            }}
@@ -90,8 +94,12 @@ const IntroMissionSection = ({data}) => {
 
           {/* Mission */}
           <div className="flex flex-col mt-10 h-full">
-            <h2 className="text-4xl font-semibold text-black mb-4">{data?.features[1].Title}</h2>
-            <p className="text-gray-800 mb-3 text-base md:text-lg"
+           <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-black mb-4">
+  {data?.features[1].Title || 'Mission'}
+</h2>
+
+          <p className="text-gray-800 mb-3 text-lg md:text-xl"
+
             dangerouslySetInnerHTML={{
              __html: data?.features[0].description.replace(/\n/g, '<br  />') || ''
            }}     />
