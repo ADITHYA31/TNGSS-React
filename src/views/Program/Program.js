@@ -309,11 +309,19 @@ function App() {
   <div className="w-full max-w-7xl mx-auto px-4  mt-5 flex flex-col md:flex-row items-center justify-between">
     {/* Left Column: Text */}
     <div className="w-full md:w-1/2  md:mb-0 text-white font-urbanist animate-fadeInLeft program-text">
-    <h1 className="text-5xl md:text-8xl sm:text-5xl text-gradient animate-gradient  lg:text-8xl mb-6">
+{/* <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-8xl leading-none  mb-6 break-words text-gradient-bw">
   Programs
 </h1>
-      <p className="text-white text-xl animate-fadeInLeft delay-200  md:text-4xl">
+
+
+      <p className="text-white text-xl animate-fadeInLeft delay-200  md:text-4xl mt-2">
         Exploring the Core of TNGSS'25
+      </p> */}
+        <h1 className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] 2xl:text-[11rem] text-gradient animate-gradient" style={{lineHeight:"8rem"}}>
+       Programs
+      </h1>
+      <p className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl animate-fadeInLeft delay-200 ">
+      Exploring the Core of TNGSS'25
       </p>
     </div>
 

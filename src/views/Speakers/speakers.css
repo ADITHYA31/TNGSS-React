@@ -36,6 +36,7 @@
     }
     
   }
+
   
 
   @keyframes slideLeftToRight {
@@ -185,6 +186,22 @@
     font-size: 1.25rem; /* Adjust the font size for "+" and "-" */
     transition: background-color 0.3s;
   }
+
+ 
+.orange-circle-1 {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #F5710C; /* Orange with 50% opacity */
+  color: white; /* Text stays fully white */
+  font-size: 1.25rem;
+  transition: background-color 0.3s;
+}
+
+
   .get-text{
     color: #18BFDB;
   }
@@ -367,3 +384,7 @@ button.bg-cyan-500.text-white {
     }
     
   }
+  .flipping-card-narrow-wrapper,
+.flipping-card-narrow-wrapper > * {
+  perspective: 2000px;
+}

@@ -65,7 +65,7 @@ const Speakers = () => {
 </div>
 
 {/* Card Section */}
-<div className="relative z-10 bg-black -mt-32 pt-32">
+<div className="relative z-10 bg-black ">
   <div className="container mx-auto px-4 py-20">
     <div className="w-full flex justify-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 px-4 sm:px-6">
@@ -74,7 +74,7 @@ const Speakers = () => {
             <div ref={(el) => (cardsRef.current[index] = el)} className="will-change-transform">
               <FlippingCardNarrow flipinvert className="rounded-2xl">
                 {/* Front of Card */}
-                <div className="relative w-80 h-96 rounded-2xl  overflow-hidden mt-36 ">
+                <div className="relative w-80 h-96 rounded-2xl  overflow-hidden ">
                   <div className='bg-black'>
                   <img
                     src={ blank}
@@ -84,20 +84,20 @@ const Speakers = () => {
                   />
                   </div>
                   <div className="self-end z-10">
-                    <p className="text-2xl font-semibold text-white absolute bottom-7 left-5">
+                    <p className="text-2xl font-semibold text-white absolute bottom-16 left-5">
                       {item.name}
                     </p>
-                    <p className="text-white absolute bottom-1 left-5">
+                    <p className="text-white absolute bottom-10 left-5">
                       {item.designation}
                     </p>
                   </div>
                 </div>
 
                 {/* Back of Card */}
-                <GradientBdrCard className="text-left w-full aspect-[3/4] rounded-2xl overflow-hidden bg-black  mt-36">
+                <GradientBdrCard className="text-left w-full aspect-[3/4] rounded-2xl overflow-hidden bg-black  ">
   <div className="flex flex-col w-80 h-96 p-6 text-white">
-    <div className="relative pb-6 ">
-      <h3 className="text-l sm:text-l leading-tight">
+    <div className="relative pb-6 md:p-2">
+      <h3 className="text-xl sm:text-xl leading-tight">
         Unlock the future of
         <br />
         <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">

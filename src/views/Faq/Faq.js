@@ -54,7 +54,7 @@ const Faq = () => {
     {/* Left col-6 with centered content */}
     <div className="w-full md:w-1/2 flex flex-col  gap-5 font-urbanist ">
       <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] 2xl:text-[11rem] text-gradient animate-gradient">
-        Faq
+        FAQ
       </h1>
       <p className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl animate-fadeInLeft delay-200">
         Frequently asked questions on TNGSS 2025
@@ -99,13 +99,15 @@ const FaqSection = ({ sectionNumber, title, items }) => {
   };
 
   return (
-    <section className="my-5 bg-black rounded-3xl md:rounded-[50px] w-full gradient-border m-3">
+    // <section className="my-5 bg-black rounded-3xl md:rounded-[50px] w-full gradient-border m-3">
+    <section className="my-5 bg-black rounded-3xl md:rounded-[50px] w-full max-w-full overflow-hidden gradient-border mx-4 sm:mx-6">
+
       <div className='gradient-inner p-6 md:p-10'>
         <header className="flex items-center mb-5">
-          <h2 className="mr-4 text-4xl md:text-5xl sm:text-3xl font-bold text-[#0099ff] text-gradient-1">
+          <h2 className="mr-4 text-4xl md:text-6xl sm:text-3xl font-bold text-[#0099ff] text-gradient-1">
             {sectionNumber}
           </h2>
-          <h2 className="text-3xl md:text-5xl sm:text-3xl font-bold text-[#0099ff] text-gradient-1">
+          <h2 className="text-3xl md:text-6xl sm:text-3xl font-bold text-[#0099ff] text-gradient-1">
             {title}
           </h2>
         </header>
@@ -144,13 +146,24 @@ const FaqItem = ({ title, content, id, isExpanded, onToggle }) => {
         </div>
       </button>
       {isExpanded && (
-        <div
-          id={`faq-content-${id}`}
-          className="px-4 py-2 text-white text-base md:text-xl border-l-2 border-blue-500 "
-          dangerouslySetInnerHTML={{
-            __html:content.replace(/\n/g, '<br  />') || ''
-          }}
-        >
+        // <div
+        //   id={`faq-content-${id}`}
+        //   className="px-4 py-2 text-white text-base md:text-xl border-l-2 border-blue-500 "
+        //   dangerouslySetInnerHTML={{
+        //     __html:content.replace(/\n/g, '<br  />') || ''
+        //   }}
+        // >
+<div
+  id={`faq-content-${id}`}
+  className="px-4 py-2 text-white text-base md:text-xl border-l-2 border-blue-500 break-words overflow-hidden"
+  dangerouslySetInnerHTML={{
+    __html: content.replace(/\n/g, '<br />') || ''
+  }}
+>
+
+
+
+
           {/* {content} */}
         </div>
       )}
