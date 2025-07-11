@@ -4,7 +4,7 @@ import NavBar from '../../components/Elements/NavBar';
 import Footer from '../../components/Elements/Footer/Footer';
 import HeroSection from '../../components/About/HeroSection';
 import blank from "../../assets/blank.png";
-import FlippingCardNarrow from '../../components/Elements/FlippingCardNarrow';
+import FlippingCardNarrow from '../../components/Elements/FlippingCard';
 import GradientBdrCard from '../../components/Elements/GradientBorderCard';
 import bgImage from '../../assets/img/image.png';
 import axios from 'axios'
