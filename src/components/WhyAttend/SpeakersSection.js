@@ -69,10 +69,10 @@ export default function SpeakersSection() {
               <img
                 src={speaker.image}
                 alt={speaker.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-xl"
              
               />
-              <div className="absolute bottom-0 w-full px-4 py-3 bg-gradient-to-t from-black/70 to-transparent text-white">
+              <div className="absolute bottom-12 w-full px-4 py-3 bg-gradient-to-t from-black/70 to-transparent text-white">
                 <h5 className="text-lg font-semibold font-urbanist">{speaker.name}</h5>
                 <p className="text-sm font-light font-urbanist">{speaker.title}</p>
               </div>

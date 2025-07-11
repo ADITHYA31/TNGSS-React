@@ -86,19 +86,27 @@ const HeroSection = ({data, className = '' }) => {
         {/* Left Column - Text Content */}
         <div className="w-full md:w-1/2 text-center md:text-left space-y-12 sm:text-start lg:pl-12 ultimate-text ">
 
-          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl font-light leading-tight md:leading-snug sm:mt-[45px]"
+          {/* <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl font-light leading-tight md:leading-snug sm:mt-[45px]"
           dangerouslySetInnerHTML={{
             __html: data?.Title.replace(/\n/g, '<br  />') || ''
             }}
           >
-          </h1>
+          </h1> */}
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl font-light leading-tight md:leading-snug sm:mt-[45px]"
+  dangerouslySetInnerHTML={{
+    __html: (data?.Title || '')
+      .replace(/\n/g, '<br />')
+      .replace('Global Gathering', '<strong class="font-extrabold">Global Gathering</strong>') // <--- MODIFIED LINE HERE
+  }}
+>
+</h1>
           
           <div className="flex justify-center md:justify-start">
             <CTAButton
               src="https://event.startuptn.in/"
               className="rounded-2xl w-full md:w-auto mt-5"
             >
-              <div className="w-50 h-9 px-5 flex items-center justify-center md:justify-start text-lg md:text-xl">
+              <div className="w-60 h-12 px-6 flex items-center justify-center md:justify-center text-lg md:text-xl ">
                {data?.cta || 'Register now'}
               </div>
             </CTAButton>

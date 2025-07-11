@@ -212,16 +212,22 @@
     /* width: 900px; */
   }
  
-  
+  .active-underline {
+
+  border-color:1px solid #F5710C !important;
+}
+
  
   .btn-active {
     background-color: #17BFDB;
     color: white;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
   }
   
   .btn-inactive {
-    background-color: white;
+    background-color: rgb(250, 249, 249);
     color: #17BFDB;
+    /* border-radius: 0px !important; */
   }
   .date-button {
     background-color: #17BFDB;
@@ -284,6 +290,7 @@ button.bg-cyan-500.text-white {
 }
 .com-button{
   background-color: #17BFDB;
+  
 }
 .gradient-border-wrapper {
   display: inline-block;
@@ -387,4 +394,11 @@ button.bg-cyan-500.text-white {
   .flipping-card-narrow-wrapper,
 .flipping-card-narrow-wrapper > * {
   perspective: 2000px;
+}
+/* index.css */
+
+
+
+.font-extrabold {
+  font-weight:600 !important; /* Or 900 for font-black */
 }
